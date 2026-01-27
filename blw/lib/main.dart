@@ -14,10 +14,16 @@ import 'screens/food_log_screen.dart';
 import 'screens/gallery_screen.dart';
 import 'screens/tips_screen.dart';
 import 'screens/onboarding_screen.dart';
-import 'screens/premium_screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Lock orientation to portrait only
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarBrightness: Brightness.light,
@@ -53,6 +59,16 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'BLW App',
         debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.light, // Force light mode only
+        builder: (context, child) {
+          // Disable dynamic font scaling - use fixed text size
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: TextScaler.noScaling,
+            ),
+            child: child!,
+          );
+        },
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -245,7 +261,6 @@ class AppWrapper extends StatefulWidget {
 class _AppWrapperState extends State<AppWrapper> {
   bool _isLoading = true;
   bool _showOnboarding = false;
-  bool _showPurchaseScreen = false;
 
   @override
   void initState() {
@@ -259,26 +274,18 @@ class _AppWrapperState extends State<AppWrapper> {
     // Increment app opens counter
     await AppOpensService.incrementAndGetOpens();
 
-    // Check if should show purchase screen (from 11th open)
-    final shouldShowPurchase = await AppOpensService.shouldShowPurchaseScreen();
-
     // Check if should request review (5th to 10th open)
     final shouldReview = await AppOpensService.shouldRequestReview();
 
     if (!mounted) return;
 
-    // Check if premium user (they shouldn't see purchase screen)
-    final premiumProvider = context.read<PremiumProvider>();
-    final isPremium = premiumProvider.isPremium;
-
     setState(() {
       _showOnboarding = !isOnboardingComplete;
-      _showPurchaseScreen = !isPremium && shouldShowPurchase && isOnboardingComplete;
       _isLoading = false;
     });
 
     // Request review if eligible
-    if (isOnboardingComplete && !shouldShowPurchase && shouldReview) {
+    if (isOnboardingComplete && shouldReview) {
       await AppOpensService.requestReview();
     }
   }
@@ -286,12 +293,6 @@ class _AppWrapperState extends State<AppWrapper> {
   void _onOnboardingComplete() {
     setState(() {
       _showOnboarding = false;
-    });
-  }
-
-  void _onPurchaseScreenDismissed() {
-    setState(() {
-      _showPurchaseScreen = false;
     });
   }
 
@@ -308,10 +309,6 @@ class _AppWrapperState extends State<AppWrapper> {
 
     if (_showOnboarding) {
       return OnboardingScreen(onComplete: _onOnboardingComplete);
-    }
-
-    if (_showPurchaseScreen) {
-      return PremiumScreen(onDismiss: _onPurchaseScreenDismissed);
     }
 
     return const MainTabScreen();

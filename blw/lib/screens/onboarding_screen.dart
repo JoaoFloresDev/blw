@@ -73,7 +73,6 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     final pages = [
       _OnboardingPageData(
@@ -103,7 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     ];
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF000000) : const Color(0xFFF2F2F7),
+      backgroundColor: const Color(0xFFF2F2F7),
       body: FadeTransition(
         opacity: _fadeAnimation,
         child: ScaleTransition(
@@ -111,7 +110,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           child: SafeArea(
             child: Column(
               children: [
-                _buildHeader(l10n, isDark),
+                _buildHeader(l10n),
                 Expanded(
                   child: PageView.builder(
                     controller: _pageController,
@@ -120,11 +119,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     },
                     itemCount: pages.length,
                     itemBuilder: (context, index) {
-                      return _buildPage(context, pages[index], isDark);
+                      return _buildPage(context, pages[index]);
                     },
                   ),
                 ),
-                _buildFooter(l10n, isDark),
+                _buildFooter(l10n),
               ],
             ),
           ),
@@ -133,7 +132,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildHeader(AppLocalizations l10n, bool isDark) {
+  Widget _buildHeader(AppLocalizations l10n) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Row(
@@ -143,8 +142,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             onPressed: _completeOnboarding,
             child: Text(
               l10n.skip,
-              style: TextStyle(
-                color: isDark ? Colors.white60 : Colors.black45,
+              style: const TextStyle(
+                color: Colors.black45,
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
               ),
@@ -155,22 +154,22 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildPage(BuildContext context, _OnboardingPageData data, bool isDark) {
+  Widget _buildPage(BuildContext context, _OnboardingPageData data) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Spacer(flex: 1),
-          _buildIconContainer(data, isDark),
+          _buildIconContainer(data),
           const SizedBox(height: 56),
           Text(
             data.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.w700,
               letterSpacing: -0.5,
-              color: isDark ? Colors.white : const Color(0xFF1C1C1E),
+              color: Color(0xFF1C1C1E),
               height: 1.2,
             ),
             textAlign: TextAlign.center,
@@ -178,10 +177,10 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           const SizedBox(height: 16),
           Text(
             data.description,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w400,
-              color: isDark ? Colors.white60 : const Color(0xFF8E8E93),
+              color: Color(0xFF8E8E93),
               height: 1.5,
               letterSpacing: -0.2,
             ),
@@ -193,7 +192,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildIconContainer(_OnboardingPageData data, bool isDark) {
+  Widget _buildIconContainer(_OnboardingPageData data) {
     return Container(
       width: 180,
       height: 180,
@@ -204,20 +203,6 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           colors: data.gradient,
         ),
         borderRadius: BorderRadius.circular(44),
-        boxShadow: [
-          BoxShadow(
-            color: data.gradient[0].withValues(alpha: 0.4),
-            blurRadius: 40,
-            offset: const Offset(0, 20),
-            spreadRadius: 0,
-          ),
-          BoxShadow(
-            color: data.gradient[1].withValues(alpha: 0.2),
-            blurRadius: 60,
-            offset: const Offset(0, 10),
-            spreadRadius: -10,
-          ),
-        ],
       ),
       child: Stack(
         children: [
@@ -253,20 +238,20 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildFooter(AppLocalizations l10n, bool isDark) {
+  Widget _buildFooter(AppLocalizations l10n) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 0, 24, 32),
       child: Column(
         children: [
-          _buildPageIndicator(isDark),
+          _buildPageIndicator(),
           const SizedBox(height: 40),
-          _buildContinueButton(l10n, isDark),
+          _buildContinueButton(l10n),
         ],
       ),
     );
   }
 
-  Widget _buildPageIndicator(bool isDark) {
+  Widget _buildPageIndicator() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(4, (index) {
@@ -280,7 +265,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           decoration: BoxDecoration(
             color: isActive
                 ? const Color(0xFF34C759)
-                : (isDark ? Colors.white24 : const Color(0xFFD1D1D6)),
+                : const Color(0xFFD1D1D6),
             borderRadius: BorderRadius.circular(4),
           ),
         );
@@ -288,7 +273,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildContinueButton(AppLocalizations l10n, bool isDark) {
+  Widget _buildContinueButton(AppLocalizations l10n) {
     final isLastPage = _currentPage == 3;
 
     return AnimatedContainer(
@@ -303,13 +288,6 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             : null,
         color: isLastPage ? null : const Color(0xFF34C759),
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF34C759).withValues(alpha: 0.3),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
       ),
       child: CupertinoButton(
         padding: EdgeInsets.zero,

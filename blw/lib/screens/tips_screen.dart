@@ -53,7 +53,7 @@ class TipsScreen extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildListDelegate([
                 // Getting Started Section
-                _buildSectionHeader(context, 'Primeiros Passos', CupertinoIcons.star_fill, const Color(0xFFFFCC00)),
+                _buildSectionHeader(context, l10n.sectionGettingStarted, CupertinoIcons.star_fill, const Color(0xFFFFCC00)),
                 const SizedBox(height: 12),
                 _buildTipCard(
                   context,
@@ -81,7 +81,7 @@ class TipsScreen extends StatelessWidget {
 
                 // Safety Section
                 const SizedBox(height: 24),
-                _buildSectionHeader(context, 'Seguranca', CupertinoIcons.shield_fill, const Color(0xFFFF3B30)),
+                _buildSectionHeader(context, l10n.sectionSafety, CupertinoIcons.shield_fill, const Color(0xFFFF3B30)),
                 const SizedBox(height: 12),
                 _buildTipCard(
                   context,
@@ -109,7 +109,7 @@ class TipsScreen extends StatelessWidget {
 
                 // Additional Tips Section
                 const SizedBox(height: 24),
-                _buildSectionHeader(context, 'Dicas Praticas', CupertinoIcons.lightbulb_fill, const Color(0xFFFFCC00)),
+                _buildSectionHeader(context, l10n.sectionPracticalTips, CupertinoIcons.lightbulb_fill, const Color(0xFFFFCC00)),
                 const SizedBox(height: 12),
                 _buildTipCard(
                   context,
@@ -145,7 +145,7 @@ class TipsScreen extends StatelessWidget {
 
                 // Nutrition Section
                 const SizedBox(height: 24),
-                _buildSectionHeader(context, 'Nutricao', CupertinoIcons.leaf_arrow_circlepath, AppColors.primary),
+                _buildSectionHeader(context, l10n.sectionNutrition, CupertinoIcons.leaf_arrow_circlepath, AppColors.primary),
                 const SizedBox(height: 12),
                 _buildTipCard(
                   context,

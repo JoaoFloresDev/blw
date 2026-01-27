@@ -9,9 +9,8 @@ import '../models/food.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
-import '../providers/premium_provider.dart';
 import '../services/photo_service.dart';
-import 'premium_screen.dart';
+import '../widgets/celebration_overlay.dart';
 
 class AddFoodLogScreen extends StatefulWidget {
   final Food? preselectedFood;
@@ -728,22 +727,18 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
           ),
           const SizedBox(height: 16),
         ],
-        Row(
+        Column(
           children: [
-            Expanded(
-              child: _buildPhotoButton(
-                icon: CupertinoIcons.camera_fill,
-                label: l10n.takePhoto,
-                onTap: () => _addPhoto(ImageSource.camera, l10n),
-              ),
+            _buildPhotoButton(
+              icon: CupertinoIcons.camera_fill,
+              label: l10n.takePhoto,
+              onTap: () => _addPhoto(ImageSource.camera, l10n),
             ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _buildPhotoButton(
-                icon: CupertinoIcons.photo_fill,
-                label: l10n.chooseFromGallery,
-                onTap: () => _addPhoto(ImageSource.gallery, l10n),
-              ),
+            const SizedBox(height: 10),
+            _buildPhotoButton(
+              icon: CupertinoIcons.photo_fill,
+              label: l10n.chooseFromGallery,
+              onTap: () => _addPhoto(ImageSource.gallery, l10n),
             ),
           ],
         ),
@@ -759,6 +754,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -776,16 +772,13 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
           children: [
             Icon(icon, color: AppColors.primary, size: 20),
             const SizedBox(width: 8),
-            Flexible(
-              child: Text(
-                label,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.primary,
-                  letterSpacing: -0.2,
-                ),
-                overflow: TextOverflow.ellipsis,
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: AppColors.primary,
+                letterSpacing: -0.2,
               ),
             ),
           ],
@@ -847,21 +840,11 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
           ),
         ],
       ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          boxShadow: canSave
-              ? [
-                  BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.3),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
-                  ),
-                ]
-              : null,
-        ),
+      child: SizedBox(
+        width: double.infinity,
+        height: 56,
         child: CupertinoButton(
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: EdgeInsets.zero,
           color: canSave ? AppColors.primary : const Color(0xFFE5E5EA),
           borderRadius: BorderRadius.circular(14),
           onPressed: canSave ? () => _saveLog(l10n) : null,
@@ -880,15 +863,6 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
   }
 
   void _addPhoto(ImageSource source, AppLocalizations l10n) async {
-    final premiumProvider = context.read<PremiumProvider>();
-    final logProvider = context.read<FoodLogProvider>();
-
-    final totalPhotos = logProvider.totalPhotosCount + _photoPaths.length;
-    if (!premiumProvider.canAddMorePhotos(totalPhotos)) {
-      _showPremiumDialog(l10n);
-      return;
-    }
-
     final path = await PhotoService.pickImage(source);
     if (path != null) {
       setState(() {
@@ -901,33 +875,6 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
     setState(() {
       _photoPaths.removeAt(index);
     });
-  }
-
-  void _showPremiumDialog(AppLocalizations l10n) {
-    showCupertinoDialog(
-      context: context,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text(l10n.photoLimitReached),
-        content: Text(l10n.upgradeToPremium),
-        actions: [
-          CupertinoDialogAction(
-            onPressed: () => Navigator.pop(context),
-            child: Text(l10n.cancel),
-          ),
-          CupertinoDialogAction(
-            isDefaultAction: true,
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                CupertinoPageRoute(builder: (_) => const PremiumScreen()),
-              );
-            },
-            child: Text(l10n.goPremium),
-          ),
-        ],
-      ),
-    );
   }
 
   Future<void> _selectDate() async {
@@ -1003,15 +950,16 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
     }
   }
 
-  void _saveLog(AppLocalizations l10n) {
+  void _saveLog(AppLocalizations l10n) async {
     if (_selectedFood == null) return;
 
     final foodName = l10n.getFoodName(_selectedFood!.id);
+    final displayName = foodName.startsWith('food_') ? _selectedFood!.name : foodName;
 
     final log = FoodLog(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       foodId: _selectedFood!.id,
-      foodName: foodName.startsWith('food_') ? _selectedFood!.name : foodName,
+      foodName: displayName,
       date: _selectedDate,
       acceptance: _selectedAcceptance,
       reaction: _selectedReaction,
@@ -1019,18 +967,45 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
       photosPaths: _photoPaths,
     );
 
-    context.read<FoodLogProvider>().addLog(log);
+    final isFirstTime = await context.read<FoodLogProvider>().addLog(log);
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.recordSaved(log.foodName)),
-        backgroundColor: AppColors.primary,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        margin: const EdgeInsets.all(16),
-      ),
+    if (!mounted) return;
+
+    if (isFirstTime) {
+      // Show celebration overlay for first time foods
+      _showCelebration(displayName, _selectedFood!.icon);
+    } else {
+      // Show regular snackbar
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.recordSaved(log.foodName)),
+          backgroundColor: AppColors.primary,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          margin: const EdgeInsets.all(16),
+        ),
+      );
+      Navigator.pop(context);
+    }
+  }
+
+  void _showCelebration(String foodName, String foodIcon) {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'Celebration',
+      barrierColor: Colors.transparent,
+      transitionDuration: const Duration(milliseconds: 200),
+      pageBuilder: (context, animation, secondaryAnimation) {
+        return CelebrationOverlay(
+          foodName: foodName,
+          foodIcon: foodIcon,
+          onDismiss: () {
+            Navigator.of(context).pop();
+            Navigator.of(this.context).pop();
+          },
+        );
+      },
     );
-
-    Navigator.pop(context);
   }
 }

@@ -8,7 +8,6 @@ import '../providers/food_log_provider.dart';
 import '../data/foods_data.dart';
 import 'add_food_log_screen.dart';
 import 'allergens_screen.dart';
-import 'premium_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -100,9 +99,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12),
-                const Text(
-                  'Acoes Rapidas',
-                  style: TextStyle(
+                Text(
+                  l10n.quickActions,
+                  style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
                     letterSpacing: -0.4,
@@ -117,7 +116,7 @@ class HomeScreen extends StatelessWidget {
             icon: CupertinoIcons.add_circled_solid,
             iconColor: AppColors.primary,
             title: l10n.addRecord,
-            subtitle: 'Registre um novo alimento',
+            subtitle: l10n.addRecordSubtitle,
             onTap: () => Navigator.push(
               context,
               CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
@@ -137,22 +136,6 @@ class HomeScreen extends StatelessWidget {
               context,
               CupertinoPageRoute(builder: (_) => const AllergensScreen()),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 56),
-            child: Divider(height: 1),
-          ),
-          _buildActionItem(
-            context,
-            icon: CupertinoIcons.star_fill,
-            iconColor: const Color(0xFFFFCC00),
-            title: 'Premium',
-            subtitle: 'Desbloqueie todos os recursos',
-            onTap: () => Navigator.push(
-              context,
-              CupertinoPageRoute(builder: (_) => const PremiumScreen()),
-            ),
-            showChevron: true,
           ),
         ],
       ),
@@ -246,9 +229,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  const Text(
-                    'Progresso',
-                    style: TextStyle(
+                  Text(
+                    l10n.progress,
+                    style: const TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w600,
                       letterSpacing: -0.4,
@@ -262,7 +245,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: _buildStatItem(
                       value: triedFoods.toString(),
-                      label: 'Alimentos\nExperimentados',
+                      label: l10n.foodsTried,
                       color: AppColors.primary,
                     ),
                   ),
@@ -274,7 +257,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: _buildStatItem(
                       value: provider.logs.length.toString(),
-                      label: 'Total de\nRegistros',
+                      label: l10n.totalRecords,
                       color: const Color(0xFF007AFF),
                     ),
                   ),
@@ -286,7 +269,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: _buildStatItem(
                       value: photosCount.toString(),
-                      label: 'Fotos\nSalvas',
+                      label: l10n.photosSaved,
                       color: AppColors.secondary,
                     ),
                   ),
@@ -299,16 +282,16 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Alimentos experimentados',
-                        style: TextStyle(
+                      Text(
+                        l10n.foodsTried.replaceAll('\n', ' '),
+                        style: const TextStyle(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                           letterSpacing: -0.1,
                         ),
                       ),
                       Text(
-                        '$triedFoods de $totalFoods',
+                        l10n.foodsTriedOf(triedFoods, totalFoods),
                         style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
@@ -397,9 +380,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    const Text(
-                      'Atividade Recente',
-                      style: TextStyle(
+                    Text(
+                      l10n.recentActivity,
+                      style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
                         letterSpacing: -0.4,

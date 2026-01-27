@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
+import '../models/food_log.dart';
+import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
-import '../providers/premium_provider.dart';
 import '../services/photo_service.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
-import 'premium_screen.dart';
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
@@ -52,8 +52,8 @@ class GalleryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Consumer2<FoodLogProvider, PremiumProvider>(
-        builder: (context, logProvider, premiumProvider, child) {
+      body: Consumer<FoodLogProvider>(
+        builder: (context, logProvider, child) {
           if (logProvider.isLoading) {
             return const Center(
               child: CupertinoActivityIndicator(radius: 14),
@@ -66,25 +66,18 @@ class GalleryScreen extends StatelessWidget {
             return _buildEmptyState(context, l10n);
           }
 
-          return Column(
-            children: [
-              if (!premiumProvider.isPremium) _buildPremiumBanner(context, l10n),
-              Expanded(
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(12),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 6,
-                    mainAxisSpacing: 6,
-                  ),
-                  itemCount: photos.length,
-                  itemBuilder: (context, index) {
-                    final photo = photos[index];
-                    return _buildPhotoTile(context, photo, index, photos, l10n);
-                  },
-                ),
-              ),
-            ],
+          return GridView.builder(
+            padding: const EdgeInsets.all(16),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+            ),
+            itemCount: photos.length,
+            itemBuilder: (context, index) {
+              final photo = photos[index];
+              return _buildPhotoTile(context, photo, index, photos, l10n);
+            },
           );
         },
       ),
@@ -196,7 +189,7 @@ class GalleryScreen extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(CupertinoIcons.camera_fill, size: 22),
+                    const Icon(CupertinoIcons.camera_fill, size: 22, color: Colors.white),
                     const SizedBox(width: 10),
                     Text(
                       l10n.addPhoto,
@@ -204,6 +197,7 @@ class GalleryScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontSize: 17,
                         letterSpacing: -0.3,
+                        color: Colors.white,
                       ),
                     ),
                   ],
@@ -211,88 +205,6 @@ class GalleryScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildPremiumBanner(BuildContext context, AppLocalizations l10n) {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(12, 0, 12, 8),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFFFF9500), Color(0xFFFFCC00)],
-        ),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFFFF9500).withValues(alpha: 0.3),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(16),
-          onTap: () => Navigator.push(
-            context,
-            CupertinoPageRoute(builder: (_) => const PremiumScreen()),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Container(
-                  width: 44,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.25),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(
-                    CupertinoIcons.star_fill,
-                    color: Colors.white,
-                    size: 24,
-                  ),
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.unlimitedPhotos,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 17,
-                          letterSpacing: -0.3,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        l10n.upgradeToPremium,
-                        style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.85),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Icon(
-                  CupertinoIcons.chevron_right,
-                  color: Colors.white,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );
@@ -317,17 +229,17 @@ class GalleryScreen extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.08),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -344,12 +256,13 @@ class GalleryScreen extends StatelessWidget {
                   );
                 },
               ),
+              // Gradient overlay at bottom for tags
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                  height: 80,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
@@ -360,17 +273,64 @@ class GalleryScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  child: Text(
-                    photo.foodName,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -0.2,
+                ),
+              ),
+              // Tags at bottom
+              Positioned(
+                bottom: 8,
+                left: 8,
+                right: 8,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Food name tag
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            getFoodById(photo.foodId)?.icon ?? '🍽️',
+                            style: const TextStyle(fontSize: 12),
+                          ),
+                          const SizedBox(width: 4),
+                          Flexible(
+                            child: Text(
+                              photo.foodName,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                    const SizedBox(height: 4),
+                    // Acceptance tag
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: _getAcceptanceColor(photo.acceptance),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        '${photo.acceptance.icon} ${_getAcceptanceName(l10n, photo.acceptance)}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -378,6 +338,36 @@ class GalleryScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Color _getAcceptanceColor(Acceptance acceptance) {
+    switch (acceptance) {
+      case Acceptance.loved:
+        return const Color(0xFFFF2D55);
+      case Acceptance.liked:
+        return AppColors.primary;
+      case Acceptance.neutral:
+        return const Color(0xFFFF9500);
+      case Acceptance.disliked:
+        return const Color(0xFFFF9500);
+      case Acceptance.refused:
+        return const Color(0xFFFF3B30);
+    }
+  }
+
+  String _getAcceptanceName(AppLocalizations l10n, Acceptance acceptance) {
+    switch (acceptance) {
+      case Acceptance.loved:
+        return l10n.loved;
+      case Acceptance.liked:
+        return l10n.liked;
+      case Acceptance.neutral:
+        return l10n.neutral;
+      case Acceptance.disliked:
+        return l10n.disliked;
+      case Acceptance.refused:
+        return l10n.refused;
+    }
   }
 
   void _shareAllPhotos(

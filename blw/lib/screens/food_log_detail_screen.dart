@@ -15,8 +15,12 @@ List<PhotoItem> _createPhotoItems(FoodLog log, String displayName) {
   return log.photosPaths.map((path) => PhotoItem(
     path: path,
     foodName: displayName,
+    foodId: log.foodId,
     date: log.date,
     logId: log.id,
+    acceptance: log.acceptance,
+    reaction: log.reaction,
+    notes: log.notes,
   )).toList();
 }
 
@@ -71,13 +75,13 @@ class FoodLogDetailScreen extends StatelessWidget {
           child: const Icon(CupertinoIcons.back, color: AppColors.primary),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text('Detalhes'),
+        title: Text(l10n.details),
         actions: [
           CupertinoButton(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: const Text(
-              'Editar',
-              style: TextStyle(color: AppColors.primary),
+            child: Text(
+              l10n.edit,
+              style: const TextStyle(color: AppColors.primary),
             ),
             onPressed: () => _editLog(context),
           ),
@@ -146,7 +150,7 @@ class FoodLogDetailScreen extends StatelessWidget {
                       context,
                       icon: CupertinoIcons.heart_fill,
                       iconColor: const Color(0xFFFF2D55),
-                      title: 'Aceitacao',
+                      title: l10n.acceptance,
                       value: '${log.acceptance.icon} ${_getAcceptanceName(context, log.acceptance)}',
                     ),
                     const Padding(
@@ -157,7 +161,7 @@ class FoodLogDetailScreen extends StatelessWidget {
                       context,
                       icon: CupertinoIcons.exclamationmark_triangle_fill,
                       iconColor: AppColors.secondary,
-                      title: 'Reacao',
+                      title: l10n.reaction,
                       value: '${log.reaction.icon} ${_getReactionName(context, log.reaction)}',
                     ),
                   ],
@@ -188,9 +192,9 @@ class FoodLogDetailScreen extends StatelessWidget {
                             color: const Color(0xFF007AFF),
                           ),
                           const SizedBox(width: 12),
-                          const Text(
-                            'Observacoes',
-                            style: TextStyle(
+                          Text(
+                            l10n.notes,
+                            style: const TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w600,
                               letterSpacing: -0.4,
@@ -296,9 +300,9 @@ class FoodLogDetailScreen extends StatelessWidget {
                   color: AppColors.destructive.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                   onPressed: () => _confirmDelete(context, l10n, displayName),
-                  child: const Text(
-                    'Excluir Registro',
-                    style: TextStyle(
+                  child: Text(
+                    l10n.deleteRecordButton,
+                    style: const TextStyle(
                       color: AppColors.destructive,
                       fontWeight: FontWeight.w600,
                     ),

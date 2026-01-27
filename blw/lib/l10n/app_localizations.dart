@@ -95,6 +95,13 @@ class AppLocalizations {
   String get cancel => get('cancel');
   String get delete => get('delete');
 
+  // Food log detail
+  String get details => get('details');
+  String get edit => get('edit');
+  String get acceptance => get('acceptance');
+  String get reaction => get('reaction');
+  String get deleteRecordButton => get('deleteRecordButton');
+
   // Add food log
   String get newRecord => get('newRecord');
   String get food => get('food');
@@ -102,6 +109,7 @@ class AppLocalizations {
   String get date => get('date');
   String get howWasAcceptance => get('howWasAcceptance');
   String get anyReaction => get('anyReaction');
+  String get notes => get('notes');
   String get notesOptional => get('notesOptional');
   String get notesHint => get('notesHint');
   String get saveRecord => get('saveRecord');
@@ -208,6 +216,21 @@ class AppLocalizations {
   String timesOffered(int count) => get('timesOffered').replaceAll('{count}', count.toString());
   String get neverOffered => get('neverOffered');
 
+  // Celebration
+  String get firstTime => get('firstTime');
+  String get addedToDiary => get('addedToDiary');
+  String get tapToContinue => get('tapToContinue');
+
+  // Home screen
+  String get quickActions => get('quickActions');
+  String get addRecordSubtitle => get('addRecordSubtitle');
+  String get progress => get('progress');
+  String get foodsTried => get('foodsTried');
+  String get totalRecords => get('totalRecords');
+  String get photosSaved => get('photosSaved');
+  String get recentActivity => get('recentActivity');
+  String foodsTriedOf(int tried, int total) => get('foodsTriedOf').replaceAll('{tried}', tried.toString()).replaceAll('{total}', total.toString());
+
   // Onboarding
   String get onboardingTitle1 => get('onboardingTitle1');
   String get onboardingDesc1 => get('onboardingDesc1');
@@ -220,6 +243,12 @@ class AppLocalizations {
   String get getStarted => get('getStarted');
   String get skip => get('skip');
   String get next => get('next');
+
+  // Tips screen sections
+  String get sectionGettingStarted => get('sectionGettingStarted');
+  String get sectionSafety => get('sectionSafety');
+  String get sectionPracticalTips => get('sectionPracticalTips');
+  String get sectionNutrition => get('sectionNutrition');
 
   // Food names
   String getFoodName(String foodId) => get('food_$foodId');
@@ -314,6 +343,13 @@ const Map<String, String> _ptTranslations = {
   'cancel': 'Cancelar',
   'delete': 'Excluir',
 
+  // Food log detail
+  'details': 'Detalhes',
+  'edit': 'Editar',
+  'acceptance': 'Aceitacao',
+  'reaction': 'Reacao',
+  'deleteRecordButton': 'Excluir Registro',
+
   // Add food log
   'newRecord': 'Novo Registro',
   'food': 'Alimento',
@@ -321,6 +357,7 @@ const Map<String, String> _ptTranslations = {
   'date': 'Data',
   'howWasAcceptance': 'Como foi a aceitacao?',
   'anyReaction': 'Houve alguma reacao?',
+  'notes': 'Observacoes',
   'notesOptional': 'Observacoes (opcional)',
   'notesHint': 'Ex: Comeu bem no almoco, fez careta no inicio...',
   'saveRecord': 'Salvar Registro',
@@ -576,6 +613,21 @@ const Map<String, String> _ptTranslations = {
   'timesOffered': '{count}x oferecido',
   'neverOffered': 'Nunca oferecido',
 
+  // Celebration
+  'firstTime': 'Primeira vez!',
+  'addedToDiary': 'foi adicionado ao diário do bebê!',
+  'tapToContinue': 'Toque para continuar',
+
+  // Home screen
+  'quickActions': 'Ações Rápidas',
+  'addRecordSubtitle': 'Registre um novo alimento',
+  'progress': 'Progresso',
+  'foodsTried': 'Alimentos\nExperimentados',
+  'totalRecords': 'Total de\nRegistros',
+  'photosSaved': 'Fotos\nSalvas',
+  'recentActivity': 'Atividade Recente',
+  'foodsTriedOf': '{tried} de {total}',
+
   // Onboarding
   'onboardingTitle1': 'Bem-vindo!',
   'onboardingDesc1': 'Acompanhe a introducao alimentar do seu bebe de forma simples e organizada.',
@@ -588,6 +640,12 @@ const Map<String, String> _ptTranslations = {
   'getStarted': 'Comecar',
   'skip': 'Pular',
   'next': 'Proximo',
+
+  // Tips screen sections
+  'sectionGettingStarted': 'Primeiros Passos',
+  'sectionSafety': 'Segurança',
+  'sectionPracticalTips': 'Dicas Práticas',
+  'sectionNutrition': 'Nutrição',
 };
 
 // English translations
@@ -659,6 +717,13 @@ const Map<String, String> _enTranslations = {
   'cancel': 'Cancel',
   'delete': 'Delete',
 
+  // Food log detail
+  'details': 'Details',
+  'edit': 'Edit',
+  'acceptance': 'Acceptance',
+  'reaction': 'Reaction',
+  'deleteRecordButton': 'Delete Record',
+
   // Add food log
   'newRecord': 'New Record',
   'food': 'Food',
@@ -666,6 +731,7 @@ const Map<String, String> _enTranslations = {
   'date': 'Date',
   'howWasAcceptance': 'How was the acceptance?',
   'anyReaction': 'Any reaction?',
+  'notes': 'Notes',
   'notesOptional': 'Notes (optional)',
   'notesHint': 'E.g.: Ate well at lunch, made a face at first...',
   'saveRecord': 'Save Record',
@@ -922,6 +988,21 @@ const Map<String, String> _enTranslations = {
   'timesOffered': '{count}x offered',
   'neverOffered': 'Never offered',
 
+  // Celebration
+  'firstTime': 'First time!',
+  'addedToDiary': 'was added to baby\'s diary!',
+  'tapToContinue': 'Tap to continue',
+
+  // Home screen
+  'quickActions': 'Quick Actions',
+  'addRecordSubtitle': 'Record a new food',
+  'progress': 'Progress',
+  'foodsTried': 'Foods\nTried',
+  'totalRecords': 'Total\nRecords',
+  'photosSaved': 'Photos\nSaved',
+  'recentActivity': 'Recent Activity',
+  'foodsTriedOf': '{tried} of {total}',
+
   // Onboarding
   'onboardingTitle1': 'Welcome!',
   'onboardingDesc1': 'Track your baby\'s food introduction journey simply and organized.',
@@ -934,6 +1015,12 @@ const Map<String, String> _enTranslations = {
   'getStarted': 'Get Started',
   'skip': 'Skip',
   'next': 'Next',
+
+  // Tips screen sections
+  'sectionGettingStarted': 'Getting Started',
+  'sectionSafety': 'Safety',
+  'sectionPracticalTips': 'Practical Tips',
+  'sectionNutrition': 'Nutrition',
 };
 
 // Spanish translations
@@ -1005,6 +1092,13 @@ const Map<String, String> _esTranslations = {
   'cancel': 'Cancelar',
   'delete': 'Eliminar',
 
+  // Food log detail
+  'details': 'Detalles',
+  'edit': 'Editar',
+  'acceptance': 'Aceptacion',
+  'reaction': 'Reaccion',
+  'deleteRecordButton': 'Eliminar Registro',
+
   // Add food log
   'newRecord': 'Nuevo Registro',
   'food': 'Alimento',
@@ -1012,6 +1106,7 @@ const Map<String, String> _esTranslations = {
   'date': 'Fecha',
   'howWasAcceptance': 'Como fue la aceptacion?',
   'anyReaction': 'Hubo alguna reaccion?',
+  'notes': 'Notas',
   'notesOptional': 'Notas (opcional)',
   'notesHint': 'Ej: Comio bien en el almuerzo, hizo muecas al principio...',
   'saveRecord': 'Guardar Registro',
@@ -1268,6 +1363,21 @@ const Map<String, String> _esTranslations = {
   'timesOffered': '{count}x ofrecido',
   'neverOffered': 'Nunca ofrecido',
 
+  // Celebration
+  'firstTime': '¡Primera vez!',
+  'addedToDiary': '¡fue agregado al diario del bebé!',
+  'tapToContinue': 'Toca para continuar',
+
+  // Home screen
+  'quickActions': 'Acciones Rápidas',
+  'addRecordSubtitle': 'Registra un nuevo alimento',
+  'progress': 'Progreso',
+  'foodsTried': 'Alimentos\nProbados',
+  'totalRecords': 'Total de\nRegistros',
+  'photosSaved': 'Fotos\nGuardadas',
+  'recentActivity': 'Actividad Reciente',
+  'foodsTriedOf': '{tried} de {total}',
+
   // Onboarding
   'onboardingTitle1': 'Bienvenido!',
   'onboardingDesc1': 'Acompana la introduccion alimentaria de tu bebe de forma simple y organizada.',
@@ -1280,4 +1390,10 @@ const Map<String, String> _esTranslations = {
   'getStarted': 'Comenzar',
   'skip': 'Saltar',
   'next': 'Siguiente',
+
+  // Tips screen sections
+  'sectionGettingStarted': 'Primeros Pasos',
+  'sectionSafety': 'Seguridad',
+  'sectionPracticalTips': 'Consejos Prácticos',
+  'sectionNutrition': 'Nutrición',
 };

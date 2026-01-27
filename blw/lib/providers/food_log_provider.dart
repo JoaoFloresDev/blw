@@ -50,8 +50,12 @@ class FoodLogProvider extends ChangeNotifier {
           photos.add(PhotoItem(
             path: path,
             foodName: log.foodName,
+            foodId: log.foodId,
             date: log.date,
             logId: log.id,
+            acceptance: log.acceptance,
+            reaction: log.reaction,
+            notes: log.notes,
           ));
         }
       }
@@ -60,10 +64,16 @@ class FoodLogProvider extends ChangeNotifier {
     return photos;
   }
 
-  Future<void> addLog(FoodLog log) async {
+  bool isFirstTimeForFood(String foodId) {
+    return !_logs.any((log) => log.foodId == foodId);
+  }
+
+  Future<bool> addLog(FoodLog log) async {
+    final isFirstTime = isFirstTimeForFood(log.foodId);
     _logs.add(log);
     await _saveLogs();
     notifyListeners();
+    return isFirstTime;
   }
 
   Future<void> removeLog(String id) async {
@@ -134,13 +144,21 @@ class FoodLogProvider extends ChangeNotifier {
 class PhotoItem {
   final String path;
   final String foodName;
+  final String foodId;
   final DateTime date;
   final String logId;
+  final Acceptance acceptance;
+  final Reaction reaction;
+  final String? notes;
 
   PhotoItem({
     required this.path,
     required this.foodName,
+    required this.foodId,
     required this.date,
     required this.logId,
+    required this.acceptance,
+    required this.reaction,
+    this.notes,
   });
 }
