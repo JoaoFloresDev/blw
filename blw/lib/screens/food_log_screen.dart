@@ -6,11 +6,44 @@ import '../main.dart';
 import '../providers/food_log_provider.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
+import '../services/pdf_service.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
 
 class FoodLogScreen extends StatelessWidget {
   const FoodLogScreen({super.key});
+
+  void _exportPdf(BuildContext context, FoodLogProvider provider, AppLocalizations l10n) {
+    final logs = provider.logsSortedByDate;
+    final introducedFoodIds = provider.introducedFoodIds;
+
+    PdfService.generateAndShareReport(
+      logs: logs,
+      introducedFoodIds: introducedFoodIds,
+      title: l10n.foodDiary,
+      subtitle: l10n.diarySubtitle,
+      labels: {
+        'page': 'Página',
+        'summary': 'Resumo',
+        'foodsTried': 'Alimentos\nExperimentados',
+        'totalRecords': 'Total de\nRegistros',
+        'reactions': 'Reações\nRegistradas',
+        'foodsIntroduced': 'Alimentos Introduzidos',
+        'food': 'Alimento',
+        'times': 'Vezes',
+        'acceptance': 'Aceitação',
+        'lastDate': 'Última Data',
+        'date': 'Data',
+        'reaction': 'Reação',
+        'reactionsTitle': 'Reações Registradas',
+        'recentRecords': 'Registros Recentes',
+        'noReaction': l10n.noReaction,
+        'mildReaction': l10n.mildReaction,
+        'moderateReaction': l10n.moderateReaction,
+        'severeReaction': l10n.severeReaction,
+      },
+    );
+  }
 
   String _getAcceptanceName(BuildContext context, Acceptance acceptance) {
     final l10n = AppLocalizations.of(context);
@@ -58,24 +91,46 @@ class FoodLogScreen extends StatelessWidget {
                             color: AppColors.textPrimary,
                           ),
                         ),
-                        CupertinoButton(
-                          padding: EdgeInsets.zero,
-                          onPressed: () => Navigator.push(
-                            context,
-                            CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.circular(12),
+                        Row(
+                          children: [
+                            if (logs.isNotEmpty)
+                              CupertinoButton(
+                                padding: EdgeInsets.zero,
+                                onPressed: () => _exportPdf(context, provider, l10n),
+                                child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF007AFF),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Icon(
+                                    CupertinoIcons.doc_text_fill,
+                                    color: Colors.white,
+                                    size: 22,
+                                  ),
+                                ),
+                              ),
+                            const SizedBox(width: 8),
+                            CupertinoButton(
+                              padding: EdgeInsets.zero,
+                              onPressed: () => Navigator.push(
+                                context,
+                                CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: AppColors.primary,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Icon(
+                                  CupertinoIcons.add,
+                                  color: Colors.white,
+                                  size: 22,
+                                ),
+                              ),
                             ),
-                            child: const Icon(
-                              CupertinoIcons.add,
-                              color: Colors.white,
-                              size: 22,
-                            ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
