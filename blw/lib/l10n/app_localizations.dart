@@ -281,6 +281,7 @@ const Map<String, String> _ptTranslations = {
   'appSubtitle': 'Guia completo de BLW para seu bebe',
 
   // Navigation
+  'home': 'Início',
   'foods': 'Alimentos',
   'foodDiary': 'Diario Alimentar',
   'allergens': 'Alergenicos',
@@ -655,6 +656,7 @@ const Map<String, String> _enTranslations = {
   'appSubtitle': 'Complete BLW guide for your baby',
 
   // Navigation
+  'home': 'Home',
   'foods': 'Foods',
   'foodDiary': 'Food Diary',
   'allergens': 'Allergens',
@@ -1030,6 +1032,7 @@ const Map<String, String> _esTranslations = {
   'appSubtitle': 'Guia completa de BLW para tu bebe',
 
   // Navigation
+  'home': 'Inicio',
   'foods': 'Alimentos',
   'foodDiary': 'Diario Alimentario',
   'allergens': 'Alergenicos',

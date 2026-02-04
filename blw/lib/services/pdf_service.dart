@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:printing/printing.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 
@@ -64,9 +66,16 @@ class PdfService {
       ),
     );
 
-    await Printing.sharePdf(
-      bytes: await pdf.save(),
-      filename: 'relatorio_blw_${DateTime.now().millisecondsSinceEpoch}.pdf',
+    // Save PDF to temp file and share
+    final bytes = await pdf.save();
+    final tempDir = await getTemporaryDirectory();
+    final filename = 'relatorio_blw_${DateTime.now().millisecondsSinceEpoch}.pdf';
+    final file = File('${tempDir.path}/$filename');
+    await file.writeAsBytes(bytes);
+
+    await Share.shareXFiles(
+      [XFile(file.path)],
+      subject: title,
     );
   }
 

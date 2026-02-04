@@ -8,7 +8,9 @@
       "Bash(flutter --version:*)",
       "Bash(flutter clean:*)",
       "Bash(pod install:*)",
-      "Bash(flutter pub:*)"
+      "Bash(flutter pub:*)",
+      "Bash(ls:*)",
+      "Bash(lipo -info:*)"
     ]
   }
 }

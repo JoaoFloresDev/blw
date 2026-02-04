@@ -1,0 +1,5 @@
+/* Portuguese (Brazil) - Permission descriptions */
+"NSCameraUsageDescription" = "Este app precisa de acesso à câmera para tirar fotos das refeições do seu bebê.";
+"NSPhotoLibraryAddUsageDescription" = "Este app precisa de permissão para salvar fotos na galeria.";
+"NSPhotoLibraryUsageDescription" = "Este app precisa de acesso à galeria para adicionar fotos das refeições do seu bebê.";
+"CFBundleDisplayName" = "BLW Baby";

@@ -357,7 +357,7 @@ class _MainTabScreenState extends State<MainTabScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, CupertinoIcons.house_fill, CupertinoIcons.house, 'Home'),
+                _buildNavItem(0, CupertinoIcons.house_fill, CupertinoIcons.house, l10n.get('home')),
                 _buildNavItem(1, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
                 _buildNavItem(2, CupertinoIcons.book_fill, CupertinoIcons.book, l10n.foodDiary),
                 _buildNavItem(3, CupertinoIcons.photo_fill, CupertinoIcons.photo, l10n.gallery),
