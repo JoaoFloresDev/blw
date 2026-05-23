@@ -1,0 +1,91 @@
+App Name,App Id,Platform,Keyword,Store Domain,Store,Note,Last Update,Ranking,Change,Popularity,Difficulty,Apps in Ranking,Tags
+BLW Baby Introdução Alimentar,6758321287,iphone,blw,br,🇧🇷 Brazil,head term — BLW é acrônimo já adotado no PT-BR,,,,,,,blw;short;own+competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw bebê,br,🇧🇷 Brazil,combo natural — competitors usam,,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw receitas,br,🇧🇷 Brazil,BLW Brasil descrição: receitas + cardápios,,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw método,br,🇧🇷 Brazil,BLW Brasil promove 'método BLW',,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw cortes,br,🇧🇷 Brazil,Mundo BLW: cortes corretos e seguros,,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw tradicional,br,🇧🇷 Brazil,Pippin: BLW e tradicional (ambas abordagens),,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,blw 6 meses,br,🇧🇷 Brazil,phase + method combo,,,,,,,blw;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw caseiro,br,🇧🇷 Brazil,diferencia de papinha industrial,,,,,,,blw;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw segurança,br,🇧🇷 Brazil,Mundo BLW angle de segurança,,,,,,,blw;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,mundo blw,br,🇧🇷 Brazil,brand search — captura intent do Mundo BLW,,,,,,,competitor_brand;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,introdução alimentar,br,🇧🇷 Brazil,head term — já no nosso name,,,,,,,intro_alimentar;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,introducao alimentar,br,🇧🇷 Brazil,variante sem cedilha — example.csv mostra pop=40 diff=21 rank=21 (sweet spot),,,,,,,intro_alimentar;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,introdução alimentar bebê,br,🇧🇷 Brazil,natural query expansion,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,introdução alimentar 6 meses,br,🇧🇷 Brazil,phase-specific long-tail,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,introdução alimentar blw,br,🇧🇷 Brazil,method+intent combo,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,começar introdução alimentar,br,🇧🇷 Brazil,user intent: just started,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,guia introdução alimentar,br,🇧🇷 Brazil,Mundo BLW phrase: guia,,,,,,,intro_alimentar;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,acompanhar introdução alimentar,br,🇧🇷 Brazil,tracker intent verb,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,primeiros alimentos,br,🇧🇷 Brazil,Pippin usa esse termo,,,,,,,intro_alimentar;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,primeiros alimentos bebê,br,🇧🇷 Brazil,expanded form,,,,,,,intro_alimentar;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,transição alimentar bebê,br,🇧🇷 Brazil,termo nutricional formal,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha,br,🇧🇷 Brazil,head term BR-forte,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha bebê,br,🇧🇷 Brazil,expansão natural,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha 6 meses,br,🇧🇷 Brazil,BR-specific phase combo,,,,,,,papinha;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha caseira,br,🇧🇷 Brazil,diferencia de industrial,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha salgada,br,🇧🇷 Brazil,tipo específico — meal-time,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha doce,br,🇧🇷 Brazil,tipo específico — fruta/sobremesa,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,primeira papinha,br,🇧🇷 Brazil,user moment-of-need,,,,,,,papinha;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,como fazer papinha,br,🇧🇷 Brazil,intent verbal — instructional,,,,,,,papinha;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,papinha pronta,br,🇧🇷 Brazil,industrial — concorrentes tipo Nestlé,,,,,,,papinha;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,bebê 6 meses,br,🇧🇷 Brazil,highest-search baby age,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,bebê 7 meses,br,🇧🇷 Brazil,phase next,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,bebê 8 meses,br,🇧🇷 Brazil,phase progression,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,bebê 1 ano,br,🇧🇷 Brazil,fim da fase BLW,,,,,,,intro_alimentar;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,comida 6 meses,br,🇧🇷 Brazil,intent: o que dar com 6mo,,,,,,,food;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,comida bebê 7 meses,br,🇧🇷 Brazil,long-tail age+food,,,,,,,food;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,alimentação 6 meses,br,🇧🇷 Brazil,alimentação + fase,,,,,,,food;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,o que dar pro bebê comer,br,🇧🇷 Brazil,natural language search,,,,,,,food;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,desengasgo,br,🇧🇷 Brazil,Mundo BLW exclusivo — possível gold,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,desengasgo bebê,br,🇧🇷 Brazil,expanded,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,manobra desengasgo,br,🇧🇷 Brazil,Mundo BLW: manobras de desengasgo,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,cortes seguros,br,🇧🇷 Brazil,Mundo BLW differentiator,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,cortes seguros bebê,br,🇧🇷 Brazil,expanded,,,,,,,safety;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,texturas bebê,br,🇧🇷 Brazil,Mundo BLW: texturas corretas,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,engasgo bebê,br,🇧🇷 Brazil,variante de desengasgo,,,,,,,safety;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,alergia alimentar bebê,br,🇧🇷 Brazil,high-emotion mom search,,,,,,,safety;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,alergênicos bebê,br,🇧🇷 Brazil,termo científico — Bebê de Nutri,,,,,,,safety;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,intolerância alimentar bebê,br,🇧🇷 Brazil,concern médico,,,,,,,safety;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,seletividade alimentar,br,🇧🇷 Brazil,recusa de alimentos,,,,,,,safety;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,receitas bebê,br,🇧🇷 Brazil,core feature,,,,,,,recipes;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,receitas papinha,br,🇧🇷 Brazil,expanded form,,,,,,,recipes;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,receitas 6 meses,br,🇧🇷 Brazil,age + recipe combo,,,,,,,recipes;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,receitas saudáveis bebê,br,🇧🇷 Brazil,health angle,,,,,,,recipes;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,cardápio bebê,br,🇧🇷 Brazil,Garfinho usa — pediatric menu,,,,,,,recipes;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,cardápio infantil,br,🇧🇷 Brazil,Garfinho subtitle hint,,,,,,,recipes;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,cardápio semanal bebê,br,🇧🇷 Brazil,intent: meal planning,,,,,,,recipes;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,planejamento alimentar bebê,br,🇧🇷 Brazil,Mundo BLW phrase,,,,,,,recipes;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,lanche bebê,br,🇧🇷 Brazil,Mundo BLW: lancheira,,,,,,,recipes;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,lanche infantil,br,🇧🇷 Brazil,broader,,,,,,,recipes;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,dicas alimentação bebê,br,🇧🇷 Brazil,blog/instructional intent,,,,,,,recipes;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,nutrição bebê,br,🇧🇷 Brazil,Bebê de Nutri angle,,,,,,,nutrition;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,nutrição infantil,br,🇧🇷 Brazil,termo profissional broader,,,,,,,nutrition;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,nutricionista materno infantil,br,🇧🇷 Brazil,Bebê de Nutri authority,,,,,,,nutrition;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,pediatria alimentar,br,🇧🇷 Brazil,credibilidade profissional,,,,,,,nutrition;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,puericultura,br,🇧🇷 Brazil,termo médico-pediátrico,,,,,,,nutrition;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,mãe primeira viagem,br,🇧🇷 Brazil,BLW Brasil testimonial usa,,,,,,,audience;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,maternidade alimentação,br,🇧🇷 Brazil,broader maternidade niche,,,,,,,audience;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,pais primeira vez,br,🇧🇷 Brazil,alternativa parent self-ID,,,,,,,audience;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,mamãe e bebê,br,🇧🇷 Brazil,natural intent broader,,,,,,,audience;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,rastreador bebê,br,🇧🇷 Brazil,PT equivalent de tracker,,,,,,,tracker;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,controle alimentação bebê,br,🇧🇷 Brazil,tool intent PT,,,,,,,tracker;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,acompanhamento bebê,br,🇧🇷 Brazil,tracker intent,,,,,,,tracker;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,diário alimentar bebê,br,🇧🇷 Brazil,current keyword + bebê,,,,,,,tracker;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,registro alimentar bebê,br,🇧🇷 Brazil,registrar = ação core,,,,,,,tracker;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,diário do bebê,br,🇧🇷 Brazil,broader diário,,,,,,,tracker;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,solid starts,br,🇧🇷 Brazil,"example.csv: pop=50 diff=9 rank=29 — GOLD (high pop, very low diff)",,,,,,,english;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,starting solids,br,🇧🇷 Brazil,example.csv: pop=28 diff=5 rank=24 — easy + decent pop,,,,,,,english;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,baby led weaning,br,🇧🇷 Brazil,exact-match BLW initialism (full form),,,,,,,english;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,baby weaning,br,🇧🇷 Brazil,"example.csv: pop=25 diff=11 rank=94 — easy mas rank ruim, vale tentar",,,,,,,english;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,baby food,br,🇧🇷 Brazil,"example.csv: pop=8 diff=7 — easy/low-pop, EN generic",,,,,,,english;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,baby first foods,br,🇧🇷 Brazil,EN phase term,,,,,,,english;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,baby food tracker,br,🇧🇷 Brazil,EN tool intent,,,,,,,english;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,feeding diary baby,br,🇧🇷 Brazil,EN diary tool — pairs with our diário feature,,,,,,,english;long;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw meals,br,🇧🇷 Brazil,example.csv: pop=6 diff=5 rank=13 — already top-15,,,,,,,english;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,solid start,br,🇧🇷 Brazil,example.csv: pop=8 diff=5 rank=36,,,,,,,english;short;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,solid starts baby first foods,br,🇧🇷 Brazil,example.csv: pop=9 diff=5 rank=24 — long-tail easy,,,,,,,english;long;competitor
+BLW Baby Introdução Alimentar,6758321287,iphone,tracker bebê,br,🇧🇷 Brazil,EN+PT mixed — algumas mães BR usam 'tracker',,,,,,,tracker;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw baby,br,🇧🇷 Brazil,nosso brand — 'baby' está literalmente no app name,,,,,,,brand;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw tracker,br,🇧🇷 Brazil,nosso brand variant,,,,,,,brand;short;own
+BLW Baby Introdução Alimentar,6758321287,iphone,blw tracker baby led,br,🇧🇷 Brazil,nosso ASC display name,,,,,,,brand;long;own

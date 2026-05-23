@@ -1,0 +1,52 @@
+default_platform(:ios)
+
+platform :ios do
+  # Metadata source-of-truth lives inside the ASO pipeline.
+  # See: ../aso-pipeline/README.md
+  METADATA_PATH = "../aso-pipeline/current/metadata"
+
+  desc "Download metadata from App Store Connect"
+  lane :download_metadata do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      key_filepath: ENV["APP_STORE_CONNECT_KEY_PATH"],
+      duration: 1200
+    )
+    deliver(
+      api_key: api_key,
+      app_identifier: "com.bemestar.POC",
+      platform: "ios",
+      metadata_path: METADATA_PATH,
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      skip_metadata: false,
+      run_precheck_before_submit: false,
+      force: true,
+      submit_for_review: false,
+      sync_screenshots: false,
+      automatic_release: false
+    )
+  end
+
+  desc "Push metadata only"
+  lane :sync_metadata do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      key_filepath: ENV["APP_STORE_CONNECT_KEY_PATH"],
+      duration: 1200
+    )
+    deliver(
+      api_key: api_key,
+      app_identifier: "com.bemestar.POC",
+      platform: "ios",
+      metadata_path: METADATA_PATH,
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      force: true,
+      submit_for_review: false,
+      run_precheck_before_submit: false
+    )
+  end
+end

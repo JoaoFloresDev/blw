@@ -1,0 +1,149 @@
+{
+  "iter_id": "2026-05-22_iter-01-text-pt-BR-keywords",
+  "type": "text",
+  "locale": "pt-BR",
+  "fields_changed": [
+    "subtitle",
+    "keywords"
+  ],
+  "fields_unchanged": [
+    "name",
+    "description",
+    "promotional_text"
+  ],
+  "approach": "parallel",
+  "approach_rationale": "Cold-start app (4.45 dl/dia em 60d, top traffic ES>US>BR>MX). Velocity > attribution. Per-keyword rank tracking via Astro permite post-hoc attribution. Exceção contextual à regra '1 variável por iter' do aso-pipeline/README.md — mesmo padrão usado no Dispensado iter-01.",
+  "status": "running",
+  "started_at": "2026-05-22",
+  "planned_close_at": "2026-06-19",
+  "actual_closed_at": null,
+  "hypothesis": {
+    "if_we_change": "Subtitle de 'Comida de Bebê 6 Meses Diário' (4 tokens todos pop=5 ou solo-OUT, peso 3× desperdiçado) para 'Solid Starts, Papinha e Cortes' (3 termos: 1 GOLD pop=50/diff=9/rank=29, 1 BR head term ausente, 1 moat segurança); E keywords de 'beb,alimentação,receitas bebê,primeiro alimento,diário alimentar,tracker,comida saudável,maternidade' (1 bug `beb` truncado + 5 dead-weight rank=1000/>100) para 'baby weaning,starting solids,blw meals,desengasgo,cortes seguros,primeiro alimento,diário alimentar' (2 keepers de rank #3+#40 + 3 EN-crossover validados Astro + 2 moats Mundo BLW). Análise detalhada palavra-por-palavra em `research/keyword_candidates.md`.",
+    "then_we_expect": "Impressions diárias em pt-BR ↑ ≥30% em 30 dias e downloads diários ↑ ≥25% (4.85 dl/dia → ≥6.06 conservador / ≥7.28 bold)",
+    "because": "(a) Subtitle absorve 'Solid Starts' (pop 50 diff 9 rank=29 atual) elevando-o de 'fora do metadata' pra peso 3× — esperado push pra top-10/15. (b) 'Papinha' (BR head term ausente) entra peso 3× — Astro reporta pop=5 (piso) mas é termo dominante na busca BR-PT (validado pela competidora BLW Brasil descrição). (c) Bug `beb` truncado removido — desperdício de 4 chars + 0 rank. (d) Dead-weight kills: `tracker` (pop=43 diff=61 rank=1000), `alimentação` (pop=27 diff=72 rank=1000), `maternidade` (rank=108 — Meu Bebê 26K reviews domina solo). (e) EN crossover (US é #2 país, 55 dl/60d): `baby weaning` (pop=25 diff=11 rank=94) + `starting solids` (pop=28 diff=5 rank=24) + `blw meals` (pop=6 diff=5 rank=13). (f) Moats safety (Mundo BLW stale 21mo): `desengasgo` (diff=5!) + `cortes seguros` (diff=10). (g) Proteções: mantém `primeiro alimento` rank=#3 + `diário alimentar` rank=#40 no keywords."
+  },
+  "success_criterion": {
+    "primary_metric": "downloads_per_day",
+    "secondary_metrics": [
+      "impressions_per_day",
+      "keywords_ranking_top_30",
+      "search_terms_unique_30d",
+      "conversion_rate"
+    ],
+    "measurement_window": "30 days from deploy day, comparing last 14d vs baseline",
+    "baseline": {
+      "downloads_per_day": 4.85,
+      "downloads_per_day_source": "ASC Sales Reports 60d window (2026-03-24 → 2026-05-22, 59/60 days with data, capturado 2026-05-23 via ./scripts/pull_analytics.py — 286 dl totais)",
+      "impressions_per_day": "~1240 (37.3K/30d conforme ASC Analytics dashboard) — Analytics Reports ONE_TIME_SNAPSHOT request criado em 2026-05-23 (id=ff722017-1917-4b46-8f97-6c17eaaaf7a4), dados detalhados disponíveis em 24-48h",
+      "conversion_rate": 0.0518,
+      "conversion_rate_source": "ASC Analytics dashboard (downloads / unique product page views)",
+      "keywords_ranking_top_30": "TBD — capturar via Astro re-track no Day 0",
+      "search_terms_unique_30d": "TBD — disponível após Analytics Reports processing window (24-48h)",
+      "top_countries_60d": {
+        "ES": 57,
+        "US": 55,
+        "BR": 49,
+        "MX": 32,
+        "CO": 13,
+        "DO": 12,
+        "PT": 10,
+        "EC": 9,
+        "CL": 9,
+        "CR": 5,
+        "AU": 5,
+        "GT": 4,
+        "GB": 4,
+        "AR": 4
+      },
+      "total_countries_with_dl": 30,
+      "iap_units_60d": 0,
+      "captured_at": "2026-05-23T02:34Z"
+    },
+    "targets": {
+      "conservador": {
+        "downloads_per_day": 6.06,
+        "downloads_delta_pct": 25,
+        "impressions_delta_pct": 25,
+        "keywords_top_30": "+3 vs Day 0"
+      },
+      "bold": {
+        "downloads_per_day": 7.28,
+        "downloads_delta_pct": 50,
+        "impressions_delta_pct": 40,
+        "keywords_top_30": "+6 vs Day 0",
+        "is_official_target": true
+      },
+      "aspiracional_90d": {
+        "downloads_per_day": 10.9,
+        "downloads_multiplier": 2.25,
+        "impressions_multiplier": 2.5,
+        "note": "90 dias — depois de iter-01 + iter-02 + iter-03. Aspiracional, não target da iter-01."
+      }
+    },
+    "go_no_go_threshold": "downloads_per_day média últimos 14d da iter ≥ 6.06 (conservador). Abaixo disso = hipótese fraca, reformula iter-02."
+  },
+  "cadence": {
+    "checkpoints": [
+      {
+        "day": 7,
+        "date": "2026-05-29",
+        "purpose": "early signal — rollback se downloads ↓ ≥30%",
+        "metrics_file": "metrics/2026-05-29_d07.csv"
+      },
+      {
+        "day": 14,
+        "date": "2026-06-05",
+        "purpose": "tendência clara — começa entender padrão",
+        "metrics_file": "metrics/2026-06-05_d14.csv"
+      },
+      {
+        "day": 21,
+        "date": "2026-06-12",
+        "purpose": "rascunho da próxima iter baseado no aprendizado",
+        "metrics_file": "metrics/2026-06-12_d21.csv"
+      },
+      {
+        "day": 28,
+        "date": "2026-06-19",
+        "purpose": "decision day — promote/rollback/extend",
+        "metrics_file": "metrics/2026-06-19_d28_final.csv"
+      }
+    ],
+    "rollback_triggers": [
+      "Downloads/dia ↓ ≥ 30% sustentado por 7 dias seguidos",
+      "Apple rejeita o subtitle/keywords (review fail) — corrige e ressubmete",
+      "Conversion rate ↓ ≥ 20% (subtitle copy ficou keyword-stuffed e perdeu legibilidade)"
+    ],
+    "escalation_triggers": [
+      "Impressions ↑ ≥ 50% antes de Day 14 → considerar adicionar tweaks em iter-02 mais ousados",
+      "Algum keyword novo entrando top 10 antes de Day 14 → reforçar via promotional_text com call-out",
+      "Algum termo do bucket safety (desengasgo / cortes seguros) entrar top-3 → considerar promover para o name em iter-02"
+    ]
+  },
+  "research_done": true,
+  "research_files": [
+    "research/competitors.md",
+    "research/current_pool_pt-BR.csv",
+    "research/candidates_pt-BR.csv",
+    "research/data.csv",
+    "research/keyword_candidates.md"
+  ],
+  "deployed": true,
+  "deploy_commit": null,
+  "deploy_timestamp": "2026-05-23T03:23:53Z",
+  "results": {
+    "baseline": {
+      "date": "2026-05-23",
+      "metrics_file": "metrics/2026-05-23_baseline.md",
+      "sales_csv": "metrics/2026-05-23_baseline_sales.csv",
+      "status": "captured",
+      "analytics_reports_request_id": "ff722017-1917-4b46-8f97-6c17eaaaf7a4",
+      "analytics_reports_eta": "2026-05-25 (24-48h after request)"
+    },
+    "checkpoints": [],
+    "final": null
+  },
+  "verdict": null,
+  "promoted_to_current": false,
+  "notes": "Iter paralela (subtitle + keywords) — único folder, fields_changed=[subtitle,keywords]. Name + description + promotional_text mantidos. Aguardando Astro export pra finalizar proposed/metadata/pt-BR/{keywords.txt, subtitle.txt}. Bug crítico identificado: keywords começa com `beb,` truncado — sai obrigatório nessa iter. Ver keyword_candidates.md pra análise detalhada palavra-por-palavra + diff visual SAIU/ENTROU/MUDOU após Astro. | Deploy 2026-05-23: fastlane teve bug (no changes detected) — push final via direct ASC API PATCH (keywords + subtitle pt-BR pra v1.1.0). v1.1.0 em PREPARE_FOR_SUBMISSION, aguardando submit_for_review manual pelo João."
+}
