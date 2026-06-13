@@ -183,9 +183,13 @@ class _PhotoViewerScreenState extends State<PhotoViewerScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  l10n.getFoodName(photo.foodId).startsWith('food_')
-                                      ? photo.foodName
-                                      : l10n.getFoodName(photo.foodId),
+                                  photo.isStandalone
+                                      ? l10n.gallery
+                                      : (l10n
+                                              .getFoodName(photo.foodId)
+                                              .startsWith('food_')
+                                          ? photo.foodName
+                                          : l10n.getFoodName(photo.foodId)),
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 22,
@@ -207,25 +211,27 @@ class _PhotoViewerScreenState extends State<PhotoViewerScreen> {
                         ],
                       ),
 
-                      const SizedBox(height: 16),
-
-                      // Acceptance and reaction badges
-                      Row(
-                        children: [
-                          _buildBadge(
-                            icon: _getAcceptanceIcon(photo.acceptance),
-                            label: _getAcceptanceName(l10n, photo.acceptance),
-                            color: _getAcceptanceColor(photo.acceptance),
-                          ),
-                          const SizedBox(width: 12),
-                          if (photo.reaction != Reaction.none)
+                      // Acceptance and reaction badges (record photos only)
+                      if (!photo.isStandalone) ...[
+                        const SizedBox(height: 16),
+                        Row(
+                          children: [
                             _buildBadge(
-                              icon: CupertinoIcons.exclamationmark_triangle_fill,
-                              label: _getReactionName(l10n, photo.reaction),
-                              color: _getReactionColor(photo.reaction),
+                              icon: _getAcceptanceIcon(photo.acceptance),
+                              label: _getAcceptanceName(l10n, photo.acceptance),
+                              color: _getAcceptanceColor(photo.acceptance),
                             ),
-                        ],
-                      ),
+                            const SizedBox(width: 12),
+                            if (photo.reaction != Reaction.none)
+                              _buildBadge(
+                                icon: CupertinoIcons
+                                    .exclamationmark_triangle_fill,
+                                label: _getReactionName(l10n, photo.reaction),
+                                color: _getReactionColor(photo.reaction),
+                              ),
+                          ],
+                        ),
+                      ],
 
                       // Notes
                       if (photo.notes != null && photo.notes!.isNotEmpty) ...[
@@ -464,7 +470,11 @@ class _PhotoViewerScreenState extends State<PhotoViewerScreen> {
 
   void _deletePhoto(PhotoItem photo) async {
     final provider = context.read<FoodLogProvider>();
-    await provider.removePhotoFromLog(photo.logId, photo.path);
+    if (photo.isStandalone) {
+      await provider.removeGalleryPhoto(photo.path);
+    } else {
+      await provider.removePhotoFromLog(photo.logId, photo.path);
+    }
 
     if (widget.photos.length == 1) {
       if (mounted) Navigator.pop(context);

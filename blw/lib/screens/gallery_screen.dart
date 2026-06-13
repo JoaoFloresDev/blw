@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
@@ -96,7 +97,7 @@ class GalleryScreen extends StatelessWidget {
               ],
             ),
             child: FloatingActionButton(
-              onPressed: () => _navigateToAddFoodLog(context),
+              onPressed: () => _startAddPhoto(context),
               backgroundColor: AppColors.primary,
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -114,10 +115,76 @@ class GalleryScreen extends StatelessWidget {
     );
   }
 
-  void _navigateToAddFoodLog(BuildContext context) {
-    Navigator.push(
-      context,
-      CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+  /// Gallery "add photo" flow: take/pick a photo FIRST, then open the record
+  /// screen with it pre-attached (where the user can fill a record or skip
+  /// and keep the photo in the gallery only).
+  void _startAddPhoto(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    showCupertinoModalPopup(
+      context: context,
+      builder: (sheetContext) => CupertinoActionSheet(
+        actions: [
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(sheetContext);
+              _pickThenAddRecord(context, ImageSource.camera);
+            },
+            child: Text(l10n.takePhoto),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(sheetContext);
+              _pickThenAddRecord(context, ImageSource.gallery);
+            },
+            child: Text(l10n.chooseFromGallery),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          isDefaultAction: true,
+          onPressed: () => Navigator.pop(sheetContext),
+          child: Text(l10n.cancel),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _pickThenAddRecord(
+      BuildContext context, ImageSource source) async {
+    final path = await PhotoService.pickImage(source);
+    if (path == null || !context.mounted) return;
+    final l10n = AppLocalizations.of(context);
+
+    showCupertinoDialog(
+      context: context,
+      builder: (dialogContext) => CupertinoAlertDialog(
+        title: Text(l10n.logMealPromptTitle),
+        content: Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(l10n.logMealPromptMessage),
+        ),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () {
+              Navigator.pop(dialogContext);
+              context.read<FoodLogProvider>().addGalleryPhoto(path);
+            },
+            child: Text(l10n.logMealPromptNo),
+          ),
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.pop(dialogContext);
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (_) => AddFoodLogScreen(initialPhotoPath: path),
+                ),
+              );
+            },
+            child: Text(l10n.logMealPromptYes),
+          ),
+        ],
+      ),
     );
   }
 
@@ -185,7 +252,7 @@ class GalleryScreen extends StatelessWidget {
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(14),
                 padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                onPressed: () => _navigateToAddFoodLog(context),
+                onPressed: () => _startAddPhoto(context),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -256,83 +323,89 @@ class GalleryScreen extends StatelessWidget {
                   );
                 },
               ),
-              // Gradient overlay at bottom for tags
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 80,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.black.withValues(alpha: 0.7),
-                        Colors.transparent,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              // Tags at bottom
-              Positioned(
-                bottom: 8,
-                left: 8,
-                right: 8,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Food name tag
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            getFoodById(photo.foodId)?.icon ?? '🍽️',
-                            style: const TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(width: 4),
-                          Flexible(
-                            child: Text(
-                              photo.foodName,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
+              // Tags only for record photos; standalone gallery photos
+              // render as a clean image.
+              if (!photo.isStandalone) ...[
+                // Gradient overlay at bottom for tags
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 80,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Colors.black.withValues(alpha: 0.7),
+                          Colors.transparent,
                         ],
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    // Acceptance tag
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: _getAcceptanceColor(photo.acceptance),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        '${photo.acceptance.icon} ${_getAcceptanceName(l10n, photo.acceptance)}',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
+                  ),
+                ),
+                // Tags at bottom
+                Positioned(
+                  bottom: 8,
+                  left: 8,
+                  right: 8,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Food name tag
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              getFoodById(photo.foodId)?.icon ?? '🍽️',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                            const SizedBox(width: 4),
+                            Flexible(
+                              child: Text(
+                                photo.foodName,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 4),
+                      // Acceptance tag
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: _getAcceptanceColor(photo.acceptance),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          '${photo.acceptance.icon} ${_getAcceptanceName(l10n, photo.acceptance)}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ],
           ),
         ),

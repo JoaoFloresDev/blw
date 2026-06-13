@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import '../models/food_log.dart';
+import '../models/gallery_photo.dart';
 import '../services/storage_service.dart';
 import '../services/photo_service.dart';
 
 class FoodLogProvider extends ChangeNotifier {
   List<FoodLog> _logs = [];
+  List<GalleryPhoto> _galleryPhotos = [];
   bool _isLoading = true;
 
   List<FoodLog> get logs => List.unmodifiable(_logs);
@@ -19,6 +21,7 @@ class FoodLogProvider extends ChangeNotifier {
     notifyListeners();
 
     _logs = await StorageService.loadLogs();
+    _galleryPhotos = await StorageService.loadGalleryPhotos();
 
     _isLoading = false;
     notifyListeners();
@@ -26,6 +29,20 @@ class FoodLogProvider extends ChangeNotifier {
 
   Future<void> _saveLogs() async {
     await StorageService.saveLogs(_logs);
+  }
+
+  // MARK: - Standalone gallery photos
+  Future<void> addGalleryPhoto(String path) async {
+    _galleryPhotos.add(GalleryPhoto(path: path, date: DateTime.now()));
+    await StorageService.saveGalleryPhotos(_galleryPhotos);
+    notifyListeners();
+  }
+
+  Future<void> removeGalleryPhoto(String path) async {
+    await PhotoService.deletePhoto(path);
+    _galleryPhotos.removeWhere((p) => p.path == path);
+    await StorageService.saveGalleryPhotos(_galleryPhotos);
+    notifyListeners();
   }
 
   List<FoodLog> get logsSortedByDate {
@@ -39,7 +56,8 @@ class FoodLogProvider extends ChangeNotifier {
   }
 
   int get totalPhotosCount {
-    return _logs.fold(0, (sum, log) => sum + log.photosPaths.length);
+    return _logs.fold(0, (sum, log) => sum + log.photosPaths.length) +
+        _galleryPhotos.length;
   }
 
   List<PhotoItem> get allPhotos {
@@ -58,6 +76,21 @@ class FoodLogProvider extends ChangeNotifier {
             notes: log.notes,
           ));
         }
+      }
+    }
+    // Standalone gallery photos (not attached to any record).
+    for (final gp in _galleryPhotos) {
+      if (PhotoService.photoExists(gp.path)) {
+        photos.add(PhotoItem(
+          path: gp.path,
+          foodName: '',
+          foodId: '',
+          date: gp.date,
+          logId: '',
+          acceptance: Acceptance.neutral,
+          reaction: Reaction.none,
+          isStandalone: true,
+        ));
       }
     }
     photos.sort((a, b) => b.date.compareTo(a.date));
@@ -150,6 +183,7 @@ class PhotoItem {
   final Acceptance acceptance;
   final Reaction reaction;
   final String? notes;
+  final bool isStandalone;
 
   PhotoItem({
     required this.path,
@@ -160,5 +194,6 @@ class PhotoItem {
     required this.acceptance,
     required this.reaction,
     this.notes,
+    this.isStandalone = false,
   });
 }

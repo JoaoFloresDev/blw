@@ -250,6 +250,37 @@ class AppLocalizations {
   String get sectionPracticalTips => get('sectionPracticalTips');
   String get sectionNutrition => get('sectionNutrition');
 
+  // Paywall / Premium
+  String get paywallTitle => get('paywallTitle');
+  String get paywallSubtitle => get('paywallSubtitle');
+  String get paywallFeature1 => get('paywallFeature1');
+  String get paywallFeature2 => get('paywallFeature2');
+  String get paywallFeature3 => get('paywallFeature3');
+  String get paywallFeature4 => get('paywallFeature4');
+  String get planWeekly => get('planWeekly');
+  String get planYearly => get('planYearly');
+  String get perWeek => get('perWeek');
+  String get perYear => get('perYear');
+  String get freeTrialBadge => get('freeTrialBadge');
+  String get bestValueBadge => get('bestValueBadge');
+  String get trialNote => get('trialNote');
+  String get continueButton => get('continueButton');
+  String get privacyPolicy => get('privacyPolicy');
+  String get termsOfUse => get('termsOfUse');
+  String get restoreSuccess => get('restoreSuccess');
+  String get restoreNone => get('restoreNone');
+  String get purchaseUnavailable => get('purchaseUnavailable');
+  String get premiumFeatureTitle => get('premiumFeatureTitle');
+  String get recipesPremiumSubtitle => get('recipesPremiumSubtitle');
+  String weeklyEquivalent(String price) =>
+      get('weeklyEquivalent').replaceAll('{price}', price);
+
+  // Gallery add-photo prompt
+  String get logMealPromptTitle => get('logMealPromptTitle');
+  String get logMealPromptMessage => get('logMealPromptMessage');
+  String get logMealPromptYes => get('logMealPromptYes');
+  String get logMealPromptNo => get('logMealPromptNo');
+
   // Food names
   String getFoodName(String foodId) => get('food_$foodId');
   String getFoodPreparation(String foodId) => get('prep_$foodId');
@@ -647,6 +678,34 @@ const Map<String, String> _ptTranslations = {
   'sectionSafety': 'Segurança',
   'sectionPracticalTips': 'Dicas Práticas',
   'sectionNutrition': 'Nutrição',
+
+  // Paywall / Premium
+  'paywallTitle': 'Desbloqueie o BLW Pro',
+  'paywallSubtitle': 'Tudo que você precisa para acompanhar a introdução alimentar do seu bebê',
+  'paywallFeature1': 'Exporte o diário completo em PDF',
+  'paywallFeature2': 'Receitas exclusivas para cada fase',
+  'paywallFeature3': 'Fotos ilimitadas em cada registro',
+  'paywallFeature4': 'Sem anúncios, para sempre',
+  'planWeekly': 'Semanal',
+  'planYearly': 'Anual',
+  'perWeek': '/semana',
+  'perYear': '/ano',
+  'freeTrialBadge': '3 dias grátis',
+  'bestValueBadge': 'MELHOR VALOR',
+  'trialNote': '3 dias grátis, depois o valor do plano. Renovação automática, cancele quando quiser.',
+  'continueButton': 'Continuar',
+  'privacyPolicy': 'Privacidade',
+  'termsOfUse': 'Termos',
+  'restoreSuccess': 'Compra restaurada com sucesso',
+  'restoreNone': 'Nenhuma compra para restaurar',
+  'purchaseUnavailable': 'Loja indisponível no momento. Tente novamente.',
+  'premiumFeatureTitle': 'Recurso Premium',
+  'recipesPremiumSubtitle': 'Receitas exclusivas para cada fase do bebê',
+  'weeklyEquivalent': '{price}/sem',
+  'logMealPromptTitle': 'Registrar refeição?',
+  'logMealPromptMessage': 'Quer cadastrar o que o bebê está comendo?',
+  'logMealPromptYes': 'Cadastrar',
+  'logMealPromptNo': 'Só salvar na galeria',
 };
 
 // English translations
@@ -1023,6 +1082,34 @@ const Map<String, String> _enTranslations = {
   'sectionSafety': 'Safety',
   'sectionPracticalTips': 'Practical Tips',
   'sectionNutrition': 'Nutrition',
+
+  // Paywall / Premium
+  'paywallTitle': 'Unlock BLW Pro',
+  'paywallSubtitle': 'Everything you need to track your baby\'s food journey',
+  'paywallFeature1': 'Export the full diary as PDF',
+  'paywallFeature2': 'Exclusive recipes for every stage',
+  'paywallFeature3': 'Unlimited photos on every record',
+  'paywallFeature4': 'No ads, forever',
+  'planWeekly': 'Weekly',
+  'planYearly': 'Yearly',
+  'perWeek': '/week',
+  'perYear': '/year',
+  'freeTrialBadge': '3 days free',
+  'bestValueBadge': 'BEST VALUE',
+  'trialNote': '3 days free, then the plan price. Auto-renews, cancel anytime.',
+  'continueButton': 'Continue',
+  'privacyPolicy': 'Privacy',
+  'termsOfUse': 'Terms',
+  'restoreSuccess': 'Purchase restored successfully',
+  'restoreNone': 'No purchases to restore',
+  'purchaseUnavailable': 'Store unavailable right now. Please try again.',
+  'premiumFeatureTitle': 'Premium Feature',
+  'recipesPremiumSubtitle': 'Exclusive recipes for every baby stage',
+  'weeklyEquivalent': '{price}/wk',
+  'logMealPromptTitle': 'Log this meal?',
+  'logMealPromptMessage': 'Want to log what your baby is eating?',
+  'logMealPromptYes': 'Log it',
+  'logMealPromptNo': 'Just save to gallery',
 };
 
 // Spanish translations
@@ -1399,4 +1486,32 @@ const Map<String, String> _esTranslations = {
   'sectionSafety': 'Seguridad',
   'sectionPracticalTips': 'Consejos Prácticos',
   'sectionNutrition': 'Nutrición',
+
+  // Paywall / Premium
+  'paywallTitle': 'Desbloquea BLW Pro',
+  'paywallSubtitle': 'Todo lo que necesitas para seguir la alimentación de tu bebé',
+  'paywallFeature1': 'Exporta el diario completo en PDF',
+  'paywallFeature2': 'Recetas exclusivas para cada etapa',
+  'paywallFeature3': 'Fotos ilimitadas en cada registro',
+  'paywallFeature4': 'Sin anuncios, para siempre',
+  'planWeekly': 'Semanal',
+  'planYearly': 'Anual',
+  'perWeek': '/semana',
+  'perYear': '/año',
+  'freeTrialBadge': '3 días gratis',
+  'bestValueBadge': 'MEJOR VALOR',
+  'trialNote': '3 días gratis, luego el precio del plan. Se renueva automáticamente, cancela cuando quieras.',
+  'continueButton': 'Continuar',
+  'privacyPolicy': 'Privacidad',
+  'termsOfUse': 'Términos',
+  'restoreSuccess': 'Compra restaurada con éxito',
+  'restoreNone': 'No hay compras para restaurar',
+  'purchaseUnavailable': 'Tienda no disponible. Inténtalo de nuevo.',
+  'premiumFeatureTitle': 'Función Premium',
+  'recipesPremiumSubtitle': 'Recetas exclusivas para cada etapa del bebé',
+  'weeklyEquivalent': '{price}/sem',
+  'logMealPromptTitle': '¿Registrar comida?',
+  'logMealPromptMessage': '¿Quieres registrar lo que está comiendo tu bebé?',
+  'logMealPromptYes': 'Registrar',
+  'logMealPromptNo': 'Solo guardar en galería',
 };

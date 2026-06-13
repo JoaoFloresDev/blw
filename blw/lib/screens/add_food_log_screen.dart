@@ -9,13 +9,20 @@ import '../models/food.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
+import '../providers/premium_provider.dart';
 import '../services/photo_service.dart';
 import '../widgets/celebration_overlay.dart';
+import '../widgets/paywall_view.dart';
 
 class AddFoodLogScreen extends StatefulWidget {
   final Food? preselectedFood;
+  final String? initialPhotoPath;
 
-  const AddFoodLogScreen({super.key, this.preselectedFood});
+  const AddFoodLogScreen({
+    super.key,
+    this.preselectedFood,
+    this.initialPhotoPath,
+  });
 
   @override
   State<AddFoodLogScreen> createState() => _AddFoodLogScreenState();
@@ -37,6 +44,9 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
   void initState() {
     super.initState();
     _selectedFood = widget.preselectedFood;
+    if (widget.initialPhotoPath != null) {
+      _photoPaths.add(widget.initialPhotoPath!);
+    }
     _searchController.addListener(() {
       setState(() {
         _searchQuery = _searchController.text;
@@ -863,6 +873,15 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
   }
 
   void _addPhoto(ImageSource source, AppLocalizations l10n) async {
+    // Free users are limited to a single photo per record; extra photos
+    // are a premium feature.
+    final premium = context.read<PremiumProvider>();
+    if (!premium.canAddPhoto(_photoPaths.length)) {
+      await showPaywall(context);
+      if (!mounted) return;
+      if (!context.read<PremiumProvider>().isPremium) return;
+    }
+
     final path = await PhotoService.pickImage(source);
     if (path != null) {
       setState(() {

@@ -6,8 +6,11 @@ import '../main.dart';
 import '../models/food_log.dart';
 import '../providers/food_log_provider.dart';
 import '../data/foods_data.dart';
+import '../providers/premium_provider.dart';
+import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'allergens_screen.dart';
+import 'recipes_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -137,6 +140,27 @@ class HomeScreen extends StatelessWidget {
               CupertinoPageRoute(builder: (_) => const AllergensScreen()),
             ),
           ),
+          const Padding(
+            padding: EdgeInsets.only(left: 56),
+            child: Divider(height: 1),
+          ),
+          _buildActionItem(
+            context,
+            icon: CupertinoIcons.book_fill,
+            iconColor: const Color(0xFFAF52DE),
+            title: l10n.recipes,
+            subtitle: l10n.recipesPremiumSubtitle,
+            trailing: context.watch<PremiumProvider>().isPremium
+                ? null
+                : const ProBadge(),
+            onTap: () => PremiumGate.guard(
+              context,
+              onUnlocked: () => Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (_) => const RecipesScreen()),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -150,6 +174,7 @@ class HomeScreen extends StatelessWidget {
     required String subtitle,
     required VoidCallback onTap,
     bool showChevron = true,
+    Widget? trailing,
   }) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
@@ -185,6 +210,10 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            if (trailing != null) ...[
+              trailing,
+              const SizedBox(width: 8),
+            ],
             if (showChevron)
               const Icon(
                 CupertinoIcons.chevron_right,

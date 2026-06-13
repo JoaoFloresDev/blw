@@ -1,1 +1,1 @@
-papillas,recetas,primeros alimentos,nutrición,alérgenos,tracker,sólidos,lactancia,maternidad,infant
+blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia

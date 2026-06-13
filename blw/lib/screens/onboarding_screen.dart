@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'dart:ui';
 import '../l10n/app_localizations.dart';
 import '../services/storage_service.dart';
+import '../widgets/paywall_view.dart';
 
 class OnboardingScreen extends StatefulWidget {
   final VoidCallback onComplete;
@@ -13,56 +13,51 @@ class OnboardingScreen extends StatefulWidget {
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen>
-    with TickerProviderStateMixin {
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  // MARK: - Constants
+  static const int _featurePageCount = 3;
+
+  // MARK: - Properties
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
-  late AnimationController _fadeController;
-  late AnimationController _scaleController;
-  late Animation<double> _fadeAnimation;
-  late Animation<double> _scaleAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _fadeController = AnimationController(
-      duration: const Duration(milliseconds: 600),
-      vsync: this,
-    );
-    _scaleController = AnimationController(
-      duration: const Duration(milliseconds: 800),
-      vsync: this,
-    );
-
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _fadeController, curve: Curves.easeOut),
-    );
-    _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
-      CurvedAnimation(parent: _scaleController, curve: Curves.easeOutBack),
-    );
-
-    _fadeController.forward();
-    _scaleController.forward();
-  }
-
+  // MARK: - Lifecycle
   @override
   void dispose() {
     _pageController.dispose();
-    _fadeController.dispose();
-    _scaleController.dispose();
     super.dispose();
   }
 
+  // MARK: - Actions
   void _nextPage() {
-    if (_currentPage < 3) {
+    if (_currentPage < _featurePageCount - 1) {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 450),
         curve: Curves.easeInOutCubic,
       );
     } else {
-      _completeOnboarding();
+      _openPaywall();
     }
+  }
+
+  /// Pushes the paywall as a native horizontal route (iOS push with parallax
+  /// + edge shadow) — a clean transition since both screens share the green
+  /// background and a plain page slide would look static.
+  void _openPaywall() {
+    Navigator.of(context).push(
+      CupertinoPageRoute(
+        builder: (routeContext) => Scaffold(
+          backgroundColor: const Color(0xFF1B9A43),
+          body: PaywallView(
+            isOnboarding: true,
+            onClose: () {
+              Navigator.of(routeContext).pop();
+              _completeOnboarding();
+            },
+          ),
+        ),
+      ),
+    );
   }
 
   void _completeOnboarding() async {
@@ -70,6 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     widget.onComplete();
   }
 
+  // MARK: - View
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -77,75 +73,155 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     final pages = [
       _OnboardingPageData(
         icon: CupertinoIcons.heart_fill,
-        gradient: const [Color(0xFF34C759), Color(0xFF30D158)],
         title: l10n.onboardingTitle1,
         description: l10n.onboardingDesc1,
       ),
       _OnboardingPageData(
         icon: CupertinoIcons.leaf_arrow_circlepath,
-        gradient: const [Color(0xFFFF9500), Color(0xFFFFCC00)],
         title: l10n.onboardingTitle2,
         description: l10n.onboardingDesc2,
       ),
       _OnboardingPageData(
         icon: CupertinoIcons.camera_fill,
-        gradient: const [Color(0xFF007AFF), Color(0xFF5AC8FA)],
         title: l10n.onboardingTitle3,
         description: l10n.onboardingDesc3,
-      ),
-      _OnboardingPageData(
-        icon: CupertinoIcons.lightbulb_fill,
-        gradient: const [Color(0xFFAF52DE), Color(0xFFFF2D55)],
-        title: l10n.onboardingTitle4,
-        description: l10n.onboardingDesc4,
       ),
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F7),
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: ScaleTransition(
-          scale: _scaleAnimation,
-          child: SafeArea(
-            child: Column(
-              children: [
-                _buildHeader(l10n),
-                Expanded(
-                  child: PageView.builder(
-                    controller: _pageController,
-                    onPageChanged: (index) {
-                      setState(() => _currentPage = index);
-                    },
-                    itemCount: pages.length,
-                    itemBuilder: (context, index) {
-                      return _buildPage(context, pages[index]);
-                    },
-                  ),
-                ),
-                _buildFooter(l10n),
-              ],
-            ),
-          ),
+      backgroundColor: const Color(0xFF1FA047),
+      body: PageView.builder(
+        controller: _pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        onPageChanged: (index) => setState(() => _currentPage = index),
+        itemCount: pages.length,
+        itemBuilder: (context, index) {
+          return _OnboardingFeaturePage(
+            key: ValueKey(index),
+            data: pages[index],
+            pageIndex: index,
+            pageCount: _featurePageCount,
+            onNext: _nextPage,
+            onSkip: _completeOnboarding,
+            l10n: l10n,
+          );
+        },
+      ),
+    );
+  }
+}
+
+// MARK: - Feature page (AppLock style, green palette)
+
+class _OnboardingFeaturePage extends StatefulWidget {
+  final _OnboardingPageData data;
+  final int pageIndex;
+  final int pageCount;
+  final VoidCallback onNext;
+  final VoidCallback onSkip;
+  final AppLocalizations l10n;
+
+  const _OnboardingFeaturePage({
+    super.key,
+    required this.data,
+    required this.pageIndex,
+    required this.pageCount,
+    required this.onNext,
+    required this.onSkip,
+    required this.l10n,
+  });
+
+  @override
+  State<_OnboardingFeaturePage> createState() => _OnboardingFeaturePageState();
+}
+
+class _OnboardingFeaturePageState extends State<_OnboardingFeaturePage>
+    with TickerProviderStateMixin {
+  // MARK: - Animation State
+  bool _showIcon = false;
+  bool _showTitle = false;
+  bool _showDescription = false;
+  bool _showButton = false;
+  bool _isButtonPressed = false;
+
+  late final AnimationController _pulseController;
+
+  // MARK: - Lifecycle
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat(reverse: true);
+    _startEntrance();
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
+
+  void _startEntrance() {
+    _stagger(0, () => _showIcon = true);
+    _stagger(120, () => _showTitle = true);
+    _stagger(240, () => _showDescription = true);
+    _stagger(400, () => _showButton = true);
+  }
+
+  void _stagger(int ms, VoidCallback apply) {
+    Future.delayed(Duration(milliseconds: ms), () {
+      if (!mounted) return;
+      setState(apply);
+    });
+  }
+
+  // MARK: - View
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFF3FD168),
+            Color(0xFF2BB554),
+            Color(0xFF1B9A43),
+          ],
+        ),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            _buildSkipRow(),
+            Expanded(child: _buildContent()),
+            _buildButton(),
+            const SizedBox(height: 20),
+            _buildIndicator(),
+            const SizedBox(height: 28),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildHeader(AppLocalizations l10n) {
+  // MARK: - Subviews
+  Widget _buildSkipRow() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           CupertinoButton(
-            onPressed: _completeOnboarding,
+            onPressed: widget.onSkip,
             child: Text(
-              l10n.skip,
-              style: const TextStyle(
-                color: Colors.black45,
+              widget.l10n.skip,
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.85),
                 fontSize: 17,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -154,83 +230,53 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildPage(BuildContext context, _OnboardingPageData data) {
+  Widget _buildContent() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Spacer(flex: 1),
-          _buildIconContainer(data),
-          const SizedBox(height: 56),
-          Text(
-            data.title,
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w700,
-              letterSpacing: -0.5,
-              color: Color(0xFF1C1C1E),
-              height: 1.2,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 16),
-          Text(
-            data.description,
-            style: const TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.w400,
-              color: Color(0xFF8E8E93),
-              height: 1.5,
-              letterSpacing: -0.2,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const Spacer(flex: 2),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildIconContainer(_OnboardingPageData data) {
-    return Container(
-      width: 180,
-      height: 180,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: data.gradient,
-        ),
-        borderRadius: BorderRadius.circular(44),
-      ),
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(44),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Colors.white.withValues(alpha: 0.2),
-                        Colors.white.withValues(alpha: 0.05),
-                      ],
-                    ),
-                  ),
+          _buildIcon(),
+          const SizedBox(height: 44),
+          AnimatedSlide(
+            offset: _showTitle ? Offset.zero : const Offset(0, 0.15),
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOut,
+            child: AnimatedOpacity(
+              opacity: _showTitle ? 1 : 0,
+              duration: const Duration(milliseconds: 500),
+              child: Text(
+                widget.data.title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 29,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.5,
+                  color: Colors.white,
+                  height: 1.2,
                 ),
               ),
             ),
           ),
-          Center(
-            child: Icon(
-              data.icon,
-              size: 80,
-              color: Colors.white,
+          const SizedBox(height: 16),
+          AnimatedSlide(
+            offset: _showDescription ? Offset.zero : const Offset(0, 0.15),
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOut,
+            child: AnimatedOpacity(
+              opacity: _showDescription ? 1 : 0,
+              duration: const Duration(milliseconds: 500),
+              child: Text(
+                widget.data.description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white.withValues(alpha: 0.92),
+                  height: 1.5,
+                  letterSpacing: -0.2,
+                ),
+              ),
             ),
           ),
         ],
@@ -238,96 +284,130 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     );
   }
 
-  Widget _buildFooter(AppLocalizations l10n) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 0, 24, 32),
-      child: Column(
-        children: [
-          _buildPageIndicator(),
-          const SizedBox(height: 40),
-          _buildContinueButton(l10n),
-        ],
+  Widget _buildIcon() {
+    return AnimatedOpacity(
+      opacity: _showIcon ? 1 : 0,
+      duration: const Duration(milliseconds: 500),
+      child: AnimatedSlide(
+        offset: _showIcon ? Offset.zero : const Offset(0, 0.12),
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+        child: ScaleTransition(
+          scale: Tween<double>(begin: 1.0, end: 1.07).animate(
+            CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 148,
+                height: 148,
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.22),
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Icon(widget.data.icon, size: 58, color: Colors.white),
+            ],
+          ),
+        ),
       ),
     );
   }
 
-  Widget _buildPageIndicator() {
+  Widget _buildButton() {
+    return AnimatedOpacity(
+      opacity: _showButton ? 1 : 0,
+      duration: const Duration(milliseconds: 500),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: GestureDetector(
+          onTapDown: (_) => setState(() => _isButtonPressed = true),
+          onTapUp: (_) => setState(() => _isButtonPressed = false),
+          onTapCancel: () => setState(() => _isButtonPressed = false),
+          onTap: widget.onNext,
+          child: AnimatedScale(
+            scale: _isButtonPressed ? 0.95 : 1.0,
+            duration: const Duration(milliseconds: 150),
+            child: Container(
+              width: double.infinity,
+              height: 56,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.12),
+                    blurRadius: 14,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    widget.l10n.next,
+                    style: const TextStyle(
+                      color: Color(0xFF1B9A43),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  const Icon(
+                    CupertinoIcons.chevron_right,
+                    color: Color(0xFF1B9A43),
+                    size: 18,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildIndicator() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(4, (index) {
-        final isActive = _currentPage == index;
+      children: List.generate(widget.pageCount, (i) {
+        final isActive = widget.pageIndex == i;
         return AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
           margin: const EdgeInsets.symmetric(horizontal: 4),
-          width: isActive ? 28 : 8,
+          width: isActive ? 26 : 8,
           height: 8,
           decoration: BoxDecoration(
-            color: isActive
-                ? const Color(0xFF34C759)
-                : const Color(0xFFD1D1D6),
+            color: isActive ? Colors.white : Colors.white.withValues(alpha: 0.4),
             borderRadius: BorderRadius.circular(4),
           ),
         );
       }),
     );
   }
-
-  Widget _buildContinueButton(AppLocalizations l10n) {
-    final isLastPage = _currentPage == 3;
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      width: double.infinity,
-      height: 56,
-      decoration: BoxDecoration(
-        gradient: isLastPage
-            ? const LinearGradient(
-                colors: [Color(0xFF34C759), Color(0xFF30D158)],
-              )
-            : null,
-        color: isLastPage ? null : const Color(0xFF34C759),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: CupertinoButton(
-        padding: EdgeInsets.zero,
-        onPressed: _nextPage,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              isLastPage ? l10n.getStarted : l10n.next,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.3,
-              ),
-            ),
-            if (!isLastPage) ...[
-              const SizedBox(width: 8),
-              const Icon(
-                CupertinoIcons.chevron_right,
-                color: Colors.white,
-                size: 20,
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
 }
+
+// MARK: - Model
 
 class _OnboardingPageData {
   final IconData icon;
-  final List<Color> gradient;
   final String title;
   final String description;
 
   _OnboardingPageData({
     required this.icon,
-    required this.gradient,
     required this.title,
     required this.description,
   });

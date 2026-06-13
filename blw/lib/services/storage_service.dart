@@ -1,11 +1,14 @@
+import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/food_log.dart';
+import '../models/gallery_photo.dart';
 
 class StorageService {
   static const String _logsKey = 'food_logs';
   static const String _isPremiumKey = 'is_premium';
   static const String _premiumExpiryKey = 'premium_expiry';
   static const String _onboardingCompleteKey = 'onboarding_complete';
+  static const String _galleryPhotosKey = 'gallery_photos';
 
   static Future<void> saveLogs(List<FoodLog> logs) async {
     final prefs = await SharedPreferences.getInstance();
@@ -57,6 +60,26 @@ class StorageService {
     final expiryString = prefs.getString(_premiumExpiryKey);
     if (expiryString == null) return null;
     return DateTime.parse(expiryString);
+  }
+
+  static Future<void> saveGalleryPhotos(List<GalleryPhoto> photos) async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = jsonEncode(photos.map((p) => p.toJson()).toList());
+    await prefs.setString(_galleryPhotosKey, jsonString);
+  }
+
+  static Future<List<GalleryPhoto>> loadGalleryPhotos() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_galleryPhotosKey);
+    if (jsonString == null || jsonString.isEmpty) return [];
+    try {
+      final List<dynamic> list = jsonDecode(jsonString);
+      return list
+          .map((e) => GalleryPhoto.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } catch (e) {
+      return [];
+    }
   }
 
   static Future<void> setOnboardingComplete() async {
