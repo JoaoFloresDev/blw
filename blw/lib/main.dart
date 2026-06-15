@@ -76,6 +76,16 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: AppLocalizations.supportedLocales,
+        localeResolutionCallback: (deviceLocale, supported) {
+          // Match by language code so any region (en-GB, es-AR, pt-PT...)
+          // resolves to the right translation; fall back to English.
+          if (deviceLocale != null) {
+            for (final l in supported) {
+              if (l.languageCode == deviceLocale.languageCode) return l;
+            }
+          }
+          return const Locale('en', 'US');
+        },
         theme: ThemeData(
           useMaterial3: true,
           brightness: Brightness.light,

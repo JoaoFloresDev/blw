@@ -17,10 +17,11 @@ class _RecipesScreenState extends State<RecipesScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final recipes = recipesFor(Localizations.localeOf(context).languageCode);
 
     final filteredRecipes = _selectedCategory == null
-        ? allRecipes
-        : allRecipes.where((r) => r.category == _selectedCategory).toList();
+        ? recipes
+        : recipes.where((r) => r.category == _selectedCategory).toList();
 
     return Scaffold(
       backgroundColor: AppColors.background,

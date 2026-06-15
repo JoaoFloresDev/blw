@@ -60,11 +60,13 @@ class FoodDetailScreen extends StatelessWidget {
     }
   }
 
-  List<Recipe> _getRelatedRecipes() {
+  List<Recipe> _getRelatedRecipes(String languageCode) {
     final foodName = food.name.toLowerCase();
     final keywords = _getFoodKeywords(food);
 
-    return allRecipes.where((recipe) {
+    // Match against the PT recipes (stable keywords), then render the
+    // localized versions of the matched recipes by id.
+    final matchedIds = allRecipes.where((recipe) {
       // Check if any ingredient contains the food name or keywords
       for (final ingredient in recipe.ingredients) {
         final ingredientLower = ingredient.toLowerCase();
@@ -74,7 +76,11 @@ class FoodDetailScreen extends StatelessWidget {
         }
       }
       return false;
-    }).toList();
+    }).map((r) => r.id).toSet();
+
+    return recipesFor(languageCode)
+        .where((r) => matchedIds.contains(r.id))
+        .toList();
   }
 
   List<String> _getFoodKeywords(Food food) {
@@ -140,7 +146,8 @@ class FoodDetailScreen extends StatelessWidget {
     final foodName = l10n.getFoodName(food.id);
     final foodPrep = l10n.getFoodPreparation(food.id);
     final foodAllergenInfo = l10n.getFoodAllergenInfo(food.id);
-    final relatedRecipes = _getRelatedRecipes();
+    final relatedRecipes =
+        _getRelatedRecipes(Localizations.localeOf(context).languageCode);
     final categoryColor = _getCategoryColor(food.category);
 
     return Scaffold(
