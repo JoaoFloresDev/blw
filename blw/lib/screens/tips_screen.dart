@@ -52,6 +52,15 @@ class TipsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
+                Center(
+                  child: Image.asset(
+                    'assets/images/tips_hero.png',
+                    width: 168,
+                    height: 168,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                const SizedBox(height: 8),
                 // Getting Started Section
                 _buildSectionHeader(context, l10n.sectionGettingStarted, CupertinoIcons.star_fill, const Color(0xFFFFCC00)),
                 const SizedBox(height: 12),

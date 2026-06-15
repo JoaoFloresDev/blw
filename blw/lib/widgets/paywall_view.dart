@@ -233,23 +233,27 @@ class _PaywallViewState extends State<PaywallView> {
           alignment: Alignment.center,
           children: [
             Container(
-              width: 76,
-              height: 76,
+              width: 150,
+              height: 150,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.15),
+                color: Colors.white.withValues(alpha: 0.13),
                 shape: BoxShape.circle,
               ),
             ),
             Container(
-              width: 60,
-              height: 60,
+              width: 124,
+              height: 124,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.22),
+                color: Colors.white.withValues(alpha: 0.20),
                 shape: BoxShape.circle,
               ),
             ),
-            const Icon(CupertinoIcons.star_fill,
-                color: Colors.white, size: 32),
+            Image.asset(
+              'assets/images/paywall_hero.png',
+              width: 146,
+              height: 146,
+              fit: BoxFit.contain,
+            ),
           ],
         ),
         const SizedBox(height: 14),

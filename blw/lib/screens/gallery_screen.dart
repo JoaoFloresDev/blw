@@ -195,25 +195,11 @@ class GalleryScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 140,
-              height: 140,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    AppColors.primary.withValues(alpha: 0.15),
-                    AppColors.primary.withValues(alpha: 0.05),
-                  ],
-                ),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                CupertinoIcons.photo_on_rectangle,
-                size: 64,
-                color: AppColors.primary,
-              ),
+            Image.asset(
+              'assets/images/empty_gallery.png',
+              width: 176,
+              height: 176,
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 32),
             Text(

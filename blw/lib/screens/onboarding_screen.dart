@@ -73,16 +73,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final pages = [
       _OnboardingPageData(
         icon: CupertinoIcons.heart_fill,
+        image: 'assets/images/onb1.png',
         title: l10n.onboardingTitle1,
         description: l10n.onboardingDesc1,
       ),
       _OnboardingPageData(
         icon: CupertinoIcons.leaf_arrow_circlepath,
+        image: 'assets/images/onb2.png',
         title: l10n.onboardingTitle2,
         description: l10n.onboardingDesc2,
       ),
       _OnboardingPageData(
         icon: CupertinoIcons.camera_fill,
+        image: 'assets/images/onb3.png',
         title: l10n.onboardingTitle3,
         description: l10n.onboardingDesc3,
       ),
@@ -300,22 +303,30 @@ class _OnboardingFeaturePageState extends State<_OnboardingFeaturePage>
             alignment: Alignment.center,
             children: [
               Container(
-                width: 148,
-                height: 148,
+                width: 196,
+                height: 196,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.15),
+                  color: Colors.white.withValues(alpha: 0.13),
                   shape: BoxShape.circle,
                 ),
               ),
               Container(
-                width: 120,
-                height: 120,
+                width: 164,
+                height: 164,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.22),
+                  color: Colors.white.withValues(alpha: 0.20),
                   shape: BoxShape.circle,
                 ),
               ),
-              Icon(widget.data.icon, size: 58, color: Colors.white),
+              if (widget.data.image != null)
+                Image.asset(
+                  widget.data.image!,
+                  width: 188,
+                  height: 188,
+                  fit: BoxFit.contain,
+                )
+              else
+                Icon(widget.data.icon, size: 58, color: Colors.white),
             ],
           ),
         ),
@@ -403,11 +414,13 @@ class _OnboardingFeaturePageState extends State<_OnboardingFeaturePage>
 
 class _OnboardingPageData {
   final IconData icon;
+  final String? image;
   final String title;
   final String description;
 
   _OnboardingPageData({
     required this.icon,
+    this.image,
     required this.title,
     required this.description,
   });

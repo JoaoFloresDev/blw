@@ -37,6 +37,15 @@ class AllergensScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          Center(
+            child: Image.asset(
+              'assets/images/allergens_hero.png',
+              width: 160,
+              height: 160,
+              fit: BoxFit.contain,
+            ),
+          ),
+          const SizedBox(height: 8),
           _buildInfoCard(context, l10n),
           const SizedBox(height: 16),
           _buildIntroductionGuide(context, l10n),

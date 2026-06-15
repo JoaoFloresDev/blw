@@ -226,10 +226,11 @@ class _FoodsScreenState extends State<FoodsScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                CupertinoIcons.nosign,
-                size: 48,
-                color: AppColors.textSecondary.withValues(alpha: 0.5),
+              Image.asset(
+                'assets/images/foods_empty.png',
+                width: 150,
+                height: 150,
+                fit: BoxFit.contain,
               ),
               const SizedBox(height: 16),
               Text(

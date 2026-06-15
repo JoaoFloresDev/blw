@@ -73,6 +73,21 @@ class _RecipesScreenState extends State<RecipesScreen> {
             ),
           ),
 
+          // Hero illustration
+          SliverToBoxAdapter(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4, bottom: 8),
+                child: Image.asset(
+                  'assets/images/recipes_hero.png',
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
+
           // Category filter
           SliverToBoxAdapter(
             child: SizedBox(

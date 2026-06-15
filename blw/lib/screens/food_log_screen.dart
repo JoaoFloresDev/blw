@@ -178,17 +178,11 @@ class FoodLogScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                CupertinoIcons.book,
-                size: 48,
-                color: AppColors.primary.withValues(alpha: 0.6),
-              ),
+            Image.asset(
+              'assets/images/empty_diary.png',
+              width: 168,
+              height: 168,
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 24),
             Text(
