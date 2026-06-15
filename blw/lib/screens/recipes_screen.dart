@@ -36,6 +36,19 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (Navigator.of(context).canPop())
+                      CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Icon(
+                            CupertinoIcons.chevron_back,
+                            color: AppColors.primary,
+                            size: 28,
+                          ),
+                        ),
+                      ),
                     Text(
                       l10n.recipes,
                       style: const TextStyle(
