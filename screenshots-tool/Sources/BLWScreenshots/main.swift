@@ -234,15 +234,45 @@ func render<V: View>(view: V, canvas: CGSize, scale: CGFloat, to url: URL) throw
     try data.write(to: url)
 }
 
+// MARK: - Raw screens mode (clean app screenshots for Nano Banana compose)
+
+@MainActor
+func renderRawScreens() throws {
+    let device = DeviceKind.iPhone6_5
+    let canvas = device.screenPointSize            // 414×896 pts
+    let locale = "en-US"
+    let outDir = URL(fileURLWithPath: NSString(string: "../fastlane/raw-screens").expandingTildeInPath)
+    try FileManager.default.createDirectory(at: outDir, withIntermediateDirectories: true)
+
+    let screens: [(String, AnyView)] = [
+        ("01_home",      AnyView(MainScreen(locale: locale))),
+        ("02_safecuts",  AnyView(Feature1Screen(locale: locale))),
+        ("03_recipes",   AnyView(Feature2Screen(locale: locale))),
+        ("04_diary",     AnyView(SettingsScreen(locale: locale))),
+        ("05_allergens", AnyView(OnboardingScreen(locale: locale)))
+    ]
+    for (name, view) in screens {
+        let url = outDir.appendingPathComponent("\(name).png")
+        try render(view: view, canvas: canvas, scale: 3.0, to: url)
+        print("✅ raw screen \(name) — done")
+    }
+    print("\n5 raw screens at: \(outDir.path)")
+}
+
 MainActor.assumeIsolated {
-    let mode: RenderMode = CommandLine.arguments.contains("initial") ? .initial : .abtest
-    print(mode == .initial
-          ? "🎬 Mode: INITIAL — single set per locale at 6.9\" (default product page)"
-          : "🧪 Mode: A/B TEST — 3 treatments × N locales (PPO experiment)")
-    do {
-        try runFullRenderPipeline(mode: mode)
-    } catch {
-        print("❌ Pipeline failed: \(error)")
-        exit(1)
+    if CommandLine.arguments.contains("screens") {
+        print("📱 Mode: RAW SCREENS — clean app screenshots for Nano Banana")
+        do { try renderRawScreens() } catch { print("❌ \(error)"); exit(1) }
+    } else {
+        let mode: RenderMode = CommandLine.arguments.contains("initial") ? .initial : .abtest
+        print(mode == .initial
+              ? "🎬 Mode: INITIAL — single set per locale at 6.9\" (default product page)"
+              : "🧪 Mode: A/B TEST — 3 treatments × N locales (PPO experiment)")
+        do {
+            try runFullRenderPipeline(mode: mode)
+        } catch {
+            print("❌ Pipeline failed: \(error)")
+            exit(1)
+        }
     }
 }
