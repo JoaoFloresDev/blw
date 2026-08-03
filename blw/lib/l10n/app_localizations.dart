@@ -253,6 +253,7 @@ class AppLocalizations {
   // Paywall / Premium
   String get paywallTitle => get('paywallTitle');
   String get paywallSubtitle => get('paywallSubtitle');
+  String get paywallFeatureDiary => get('paywallFeatureDiary');
   String get paywallFeature1 => get('paywallFeature1');
   String get paywallFeature2 => get('paywallFeature2');
   String get paywallFeature3 => get('paywallFeature3');
@@ -682,6 +683,7 @@ const Map<String, String> _ptTranslations = {
   // Paywall / Premium
   'paywallTitle': 'Desbloqueie o BLW Pro',
   'paywallSubtitle': 'Tudo que você precisa para acompanhar a introdução alimentar do seu bebê',
+  'paywallFeatureDiary': 'Registre todas as refeições do bebê',
   'paywallFeature1': 'Exporte o diário completo em PDF',
   'paywallFeature2': 'Receitas exclusivas para cada fase',
   'paywallFeature3': 'Fotos ilimitadas em cada registro',
@@ -1086,6 +1088,7 @@ const Map<String, String> _enTranslations = {
   // Paywall / Premium
   'paywallTitle': 'Unlock BLW Pro',
   'paywallSubtitle': 'Everything you need to track your baby\'s food journey',
+  'paywallFeatureDiary': 'Log every one of your baby\'s meals',
   'paywallFeature1': 'Export the full diary as PDF',
   'paywallFeature2': 'Exclusive recipes for every stage',
   'paywallFeature3': 'Unlimited photos on every record',
@@ -1490,6 +1493,7 @@ const Map<String, String> _esTranslations = {
   // Paywall / Premium
   'paywallTitle': 'Desbloquea BLW Pro',
   'paywallSubtitle': 'Todo lo que necesitas para seguir la alimentación de tu bebé',
+  'paywallFeatureDiary': 'Registra todas las comidas del bebé',
   'paywallFeature1': 'Exporta el diario completo en PDF',
   'paywallFeature2': 'Recetas exclusivas para cada etapa',
   'paywallFeature3': 'Fotos ilimitadas en cada registro',

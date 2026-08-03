@@ -7,6 +7,7 @@ import '../main.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
+import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
 
@@ -368,11 +369,14 @@ class FoodLogDetailScreen extends StatelessWidget {
   }
 
   void _editLog(BuildContext context) {
-    Navigator.push(
+    PremiumGate.guard(
       context,
-      CupertinoPageRoute(
-        builder: (_) => AddFoodLogScreen(
-          preselectedFood: getFoodById(log.foodId),
+      onUnlocked: () => Navigator.push(
+        context,
+        CupertinoPageRoute(
+          builder: (_) => AddFoodLogScreen(
+            preselectedFood: getFoodById(log.foodId),
+          ),
         ),
       ),
     );

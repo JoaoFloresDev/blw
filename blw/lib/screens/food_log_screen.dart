@@ -132,21 +132,39 @@ class FoodLogScreen extends StatelessWidget {
                             const SizedBox(width: 8),
                             CupertinoButton(
                               padding: EdgeInsets.zero,
-                              onPressed: () => Navigator.push(
+                              onPressed: () => PremiumGate.guard(
                                 context,
-                                CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+                                onUnlocked: () => Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (_) =>
+                                          const AddFoodLogScreen()),
+                                ),
                               ),
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: AppColors.primary,
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: const Icon(
-                                  CupertinoIcons.add,
-                                  color: Colors.white,
-                                  size: 22,
-                                ),
+                              child: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.primary,
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: const Icon(
+                                      CupertinoIcons.add,
+                                      color: Colors.white,
+                                      size: 22,
+                                    ),
+                                  ),
+                                  if (!context
+                                      .watch<PremiumProvider>()
+                                      .isPremium)
+                                    const Positioned(
+                                      top: -6,
+                                      right: -6,
+                                      child: _LockDot(),
+                                    ),
+                                ],
                               ),
                             ),
                           ],
@@ -207,9 +225,13 @@ class FoodLogScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Navigator.push(
+                onPressed: () => PremiumGate.guard(
                   context,
-                  CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+                  onUnlocked: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (_) => const AddFoodLogScreen()),
+                  ),
                 ),
                 child: Text(l10n.addRecord),
               ),

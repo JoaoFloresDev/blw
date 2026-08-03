@@ -162,9 +162,15 @@ class HomeScreen extends StatelessWidget {
             iconColor: AppColors.primary,
             title: l10n.addRecord,
             subtitle: l10n.addRecordSubtitle,
-            onTap: () => Navigator.push(
+            trailing: context.watch<PremiumProvider>().isPremium
+                ? null
+                : const ProBadge(),
+            onTap: () => PremiumGate.guard(
               context,
-              CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+              onUnlocked: () => Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+              ),
             ),
           ),
           const Padding(

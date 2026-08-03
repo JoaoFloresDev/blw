@@ -9,6 +9,7 @@ import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import '../services/photo_service.dart';
+import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
 
@@ -174,10 +175,13 @@ class GalleryScreen extends StatelessWidget {
             isDefaultAction: true,
             onPressed: () {
               Navigator.pop(dialogContext);
-              Navigator.push(
+              PremiumGate.guard(
                 context,
-                CupertinoPageRoute(
-                  builder: (_) => AddFoodLogScreen(initialPhotoPath: path),
+                onUnlocked: () => Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (_) => AddFoodLogScreen(initialPhotoPath: path),
+                  ),
                 ),
               );
             },

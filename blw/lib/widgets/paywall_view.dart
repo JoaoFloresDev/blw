@@ -284,6 +284,7 @@ class _PaywallViewState extends State<PaywallView> {
 
   Widget _buildFeatures(AppLocalizations l10n) {
     final features = [
+      (CupertinoIcons.square_pencil_fill, l10n.paywallFeatureDiary),
       (CupertinoIcons.doc_text_fill, l10n.paywallFeature1),
       (CupertinoIcons.book_fill, l10n.paywallFeature2),
       (CupertinoIcons.photo_on_rectangle, l10n.paywallFeature3),

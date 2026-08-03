@@ -4,6 +4,7 @@ import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../models/food.dart';
 import '../data/recipes_data.dart';
+import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 
 class FoodDetailScreen extends StatelessWidget {
@@ -684,10 +685,13 @@ class FoodDetailScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           color: AppColors.primary,
           borderRadius: BorderRadius.circular(14),
-          onPressed: () => Navigator.push(
+          onPressed: () => PremiumGate.guard(
             context,
-            CupertinoPageRoute(
-              builder: (_) => AddFoodLogScreen(preselectedFood: food),
+            onUnlocked: () => Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (_) => AddFoodLogScreen(preselectedFood: food),
+              ),
             ),
           ),
           child: Row(
