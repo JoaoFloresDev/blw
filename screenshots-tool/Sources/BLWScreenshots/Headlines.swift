@@ -46,99 +46,101 @@ private func loc(
 
 enum Headlines {
 
-    // MARK: - Treatment A — Direct / Action (verb + benefit, keyword-led)
+    // Round 2 (2026-08) — all copy distinct from the May "BLW Headlines" test.
+
+    // MARK: - Treatment A — Guided / step-by-step (authority angle)
 
     static let treatmentA = TreatmentCopy(
         id: "A",
-        label: "Direct / Action",
+        label: "Guided / Step-by-step",
         home: loc(
-            en: ("Start solids with confidence", "solids"),
-            pt: ("Comece a introdução alimentar", "introdução"),
-            es: ("Empieza la alimentación complementaria", "alimentación")
+            en: ("Your starting solids guide", "guide"),
+            pt: ("Seu guia de introdução alimentar", "guia"),
+            es: ("Tu guía de alimentación", "guía")
         ),
         feature1: loc(
-            en: ("Cut every food safely", "safely"),
-            pt: ("Corte cada alimento com segurança", "segurança"),
-            es: ("Corta cada alimento con seguridad", "seguridad")
+            en: ("How to serve every food", "serve"),
+            pt: ("Como servir cada alimento", "servir"),
+            es: ("Cómo servir cada alimento", "servir")
         ),
         feature2: loc(
-            en: ("Recipes for every stage", "Recipes"),
-            pt: ("Receitas para cada fase", "Receitas"),
-            es: ("Recetas para cada etapa", "Recetas")
+            en: ("Recipes for every month", "Recipes"),
+            pt: ("Receitas para cada mês", "Receitas"),
+            es: ("Recetas para cada mes", "Recetas")
         ),
         settings: loc(
-            en: ("Track every new food", nil),
-            pt: ("Registre cada novo alimento", nil),
-            es: ("Registra cada nuevo alimento", nil)
+            en: ("Log meals in seconds", "Log"),
+            pt: ("Registre refeições em segundos", "Registre"),
+            es: ("Registra comidas en segundos", "Registra")
         ),
         onboarding: loc(
-            en: ("Introduce allergens safely", "allergens"),
-            pt: ("Introduza alérgenos com segurança", "alérgenos"),
-            es: ("Introduce alérgenos con seguridad", "alérgenos")
+            en: ("Allergens, step by step", "Allergens"),
+            pt: ("Alérgenos passo a passo", "Alérgenos"),
+            es: ("Alérgenos paso a paso", "Alérgenos")
         )
     )
 
-    // MARK: - Treatment B — Emotional / Aspirational (parent peace of mind)
+    // MARK: - Treatment B — Safety-first (fear-relief as the whole narrative)
 
     static let treatmentB = TreatmentCopy(
         id: "B",
-        label: "Emotional / Aspirational",
+        label: "Safety-first",
         home: loc(
-            en: ("Every first food, one happy place", nil),
-            pt: ("Cada primeira papinha num só lugar", nil),
-            es: ("Cada primer alimento en un solo lugar", nil)
+            en: ("Start solids without worry", "worry"),
+            pt: ("Introdução alimentar sem medo", "medo"),
+            es: ("Sólidos sin miedo", "miedo")
         ),
         feature1: loc(
-            en: ("No more choking worries", "choking"),
-            pt: ("Sem medo de engasgo", "engasgo"),
-            es: ("Sin miedo al atragantamiento", "atragantamiento")
+            en: ("Choke-safe cuts by age", "Choke-safe"),
+            pt: ("Cortes seguros por idade", "Cortes seguros"),
+            es: ("Cortes seguros por edad", "Cortes seguros")
         ),
         feature2: loc(
-            en: ("Always know what to cook", nil),
-            pt: ("Sempre saiba o que cozinhar", nil),
-            es: ("Siempre sabrás qué cocinar", nil)
+            en: ("Recipes you can trust", "trust"),
+            pt: ("Receitas seguras por fase", "seguras"),
+            es: ("Recetas seguras por etapa", "seguras")
         ),
         settings: loc(
-            en: ("Spot reactions early", nil),
-            pt: ("Perceba reações antes", nil),
-            es: ("Detecta reacciones a tiempo", nil)
+            en: ("Every meal, on record", "record"),
+            pt: ("Cada refeição registrada", "registrada"),
+            es: ("Cada comida registrada", "registrada")
         ),
         onboarding: loc(
-            en: ("Confident with the big 9", nil),
-            pt: ("Segurança com os 9 principais", nil),
-            es: ("Tranquilidad con los 9 principales", nil)
+            en: ("The big 9, without fear", "big 9"),
+            pt: ("Os 9 alérgenos sem susto", "alérgenos"),
+            es: ("Los 9 alérgenos sin susto", "alérgenos")
         )
     )
 
-    // MARK: - Treatment C — Feature / Tech (specific differentiator)
+    // MARK: - Treatment C — Complete toolkit (real content density, honest numbers)
 
     static let treatmentC = TreatmentCopy(
         id: "C",
-        label: "Feature / Technical",
+        label: "Complete toolkit",
         home: loc(
-            en: ("Your complete BLW hub", "BLW"),
-            pt: ("Tudo do BLW num só app", "BLW"),
-            es: ("Todo el BLW en una sola app", "BLW")
+            en: ("The complete weaning app", "weaning"),
+            pt: ("Introdução alimentar completa", "completa"),
+            es: ("Alimentación complementaria completa", "completa")
         ),
         feature1: loc(
-            en: ("Safe cuts for 200+ foods", "Safe cuts"),
-            pt: ("Cortes seguros para 200+ alimentos", "Cortes seguros"),
-            es: ("Cortes seguros para 200+ alimentos", "Cortes seguros")
+            en: ("Cut guides for 40+ foods", "Cut guides"),
+            pt: ("Guia de corte por alimento", "corte"),
+            es: ("Guía de corte por alimento", "corte")
         ),
         feature2: loc(
-            en: ("Age-based weaning recipes", "weaning recipes"),
-            pt: ("Receitas de papinha por idade", "Receitas de papinha"),
-            es: ("Recetas de papillas por edad", "Recetas de papillas")
+            en: ("50+ recipes by stage", "recipes"),
+            pt: ("50+ receitas por fase", "receitas"),
+            es: ("50+ recetas por etapa", "recetas")
         ),
         settings: loc(
-            en: ("Food diary + reaction log", "diary"),
-            pt: ("Diário + registro de reações", "Diário"),
-            es: ("Diario + registro de reacciones", "Diario")
+            en: ("Diary + PDF export", "Diary"),
+            pt: ("Diário + exportação em PDF", "Diário"),
+            es: ("Diario + exportación en PDF", "Diario")
         ),
         onboarding: loc(
-            en: ("Track all 9 top allergens", "allergens"),
-            pt: ("Acompanhe os 9 alérgenos", "alérgenos"),
-            es: ("Controla los 9 alérgenos", "alérgenos")
+            en: ("Built-in allergen tracker", "allergen"),
+            pt: ("Controle de alérgenos completo", "alérgenos"),
+            es: ("Control de alérgenos completo", "alérgenos")
         )
     )
 
