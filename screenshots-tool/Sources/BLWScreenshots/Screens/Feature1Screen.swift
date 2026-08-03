@@ -18,7 +18,8 @@ struct Feature1Screen: View {
                 VStack(spacing: 16) {
                     foodHeader
                     safeNote
-                    cutCard
+                    // cutCard intentionally omitted — the marketing breakout
+                    // (CutStepsBreakout) renders it enlarged over the device.
                 }
                 .padding(20)
 

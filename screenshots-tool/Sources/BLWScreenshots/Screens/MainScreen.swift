@@ -19,7 +19,8 @@ struct MainScreen: View {
                 VStack(spacing: 16) {
                     banner
                     quickActionsCard
-                    statsCard
+                    // statsCard intentionally omitted — the marketing breakout
+                    // (ProgressBreakout) renders it enlarged over the device.
                 }
                 .padding(20)
 

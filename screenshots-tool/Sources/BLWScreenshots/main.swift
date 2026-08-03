@@ -157,7 +157,7 @@ func renderLocaleSet(
                                 headline: treatment.home[locale],
                                 foreground: slotDecor(canvas: canvas,
                                                       breakout: AnyView(ProgressBreakout(locale: locale)),
-                                                      breakoutCenterYFraction: 0.685,
+                                                      breakoutCenterYFraction: 0.595,
                                                       mascotAsset: "home_hero",
                                                       mascotOnLeft: false)) { MainScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url1)
@@ -168,7 +168,7 @@ func renderLocaleSet(
                                 headline: treatment.feature1[locale],
                                 foreground: slotDecor(canvas: canvas,
                                                       breakout: AnyView(CutStepsBreakout(locale: locale)),
-                                                      breakoutCenterYFraction: 0.700,
+                                                      breakoutCenterYFraction: 0.615,
                                                       mascotAsset: "banana_baby_hero",
                                                       mascotOnLeft: true)) { Feature1Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url2)
@@ -179,7 +179,7 @@ func renderLocaleSet(
                                 headline: treatment.feature2[locale],
                                 foreground: slotDecor(canvas: canvas,
                                                       breakout: AnyView(RecipesBreakout(locale: locale)),
-                                                      breakoutCenterYFraction: 0.660,
+                                                      breakoutCenterYFraction: 0.575,
                                                       mascotAsset: "recipes_hero",
                                                       mascotOnLeft: false)) { Feature2Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url3)
@@ -190,7 +190,7 @@ func renderLocaleSet(
                                 headline: treatment.settings[locale],
                                 foreground: slotDecor(canvas: canvas,
                                                       breakout: AnyView(DiaryBreakout(locale: locale)),
-                                                      breakoutCenterYFraction: 0.660,
+                                                      breakoutCenterYFraction: 0.575,
                                                       mascotAsset: "diary_hero",
                                                       mascotOnLeft: true)) { SettingsScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url4)
@@ -201,7 +201,7 @@ func renderLocaleSet(
                                 headline: treatment.onboarding[locale],
                                 foreground: slotDecor(canvas: canvas,
                                                       breakout: AnyView(AllergensBreakout(locale: locale)),
-                                                      breakoutCenterYFraction: 0.685,
+                                                      breakoutCenterYFraction: 0.595,
                                                       mascotAsset: "allergens_hero",
                                                       mascotOnLeft: false)) { OnboardingScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url5)

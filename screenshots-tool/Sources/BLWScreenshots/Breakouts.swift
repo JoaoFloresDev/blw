@@ -44,12 +44,12 @@ struct ProgressBreakout: View {
             VStack(alignment: .leading, spacing: 18) {
                 HStack(spacing: 12) {
                     Image(systemName: "chart.bar.fill")
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(MockTheme.blue)
-                        .frame(width: 34, height: 34)
+                        .frame(width: 42, height: 42)
                         .background(MockTheme.blue.opacity(0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     Text(L(BLWStrings.progress, locale))
-                        .font(.system(size: 17, weight: .semibold))
+                        .font(.system(size: 22, weight: .semibold))
                         .foregroundStyle(MockTheme.textPrimary)
                 }
                 HStack {
@@ -62,10 +62,10 @@ struct ProgressBreakout: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text(L(BLWStrings.foodsTried, locale))
-                            .font(.system(size: 13)).foregroundStyle(MockTheme.textSecondary)
+                            .font(.system(size: 17)).foregroundStyle(MockTheme.textSecondary)
                         Spacer()
                         Text("12 / 200")
-                            .font(.system(size: 13, weight: .semibold)).foregroundStyle(MockTheme.primary)
+                            .font(.system(size: 17, weight: .semibold)).foregroundStyle(MockTheme.primary)
                     }
                     GeometryReader { geo in
                         ZStack(alignment: .leading) {
@@ -73,7 +73,7 @@ struct ProgressBreakout: View {
                             Capsule().fill(MockTheme.primary).frame(width: geo.size.width * 0.32)
                         }
                     }
-                    .frame(height: 8)
+                    .frame(height: 11)
                 }
             }
             .padding(20)
@@ -81,13 +81,13 @@ struct ProgressBreakout: View {
     }
 
     private var divider: some View {
-        Rectangle().fill(MockTheme.separator).frame(width: 1, height: 50)
+        Rectangle().fill(MockTheme.separator).frame(width: 1, height: 60)
     }
 
     private func stat(_ value: String, _ label: String, _ color: Color) -> some View {
         VStack(spacing: 4) {
-            Text(value).font(.system(size: 28, weight: .bold)).foregroundStyle(color)
-            Text(label).font(.system(size: 11)).foregroundStyle(MockTheme.textSecondary)
+            Text(value).font(.system(size: 38, weight: .bold)).foregroundStyle(color)
+            Text(label).font(.system(size: 15, weight: .medium)).foregroundStyle(MockTheme.textSecondary)
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
@@ -104,12 +104,12 @@ struct CutStepsBreakout: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(spacing: 12) {
                     Image(systemName: "scissors")
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(MockTheme.secondary)
-                        .frame(width: 34, height: 34)
+                        .frame(width: 42, height: 42)
                         .background(MockTheme.secondary.opacity(0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     Text(L(BLWStrings.howToCut, locale))
-                        .font(.system(size: 17, weight: .semibold))
+                        .font(.system(size: 22, weight: .semibold))
                         .foregroundStyle(MockTheme.textPrimary)
                 }
                 step("1", L(BLWStrings.cutStep1, locale))
@@ -123,12 +123,12 @@ struct CutStepsBreakout: View {
     private func step(_ n: String, _ text: String) -> some View {
         HStack(alignment: .top, spacing: 14) {
             Text(n)
-                .font(.system(size: 15, weight: .bold))
+                .font(.system(size: 19, weight: .bold))
                 .foregroundStyle(.white)
-                .frame(width: 28, height: 28)
+                .frame(width: 36, height: 36)
                 .background(MockTheme.primary, in: Circle())
             Text(text)
-                .font(.system(size: 15))
+                .font(.system(size: 19))
                 .foregroundStyle(MockTheme.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
@@ -155,21 +155,21 @@ struct RecipesBreakout: View {
     private func row(_ recipe: RecipeItem) -> some View {
         HStack(spacing: 14) {
             Text(recipe.emoji)
-                .font(.system(size: 30))
-                .frame(width: 54, height: 54)
+                .font(.system(size: 38))
+                .frame(width: 66, height: 66)
                 .background(MockTheme.background, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             VStack(alignment: .leading, spacing: 4) {
                 Text(L(recipe.name, locale))
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: 21, weight: .semibold))
                     .foregroundStyle(MockTheme.textPrimary)
                     .lineLimit(1)
                 Text(L(recipe.age, locale))
-                    .font(.system(size: 13, weight: .medium))
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(MockTheme.primary)
             }
             Spacer(minLength: 0)
             Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(MockTheme.textTertiary)
         }
         .padding(14)
@@ -195,20 +195,20 @@ struct DiaryBreakout: View {
     private func row(_ entry: DiaryEntry) -> some View {
         HStack(spacing: 14) {
             Text(entry.emoji)
-                .font(.system(size: 26))
-                .frame(width: 48, height: 48)
+                .font(.system(size: 34))
+                .frame(width: 60, height: 60)
                 .background(MockTheme.background, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             VStack(alignment: .leading, spacing: 3) {
                 Text(L(entry.name, locale))
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 22, weight: .semibold))
                     .foregroundStyle(MockTheme.textPrimary)
                 Text("\(entry.reaction)  \(L(entry.when, locale))")
-                    .font(.system(size: 13, weight: .medium))
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(MockTheme.textSecondary)
             }
             Spacer(minLength: 0)
             Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(MockTheme.textTertiary)
         }
         .padding(14)
@@ -234,11 +234,11 @@ struct AllergensBreakout: View {
     private func row(_ item: AllergenItem) -> some View {
         HStack(spacing: 14) {
             Text(item.emoji)
-                .font(.system(size: 26))
-                .frame(width: 48, height: 48)
+                .font(.system(size: 34))
+                .frame(width: 60, height: 60)
                 .background(MockTheme.background, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             Text(L(item.name, locale))
-                .font(.system(size: 17, weight: .semibold))
+                .font(.system(size: 22, weight: .semibold))
                 .foregroundStyle(MockTheme.textPrimary)
             Spacer(minLength: 0)
             statusPill(item.introduced)
@@ -251,8 +251,8 @@ struct AllergensBreakout: View {
         let label = introduced ? L(BLWStrings.introduced, locale) : L(BLWStrings.pending, locale)
         let icon = introduced ? "checkmark.circle.fill" : "circle"
         return HStack(spacing: 6) {
-            Image(systemName: icon).font(.system(size: 13, weight: .bold))
-            Text(label).font(.system(size: 13, weight: .semibold))
+            Image(systemName: icon).font(.system(size: 17, weight: .bold))
+            Text(label).font(.system(size: 17, weight: .semibold))
         }
         .foregroundStyle(color)
         .padding(.horizontal, 10).padding(.vertical, 6)
