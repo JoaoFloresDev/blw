@@ -110,6 +110,35 @@ func runFullRenderPipeline(mode: RenderMode) throws {
 
 // MARK: - Per-Locale Rendering
 
+/// Canvas-space decoration for one slot: the whole-section breakout popped
+/// out over the device (wider than the phone, glow in the brand primary)
+/// plus a flat Nano Banana mascot anchored to a bottom corner.
+@MainActor
+func slotDecor(
+    canvas: CGSize,
+    breakout: AnyView,
+    breakoutCenterYFraction: CGFloat,
+    mascotAsset: String,
+    mascotOnLeft: Bool
+) -> AnyView {
+    let targetWidth = canvas.width * 0.935          // wider than the device — overflows both bezels
+    let scale = targetWidth / breakoutBaseWidth
+    let mascotSize = canvas.width * 0.335
+    let mascotX = canvas.width * (mascotOnLeft ? 0.185 : 0.815)
+    let mascotY = canvas.height * 0.902
+    return AnyView(
+        ZStack {
+            breakout
+                .scaleEffect(scale)
+                .position(x: canvas.width / 2, y: canvas.height * breakoutCenterYFraction)
+            HeroImage(assetName: mascotAsset, size: mascotSize)
+                .rotationEffect(.degrees(mascotOnLeft ? -7 : 7))
+                .shadow(color: .black.opacity(0.30), radius: 26, y: 14)
+                .position(x: mascotX, y: mascotY)
+        }
+    )
+}
+
 @MainActor
 func renderLocaleSet(
     treatment: TreatmentCopy,
@@ -122,34 +151,59 @@ func renderLocaleSet(
 ) throws {
     let totalSlots = 5
 
-    // Slot 1: Main / Home
+    // Slot 1: Main / Home — progress card breakout + high-chair baby
     let url1 = outputDir.appendingPathComponent("01_main_iphone.png")
     try render(view: marketing(device: device, slot: 0, totalSlots: totalSlots,
-                                headline: treatment.home[locale]) { MainScreen(locale: locale) },
+                                headline: treatment.home[locale],
+                                foreground: slotDecor(canvas: canvas,
+                                                      breakout: AnyView(ProgressBreakout(locale: locale)),
+                                                      breakoutCenterYFraction: 0.685,
+                                                      mascotAsset: "home_hero",
+                                                      mascotOnLeft: false)) { MainScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url1)
 
-    // Slot 2: Feature 1
+    // Slot 2: Safe cuts — cut-steps breakout + banana baby (Nano Banana)
     let url2 = outputDir.appendingPathComponent("02_feature1_iphone.png")
     try render(view: marketing(device: device, slot: 1, totalSlots: totalSlots,
-                                headline: treatment.feature1[locale]) { Feature1Screen(locale: locale) },
+                                headline: treatment.feature1[locale],
+                                foreground: slotDecor(canvas: canvas,
+                                                      breakout: AnyView(CutStepsBreakout(locale: locale)),
+                                                      breakoutCenterYFraction: 0.700,
+                                                      mascotAsset: "banana_baby_hero",
+                                                      mascotOnLeft: true)) { Feature1Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url2)
 
-    // Slot 3: Feature 2
+    // Slot 3: Recipes — recipe-rows breakout + cooking pot
     let url3 = outputDir.appendingPathComponent("03_feature2_iphone.png")
     try render(view: marketing(device: device, slot: 2, totalSlots: totalSlots,
-                                headline: treatment.feature2[locale]) { Feature2Screen(locale: locale) },
+                                headline: treatment.feature2[locale],
+                                foreground: slotDecor(canvas: canvas,
+                                                      breakout: AnyView(RecipesBreakout(locale: locale)),
+                                                      breakoutCenterYFraction: 0.660,
+                                                      mascotAsset: "recipes_hero",
+                                                      mascotOnLeft: false)) { Feature2Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url3)
 
-    // Slot 4: Settings
+    // Slot 4: Food diary — diary-rows breakout + diary illustration (Nano Banana)
     let url4 = outputDir.appendingPathComponent("04_settings_iphone.png")
     try render(view: marketing(device: device, slot: 3, totalSlots: totalSlots,
-                                headline: treatment.settings[locale]) { SettingsScreen(locale: locale) },
+                                headline: treatment.settings[locale],
+                                foreground: slotDecor(canvas: canvas,
+                                                      breakout: AnyView(DiaryBreakout(locale: locale)),
+                                                      breakoutCenterYFraction: 0.660,
+                                                      mascotAsset: "diary_hero",
+                                                      mascotOnLeft: true)) { SettingsScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url4)
 
-    // Slot 5: Onboarding
+    // Slot 5: Allergens — allergen-rows breakout + feeding illustration
     let url5 = outputDir.appendingPathComponent("05_onboarding_iphone.png")
     try render(view: marketing(device: device, slot: 4, totalSlots: totalSlots,
-                                headline: treatment.onboarding[locale]) { OnboardingScreen(locale: locale) },
+                                headline: treatment.onboarding[locale],
+                                foreground: slotDecor(canvas: canvas,
+                                                      breakout: AnyView(AllergensBreakout(locale: locale)),
+                                                      breakoutCenterYFraction: 0.685,
+                                                      mascotAsset: "allergens_hero",
+                                                      mascotOnLeft: false)) { OnboardingScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url5)
 
     // Slot 6: App Store listing mockup (validation only, abtest mode only)
@@ -180,36 +234,41 @@ func marketing<Content: View>(
     slot: Int,
     totalSlots: Int,
     headline: Headline?,
+    foreground: AnyView? = nil,
     @ViewBuilder content: () -> Content
 ) -> some View {
     let h = headline ?? Headline(text: "", highlight: nil)
     MarketingScreen(
         device: device,
         headline: h.text,
-        highlightWord: h.highlight,
+        highlightWord: nil,
         slotIndex: slot,
         totalSlots: totalSlots,
         theme: blwTheme,
+        foreground: foreground,
+        splitFirstWord: true,
         content: content
     )
 }
 
-// MARK: - BLW brand marketing theme (warm light green, niche = health/baby)
+// MARK: - BLW brand marketing theme (canonical LOOK: solid saturated brand green,
+// no blobs/rays/gradient, white SF Pro Black verb-split headline)
 
 let blwTheme = MarketingTheme(
-    baseColor: Color(red: 0.95, green: 0.99, blue: 0.96),
-    blobBright: Color(red: 0.83, green: 0.96, blue: 0.86),
-    blobMid:    Color(red: 0.88, green: 0.97, blue: 0.90),
-    blobDeep:   Color(red: 0.78, green: 0.93, blue: 0.82),
-    rayLeft:    Color.white.opacity(0.45),
-    rayRight:   Color(red: 0.88, green: 0.97, blue: 0.90).opacity(0.55),
-    highlightGlow: Color.clear,
-    headlineTop: Color(red: 0.09, green: 0.22, blue: 0.13),
-    headlineBottom: Color(red: 0.09, green: 0.22, blue: 0.13),
-    headlineDepthShadow: Color.clear,
-    blobBlendMode: .multiply,
-    vignetteColor: Color(red: 0.55, green: 0.78, blue: 0.60),
-    deviceContactShadow: Color(red: 0.20, green: 0.45, blue: 0.28).opacity(0.22)
+    baseColor: Color(red: 0x0F/255, green: 0x8A/255, blue: 0x3F/255),
+    blobBright: .clear,
+    blobMid:    .clear,
+    blobDeep:   .clear,
+    rayLeft:    .clear,
+    rayRight:   .clear,
+    highlightGlow: .clear,
+    headlineTop: .white,
+    headlineBottom: Color(red: 0.93, green: 0.99, blue: 0.95),
+    headlineDepthShadow: Color.black.opacity(0.32),
+    blobBlendMode: .screen,
+    vignetteColor: Color.black.opacity(0.55),
+    deviceContactShadow: Color.black.opacity(0.45),
+    headlineWeight: .black
 )
 
 // MARK: - Render Helper
