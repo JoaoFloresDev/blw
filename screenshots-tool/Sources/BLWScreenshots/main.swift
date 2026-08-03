@@ -113,24 +113,55 @@ func runFullRenderPipeline(mode: RenderMode) throws {
 /// Canvas-space decoration for one slot: the whole-section breakout popped
 /// out over the device (wider than the phone, glow in the brand primary)
 /// plus a flat Nano Banana mascot anchored to a bottom corner.
+/// Playful food-emoji sticker: white circle chip with a soft shadow,
+/// slightly rotated — the warmth layer that keeps the prints mom-friendly.
+struct EmojiChip: View {
+    let emoji: String
+    let size: CGFloat
+    let rotation: Double
+
+    var body: some View {
+        Text(emoji)
+            .font(.system(size: size * 0.52))
+            .frame(width: size, height: size)
+            .background(Color.white, in: Circle())
+            .overlay(Circle().stroke(Color.white.opacity(0.9), lineWidth: 2))
+            .rotationEffect(.degrees(rotation))
+            .shadow(color: .black.opacity(0.22), radius: 14, y: 8)
+    }
+}
+
 @MainActor
 func slotDecor(
     canvas: CGSize,
     breakout: AnyView,
     breakoutCenterYFraction: CGFloat,
     mascotAsset: String,
-    mascotOnLeft: Bool
+    mascotOnLeft: Bool,
+    chips: [String]
 ) -> AnyView {
     let targetWidth = canvas.width * 0.935          // wider than the device — overflows both bezels
     let scale = targetWidth / breakoutBaseWidth
-    let mascotSize = canvas.width * 0.335
-    let mascotX = canvas.width * (mascotOnLeft ? 0.185 : 0.815)
-    let mascotY = canvas.height * 0.902
+    let mascotSize = canvas.width * 0.42
+    let mascotX = canvas.width * (mascotOnLeft ? 0.195 : 0.805)
+    let mascotY = canvas.height * 0.885
+    let chipSize = canvas.width * 0.105
+    // Sticker anchors: the two top device corners + one edge opposite the mascot.
+    let chipSpots: [(x: CGFloat, y: CGFloat, rot: Double)] = [
+        (0.115, 0.182, -10),
+        (0.885, 0.176, 9),
+        (mascotOnLeft ? 0.92 : 0.08, 0.46, mascotOnLeft ? 8 : -8)
+    ]
     return AnyView(
         ZStack {
             breakout
                 .scaleEffect(scale)
                 .position(x: canvas.width / 2, y: canvas.height * breakoutCenterYFraction)
+            ForEach(Array(chips.prefix(3).enumerated()), id: \.offset) { index, emoji in
+                let spot = chipSpots[index]
+                EmojiChip(emoji: emoji, size: chipSize, rotation: spot.rot)
+                    .position(x: canvas.width * spot.x, y: canvas.height * spot.y)
+            }
             HeroImage(assetName: mascotAsset, size: mascotSize)
                 .rotationEffect(.degrees(mascotOnLeft ? -7 : 7))
                 .shadow(color: .black.opacity(0.30), radius: 26, y: 14)
@@ -159,7 +190,8 @@ func renderLocaleSet(
                                                       breakout: AnyView(ProgressBreakout(locale: locale)),
                                                       breakoutCenterYFraction: 0.595,
                                                       mascotAsset: "home_hero",
-                                                      mascotOnLeft: false)) { MainScreen(locale: locale) },
+                                                      mascotOnLeft: false,
+                                                      chips: ["\u{1F951}", "\u{1F353}", "\u{1F34C}"])) { MainScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url1)
 
     // Slot 2: Safe cuts — cut-steps breakout + banana baby (Nano Banana)
@@ -170,7 +202,8 @@ func renderLocaleSet(
                                                       breakout: AnyView(CutStepsBreakout(locale: locale)),
                                                       breakoutCenterYFraction: 0.615,
                                                       mascotAsset: "banana_baby_hero",
-                                                      mascotOnLeft: true)) { Feature1Screen(locale: locale) },
+                                                      mascotOnLeft: true,
+                                                      chips: ["\u{1F34C}", "\u{2702}\u{FE0F}", "\u{1F476}"])) { Feature1Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url2)
 
     // Slot 3: Recipes — recipe-rows breakout + cooking pot
@@ -181,7 +214,8 @@ func renderLocaleSet(
                                                       breakout: AnyView(RecipesBreakout(locale: locale)),
                                                       breakoutCenterYFraction: 0.575,
                                                       mascotAsset: "recipes_hero",
-                                                      mascotOnLeft: false)) { Feature2Screen(locale: locale) },
+                                                      mascotOnLeft: false,
+                                                      chips: ["\u{1F95E}", "\u{1F372}", "\u{1F41F}"])) { Feature2Screen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url3)
 
     // Slot 4: Food diary — diary-rows breakout + diary illustration (Nano Banana)
@@ -192,7 +226,8 @@ func renderLocaleSet(
                                                       breakout: AnyView(DiaryBreakout(locale: locale)),
                                                       breakoutCenterYFraction: 0.575,
                                                       mascotAsset: "diary_hero",
-                                                      mascotOnLeft: true)) { SettingsScreen(locale: locale) },
+                                                      mascotOnLeft: true,
+                                                      chips: ["\u{1F951}", "\u{1F966}", "\u{1F60B}"])) { SettingsScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url4)
 
     // Slot 5: Allergens — allergen-rows breakout + feeding illustration
@@ -203,7 +238,8 @@ func renderLocaleSet(
                                                       breakout: AnyView(AllergensBreakout(locale: locale)),
                                                       breakoutCenterYFraction: 0.595,
                                                       mascotAsset: "allergens_hero",
-                                                      mascotOnLeft: false)) { OnboardingScreen(locale: locale) },
+                                                      mascotOnLeft: false,
+                                                      chips: ["\u{1F95C}", "\u{1F95A}", "\u{1F95B}"])) { OnboardingScreen(locale: locale) },
                 canvas: canvas, scale: 1.0, to: url5)
 
     // Slot 6: App Store listing mockup (validation only, abtest mode only)
@@ -255,7 +291,7 @@ func marketing<Content: View>(
 // no blobs/rays/gradient, white SF Pro Black verb-split headline)
 
 let blwTheme = MarketingTheme(
-    baseColor: Color(red: 0x0F/255, green: 0x8A/255, blue: 0x3F/255),
+    baseColor: Color(red: 0x15/255, green: 0xA0/255, blue: 0x4D/255),
     blobBright: .clear,
     blobMid:    .clear,
     blobDeep:   .clear,
