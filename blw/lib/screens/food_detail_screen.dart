@@ -687,6 +687,7 @@ class FoodDetailScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           onPressed: () => PremiumGate.guard(
             context,
+            source: 'food_detail_add',
             onUnlocked: () => Navigator.push(
               context,
               CupertinoPageRoute(

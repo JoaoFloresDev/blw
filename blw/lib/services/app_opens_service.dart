@@ -1,5 +1,6 @@
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'analytics_service.dart';
 
 class AppOpensService {
   static const String _appOpensKey = 'app_opens_count';
@@ -35,12 +36,21 @@ class AppOpensService {
     return opens >= 5 && opens <= 10 && !alreadyRequested;
   }
 
-  static Future<void> requestReview() async {
+  static Future<void> requestReview({String trigger = 'launch'}) async {
     final InAppReview inAppReview = InAppReview.instance;
     if (await inAppReview.isAvailable()) {
+      AnalyticsService.reviewPromptRequested(trigger);
       await inAppReview.requestReview();
       await markReviewRequested();
     }
+  }
+
+  /// Aha-moment trigger: called right after the first-time-food celebration
+  /// is dismissed — the emotional peak of the app. The [_reviewRequestedKey]
+  /// guard keeps the prompt to a single ask across both triggers.
+  static Future<void> maybeRequestReviewAtAhaMoment() async {
+    if (await hasRequestedReview()) return;
+    await requestReview(trigger: 'first_food_celebration');
   }
 
   // Purchase screen: from 11th open onwards

@@ -6,16 +6,19 @@ import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../providers/premium_provider.dart';
+import '../services/analytics_service.dart';
 
 // MARK: - Public helpers
 
 /// Presents the paywall as a full-screen modal. Returns true if the user
-/// became premium while it was open.
-Future<bool> showPaywall(BuildContext context) async {
+/// became premium while it was open. [source] tags the funnel entry point
+/// on every analytics event this paywall emits.
+Future<bool> showPaywall(BuildContext context, {String source = 'unknown'}) async {
+  AnalyticsService.paywallShown(source);
   await Navigator.of(context, rootNavigator: true).push(
     CupertinoPageRoute(
       fullscreenDialog: true,
-      builder: (_) => const _PaywallPage(),
+      builder: (_) => _PaywallPage(source: source),
     ),
   );
   if (!context.mounted) return false;
@@ -28,6 +31,7 @@ class PremiumGate {
   static Future<void> guard(
     BuildContext context, {
     required VoidCallback onUnlocked,
+    String source = 'unknown',
   }) async {
     final premium = context.read<PremiumProvider>();
     if (premium.isPremium) {
@@ -35,7 +39,7 @@ class PremiumGate {
       return;
     }
     HapticFeedback.lightImpact();
-    final unlocked = await showPaywall(context);
+    final unlocked = await showPaywall(context, source: source);
     if (unlocked && context.mounted) onUnlocked();
   }
 }
@@ -77,13 +81,18 @@ class ProBadge extends StatelessWidget {
 // MARK: - Standalone page wrapper
 
 class _PaywallPage extends StatelessWidget {
-  const _PaywallPage();
+  final String source;
+
+  const _PaywallPage({required this.source});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1B9A43),
-      body: PaywallView(onClose: () => Navigator.of(context).maybePop()),
+      body: PaywallView(
+        source: source,
+        onClose: () => Navigator.of(context).maybePop(),
+      ),
     );
   }
 }
@@ -96,11 +105,13 @@ class _PaywallPage extends StatelessWidget {
 class PaywallView extends StatefulWidget {
   final VoidCallback onClose;
   final bool isOnboarding;
+  final String source;
 
   const PaywallView({
     super.key,
     required this.onClose,
     this.isOnboarding = false,
+    this.source = 'unknown',
   });
 
   @override
@@ -126,6 +137,8 @@ class _PaywallViewState extends State<PaywallView> {
       _showUnavailable();
       return;
     }
+    AnalyticsService.purchaseStarted(
+        _yearlySelected ? 'yearly' : 'weekly', widget.source);
     HapticFeedback.mediumImpact();
     await premium.buy(product);
   }
@@ -134,6 +147,9 @@ class _PaywallViewState extends State<PaywallView> {
     HapticFeedback.selectionClick();
     await premium.restore();
     if (!mounted) return;
+    if (context.read<PremiumProvider>().isPremium) {
+      AnalyticsService.purchaseRestored();
+    }
     final l10n = AppLocalizations.of(context);
     final msg = premium.isPremium ? l10n.restoreSuccess : l10n.restoreNone;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
@@ -162,6 +178,7 @@ class _PaywallViewState extends State<PaywallView> {
     // Auto-dismiss once the purchase lands.
     if (premium.isPremium && !_wasPremium) {
       _wasPremium = true;
+      AnalyticsService.purchaseSuccess(widget.source);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         HapticFeedback.heavyImpact();
         widget.onClose();
@@ -215,6 +232,9 @@ class _PaywallViewState extends State<PaywallView> {
         padding: const EdgeInsets.all(16),
         onPressed: () {
           HapticFeedback.selectionClick();
+          if (!context.read<PremiumProvider>().isPremium) {
+            AnalyticsService.paywallDismissed(widget.source);
+          }
           widget.onClose();
         },
         child: Icon(

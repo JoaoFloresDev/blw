@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
+import '../services/analytics_service.dart';
 import '../main.dart';
 import '../models/food.dart';
 import '../data/foods_data.dart';
@@ -307,10 +308,13 @@ class _FoodsScreenState extends State<FoodsScreen> {
       children: [
         CupertinoButton(
           padding: EdgeInsets.zero,
-          onPressed: () => Navigator.push(
-            context,
-            CupertinoPageRoute(builder: (_) => FoodDetailScreen(food: food)),
-          ),
+          onPressed: () {
+            AnalyticsService.foodViewed(food.id);
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (_) => FoodDetailScreen(food: food)),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             child: Row(

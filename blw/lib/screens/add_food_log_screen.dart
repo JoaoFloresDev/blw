@@ -10,6 +10,8 @@ import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import '../providers/premium_provider.dart';
+import '../services/analytics_service.dart';
+import '../services/app_opens_service.dart';
 import '../services/photo_service.dart';
 import '../widgets/celebration_overlay.dart';
 import '../widgets/paywall_view.dart';
@@ -877,7 +879,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
     // are a premium feature.
     final premium = context.read<PremiumProvider>();
     if (!premium.canAddPhoto(_photoPaths.length)) {
-      await showPaywall(context);
+      await showPaywall(context, source: 'photo_limit');
       if (!mounted) return;
       if (!context.read<PremiumProvider>().isPremium) return;
     }
@@ -987,6 +989,8 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
     );
 
     final isFirstTime = await context.read<FoodLogProvider>().addLog(log);
+    AnalyticsService.foodLogSaved(
+        firstTime: isFirstTime, photoCount: _photoPaths.length);
 
     if (!mounted) return;
 
@@ -1022,6 +1026,8 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
           onDismiss: () {
             Navigator.of(context).pop();
             Navigator.of(this.context).pop();
+            // Aha moment: baby just tried a brand-new food.
+            AppOpensService.maybeRequestReviewAtAhaMoment();
           },
         );
       },

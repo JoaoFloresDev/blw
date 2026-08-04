@@ -9,6 +9,7 @@ import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import '../services/photo_service.dart';
+import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
@@ -167,6 +168,7 @@ class GalleryScreen extends StatelessWidget {
           CupertinoDialogAction(
             onPressed: () {
               Navigator.pop(dialogContext);
+              AnalyticsService.galleryPhotoAdded();
               context.read<FoodLogProvider>().addGalleryPhoto(path);
             },
             child: Text(l10n.logMealPromptNo),
@@ -177,6 +179,7 @@ class GalleryScreen extends StatelessWidget {
               Navigator.pop(dialogContext);
               PremiumGate.guard(
                 context,
+                source: 'gallery_log',
                 onUnlocked: () => Navigator.push(
                   context,
                   CupertinoPageRoute(

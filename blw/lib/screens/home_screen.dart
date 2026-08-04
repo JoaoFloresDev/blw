@@ -7,6 +7,7 @@ import '../models/food_log.dart';
 import '../providers/food_log_provider.dart';
 import '../data/foods_data.dart';
 import '../providers/premium_provider.dart';
+import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'allergens_screen.dart';
@@ -167,6 +168,7 @@ class HomeScreen extends StatelessWidget {
                 : const ProBadge(),
             onTap: () => PremiumGate.guard(
               context,
+              source: 'home_add',
               onUnlocked: () => Navigator.push(
                 context,
                 CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
@@ -183,10 +185,13 @@ class HomeScreen extends StatelessWidget {
             iconColor: AppColors.secondary,
             title: l10n.allergens,
             subtitle: l10n.allergensSubtitle,
-            onTap: () => Navigator.push(
-              context,
-              CupertinoPageRoute(builder: (_) => const AllergensScreen()),
-            ),
+            onTap: () {
+              AnalyticsService.allergensOpened();
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (_) => const AllergensScreen()),
+              );
+            },
           ),
           const Padding(
             padding: EdgeInsets.only(left: 56),
@@ -203,10 +208,14 @@ class HomeScreen extends StatelessWidget {
                 : const ProBadge(),
             onTap: () => PremiumGate.guard(
               context,
-              onUnlocked: () => Navigator.push(
-                context,
-                CupertinoPageRoute(builder: (_) => const RecipesScreen()),
-              ),
+              source: 'recipes',
+              onUnlocked: () {
+                AnalyticsService.recipesOpened();
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (_) => const RecipesScreen()),
+                );
+              },
             ),
           ),
         ],

@@ -8,6 +8,7 @@ import '../providers/premium_provider.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../services/pdf_service.dart';
+import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
@@ -100,8 +101,11 @@ class FoodLogScreen extends StatelessWidget {
                                 padding: EdgeInsets.zero,
                                 onPressed: () => PremiumGate.guard(
                                   context,
-                                  onUnlocked: () =>
-                                      _exportPdf(context, provider, l10n),
+                                  source: 'pdf_export',
+                                  onUnlocked: () {
+                                    AnalyticsService.pdfExported();
+                                    _exportPdf(context, provider, l10n);
+                                  },
                                 ),
                                 child: Stack(
                                   clipBehavior: Clip.none,
@@ -134,6 +138,7 @@ class FoodLogScreen extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               onPressed: () => PremiumGate.guard(
                                 context,
+                                source: 'diary_add',
                                 onUnlocked: () => Navigator.push(
                                   context,
                                   CupertinoPageRoute(
@@ -227,6 +232,7 @@ class FoodLogScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => PremiumGate.guard(
                   context,
+                  source: 'diary_add',
                   onUnlocked: () => Navigator.push(
                     context,
                     CupertinoPageRoute(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../l10n/app_localizations.dart';
+import '../services/analytics_service.dart';
 import '../services/storage_service.dart';
 import '../widgets/paywall_view.dart';
 
@@ -50,6 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           backgroundColor: const Color(0xFF1B9A43),
           body: PaywallView(
             isOnboarding: true,
+            source: 'onboarding',
             onClose: () {
               Navigator.of(routeContext).pop();
               _completeOnboarding();
@@ -61,6 +63,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _completeOnboarding() async {
+    AnalyticsService.onboardingCompleted();
     await StorageService.setOnboardingComplete();
     widget.onComplete();
   }

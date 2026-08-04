@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDUW_0dmSzFPWfSP3e7sYFIKfOs8C_YVtI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>595755584812</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.bemestar.POC</string>
+	<key>PROJECT_ID</key>
+	<string>blw-gambitstudio</string>
+	<key>STORAGE_BUCKET</key>
+	<string>blw-gambitstudio.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:595755584812:ios:dc91d488bb348ff764b089</string>
+</dict>
+</plist>

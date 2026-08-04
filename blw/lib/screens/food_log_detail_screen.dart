@@ -371,6 +371,7 @@ class FoodLogDetailScreen extends StatelessWidget {
   void _editLog(BuildContext context) {
     PremiumGate.guard(
       context,
+      source: 'log_edit',
       onUnlocked: () => Navigator.push(
         context,
         CupertinoPageRoute(

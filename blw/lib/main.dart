@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
 import 'providers/food_log_provider.dart';
 import 'providers/premium_provider.dart';
@@ -17,6 +19,12 @@ import 'screens/onboarding_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  try {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  } catch (_) {
+    // Analytics must never block app startup (e.g. offline first launch).
+  }
 
   // Lock orientation to portrait only
   await SystemChrome.setPreferredOrientations([
