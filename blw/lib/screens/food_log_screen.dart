@@ -180,9 +180,18 @@ class FoodLogScreen extends StatelessWidget {
                 ),
               ),
 
+              // Progress summary (moved from the old Home tab)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+                  child: _buildProgressCard(context, provider, l10n),
+                ),
+              ),
+
               // Content
               if (logs.isEmpty)
                 SliverFillRemaining(
+                  hasScrollBody: false,
                   child: _buildEmptyState(context, l10n),
                 )
               else
@@ -190,6 +199,62 @@ class FoodLogScreen extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildProgressCard(
+    BuildContext context,
+    FoodLogProvider provider,
+    AppLocalizations l10n,
+  ) {
+    final totalFoods = allFoods.length;
+    final triedFoods = provider.introducedFoodIds.length;
+    final progress = totalFoods > 0 ? triedFoods / totalFoods : 0.0;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.cardBackground,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                l10n.foodsTried.replaceAll('\n', ' '),
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                  letterSpacing: -0.2,
+                ),
+              ),
+              Text(
+                '$triedFoods / $totalFoods',
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primary,
+                  letterSpacing: -0.2,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: progress,
+              minHeight: 8,
+              backgroundColor: AppColors.separator.withValues(alpha: 0.4),
+              valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary),
+            ),
+          ),
+        ],
       ),
     );
   }

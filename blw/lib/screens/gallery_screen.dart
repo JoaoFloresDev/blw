@@ -92,7 +92,7 @@ class GalleryScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withValues(alpha: 0.3),
+                  color: Colors.black.withValues(alpha: 0.15),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),
@@ -235,7 +235,7 @@ class GalleryScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.3),
+                    color: Colors.black.withValues(alpha: 0.15),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),

@@ -78,6 +78,7 @@ class AppLocalizations {
 
   // Food detail
   String get category => get('category');
+  String get babyAge => get('babyAge');
   String get howToPrepare => get('howToPrepare');
   String get allergenWarning => get('allergenWarning');
   String get allergenDefaultInfo => get('allergenDefaultInfo');
@@ -358,6 +359,7 @@ const Map<String, String> _ptTranslations = {
 
   // Food detail
   'category': 'Categoria',
+  'babyAge': 'Idade do bebê',
   'howToPrepare': 'Como Preparar',
   'allergenWarning': 'Atencao: Alergenico',
   'allergenDefaultInfo':
@@ -762,6 +764,7 @@ const Map<String, String> _enTranslations = {
 
   // Food detail
   'category': 'Category',
+  'babyAge': "Baby's age",
   'howToPrepare': 'How to Prepare',
   'allergenWarning': 'Warning: Allergen',
   'allergenDefaultInfo':
@@ -1167,6 +1170,7 @@ const Map<String, String> _esTranslations = {
 
   // Food detail
   'category': 'Categoria',
+  'babyAge': 'Edad del bebé',
   'howToPrepare': 'Como Preparar',
   'allergenWarning': 'Atencion: Alergenico',
   'allergenDefaultInfo':

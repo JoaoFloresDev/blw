@@ -7,7 +7,12 @@ import '../main.dart';
 import '../models/food.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
+import '../providers/premium_provider.dart';
+import '../widgets/paywall_view.dart';
 import 'food_detail_screen.dart';
+import 'recipes_screen.dart';
+import 'allergens_screen.dart';
+import 'tips_screen.dart';
 
 class FoodsScreen extends StatefulWidget {
   const FoodsScreen({super.key});
@@ -19,6 +24,62 @@ class FoodsScreen extends StatefulWidget {
 class _FoodsScreenState extends State<FoodsScreen> {
   AgeGroup _selectedAge = AgeGroup.sixMonths;
   FoodCategory? _selectedCategory;
+
+  Widget _buildQuickAccessCard({
+    required IconData icon,
+    required Color color,
+    required String label,
+    required VoidCallback onTap,
+    bool showPro = false,
+  }) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(icon, color: color, size: 22),
+                ),
+                if (showPro)
+                  const Positioned(
+                    top: -6,
+                    right: -10,
+                    child: ProBadge(),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: AppColors.textPrimary,
+                letterSpacing: -0.2,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   String _getCategoryName(BuildContext context, FoodCategory category) {
     final l10n = AppLocalizations.of(context);
@@ -81,6 +142,65 @@ class _FoodsScreenState extends State<FoodsScreen> {
             ),
           ),
 
+          // Quick access: Recipes (PRO) / Allergens / Tips
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: _buildQuickAccessCard(
+                      icon: CupertinoIcons.book_fill,
+                      color: const Color(0xFFAF52DE),
+                      label: l10n.recipes,
+                      showPro: !context.watch<PremiumProvider>().isPremium,
+                      onTap: () => PremiumGate.guard(
+                        context,
+                        source: 'recipes',
+                        onUnlocked: () {
+                          AnalyticsService.recipesOpened();
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (_) => const RecipesScreen()),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _buildQuickAccessCard(
+                      icon: CupertinoIcons.exclamationmark_shield_fill,
+                      color: AppColors.secondary,
+                      label: l10n.allergens,
+                      onTap: () {
+                        AnalyticsService.allergensOpened();
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (_) => const AllergensScreen()),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _buildQuickAccessCard(
+                      icon: CupertinoIcons.lightbulb_fill,
+                      color: const Color(0xFF007AFF),
+                      label: l10n.blwTips,
+                      onTap: () => Navigator.push(
+                        context,
+                        CupertinoPageRoute(builder: (_) => const TipsScreen()),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           // Age filter
           SliverToBoxAdapter(
             child: Padding(
@@ -88,9 +208,9 @@ class _FoodsScreenState extends State<FoodsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Idade do bebe',
-                    style: TextStyle(
+                  Text(
+                    l10n.babyAge,
+                    style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -141,9 +261,9 @@ class _FoodsScreenState extends State<FoodsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Categoria',
-                    style: TextStyle(
+                  Text(
+                    l10n.category,
+                    style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -155,7 +275,7 @@ class _FoodsScreenState extends State<FoodsScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        _buildCategoryChip(null, 'Todos', '🍽️'),
+                        _buildCategoryChip(null, l10n.get('all'), '🍽️'),
                         ...FoodCategory.values.map((cat) => _buildCategoryChip(
                           cat,
                           _getCategoryName(context, cat),

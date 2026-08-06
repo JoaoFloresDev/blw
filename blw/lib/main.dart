@@ -10,11 +10,9 @@ import 'providers/food_log_provider.dart';
 import 'providers/premium_provider.dart';
 import 'services/storage_service.dart';
 import 'services/app_opens_service.dart';
-import 'screens/home_screen.dart';
 import 'screens/foods_screen.dart';
 import 'screens/food_log_screen.dart';
 import 'screens/gallery_screen.dart';
-import 'screens/tips_screen.dart';
 import 'screens/onboarding_screen.dart';
 
 void main() async {
@@ -351,11 +349,9 @@ class _MainTabScreenState extends State<MainTabScreen> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
-          HomeScreen(),
           FoodsScreen(),
           FoodLogScreen(),
           GalleryScreen(),
-          TipsScreen(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -375,11 +371,9 @@ class _MainTabScreenState extends State<MainTabScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, CupertinoIcons.house_fill, CupertinoIcons.house, l10n.get('home')),
-                _buildNavItem(1, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
-                _buildNavItem(2, CupertinoIcons.book_fill, CupertinoIcons.book, l10n.foodDiary),
-                _buildNavItem(3, CupertinoIcons.photo_fill, CupertinoIcons.photo, l10n.gallery),
-                _buildNavItem(4, CupertinoIcons.lightbulb_fill, CupertinoIcons.lightbulb, l10n.blwTips),
+                _buildNavItem(0, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
+                _buildNavItem(1, CupertinoIcons.doc_text_fill, CupertinoIcons.doc_text, l10n.foodDiary),
+                _buildNavItem(2, CupertinoIcons.photo_fill, CupertinoIcons.photo, l10n.gallery),
               ],
             ),
           ),
