@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../providers/food_log_provider.dart';
@@ -283,19 +284,54 @@ class FoodLogScreen extends StatelessWidget {
     FoodLogProvider provider,
     AppLocalizations l10n,
   ) {
-    final tried = provider.introducedFoodIds;
-    final untried =
-        allFoods.where((food) => !tried.contains(food.id)).toList();
-    if (untried.isEmpty) return const SizedBox.shrink();
+    return FutureBuilder<SharedPreferences>(
+      future: SharedPreferences.getInstance(),
+      builder: (context, snapshot) {
+        final ageIndex =
+            snapshot.data?.getInt('foods.selectedAgeIndex') ?? 0;
+        final tried = provider.introducedFoodIds;
+        final untried = allFoods
+            .where((food) =>
+                !tried.contains(food.id) &&
+                food.minimumAge.index <= ageIndex)
+            .toList();
+        if (untried.isEmpty) return const SizedBox.shrink();
 
-    // Rotate suggestions daily so the picks feel fresh.
-    final day = DateTime.now().difference(DateTime(2026)).inDays;
-    final start = untried.length <= 8 ? 0 : (day * 8) % untried.length;
-    final suggestions = <Food>[
-      for (var i = 0; i < 8 && i < untried.length; i++)
-        untried[(start + i) % untried.length],
-    ];
+        // One suggestion per category, round-robin, rotating daily.
+        final day = DateTime.now().difference(DateTime(2026)).inDays;
+        final byCategory = <FoodCategory, List<Food>>{};
+        for (final food in untried) {
+          byCategory.putIfAbsent(food.category, () => []).add(food);
+        }
+        final categories = FoodCategory.values
+            .where((cat) => byCategory.containsKey(cat))
+            .toList();
+        final taken = {for (final cat in categories) cat: 0};
+        final suggestions = <Food>[];
+        var slot = 0;
+        while (suggestions.length < 8 && slot < 40) {
+          final cat = categories[(day + slot) % categories.length];
+          final pool = byCategory[cat]!;
+          final used = taken[cat]!;
+          if (used < pool.length) {
+            suggestions.add(pool[(day + used) % pool.length]);
+            taken[cat] = used + 1;
+          }
+          slot++;
+          if (taken.values.every(
+              (count) => count >= (byCategory.values.map((p) => p.length)
+                  .reduce((a, b) => a > b ? a : b)))) {
+            break;
+          }
+        }
 
+        return _buildTryNextContent(context, suggestions, l10n);
+      },
+    );
+  }
+
+  Widget _buildTryNextContent(
+      BuildContext context, List<Food> suggestions, AppLocalizations l10n) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
       child: Column(
@@ -317,9 +353,9 @@ class FoodLogScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               clipBehavior: Clip.none,
               itemCount: suggestions.length,
-              separatorBuilder: (_, i) => const SizedBox(width: 10),
+              separatorBuilder: (_, i) => const SizedBox(width: 8),
               itemBuilder: (context, index) => SizedBox(
-                width: 104,
+                width: 86,
                 child:
                     _buildSuggestionCard(context, suggestions[index], l10n),
               ),
