@@ -13,10 +13,10 @@
   ],
   "approach": "parallel",
   "approach_rationale": "Cold-start no store US (12.8 dl/dia GLOBAIS, share US menor). Velocity > attribution. Per-keyword rank tracking via Astro permite post-hoc attribution. Exceção contextual à regra '1 variável por iter'.",
-  "status": "draft",
+  "status": "abandoned",
   "started_at": "2026-08-06",
   "planned_close_at": "2026-09-03",
-  "actual_closed_at": null,
+  "actual_closed_at": "2026-08-07",
   "hypothesis": {
     "if_we_change": "Subtitle de 'First Foods & Solid Starts Log' para 'Solid Starts & First 100 Foods' (mantém as âncoras, troca 'Log' morto por '100'); E keywords para 'meals,start,introducing solids,food,diary,allergy,log,finger,101,cut,6 month,starting,puree,list' — front-loaded em volume CONFIRMADO: meals (blw meals pop 9), start (start solids pop 9 r84), 101 (101 before one pop 9, 29 apps), starting (protect r19); cauda pop-5 só nos moats de feature (allergy d5, introducing solids d7/33 apps, diary, cut, finger).",
     "then_we_expect": "Impressions diárias US ↑ ≥30% e downloads diários globais ↑ ≥25% em 30 dias (12.8 → ≥16 conservador / ≥19.2 bold)",
@@ -120,7 +120,7 @@
     "checkpoints": [],
     "final": null
   },
-  "verdict": null,
+  "verdict": "rejected",
   "promoted_to_current": false,
-  "notes": "iter-02 acompanha o release 1.5.0 (120 foods, first-100 journey, allergen tracking, busca) — o metadata agora tem lastro de produto. Deploy deve esperar a 1.5.0 ficar Ready for Sale pra ir junto. Cuidado: 'Solid Starts' é marca do líder — já está live no nosso subtitle sem complaint desde jun/2026; manter monitorado (risco trademark)."
+  "notes": "ABANDONADA sem deploy por decisão do João (2026-08-07): análise rejeitada, metadata live fica como está. Research fica como artefato pra eventual iter futura."
 }
