@@ -74,11 +74,24 @@ class FoodLogScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      bottomNavigationBar: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
-          child: SizedBox(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius:
+              const BorderRadius.vertical(top: Radius.circular(24)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.06),
+              blurRadius: 14,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
+        child: SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
+            child: SizedBox(
             width: double.infinity,
             child: CupertinoButton(
               color: AppColors.primary,
@@ -110,6 +123,7 @@ class FoodLogScreen extends StatelessWidget {
                 ],
               ),
             ),
+          ),
           ),
         ),
       ),
