@@ -209,16 +209,25 @@ class _PaywallViewState extends State<PaywallView> {
                       children: [
                         const SizedBox(height: 4),
                         _buildHero(l10n),
-                        const SizedBox(height: 14),
-                        _buildFeatures(l10n),
-                        const SizedBox(height: 18),
-                        _buildPlans(l10n, premium),
-                        const SizedBox(height: 10),
-                        _buildTrialNote(l10n, premium),
+                        const SizedBox(height: 26),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 14, vertical: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.10),
+                            borderRadius: BorderRadius.circular(22),
+                          ),
+                          child: _buildFeatures(l10n),
+                        ),
                         const SizedBox(height: 12),
                       ],
                     ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: _buildPlans(l10n, premium),
                 ),
                 _buildFooter(l10n, premium),
               ],
@@ -299,7 +308,8 @@ class _PaywallViewState extends State<PaywallView> {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 16,
-            color: Colors.white.withValues(alpha: 0.9),
+            fontWeight: FontWeight.w600,
+            color: Colors.white.withValues(alpha: 0.92),
             height: 1.4,
             letterSpacing: -0.2,
           ),
@@ -335,7 +345,7 @@ class _PaywallViewState extends State<PaywallView> {
                   f.$2,
                   style: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Colors.white,
                     letterSpacing: -0.3,
                   ),
@@ -393,21 +403,9 @@ class _PaywallViewState extends State<PaywallView> {
     );
   }
 
-  Widget _buildTrialNote(AppLocalizations l10n, PremiumProvider premium) {
-    return Text(
-      l10n.trialNote,
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 12.5,
-        color: Colors.white.withValues(alpha: 0.85),
-        height: 1.4,
-      ),
-    );
-  }
-
   Widget _buildFooter(AppLocalizations l10n, PremiumProvider premium) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
+      padding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -431,7 +429,7 @@ class _PaywallViewState extends State<PaywallView> {
               child: premium.purchasePending
                   ? const CupertinoActivityIndicator(color: Color(0xFF1B9A43))
                   : Text(
-                      l10n.continueButton,
+                      l10n.startTrialButton,
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -509,20 +507,17 @@ class _PlanCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color accent = Color(0xFF1B9A43);
-    final Color cardColor =
-        selected ? Colors.white : Colors.white.withValues(alpha: 0.15);
-    final Color titleColor = selected ? AppColors.textPrimary : Colors.white;
-    final Color priceColor = selected ? AppColors.textPrimary : Colors.white;
-    final Color subtitleColor =
-        selected ? accent : Colors.white.withValues(alpha: 0.9);
-    final Color periodColor = selected
-        ? AppColors.textSecondary
-        : Colors.white.withValues(alpha: 0.85);
+    final Color cardColor = selected
+        ? Colors.white.withValues(alpha: 0.28)
+        : Colors.white.withValues(alpha: 0.12);
+    const Color titleColor = Colors.white;
+    const Color priceColor = Colors.white;
+    final Color subtitleColor = Colors.white.withValues(alpha: 0.95);
+    final Color periodColor = Colors.white.withValues(alpha: 0.85);
     final Color checkColor =
-        selected ? accent : Colors.white.withValues(alpha: 0.85);
+        selected ? Colors.white : Colors.white.withValues(alpha: 0.7);
     final Color borderColor =
-        selected ? Colors.white : Colors.white.withValues(alpha: 0.4);
+        selected ? Colors.white : Colors.white.withValues(alpha: 0.35);
 
     return GestureDetector(
       onTap: onTap,

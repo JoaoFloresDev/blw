@@ -554,7 +554,7 @@ const Map<String, String> _ptTranslations = {
   // Food detail
   'category': 'Categoria',
   'babyAge': 'Idade do bebê',
-  'startTrialButton': 'Iniciar 3 dias grátis',
+  'startTrialButton': 'Iniciar teste grátis',
   'notIntroducedYet': 'Ainda não introduzido',
   'tryNext': 'Experimente a seguir',
   'searchFoods': 'Buscar alimento...',
@@ -1153,7 +1153,7 @@ const Map<String, String> _enTranslations = {
   // Food detail
   'category': 'Category',
   'babyAge': "Baby's age",
-  'startTrialButton': 'Start 3-Day Free Trial',
+  'startTrialButton': 'Start Free Trial',
   'notIntroducedYet': 'Not introduced yet',
   'tryNext': 'Try next',
   'searchFoods': 'Search foods...',
@@ -1753,7 +1753,7 @@ const Map<String, String> _esTranslations = {
   // Food detail
   'category': 'Categoria',
   'babyAge': 'Edad del bebé',
-  'startTrialButton': 'Comenzar 3 días gratis',
+  'startTrialButton': 'Comenzar prueba gratis',
   'notIntroducedYet': 'Aún no introducido',
   'tryNext': 'Prueba a continuación',
   'searchFoods': 'Buscar alimento...',
