@@ -353,7 +353,7 @@ class FoodLogScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               clipBehavior: Clip.none,
               itemCount: suggestions.length,
-              separatorBuilder: (_, i) => const SizedBox(width: 8),
+              separatorBuilder: (_, i) => const SizedBox(width: 6),
               itemBuilder: (context, index) => SizedBox(
                 width: 86,
                 child:
@@ -377,6 +377,7 @@ class FoodLogScreen extends StatelessWidget {
         CupertinoPageRoute(builder: (_) => FoodDetailScreen(food: food)),
       ),
       child: Container(
+        width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         decoration: BoxDecoration(
           color: Colors.white,
