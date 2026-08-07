@@ -6,6 +6,7 @@ import '../l10n/app_localizations.dart';
 import '../data/foods_data.dart';
 import '../models/food.dart';
 import 'food_detail_screen.dart';
+import '../widgets/food_icon.dart';
 
 class AllergensScreen extends StatelessWidget {
   const AllergensScreen({super.key});
@@ -205,10 +206,7 @@ class AllergensScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Center(
-                      child: Text(
-                        food.icon,
-                        style: const TextStyle(fontSize: 20),
-                      ),
+                      child: FoodIcon(food, size: 20),
                     ),
                   ),
                   const SizedBox(width: 12),

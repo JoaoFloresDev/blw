@@ -15,6 +15,7 @@ import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
 import 'food_detail_screen.dart';
+import '../widgets/food_icon.dart';
 
 class FoodLogScreen extends StatelessWidget {
   const FoodLogScreen({super.key});
@@ -339,7 +340,7 @@ class FoodLogScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(food.icon, style: const TextStyle(fontSize: 26)),
+            FoodIcon(food, size: 26),
             const SizedBox(height: 6),
             Text(
               displayName,

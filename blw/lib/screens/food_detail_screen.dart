@@ -6,6 +6,7 @@ import '../models/food.dart';
 import '../data/recipes_data.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
+import '../widgets/food_icon.dart';
 
 class FoodDetailScreen extends StatelessWidget {
   final Food food;
@@ -207,10 +208,7 @@ class FoodDetailScreen extends StatelessWidget {
                         ],
                       ),
                       child: Center(
-                        child: Text(
-                          food.icon,
-                          style: const TextStyle(fontSize: 70),
-                        ),
+                        child: FoodIcon(food, size: 70),
                       ),
                     ),
                   ),

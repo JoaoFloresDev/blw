@@ -10,6 +10,7 @@ import '../providers/food_log_provider.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
+import '../widgets/food_icon.dart';
 
 // Helper to create PhotoItem list from log
 List<PhotoItem> _createPhotoItems(FoodLog log, String displayName) {
@@ -110,10 +111,10 @@ class FoodLogDetailScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
-                      child: Text(
-                        food?.icon ?? '🍽️',
-                        style: const TextStyle(fontSize: 48),
-                      ),
+                      child: food != null
+                          ? FoodIcon(food, size: 48)
+                          : const Text('🍽️',
+                              style: TextStyle(fontSize: 48)),
                     ),
                   ),
                   const SizedBox(height: 16),

@@ -14,6 +14,7 @@ import '../widgets/paywall_view.dart';
 import 'recipes_screen.dart';
 import 'allergens_screen.dart';
 import 'tips_screen.dart';
+import '../widgets/food_icon.dart';
 
 class FoodsScreen extends StatefulWidget {
   const FoodsScreen({super.key});
@@ -530,10 +531,7 @@ class _FoodsScreenState extends State<FoodsScreen> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
-                    child: Text(
-                      food.icon,
-                      style: const TextStyle(fontSize: 28),
-                    ),
+                    child: FoodIcon(food, size: 28),
                   ),
                 ),
                 const SizedBox(width: 14),

@@ -15,6 +15,7 @@ import '../services/app_opens_service.dart';
 import '../services/photo_service.dart';
 import '../widgets/celebration_overlay.dart';
 import '../widgets/paywall_view.dart';
+import '../widgets/food_icon.dart';
 
 class AddFoodLogScreen extends StatefulWidget {
   final Food? preselectedFood;
@@ -283,10 +284,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Center(
-                  child: Text(
-                    _selectedFood!.icon,
-                    style: const TextStyle(fontSize: 24),
-                  ),
+                  child: FoodIcon(_selectedFood!, size: 24),
                 ),
               ),
               const SizedBox(width: 14),
@@ -431,10 +429,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                            child: Text(
-                              food.icon,
-                              style: const TextStyle(fontSize: 22),
-                            ),
+                            child: FoodIcon(food, size: 22),
                           ),
                         ),
                         const SizedBox(width: 14),
