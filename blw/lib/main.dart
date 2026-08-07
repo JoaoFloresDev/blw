@@ -349,8 +349,8 @@ class _MainTabScreenState extends State<MainTabScreen> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
-          FoodsScreen(),
           FoodLogScreen(),
+          FoodsScreen(),
           GalleryScreen(),
         ],
       ),
@@ -371,8 +371,8 @@ class _MainTabScreenState extends State<MainTabScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
-                _buildNavItem(1, CupertinoIcons.doc_text_fill, CupertinoIcons.doc_text, l10n.foodDiary),
+                _buildNavItem(0, CupertinoIcons.doc_text_fill, CupertinoIcons.doc_text, l10n.foodDiary),
+                _buildNavItem(1, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
                 _buildNavItem(2, CupertinoIcons.photo_fill, CupertinoIcons.photo, l10n.gallery),
               ],
             ),

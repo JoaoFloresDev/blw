@@ -12,6 +12,7 @@ import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
+import 'recipes_screen.dart';
 
 class FoodLogScreen extends StatelessWidget {
   const FoodLogScreen({super.key});
@@ -70,6 +71,45 @@ class FoodLogScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.background,
+      floatingActionButton: Consumer<FoodLogProvider>(
+        builder: (context, provider, child) {
+          if (provider.logsSortedByDate.isEmpty) {
+            return const SizedBox.shrink();
+          }
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: FloatingActionButton(
+              onPressed: () => PremiumGate.guard(
+                context,
+                source: 'diary_add',
+                onUnlocked: () => Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+                ),
+              ),
+              backgroundColor: AppColors.primary,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Icon(
+                CupertinoIcons.add,
+                color: Colors.white,
+                size: 26,
+              ),
+            ),
+          );
+        },
+      ),
       body: Consumer<FoodLogProvider>(
         builder: (context, provider, child) {
           final logs = provider.logsSortedByDate;
@@ -138,27 +178,46 @@ class FoodLogScreen extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               onPressed: () => PremiumGate.guard(
                                 context,
-                                source: 'diary_add',
-                                onUnlocked: () => Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                      builder: (_) =>
-                                          const AddFoodLogScreen()),
-                                ),
+                                source: 'recipes',
+                                onUnlocked: () {
+                                  AnalyticsService.recipesOpened();
+                                  Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (_) =>
+                                            const RecipesScreen()),
+                                  );
+                                },
                               ),
                               child: Stack(
                                 clipBehavior: Clip.none,
                                 children: [
                                   Container(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 14, vertical: 10),
                                     decoration: BoxDecoration(
-                                      color: AppColors.primary,
+                                      color: const Color(0xFFAF52DE),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: const Icon(
-                                      CupertinoIcons.add,
-                                      color: Colors.white,
-                                      size: 22,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Icon(
+                                          CupertinoIcons.book_fill,
+                                          color: Colors.white,
+                                          size: 20,
+                                        ),
+                                        const SizedBox(width: 6),
+                                        Text(
+                                          l10n.recipes,
+                                          style: const TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white,
+                                            letterSpacing: -0.2,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   if (!context
