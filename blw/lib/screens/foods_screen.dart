@@ -9,6 +9,9 @@ import '../models/food.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import 'food_detail_screen.dart';
+import '../providers/premium_provider.dart';
+import '../widgets/paywall_view.dart';
+import 'recipes_screen.dart';
 import 'allergens_screen.dart';
 import 'tips_screen.dart';
 
@@ -108,6 +111,65 @@ class _FoodsScreenState extends State<FoodsScreen> {
                     ),
                     Row(
                       children: [
+                        CupertinoButton(
+                          padding: EdgeInsets.zero,
+                          onPressed: () => PremiumGate.guard(
+                            context,
+                            source: 'recipes',
+                            onUnlocked: () {
+                              AnalyticsService.recipesOpened();
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (_) => const RecipesScreen()),
+                              );
+                            },
+                          ),
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(14),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color:
+                                          Colors.black.withValues(alpha: 0.06),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 3),
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  'assets/images/btn_recipes.png',
+                                  width: 30,
+                                  height: 30,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              if (!context.watch<PremiumProvider>().isPremium)
+                                Positioned(
+                                  top: -4,
+                                  right: -4,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(3),
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xFFFF9500),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Icon(
+                                      CupertinoIcons.lock_fill,
+                                      size: 9,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 8),
                         CupertinoButton(
                           padding: EdgeInsets.zero,
                           onPressed: () {

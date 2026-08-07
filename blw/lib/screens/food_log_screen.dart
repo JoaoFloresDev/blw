@@ -15,7 +15,6 @@ import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
 import 'food_detail_screen.dart';
-import 'recipes_screen.dart';
 
 class FoodLogScreen extends StatelessWidget {
   const FoodLogScreen({super.key});
@@ -190,73 +189,6 @@ class FoodLogScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            const SizedBox(width: 8),
-                            CupertinoButton(
-                              padding: EdgeInsets.zero,
-                              onPressed: () => PremiumGate.guard(
-                                context,
-                                source: 'recipes',
-                                onUnlocked: () {
-                                  AnalyticsService.recipesOpened();
-                                  Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (_) =>
-                                            const RecipesScreen()),
-                                  );
-                                },
-                              ),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 12, vertical: 7),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(14),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black
-                                              .withValues(alpha: 0.06),
-                                          blurRadius: 8,
-                                          offset: const Offset(0, 3),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Image.asset(
-                                          'assets/images/btn_recipes.png',
-                                          width: 30,
-                                          height: 30,
-                                          fit: BoxFit.contain,
-                                        ),
-                                        const SizedBox(width: 6),
-                                        Text(
-                                          l10n.recipes,
-                                          style: const TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w600,
-                                            color: AppColors.textPrimary,
-                                            letterSpacing: -0.2,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  if (!context
-                                      .watch<PremiumProvider>()
-                                      .isPremium)
-                                    const Positioned(
-                                      top: -6,
-                                      right: -6,
-                                      child: _LockDot(),
-                                    ),
-                                ],
-                              ),
-                            ),
                           ],
                         ),
                       ],
@@ -539,19 +471,20 @@ class FoodLogScreen extends StatelessWidget {
   }
 
   Widget _buildEmptyState(BuildContext context, AppLocalizations l10n) {
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.fromLTRB(40, 0, 40, 24),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
               'assets/images/empty_diary.png',
-              width: 168,
-              height: 168,
+              width: 150,
+              height: 150,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 6),
             Text(
               l10n.noRecordsYet,
               style: const TextStyle(
