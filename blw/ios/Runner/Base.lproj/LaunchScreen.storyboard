@@ -15,13 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <!-- App Icon Emoji -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emoji-label">
-                                <rect key="frame" x="146.5" y="356" width="100" height="80"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <!-- Hero image -->
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="emoji-label">
+                                <rect key="frame" x="71.5" y="301" width="250" height="250"/>
+                            </imageView>
                             <!-- App Name -->
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLW Baby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="app-name-label">
                                 <rect key="frame" x="96.5" y="456" width="200" height="40"/>
@@ -36,7 +33,9 @@
                             <!-- Emoji centered horizontally -->
                             <constraint firstItem="emoji-label" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="emoji-centerX"/>
                             <!-- Emoji centered vertically with offset up -->
-                            <constraint firstItem="emoji-label" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="emoji-centerY"/>
+                            <constraint firstItem="emoji-label" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="emoji-centerY"/>
+                            <constraint firstItem="emoji-label" firstAttribute="width" constant="250" id="emoji-w"/>
+                            <constraint firstItem="emoji-label" firstAttribute="height" constant="250" id="emoji-h"/>
                             <!-- App name centered horizontally -->
                             <constraint firstItem="app-name-label" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="name-centerX"/>
                             <!-- App name below emoji -->
@@ -49,4 +48,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="250" height="250"/>
+    </resources>
 </document>

@@ -201,7 +201,7 @@ class _OnboardingFeaturePageState extends State<_OnboardingFeaturePage>
       child: SafeArea(
         child: Column(
           children: [
-            _buildSkipRow(),
+            const SizedBox(height: 44),
             Expanded(child: _buildContent()),
             _buildButton(),
             const SizedBox(height: 20),
@@ -214,28 +214,6 @@ class _OnboardingFeaturePageState extends State<_OnboardingFeaturePage>
   }
 
   // MARK: - Subviews
-  Widget _buildSkipRow() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          CupertinoButton(
-            onPressed: widget.onSkip,
-            child: Text(
-              widget.l10n.skip,
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.85),
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildContent() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),

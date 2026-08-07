@@ -198,27 +198,32 @@ class _PaywallViewState extends State<PaywallView> {
         ),
       ),
       child: SafeArea(
-        child: Column(
+        child: Stack(
           children: [
-            _buildCloseRow(),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  children: [
-                    _buildHero(l10n),
-                    const SizedBox(height: 18),
-                    _buildFeatures(l10n),
-                    const SizedBox(height: 18),
-                    _buildPlans(l10n, premium),
-                    const SizedBox(height: 10),
-                    _buildTrialNote(l10n, premium),
-                    const SizedBox(height: 12),
-                  ],
+            Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 4),
+                        _buildHero(l10n),
+                        const SizedBox(height: 14),
+                        _buildFeatures(l10n),
+                        const SizedBox(height: 18),
+                        _buildPlans(l10n, premium),
+                        const SizedBox(height: 10),
+                        _buildTrialNote(l10n, premium),
+                        const SizedBox(height: 12),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+                _buildFooter(l10n, premium),
+              ],
             ),
-            _buildFooter(l10n, premium),
+            _buildCloseRow(),
           ],
         ),
       ),
@@ -226,8 +231,9 @@ class _PaywallViewState extends State<PaywallView> {
   }
 
   Widget _buildCloseRow() {
-    return Align(
-      alignment: Alignment.centerLeft,
+    return Positioned(
+      top: 0,
+      left: 0,
       child: CupertinoButton(
         padding: const EdgeInsets.all(16),
         onPressed: () {
@@ -253,16 +259,16 @@ class _PaywallViewState extends State<PaywallView> {
           alignment: Alignment.center,
           children: [
             Container(
-              width: 150,
-              height: 150,
+              width: 112,
+              height: 112,
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.13),
                 shape: BoxShape.circle,
               ),
             ),
             Container(
-              width: 124,
-              height: 124,
+              width: 92,
+              height: 92,
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.20),
                 shape: BoxShape.circle,
@@ -270,13 +276,13 @@ class _PaywallViewState extends State<PaywallView> {
             ),
             Image.asset(
               'assets/images/paywall_hero.png',
-              width: 146,
-              height: 146,
+              width: 108,
+              height: 108,
               fit: BoxFit.contain,
             ),
           ],
         ),
-        const SizedBox(height: 14),
+        const SizedBox(height: 10),
         Text(
           l10n.paywallTitle,
           textAlign: TextAlign.center,
@@ -307,8 +313,6 @@ class _PaywallViewState extends State<PaywallView> {
       (CupertinoIcons.square_pencil_fill, l10n.paywallFeatureDiary),
       (CupertinoIcons.doc_text_fill, l10n.paywallFeature1),
       (CupertinoIcons.book_fill, l10n.paywallFeature2),
-      (CupertinoIcons.photo_on_rectangle, l10n.paywallFeature3),
-      (CupertinoIcons.heart_fill, l10n.paywallFeature4),
     ];
     return Column(
       children: features.map((f) {
@@ -372,7 +376,7 @@ class _PaywallViewState extends State<PaywallView> {
             setState(() => _yearlySelected = true);
           },
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 8),
         _PlanCard(
           title: l10n.planWeekly,
           price: weekly,
@@ -528,7 +532,7 @@ class _PlanCard extends StatelessWidget {
         curve: Curves.easeOutBack,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
           decoration: BoxDecoration(
             color: cardColor,
             borderRadius: BorderRadius.circular(16),
