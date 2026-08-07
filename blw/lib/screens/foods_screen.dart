@@ -323,13 +323,34 @@ class _FoodsScreenState extends State<FoodsScreen> {
           ...groupedFoods.entries.expand((entry) => [
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 12),
-              child: Text(
-                '${entry.key.icon} ${_getCategoryName(context, entry.key)}',
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: -0.4,
-                ),
+              child: Row(
+                children: [
+                  Text(
+                    '${entry.key.icon} ${_getCategoryName(context, entry.key)}',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: -0.4,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      '${entry.value.length}',
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
