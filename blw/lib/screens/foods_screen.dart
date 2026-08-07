@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import '../services/analytics_service.dart';
 import '../main.dart';
@@ -19,8 +20,31 @@ class FoodsScreen extends StatefulWidget {
 }
 
 class _FoodsScreenState extends State<FoodsScreen> {
+  static const _agePrefKey = 'foods.selectedAgeIndex';
+
   AgeGroup _selectedAge = AgeGroup.sixMonths;
   FoodCategory? _selectedCategory;
+  String _searchQuery = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _restoreSelectedAge();
+  }
+
+  Future<void> _restoreSelectedAge() async {
+    final prefs = await SharedPreferences.getInstance();
+    final index = prefs.getInt(_agePrefKey);
+    if (index != null && index >= 0 && index < AgeGroup.values.length) {
+      setState(() => _selectedAge = AgeGroup.values[index]);
+    }
+  }
+
+  void _selectAge(AgeGroup age) {
+    setState(() => _selectedAge = age);
+    SharedPreferences.getInstance()
+        .then((prefs) => prefs.setInt(_agePrefKey, age.index));
+  }
 
   String _getCategoryName(BuildContext context, FoodCategory category) {
     final l10n = AppLocalizations.of(context);
@@ -153,6 +177,19 @@ class _FoodsScreenState extends State<FoodsScreen> {
           ),
 
 
+          // Search
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
+              child: CupertinoSearchTextField(
+                placeholder: l10n.searchFoods,
+                onChanged: (value) =>
+                    setState(() => _searchQuery = value.trim()),
+                backgroundColor: Colors.white,
+              ),
+            ),
+          ),
+
           // Age filter
           SliverToBoxAdapter(
             child: Padding(
@@ -178,7 +215,7 @@ class _FoodsScreenState extends State<FoodsScreen> {
                         return Padding(
                           padding: const EdgeInsets.only(right: 8),
                           child: GestureDetector(
-                            onTap: () => setState(() => _selectedAge = age),
+                            onTap: () => _selectAge(age),
                             child: Container(
                               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                               decoration: BoxDecoration(
@@ -309,9 +346,17 @@ class _FoodsScreenState extends State<FoodsScreen> {
   Widget _buildFoodsList() {
     final l10n = AppLocalizations.of(context);
 
-    var foods = allFoods.where((food) =>
-      food.minimumAge.index <= _selectedAge.index
-    ).toList();
+    final l10nSearch = _searchQuery.toLowerCase();
+    var foods = _searchQuery.isEmpty
+        ? allFoods
+            .where((food) => food.minimumAge.index <= _selectedAge.index)
+            .toList()
+        : allFoods.where((food) {
+            final localized =
+                AppLocalizations.of(context).getFoodName(food.id).toLowerCase();
+            return localized.contains(l10nSearch) ||
+                food.name.toLowerCase().contains(l10nSearch);
+          }).toList();
 
     if (_selectedCategory != null) {
       foods = foods.where((food) => food.category == _selectedCategory).toList();

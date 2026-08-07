@@ -79,6 +79,9 @@ class AppLocalizations {
   // Food detail
   String get category => get('category');
   String get babyAge => get('babyAge');
+  String get notIntroducedYet => get('notIntroducedYet');
+  String get tryNext => get('tryNext');
+  String get searchFoods => get('searchFoods');
   String get howToPrepare => get('howToPrepare');
   String get allergenWarning => get('allergenWarning');
   String get allergenDefaultInfo => get('allergenDefaultInfo');
@@ -550,6 +553,9 @@ const Map<String, String> _ptTranslations = {
   // Food detail
   'category': 'Categoria',
   'babyAge': 'Idade do bebê',
+  'notIntroducedYet': 'Ainda não introduzido',
+  'tryNext': 'Experimente a seguir',
+  'searchFoods': 'Buscar alimento...',
   'howToPrepare': 'Como Preparar',
   'allergenWarning': 'Atencao: Alergenico',
   'allergenDefaultInfo':
@@ -1145,6 +1151,9 @@ const Map<String, String> _enTranslations = {
   // Food detail
   'category': 'Category',
   'babyAge': "Baby's age",
+  'notIntroducedYet': 'Not introduced yet',
+  'tryNext': 'Try next',
+  'searchFoods': 'Search foods...',
   'howToPrepare': 'How to Prepare',
   'allergenWarning': 'Warning: Allergen',
   'allergenDefaultInfo':
@@ -1741,6 +1750,9 @@ const Map<String, String> _esTranslations = {
   // Food detail
   'category': 'Categoria',
   'babyAge': 'Edad del bebé',
+  'notIntroducedYet': 'Aún no introducido',
+  'tryNext': 'Prueba a continuación',
+  'searchFoods': 'Buscar alimento...',
   'howToPrepare': 'Como Preparar',
   'allergenWarning': 'Atencion: Alergenico',
   'allergenDefaultInfo':

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../models/food_log.dart';
+import '../providers/food_log_provider.dart';
 import '../l10n/app_localizations.dart';
 import '../data/foods_data.dart';
 import '../models/food.dart';
@@ -233,6 +236,8 @@ class AllergensScreen extends StatelessWidget {
                   Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey[400]),
                 ],
               ),
+              const SizedBox(height: 12),
+              _buildExposureStatus(context, food, l10n),
               if (displayAllergenInfo != null) ...[
                 const SizedBox(height: 12),
                 Container(
@@ -263,6 +268,64 @@ class AllergensScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildExposureStatus(
+      BuildContext context, Food food, AppLocalizations l10n) {
+    final logs = context
+        .watch<FoodLogProvider>()
+        .logs
+        .where((log) => log.foodId == food.id)
+        .toList();
+
+    if (logs.isEmpty) {
+      return Row(
+        children: [
+          Icon(Icons.radio_button_unchecked, size: 16, color: Colors.grey[400]),
+          const SizedBox(width: 6),
+          Text(
+            l10n.notIntroducedYet,
+            style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+          ),
+        ],
+      );
+    }
+
+    Reaction worst = Reaction.none;
+    for (final log in logs) {
+      if (log.reaction.index > worst.index) worst = log.reaction;
+    }
+
+    final hasReaction = worst != Reaction.none;
+    final reactionLabel = switch (worst) {
+      Reaction.none => l10n.noReaction,
+      Reaction.mild => l10n.mildReaction,
+      Reaction.moderate => l10n.moderateReaction,
+      Reaction.severe => l10n.severeReaction,
+    };
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: hasReaction ? Colors.red[50] : Colors.green[50],
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(worst.icon, style: const TextStyle(fontSize: 13)),
+          const SizedBox(width: 6),
+          Text(
+            '${l10n.timesOffered(logs.length)} · $reactionLabel',
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: hasReaction ? Colors.red[700] : Colors.green[700],
+            ),
+          ),
+        ],
       ),
     );
   }

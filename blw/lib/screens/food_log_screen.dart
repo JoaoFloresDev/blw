@@ -6,12 +6,14 @@ import '../main.dart';
 import '../providers/food_log_provider.dart';
 import '../providers/premium_provider.dart';
 import '../models/food_log.dart';
+import '../models/food.dart';
 import '../data/foods_data.dart';
 import '../services/pdf_service.dart';
 import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
+import 'food_detail_screen.dart';
 import 'recipes_screen.dart';
 
 class FoodLogScreen extends StatelessWidget {
@@ -194,18 +196,27 @@ class FoodLogScreen extends StatelessWidget {
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 14, vertical: 10),
+                                        horizontal: 12, vertical: 7),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFFAF52DE),
-                                      borderRadius: BorderRadius.circular(12),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(14),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black
+                                              .withValues(alpha: 0.06),
+                                          blurRadius: 8,
+                                          offset: const Offset(0, 3),
+                                        ),
+                                      ],
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        const Icon(
-                                          CupertinoIcons.book_fill,
-                                          color: Colors.white,
-                                          size: 20,
+                                        Image.asset(
+                                          'assets/images/btn_recipes.png',
+                                          width: 30,
+                                          height: 30,
+                                          fit: BoxFit.contain,
                                         ),
                                         const SizedBox(width: 6),
                                         Text(
@@ -213,7 +224,7 @@ class FoodLogScreen extends StatelessWidget {
                                           style: const TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            color: Colors.white,
+                                            color: AppColors.textPrimary,
                                             letterSpacing: -0.2,
                                           ),
                                         ),
@@ -247,6 +258,11 @@ class FoodLogScreen extends StatelessWidget {
                 ),
               ),
 
+              // "Try next" suggestions
+              SliverToBoxAdapter(
+                child: _buildTryNext(context, provider, l10n),
+              ),
+
               // Content
               if (logs.isEmpty)
                 SliverFillRemaining(
@@ -258,6 +274,99 @@ class FoodLogScreen extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildTryNext(
+    BuildContext context,
+    FoodLogProvider provider,
+    AppLocalizations l10n,
+  ) {
+    final tried = provider.introducedFoodIds;
+    final untried =
+        allFoods.where((food) => !tried.contains(food.id)).toList();
+    if (untried.isEmpty) return const SizedBox.shrink();
+
+    // Rotate suggestions daily so the trio feels fresh.
+    final day = DateTime.now().difference(DateTime(2026)).inDays;
+    final start = untried.length <= 3 ? 0 : (day * 3) % untried.length;
+    final suggestions = <Food>[
+      for (var i = 0; i < 3 && i < untried.length; i++)
+        untried[(start + i) % untried.length],
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.tryNext,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+              color: AppColors.textPrimary,
+              letterSpacing: -0.2,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              for (var i = 0; i < suggestions.length; i++) ...[
+                if (i > 0) const SizedBox(width: 10),
+                Expanded(
+                  child: _buildSuggestionCard(context, suggestions[i], l10n),
+                ),
+              ],
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSuggestionCard(
+      BuildContext context, Food food, AppLocalizations l10n) {
+    final name = l10n.getFoodName(food.id);
+    final displayName = name.startsWith('food_') ? food.name : name;
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: () => Navigator.push(
+        context,
+        CupertinoPageRoute(builder: (_) => FoodDetailScreen(food: food)),
+      ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(food.icon, style: const TextStyle(fontSize: 26)),
+            const SizedBox(height: 6),
+            Text(
+              displayName,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: AppColors.textPrimary,
+                letterSpacing: -0.2,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -657,4 +766,5 @@ class _LockDot extends StatelessWidget {
       child: const Icon(CupertinoIcons.lock_fill, size: 9, color: Colors.white),
     );
   }
+
 }
