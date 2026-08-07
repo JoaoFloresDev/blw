@@ -73,44 +73,44 @@ class FoodLogScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      floatingActionButton: Consumer<FoodLogProvider>(
-        builder: (context, provider, child) {
-          if (provider.logsSortedByDate.isEmpty) {
-            return const SizedBox.shrink();
-          }
-          return Container(
-            decoration: BoxDecoration(
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+          child: SizedBox(
+            width: double.infinity,
+            child: CupertinoButton(
+              color: AppColors.primary,
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.15),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: FloatingActionButton(
+              padding: const EdgeInsets.symmetric(vertical: 15),
               onPressed: () => PremiumGate.guard(
                 context,
                 source: 'diary_add',
                 onUnlocked: () => Navigator.push(
                   context,
-                  CupertinoPageRoute(builder: (_) => const AddFoodLogScreen()),
+                  CupertinoPageRoute(
+                      builder: (_) => const AddFoodLogScreen()),
                 ),
               ),
-              backgroundColor: AppColors.primary,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: const Icon(
-                CupertinoIcons.add,
-                color: Colors.white,
-                size: 26,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(CupertinoIcons.add, size: 20, color: Colors.white),
+                  const SizedBox(width: 8),
+                  Text(
+                    l10n.addRecord,
+                    style: const TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                ],
               ),
             ),
-          );
-        },
+          ),
+        ),
       ),
       body: Consumer<FoodLogProvider>(
         builder: (context, provider, child) {
@@ -288,11 +288,11 @@ class FoodLogScreen extends StatelessWidget {
         allFoods.where((food) => !tried.contains(food.id)).toList();
     if (untried.isEmpty) return const SizedBox.shrink();
 
-    // Rotate suggestions daily so the trio feels fresh.
+    // Rotate suggestions daily so the picks feel fresh.
     final day = DateTime.now().difference(DateTime(2026)).inDays;
-    final start = untried.length <= 3 ? 0 : (day * 3) % untried.length;
+    final start = untried.length <= 8 ? 0 : (day * 8) % untried.length;
     final suggestions = <Food>[
-      for (var i = 0; i < 3 && i < untried.length; i++)
+      for (var i = 0; i < 8 && i < untried.length; i++)
         untried[(start + i) % untried.length],
     ];
 
@@ -311,15 +311,19 @@ class FoodLogScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Row(
-            children: [
-              for (var i = 0; i < suggestions.length; i++) ...[
-                if (i > 0) const SizedBox(width: 10),
-                Expanded(
-                  child: _buildSuggestionCard(context, suggestions[i], l10n),
-                ),
-              ],
-            ],
+          SizedBox(
+            height: 96,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              clipBehavior: Clip.none,
+              itemCount: suggestions.length,
+              separatorBuilder: (_, i) => const SizedBox(width: 10),
+              itemBuilder: (context, index) => SizedBox(
+                width: 104,
+                child:
+                    _buildSuggestionCard(context, suggestions[index], l10n),
+              ),
+            ),
           ),
         ],
       ),
@@ -513,22 +517,6 @@ class FoodLogScreen extends StatelessWidget {
                 fontSize: 15,
                 color: AppColors.textSecondary,
                 height: 1.4,
-              ),
-            ),
-            const SizedBox(height: 32),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => PremiumGate.guard(
-                  context,
-                  source: 'diary_add',
-                  onUnlocked: () => Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                        builder: (_) => const AddFoodLogScreen()),
-                  ),
-                ),
-                child: Text(l10n.addRecord),
               ),
             ),
           ],
