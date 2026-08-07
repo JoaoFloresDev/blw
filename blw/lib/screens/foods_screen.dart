@@ -95,15 +95,23 @@ class _FoodsScreenState extends State<FoodsScreen> {
                             );
                           },
                           child: Container(
-                            padding: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(
-                              color: AppColors.secondary,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Icon(
-                              CupertinoIcons.exclamationmark_shield_fill,
                               color: Colors.white,
-                              size: 22,
+                              borderRadius: BorderRadius.circular(14),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.06),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Image.asset(
+                              'assets/images/btn_allergens.png',
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -116,15 +124,23 @@ class _FoodsScreenState extends State<FoodsScreen> {
                                 builder: (_) => const TipsScreen()),
                           ),
                           child: Container(
-                            padding: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF007AFF),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Icon(
-                              CupertinoIcons.lightbulb_fill,
                               color: Colors.white,
-                              size: 22,
+                              borderRadius: BorderRadius.circular(14),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.06),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Image.asset(
+                              'assets/images/btn_tips.png',
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -234,6 +250,11 @@ class _FoodsScreenState extends State<FoodsScreen> {
 
   Widget _buildCategoryChip(FoodCategory? category, String label, String icon) {
     final isSelected = category == _selectedCategory;
+    final count = allFoods
+        .where((food) =>
+            food.minimumAge.index <= _selectedAge.index &&
+            (category == null || food.category == category))
+        .length;
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: GestureDetector(
@@ -257,6 +278,25 @@ class _FoodsScreenState extends State<FoodsScreen> {
                   fontWeight: FontWeight.w500,
                   color: isSelected ? Colors.white : AppColors.textPrimary,
                   letterSpacing: -0.2,
+                ),
+              ),
+              const SizedBox(width: 6),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 7, vertical: 1),
+                decoration: BoxDecoration(
+                  color: isSelected
+                      ? Colors.white.withValues(alpha: 0.25)
+                      : AppColors.primary.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  '$count',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: isSelected ? Colors.white : AppColors.primary,
+                  ),
                 ),
               ),
             ],
@@ -323,34 +363,13 @@ class _FoodsScreenState extends State<FoodsScreen> {
           ...groupedFoods.entries.expand((entry) => [
             Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 12),
-              child: Row(
-                children: [
-                  Text(
-                    '${entry.key.icon} ${_getCategoryName(context, entry.key)}',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: -0.4,
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      '${entry.value.length}',
-                      style: const TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primary,
-                      ),
-                    ),
-                  ),
-                ],
+              child: Text(
+                '${entry.key.icon} ${_getCategoryName(context, entry.key)}',
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: -0.4,
+                ),
               ),
             ),
             Container(

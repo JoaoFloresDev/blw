@@ -371,9 +371,9 @@ class _MainTabScreenState extends State<MainTabScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, CupertinoIcons.doc_text_fill, CupertinoIcons.doc_text, l10n.foodDiary),
-                _buildNavItem(1, CupertinoIcons.square_grid_2x2_fill, CupertinoIcons.square_grid_2x2, l10n.foods),
-                _buildNavItem(2, CupertinoIcons.photo_fill, CupertinoIcons.photo, l10n.gallery),
+                _buildNavItem(0, 'assets/images/tab_diary.png', l10n.foodDiary),
+                _buildNavItem(1, 'assets/images/tab_foods.png', l10n.foods),
+                _buildNavItem(2, 'assets/images/tab_gallery.png', l10n.gallery),
               ],
             ),
           ),
@@ -382,8 +382,14 @@ class _MainTabScreenState extends State<MainTabScreen> {
     );
   }
 
-  Widget _buildNavItem(int index, IconData selectedIcon, IconData unselectedIcon, String label) {
+  Widget _buildNavItem(int index, String assetPath, String label) {
     final isSelected = _selectedIndex == index;
+    final image = Image.asset(
+      assetPath,
+      width: 30,
+      height: 30,
+      fit: BoxFit.contain,
+    );
     return GestureDetector(
       onTap: () => setState(() => _selectedIndex = index),
       behavior: HitTestBehavior.opaque,
@@ -392,10 +398,24 @@ class _MainTabScreenState extends State<MainTabScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              isSelected ? selectedIcon : unselectedIcon,
-              size: 24,
-              color: isSelected ? AppColors.primary : AppColors.textSecondary,
+            AnimatedScale(
+              scale: isSelected ? 1.0 : 0.9,
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOutCubic,
+              child: isSelected
+                  ? image
+                  : Opacity(
+                      opacity: 0.55,
+                      child: ColorFiltered(
+                        colorFilter: const ColorFilter.matrix(<double>[
+                          0.2126, 0.7152, 0.0722, 0, 0,
+                          0.2126, 0.7152, 0.0722, 0, 0,
+                          0.2126, 0.7152, 0.0722, 0, 0,
+                          0, 0, 0, 1, 0,
+                        ]),
+                        child: image,
+                      ),
+                    ),
             ),
             const SizedBox(height: 4),
             Text(
