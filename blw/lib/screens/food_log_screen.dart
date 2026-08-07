@@ -267,8 +267,9 @@ class FoodLogScreen extends StatelessWidget {
     FoodLogProvider provider,
     AppLocalizations l10n,
   ) {
-    final totalFoods = allFoods.length;
     final triedFoods = provider.introducedFoodIds.length;
+    // "First 100 foods" journey; once past it, the goal grows to the catalog.
+    final totalFoods = triedFoods > 100 ? allFoods.length : 100;
     final progress = totalFoods > 0 ? triedFoods / totalFoods : 0.0;
 
     return Container(
