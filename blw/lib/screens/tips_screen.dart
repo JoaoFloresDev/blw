@@ -23,6 +23,19 @@ class TipsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (Navigator.of(context).canPop())
+                      CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Icon(
+                            CupertinoIcons.chevron_back,
+                            color: AppColors.primary,
+                            size: 28,
+                          ),
+                        ),
+                      ),
                     Text(
                       l10n.blwTips,
                       style: const TextStyle(
