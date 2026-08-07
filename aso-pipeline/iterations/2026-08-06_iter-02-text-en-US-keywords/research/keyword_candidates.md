@@ -22,7 +22,7 @@ Legenda: <span style="color:#dc3545">🔴 saiu</span> · <span style="color:#28a
 |-------|-------|--------|
 | Name | BLW Baby Led Weaning Tracker | BLW Baby Led Weaning Tracker |
 | Subtitle | First Foods & <b>Solid Starts</b> <span style="color:#1e3a8a">Log</span> | <b>Solid Starts</b> & First <span style="color:#28a745">100</span> Foods |
-| Keywords | starting solids, <span style="color:#dc3545">weaning</span>, puree, <span style="color:#dc3545">feeding</span>, <span style="color:#dc3545">recipes</span>, <span style="color:#dc3545">allergen</span>, <span style="color:#dc3545">infant</span>, <span style="color:#dc3545">toddler</span>, <span style="color:#dc3545">nutrition</span>, <span style="color:#dc3545">meal plan</span>, 6 month | <span style="color:#28a745">app</span>, <span style="color:#28a745">meals</span>, <span style="color:#28a745">start</span>, <span style="color:#28a745">introducing</span> solids, <span style="color:#28a745">food</span>, <span style="color:#28a745">diary</span>, <span style="color:#28a745">allergy</span>, <span style="color:#1e3a8a">log</span>, <span style="color:#28a745">finger</span>, <span style="color:#28a745">101</span>, <span style="color:#28a745">cut</span>, 6 month, starting, puree, <span style="color:#28a745">list</span> |
+| Keywords | starting solids, <span style="color:#dc3545">weaning</span>, puree, <span style="color:#dc3545">feeding</span>, <span style="color:#dc3545">recipes</span>, <span style="color:#dc3545">allergen</span>, <span style="color:#dc3545">infant</span>, <span style="color:#dc3545">toddler</span>, <span style="color:#dc3545">nutrition</span>, <span style="color:#dc3545">meal plan</span>, 6 month | <span style="color:#28a745">meals</span>, <span style="color:#28a745">start</span>, <span style="color:#28a745">introducing</span> solids, <span style="color:#28a745">food</span>, <span style="color:#28a745">diary</span>, <span style="color:#28a745">allergy</span>, <span style="color:#1e3a8a">log</span>, <span style="color:#28a745">finger</span>, <span style="color:#28a745">101</span>, <span style="color:#28a745">cut</span>, 6 month, starting, puree, <span style="color:#28a745">list</span> |
 
 ---
 
@@ -87,7 +87,6 @@ Ordem invertida ("Solid Starts" primeiro): front-load do termo pop-61 no campo p
 
 | Termo | Pop | Diff | Rank hoje | Por quê |
 |-------|-----|------|-----------|---------|
-| `app` | **27** | 17 | baby led weaning app **100** | 🥇 MAIOR jogada de volume confirmado: "baby led weaning" ranka 17, com "app" cai pra 100 → a Apple NÃO nos dá o token. 3 chars compram um pop-27 |
 | `start` | **9** | 19 | start solids **84** | 🥈 "start" ≠ "starting" no índice; cobre start solids pop 9 + when to start solids |
 | `101` | **9** | 30 | 101 before one OUT | 🥈 Marca do #4 com só **29 apps** rankeando ("before"/"one" = stopwords ignoradas — o token 101 basta) |
 | `meals` | **9** | 23 | blw meals OUT | 🥈 blw(name)+meals = "blw meals" pop 9 — brand do #2 do nicho, interceptação barata |
@@ -117,9 +116,8 @@ Nenhum bug de caps/truncamento no campo atual (o `beb` truncado era do pt-BR, co
 
 | Pos | Token | Pop (termo alvo) | Diff | Bucket |
 |-----|-------|------------------|------|--------|
-| 1 | app | **27** (baby led weaning app) | 17 | confirmed-pop |
-| 2 | meals | **9** (blw meals) | 23 | confirmed-pop |
-| 3 | start | **9** (start solids) | 19 | confirmed-pop |
+| 1 | meals | **9** (blw meals) | 23 | confirmed-pop |
+| 2 | start | **9** (start solids) | 19 | confirmed-pop |
 | 4 | introducing solids | 5 | 7 | gold apps-33 |
 | 5 | food | hub | — | hub de composição |
 | 6 | diary | 5 | 11 | feature moat |
@@ -140,7 +138,7 @@ Nenhum bug de caps/truncamento no campo atual (o `beb` truncado era do pt-BR, co
 ```
 name      (28/30):  BLW Baby Led Weaning Tracker
 subtitle  (30/30):  Solid Starts & First 100 Foods
-keywords (100/100): app,meals,start,introducing solids,food,diary,allergy,log,finger,101,cut,6 month,starting,puree,list
+keywords (96/100): meals,start,introducing solids,food,diary,allergy,log,finger,101,cut,6 month,starting,puree,list
 ```
 
 ## Cobertura por cluster (peso composto: name 7× + subtitle 3× + kw 1×)
@@ -217,7 +215,7 @@ keywords (100/100): app,meals,start,introducing solids,food,diary,allergy,log,fi
 | MOAT speculation | cut, bites, stage 1, list, diary (pop=5 piso) | OUT → 50-150 | +3 a +10 (se pop real > piso) |
 | PERDAS ESPERADAS | recipes composições (r20-42, pop 5) | caem 30-80 posições | −1 a −3 |
 | UPSIDE marca | blw meals OUT → top 40 (pop 9) · 101 before one OUT → top 30 (29 apps) | | +3 a +7 |
-| 🥇 CONFIRMED-POP | baby led weaning app (pop 27): 100 → top 30-40 · start solids (pop 9): 84 → top 40 | | **+10 a +20** |
+| 🥇 CONFIRMED-POP | start solids (pop 9): 84 → top 40 | | **+3 a +8** |
 
 | Cenário | Δ impressions/dia US | Downloads/dia global |
 |---------|----------------------|----------------------|
@@ -254,5 +252,4 @@ D28  16.5  ███████████░
 | Rank-protects seguram com tokens preservados | 85% | Downside real (raro: Apple reindexa tudo) |
 | Perder `recipes` custa pouco (pop 5) | 75% | −2-3 impressions/dia, recuperável iter-03 |
 | CR não degrada (subtitle segue claro) | 90% | Subtitle novo é até mais "produto" |
-| "app" token destrava baby led weaning app (evidência: gap 17 vs 100) | 75% | Perde a maior jogada de pop confirmado |
 | **Agregada** | **~70%** de bater o conservador | |

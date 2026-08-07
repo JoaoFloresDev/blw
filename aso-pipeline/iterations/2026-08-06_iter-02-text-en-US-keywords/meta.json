@@ -18,9 +18,9 @@
   "planned_close_at": "2026-09-03",
   "actual_closed_at": null,
   "hypothesis": {
-    "if_we_change": "Subtitle de 'First Foods & Solid Starts Log' para 'Solid Starts & First 100 Foods' (mantém as âncoras, troca 'Log' morto por '100'); E keywords para 'app,meals,start,introducing solids,food,diary,allergy,log,finger,101,cut,6 month,starting,puree,list' — front-loaded em volume CONFIRMADO: app (baby led weaning app pop 27, rank 100 hoje sem o token), meals (blw meals pop 9), start (start solids pop 9 r84), 101 (101 before one pop 9, 29 apps), starting (protect r19); cauda pop-5 só nos moats de feature (allergy d5, introducing solids d7/33 apps, diary, cut, finger).",
+    "if_we_change": "Subtitle de 'First Foods & Solid Starts Log' para 'Solid Starts & First 100 Foods' (mantém as âncoras, troca 'Log' morto por '100'); E keywords para 'meals,start,introducing solids,food,diary,allergy,log,finger,101,cut,6 month,starting,puree,list' — front-loaded em volume CONFIRMADO: meals (blw meals pop 9), start (start solids pop 9 r84), 101 (101 before one pop 9, 29 apps), starting (protect r19); cauda pop-5 só nos moats de feature (allergy d5, introducing solids d7/33 apps, diary, cut, finger).",
     "then_we_expect": "Impressions diárias US ↑ ≥30% e downloads diários globais ↑ ≥25% em 30 dias (12.8 → ≥16 conservador / ≥19.2 bold)",
-    "because": "(a) 'app' destrava baby led weaning app pop 27 — rankeamos 100 vs 17 do termo sem 'app', prova de que o token falta; (b) '101' intercepta marca do #4 com 29 apps concorrendo; (c) start+solids cobre start solids pop 9 r84; (d) 'first 100 foods' d11 entra peso 3× com feature nativa; (e) hub food destrava 6 caudas baby food *; (f) 7 tokens mortos (diff 45-79 OUT) viram termos ganháveis; (g) rank-protects preservados token a token."
+    "because": "(a) '101' intercepta marca do #4 com 29 apps concorrendo; (b) start+solids cobre start solids pop 9 r84; (c) 'first 100 foods' d11 entra peso 3× com feature nativa; (d) hub food destrava 6 caudas baby food *; (e) 7 tokens mortos (diff 45-79 OUT) viram termos ganháveis; (f) rank-protects preservados token a token."
   },
   "success_criterion": {
     "primary_metric": "downloads_per_day",
