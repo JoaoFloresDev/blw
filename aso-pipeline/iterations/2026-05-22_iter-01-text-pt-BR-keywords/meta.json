@@ -13,10 +13,10 @@
   ],
   "approach": "parallel",
   "approach_rationale": "Cold-start app (4.45 dl/dia em 60d, top traffic ES>US>BR>MX). Velocity > attribution. Per-keyword rank tracking via Astro permite post-hoc attribution. Exceção contextual à regra '1 variável por iter' do aso-pipeline/README.md — mesmo padrão usado no Dispensado iter-01.",
-  "status": "running",
+  "status": "closed",
   "started_at": "2026-05-22",
   "planned_close_at": "2026-06-19",
-  "actual_closed_at": null,
+  "actual_closed_at": "2026-08-06",
   "hypothesis": {
     "if_we_change": "Subtitle de 'Comida de Bebê 6 Meses Diário' (4 tokens todos pop=5 ou solo-OUT, peso 3× desperdiçado) para 'Solid Starts, Papinha e Cortes' (3 termos: 1 GOLD pop=50/diff=9/rank=29, 1 BR head term ausente, 1 moat segurança); E keywords de 'beb,alimentação,receitas bebê,primeiro alimento,diário alimentar,tracker,comida saudável,maternidade' (1 bug `beb` truncado + 5 dead-weight rank=1000/>100) para 'baby weaning,starting solids,blw meals,desengasgo,cortes seguros,primeiro alimento,diário alimentar' (2 keepers de rank #3+#40 + 3 EN-crossover validados Astro + 2 moats Mundo BLW). Análise detalhada palavra-por-palavra em `research/keyword_candidates.md`.",
     "then_we_expect": "Impressions diárias em pt-BR ↑ ≥30% em 30 dias e downloads diários ↑ ≥25% (4.85 dl/dia → ≥6.06 conservador / ≥7.28 bold)",
@@ -141,9 +141,12 @@
       "analytics_reports_eta": "2026-05-25 (24-48h after request)"
     },
     "checkpoints": [],
-    "final": null
+    "final": {
+      "date": "2026-08-06",
+      "summary": "Downloads/dia 4.85 (baseline 30d pre-deploy) -> 12.8 (45d window ending 2026-08-06, ASC Sales Reports). +164% vs baseline, acima do target bold (+50%). Atribuicao parcial: janela inclui 1.4.0 (premium) e refresh de prints treatment_A; ainda assim o go/no-go (>=6.06 dl/dia) foi superado com folga. Metadata pt-BR promovida a current (ja live)."
+    }
   },
-  "verdict": null,
-  "promoted_to_current": false,
-  "notes": "Iter paralela (subtitle + keywords) — único folder, fields_changed=[subtitle,keywords]. Name + description + promotional_text mantidos. Aguardando Astro export pra finalizar proposed/metadata/pt-BR/{keywords.txt, subtitle.txt}. Bug crítico identificado: keywords começa com `beb,` truncado — sai obrigatório nessa iter. Ver keyword_candidates.md pra análise detalhada palavra-por-palavra + diff visual SAIU/ENTROU/MUDOU após Astro. | Deploy 2026-05-23: fastlane teve bug (no changes detected) — push final via direct ASC API PATCH (keywords + subtitle pt-BR pra v1.1.0). v1.1.0 em PREPARE_FOR_SUBMISSION, aguardando submit_for_review manual pelo João."
+  "verdict": "promote",
+  "promoted_to_current": true,
+  "notes": "Iter paralela (subtitle + keywords) — único folder, fields_changed=[subtitle,keywords]. Name + description + promotional_text mantidos. Aguardando Astro export pra finalizar proposed/metadata/pt-BR/{keywords.txt, subtitle.txt}. Bug crítico identificado: keywords começa com `beb,` truncado — sai obrigatório nessa iter. Ver keyword_candidates.md pra análise detalhada palavra-por-palavra + diff visual SAIU/ENTROU/MUDOU após Astro. | Deploy 2026-05-23: fastlane teve bug (no changes detected) — push final via direct ASC API PATCH (keywords + subtitle pt-BR pra v1.1.0). v1.1.0 em PREPARE_FOR_SUBMISSION, aguardando submit_for_review manual pelo João. | Fechada 2026-08-06 na abertura da iter-02 (pos-1.5.0)."
 }

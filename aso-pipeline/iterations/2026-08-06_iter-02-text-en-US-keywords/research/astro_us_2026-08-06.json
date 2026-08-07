@@ -1,0 +1,566 @@
+{
+ "blw baby": {
+  "rank": 1,
+  "pop": 5,
+  "diff": 17,
+  "apps": 242
+ },
+ "baby led weaning tracker": {
+  "rank": 2,
+  "pop": 5,
+  "diff": 50,
+  "apps": 248
+ },
+ "weaning tracker": {
+  "rank": 5,
+  "pop": 5,
+  "diff": 15,
+  "apps": 244
+ },
+ "weaning log": {
+  "rank": 5,
+  "pop": 5,
+  "diff": 13,
+  "apps": 248
+ },
+ "baby led weaning": {
+  "rank": 17,
+  "pop": 7,
+  "diff": 15,
+  "apps": 247
+ },
+ "weaning app": {
+  "rank": 18,
+  "pop": 5,
+  "diff": 13,
+  "apps": 250
+ },
+ "starting solids": {
+  "rank": 19,
+  "pop": 8,
+  "diff": 19,
+  "apps": 78
+ },
+ "baby led weaning recipes": {
+  "rank": 20,
+  "pop": 5,
+  "diff": 17,
+  "apps": 246
+ },
+ "weaning": {
+  "rank": 25,
+  "pop": 15,
+  "diff": 13,
+  "apps": 243
+ },
+ "solid starts log": {
+  "rank": 27,
+  "pop": 5,
+  "diff": 15,
+  "apps": 147
+ },
+ "blw": {
+  "rank": 28,
+  "pop": 19,
+  "diff": 17,
+  "apps": 245
+ },
+ "solid starts tracker": {
+  "rank": 28,
+  "pop": 5,
+  "diff": 17,
+  "apps": 248
+ },
+ "wean": {
+  "rank": 29,
+  "pop": 5,
+  "diff": 13,
+  "apps": 240
+ },
+ "blw recipes": {
+  "rank": 30,
+  "pop": 5,
+  "diff": 9,
+  "apps": 242
+ },
+ "baby led feeding": {
+  "rank": 30,
+  "pop": 5,
+  "diff": 15,
+  "apps": 243
+ },
+ "weaning food": {
+  "rank": 32,
+  "pop": 5,
+  "diff": 9,
+  "apps": 244
+ },
+ "weaning recipes": {
+  "rank": 42,
+  "pop": 5,
+  "diff": 9,
+  "apps": 242
+ },
+ "starting solids tracker": {
+  "rank": 44,
+  "pop": 5,
+  "diff": 15,
+  "apps": 248
+ },
+ "starting solids app": {
+  "rank": 44,
+  "pop": 5,
+  "diff": 19,
+  "apps": 249
+ },
+ "6 month": {
+  "rank": 45,
+  "pop": 5,
+  "diff": 21,
+  "apps": 137
+ },
+ "baby weaning": {
+  "rank": 47,
+  "pop": 26,
+  "diff": 15,
+  "apps": 249
+ },
+ "solid starts": {
+  "rank": 50,
+  "pop": 61,
+  "diff": 41,
+  "apps": 129
+ },
+ "puree": {
+  "rank": 65,
+  "pop": 5,
+  "diff": 13,
+  "apps": 158
+ },
+ "solid starts baby first foods": {
+  "rank": 70,
+  "pop": 6,
+  "diff": 17,
+  "apps": 248
+ },
+ "start solids": {
+  "rank": 84,
+  "pop": 9,
+  "diff": 19,
+  "apps": 125
+ },
+ "first foods for baby": {
+  "rank": 89,
+  "pop": 5,
+  "diff": 15,
+  "apps": 246
+ },
+ "baby food 6 months": {
+  "rank": 89,
+  "pop": 5,
+  "diff": 9,
+  "apps": 246
+ },
+ "solid start": {
+  "rank": 92,
+  "pop": 6,
+  "diff": 17,
+  "apps": 128
+ },
+ "baby led weaning app": {
+  "rank": 100,
+  "pop": 27,
+  "diff": 17,
+  "apps": 249
+ },
+ "baby nutrition": {
+  "rank": 113,
+  "pop": 5,
+  "diff": 23,
+  "apps": 249
+ },
+ "introduce solids to baby": {
+  "rank": 118,
+  "pop": 5,
+  "diff": 9,
+  "apps": 249
+ },
+ "allergy log baby": {
+  "rank": 121,
+  "pop": 5,
+  "diff": 5,
+  "apps": 247
+ },
+ "baby finger foods": {
+  "rank": 121,
+  "pop": 5,
+  "diff": 11,
+  "apps": 246
+ },
+ "baby food log": {
+  "rank": 127,
+  "pop": 5,
+  "diff": 43,
+  "apps": 249
+ },
+ "stage 1 baby food": {
+  "rank": 136,
+  "pop": 5,
+  "diff": 7,
+  "apps": 242
+ },
+ "6 month old food": {
+  "rank": 143,
+  "pop": 5,
+  "diff": 11,
+  "apps": 248
+ },
+ "weaning baby from breastfeeding": {
+  "rank": 147,
+  "pop": 5,
+  "diff": 15,
+  "apps": 243
+ },
+ "first foods log": {
+  "rank": 153,
+  "pop": 5,
+  "diff": 24,
+  "apps": 248
+ },
+ "baby food list": {
+  "rank": 159,
+  "pop": 5,
+  "diff": 15,
+  "apps": 247
+ },
+ "food checklist baby": {
+  "rank": 159,
+  "pop": 5,
+  "diff": 19,
+  "apps": 249
+ },
+ "baby feeding tracker": {
+  "rank": 162,
+  "pop": 6,
+  "diff": 68,
+  "apps": 248
+ },
+ "finger foods for baby": {
+  "rank": 163,
+  "pop": 5,
+  "diff": 7,
+  "apps": 246
+ },
+ "baby first foods": {
+  "rank": 166,
+  "pop": 8,
+  "diff": 17,
+  "apps": 247
+ },
+ "picky eater baby": {
+  "rank": 170,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "how to cut food for baby": {
+  "rank": 174,
+  "pop": 5,
+  "diff": 21,
+  "apps": 248
+ },
+ "baby food chart": {
+  "rank": 175,
+  "pop": 5,
+  "diff": 39,
+  "apps": 248
+ },
+ "complementary feeding": {
+  "rank": 187,
+  "pop": 5,
+  "diff": 7,
+  "apps": 250
+ },
+ "baby meal tracker": {
+  "rank": 193,
+  "pop": 5,
+  "diff": 56,
+  "apps": 250
+ },
+ "baby food allergies": {
+  "rank": 208,
+  "pop": 5,
+  "diff": 7,
+  "apps": 248
+ },
+ "alimentazione": {
+  "rank": 212,
+  "pop": 19,
+  "diff": 19,
+  "apps": 236
+ },
+ "baby plate start solids": {
+  "rank": 214,
+  "pop": 8,
+  "diff": 41,
+  "apps": 250
+ },
+ "baby food recipes": {
+  "rank": 241,
+  "pop": 6,
+  "diff": 21,
+  "apps": 247
+ },
+ "baby food tracker": {
+  "rank": 1000,
+  "pop": 7,
+  "diff": 54,
+  "apps": 248
+ },
+ "feeding": {
+  "rank": 1000,
+  "pop": 13,
+  "diff": 62,
+  "apps": 239
+ },
+ "recipes": {
+  "rank": 1000,
+  "pop": 53,
+  "diff": 70,
+  "apps": 248
+ },
+ "allergen": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 45,
+  "apps": 249
+ },
+ "infant": {
+  "rank": 1000,
+  "pop": 13,
+  "diff": 47,
+  "apps": 247
+ },
+ "toddler": {
+  "rank": 1000,
+  "pop": 8,
+  "diff": 79,
+  "apps": 244
+ },
+ "nutrition": {
+  "rank": 1000,
+  "pop": 7,
+  "diff": 71,
+  "apps": 249
+ },
+ "meal plan": {
+  "rank": 1000,
+  "pop": 27,
+  "diff": 67,
+  "apps": 246
+ },
+ "blw tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 19,
+  "apps": 250
+ },
+ "first foods": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 13,
+  "apps": 250
+ },
+ "first foods tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 15,
+  "apps": 248
+ },
+ "first 100 foods": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "100 first foods": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "baby food diary": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "solid food tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 13,
+  "apps": 250
+ },
+ "solids tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 17,
+  "apps": 250
+ },
+ "allergen tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 41,
+  "apps": 250
+ },
+ "baby allergy tracker": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 21,
+  "apps": 245
+ },
+ "peanut introduction": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 5,
+  "apps": 11
+ },
+ "allergen introduction": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "choking prevention baby": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 7,
+  "apps": 248
+ },
+ "baby recipes": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 17,
+  "apps": 249
+ },
+ "baby meal ideas": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 23,
+  "apps": 249
+ },
+ "toddler meal ideas": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 19,
+  "apps": 250
+ },
+ "baby meal planner": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 19,
+  "apps": 250
+ },
+ "introducing solids": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 7,
+  "apps": 33
+ },
+ "when to start solids": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 249
+ },
+ "finger foods": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 44,
+  "apps": 240
+ },
+ "infant feeding": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 43,
+  "apps": 250
+ },
+ "baby eating": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 59,
+  "apps": 248
+ },
+ "baby feeding schedule": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 56,
+  "apps": 249
+ },
+ "feeding schedule": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 59,
+  "apps": 249
+ },
+ "blw meals": {
+  "rank": 1000,
+  "pop": 9,
+  "diff": 23,
+  "apps": 249
+ },
+ "solid starts app": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 21,
+  "apps": 247
+ },
+ "101 before one": {
+  "rank": 1000,
+  "pop": 9,
+  "diff": 30,
+  "apps": 29
+ },
+ "baby tracker": {
+  "rank": 1000,
+  "pop": 63,
+  "diff": 77,
+  "apps": 248
+ },
+ "new parent app": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 62,
+  "apps": 248
+ },
+ "first bites": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 13,
+  "apps": 230
+ },
+ "gag reflex": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 11,
+  "apps": 250
+ },
+ "high chair": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 34,
+  "apps": 88
+ },
+ "puree recipes": {
+  "rank": 1000,
+  "pop": 5,
+  "diff": 13,
+  "apps": 246
+ },
+ "baby milestones": {
+  "rank": 1000,
+  "pop": 6,
+  "diff": 53,
+  "apps": 247
+ }
+}

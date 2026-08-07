@@ -1,0 +1,22 @@
+{
+  "trackId": 1540196240,
+  "trackName": "BLW Meals: Starting Solids",
+  "sellerName": "BLW SOCIAL PTE. LTD.",
+  "primaryGenreName": "Food & Drink",
+  "averageUserRating": 4.64821,
+  "userRatingCount": 307,
+  "price": 0.0,
+  "formattedPrice": "Free",
+  "releaseDate": "2020-11-20T08:00:00Z",
+  "currentVersionReleaseDate": "2026-03-24T01:27:27Z",
+  "version": "1.0.173",
+  "minimumOsVersion": "15.6",
+  "languageCodesISO2A": [
+    "EN"
+  ],
+  "contentAdvisoryRating": "4+",
+  "trackViewUrl": "https://apps.apple.com/us/app/blw-meals-starting-solids/id1540196240?uo=4",
+  "bundleId": "com.n51951dd8177.app",
+  "subtitle": "Alimentación complementaria",
+  "screenshotCount": 21
+}

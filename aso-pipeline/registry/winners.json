@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "iter": "2026-05-22_iter-01-text-pt-BR-keywords",
+    "locale": "pt-BR",
+    "fields": [
+      "subtitle",
+      "keywords"
+    ],
+    "result": "+164% downloads/dia (4.85->12.8) em 75 dias; atribuicao parcial (1.4.0+prints na janela)",
+    "closed": "2026-08-06"
+  }
+]

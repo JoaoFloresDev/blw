@@ -1,0 +1,126 @@
+{
+  "iter_id": "2026-08-06_iter-02-text-en-US-keywords",
+  "type": "text",
+  "locale": "en-US",
+  "fields_changed": [
+    "subtitle",
+    "keywords"
+  ],
+  "fields_unchanged": [
+    "name",
+    "description",
+    "promotional_text"
+  ],
+  "approach": "parallel",
+  "approach_rationale": "Cold-start no store US (12.8 dl/dia GLOBAIS, share US menor). Velocity > attribution. Per-keyword rank tracking via Astro permite post-hoc attribution. Exceção contextual à regra '1 variável por iter'.",
+  "status": "draft",
+  "started_at": "2026-08-06",
+  "planned_close_at": "2026-09-03",
+  "actual_closed_at": null,
+  "hypothesis": {
+    "if_we_change": "Subtitle de 'First Foods & Solid Starts Log' para 'Solid Starts & First 100 Foods' (mantém as duas âncoras, troca 'Log' morto por '100' — destrava a jornada 'first 100 foods' peso 3×, convenção do nicho que o 1.5.0 implementa nativamente); E keywords de 'starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month' (1 dup de name [weaning] + 7 tokens mortos rank OUT diff 45-79) para 'meals,introducing solids,food,diary,allergy,log,finger,starting,bites,cut,6 month,stage 1,puree,list' (hub de composição 'food' + moats de feature diff 5-24). Análise palavra-por-palavra em research/keyword_candidates.md.",
+    "then_we_expect": "Impressions diárias US ↑ ≥30% e downloads diários globais ↑ ≥25% em 30 dias (12.8 → ≥16 conservador / ≥19.2 bold)",
+    "because": "(a) 'first 100 foods'/'100 first foods' (diff 11, rank OUT hoje) entram no subtitle peso 3× com feature real no app — esperado top-30; (b) token 'food' destrava o hub 'baby food *' (diary/log/chart/list/allergies/6 months — 6 long-tails diff 5-43 onde hoje só compomos parcial); (c) 7 tokens mortos (feeding/recipes/allergen/infant/toddler/nutrition/meal plan — todos OUT com diff 45-79) liberam 60+ chars pra 13 termos ganháveis diff 5-24; (d) 'meals' compõe 'blw meals' (pop 9, brand do #2) via name; (e) rank-protects: starting solids r19 mantém starting+solids, weaning log r5 mantém via 'log' no kw field."
+  },
+  "success_criterion": {
+    "primary_metric": "downloads_per_day",
+    "secondary_metrics": [
+      "impressions_per_day",
+      "keywords_ranking_top_30",
+      "search_terms_unique_30d",
+      "conversion_rate"
+    ],
+    "measurement_window": "30 days from deploy day, comparing last 14d vs baseline",
+    "baseline": {
+      "downloads_per_day": 12.8,
+      "downloads_per_day_source": "ASC Sales Reports 45d window (capturado 2026-08-06 via kill_or_scale.py, global todas as lojas)",
+      "impressions_per_day": "TBD — capturar via pull_analytics.py no Day 0",
+      "conversion_rate": "TBD",
+      "keywords_ranking_top_30": 13,
+      "search_terms_unique_30d": "TBD — capturar via ASC Analytics Day 0",
+      "captured_at": "2026-08-06"
+    },
+    "targets": {
+      "conservador": {
+        "downloads_per_day": 16.0,
+        "downloads_delta_pct": 25,
+        "impressions_delta_pct": 25,
+        "keywords_top_30": "+4 vs Day 0"
+      },
+      "bold": {
+        "downloads_per_day": 19.2,
+        "downloads_delta_pct": 50,
+        "impressions_delta_pct": 40,
+        "keywords_top_30": "+8 vs Day 0",
+        "is_official_target": true
+      },
+      "aspiracional_90d": {
+        "downloads_per_day": 26.0,
+        "downloads_multiplier": 2.0,
+        "impressions_multiplier": 2.0,
+        "note": "90 dias — aspiracional, não target dessa iter. Depende de prints novos (nano Solid Starts) + es-ES iter-03."
+      }
+    },
+    "go_no_go_threshold": "downloads_per_day média últimos 14d da iter ≥ 16.0. Abaixo disso = hipótese fraca, reformula iter-03."
+  },
+  "cadence": {
+    "checkpoints": [
+      {
+        "day": 7,
+        "date": "2026-08-13",
+        "purpose": "early signal — rollback se downloads ↓ ≥30%",
+        "metrics_file": "metrics/2026-08-13_d07.csv"
+      },
+      {
+        "day": 14,
+        "date": "2026-08-20",
+        "purpose": "tendência clara",
+        "metrics_file": "metrics/2026-08-20_d14.csv"
+      },
+      {
+        "day": 21,
+        "date": "2026-08-27",
+        "purpose": "rascunho da próxima iter (es-ES?)",
+        "metrics_file": "metrics/2026-08-27_d21.csv"
+      },
+      {
+        "day": 28,
+        "date": "2026-09-03",
+        "purpose": "decision day — promote/rollback/extend",
+        "metrics_file": "metrics/2026-09-03_d28_final.csv"
+      }
+    ],
+    "rollback_triggers": [
+      "Downloads/dia ↓ ≥ 30% sustentado por 7 dias seguidos",
+      "Apple rejeita (review fail)",
+      "solid starts cai pra fora do top-100 (perda da âncora)"
+    ],
+    "escalation_triggers": [
+      "Impressions ↑ ≥ 50% antes de Day 14 → tweaks mais ousados em iter-03",
+      "first 100 foods top-10 antes de Day 14 → reforçar via promotional_text + prints"
+    ]
+  },
+  "research_done": true,
+  "research_files": [
+    "research/competitors.md",
+    "research/current_pool_en-US.csv",
+    "research/candidates_en-US.csv",
+    "research/keyword_candidates.md",
+    "research/astro_us_2026-08-06.json"
+  ],
+  "deployed": false,
+  "deploy_commit": null,
+  "deploy_timestamp": null,
+  "results": {
+    "baseline": {
+      "date": "2026-08-06",
+      "metrics_file": "metrics/2026-08-06_baseline.md",
+      "status": "pending — run ./scripts/pull_analytics.py Day 0"
+    },
+    "checkpoints": [],
+    "final": null
+  },
+  "verdict": null,
+  "promoted_to_current": false,
+  "notes": "iter-02 acompanha o release 1.5.0 (120 foods, first-100 journey, allergen tracking, busca) — o metadata agora tem lastro de produto. Deploy deve esperar a 1.5.0 ficar Ready for Sale pra ir junto. Cuidado: 'Solid Starts' é marca do líder — já está live no nosso subtitle sem complaint desde jun/2026; manter monitorado (risco trademark)."
+}

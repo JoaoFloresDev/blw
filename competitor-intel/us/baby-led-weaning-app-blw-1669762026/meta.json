@@ -1,0 +1,22 @@
+{
+  "trackId": 1669762026,
+  "trackName": "Baby Led Weaning App - BLW",
+  "sellerName": "Drama Labs GmbH",
+  "primaryGenreName": "Food & Drink",
+  "averageUserRating": 4.61918,
+  "userRatingCount": 688,
+  "price": 0.0,
+  "formattedPrice": "Free",
+  "releaseDate": "2023-03-04T08:00:00Z",
+  "currentVersionReleaseDate": "2026-02-07T21:25:41Z",
+  "version": "2.1.8",
+  "minimumOsVersion": "15.0",
+  "languageCodesISO2A": [
+    "EN"
+  ],
+  "contentAdvisoryRating": "12+",
+  "trackViewUrl": "https://apps.apple.com/us/app/baby-led-weaning-app-blw/id1669762026?uo=4",
+  "bundleId": "de.drama-labs.BLW-Meal-App",
+  "subtitle": "Carb Manager & Cycle Tracker",
+  "screenshotCount": 12
+}

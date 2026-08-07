@@ -1,0 +1,22 @@
+{
+  "trackId": 1564189151,
+  "trackName": "Solid Starts: Baby First Foods",
+  "sellerName": "SolidStarts LLC",
+  "primaryGenreName": "Education",
+  "averageUserRating": 4.90292,
+  "userRatingCount": 42692,
+  "price": 0.0,
+  "formattedPrice": "Free",
+  "releaseDate": "2021-05-10T07:00:00Z",
+  "currentVersionReleaseDate": "2026-07-28T19:06:53Z",
+  "version": "6.0.0",
+  "minimumOsVersion": "16.4",
+  "languageCodesISO2A": [
+    "EN"
+  ],
+  "contentAdvisoryRating": "4+",
+  "trackViewUrl": "https://apps.apple.com/us/app/solid-starts-baby-first-foods/id1564189151?uo=4",
+  "bundleId": "com.digitas.solidstarts",
+  "subtitle": "24/7 Parenting Support",
+  "screenshotCount": 19
+}
