@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../data/recipes_data.dart';
+import '../services/analytics_service.dart';
 
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
@@ -164,12 +165,15 @@ class _RecipesScreenState extends State<RecipesScreen> {
 
   Widget _buildRecipeCard(BuildContext context, Recipe recipe, AppLocalizations l10n) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        CupertinoPageRoute(
-          builder: (_) => RecipeDetailScreen(recipe: recipe),
-        ),
-      ),
+      onTap: () {
+        AnalyticsService.recipeViewed(recipe.id);
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+            builder: (_) => RecipeDetailScreen(recipe: recipe),
+          ),
+        );
+      },
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.cardBackground,

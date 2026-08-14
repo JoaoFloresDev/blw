@@ -7,6 +7,7 @@ import '../main.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
+import '../services/analytics_service.dart';
 import 'add_food_log_screen.dart';
 import 'photo_viewer_screen.dart';
 import '../widgets/food_icon.dart';
@@ -259,15 +260,18 @@ class FoodLogDetailScreen extends StatelessWidget {
                           itemCount: log.photosPaths.length,
                           itemBuilder: (context, index) {
                             return GestureDetector(
-                              onTap: () => Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                  builder: (_) => PhotoViewerScreen(
-                                    photos: _createPhotoItems(log, displayName),
-                                    initialIndex: index,
+                              onTap: () {
+                                AnalyticsService.galleryPhotoViewed();
+                                Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                    builder: (_) => PhotoViewerScreen(
+                                      photos: _createPhotoItems(log, displayName),
+                                      initialIndex: index,
+                                    ),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                               child: Container(
                                 width: 120,
                                 height: 120,
@@ -394,6 +398,7 @@ class FoodLogDetailScreen extends StatelessWidget {
             isDestructiveAction: true,
             child: Text(l10n.delete),
             onPressed: () {
+              AnalyticsService.logDeleted();
               context.read<FoodLogProvider>().removeLog(log.id);
               Navigator.pop(context); // Close dialog
               Navigator.pop(context); // Go back to list

@@ -323,8 +323,8 @@ class _PaywallViewState extends State<PaywallView> {
   Widget _buildFeatures(AppLocalizations l10n) {
     final features = [
       (CupertinoIcons.book_fill, l10n.paywallFeature2),
-      (CupertinoIcons.list_bullet, l10n.paywallFeatureRecipeCount),
-      (CupertinoIcons.heart_fill, l10n.paywallFeatureRecipeMeals),
+      (CupertinoIcons.doc_text_fill, l10n.paywallFeature1),
+      (CupertinoIcons.camera_fill, l10n.paywallFeature3),
     ];
     return Column(
       children: features.map((f) {

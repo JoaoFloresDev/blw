@@ -5,11 +5,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../providers/food_log_provider.dart';
+import '../providers/premium_provider.dart';
 import '../models/food_log.dart';
 import '../models/food.dart';
 import '../data/foods_data.dart';
 import '../services/pdf_service.dart';
 import '../services/analytics_service.dart';
+import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import 'food_log_detail_screen.dart';
 import 'food_detail_screen.dart';
@@ -21,8 +23,11 @@ class FoodLogScreen extends StatelessWidget {
   void _exportPdf(BuildContext context, FoodLogProvider provider, AppLocalizations l10n) {
     final logs = provider.logsSortedByDate;
     final introducedFoodIds = provider.introducedFoodIds;
+    final box = context.findRenderObject() as RenderBox?;
 
     PdfService.generateAndShareReport(
+      sharePositionOrigin:
+          box == null ? null : box.localToGlobal(Offset.zero) & box.size,
       logs: logs,
       introducedFoodIds: introducedFoodIds,
       title: l10n.foodDiary,
@@ -150,21 +155,38 @@ class FoodLogScreen extends StatelessWidget {
                             if (logs.isNotEmpty)
                               CupertinoButton(
                                 padding: EdgeInsets.zero,
-                                onPressed: () {
-                                  AnalyticsService.pdfExported();
-                                  _exportPdf(context, provider, l10n);
-                                },
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF007AFF),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: const Icon(
-                                    CupertinoIcons.doc_text_fill,
-                                    color: Colors.white,
-                                    size: 22,
-                                  ),
+                                onPressed: () => PremiumGate.guard(
+                                  context,
+                                  source: 'pdf_export',
+                                  onUnlocked: () {
+                                    AnalyticsService.pdfExported();
+                                    _exportPdf(context, provider, l10n);
+                                  },
+                                ),
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFF007AFF),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: const Icon(
+                                        CupertinoIcons.doc_text_fill,
+                                        color: Colors.white,
+                                        size: 22,
+                                      ),
+                                    ),
+                                    if (!context
+                                        .watch<PremiumProvider>()
+                                        .isPremium)
+                                      const Positioned(
+                                        top: -6,
+                                        right: -6,
+                                        child: _LockDot(),
+                                      ),
+                                  ],
                                 ),
                               ),
                           ],
@@ -577,12 +599,15 @@ class FoodLogScreen extends StatelessWidget {
       children: [
         CupertinoButton(
           padding: EdgeInsets.zero,
-          onPressed: () => Navigator.push(
-            context,
-            CupertinoPageRoute(
-              builder: (_) => FoodLogDetailScreen(log: log),
-            ),
-          ),
+          onPressed: () {
+            AnalyticsService.logOpened();
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (_) => FoodLogDetailScreen(log: log),
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Row(
@@ -691,6 +716,29 @@ class FoodLogScreen extends StatelessWidget {
           ],
         ],
       ),
+    );
+  }
+}
+
+// MARK: - Lock indicator
+
+/// Small lock dot rendered over premium-gated icon buttons.
+class _LockDot extends StatelessWidget {
+  const _LockDot();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 18,
+      height: 18,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFFFF9500), Color(0xFFFFB340)],
+        ),
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.white, width: 1.5),
+      ),
+      child: const Icon(CupertinoIcons.lock_fill, size: 9, color: Colors.white),
     );
   }
 }

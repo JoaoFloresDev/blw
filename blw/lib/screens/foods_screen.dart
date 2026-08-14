@@ -205,11 +205,14 @@ class _FoodsScreenState extends State<FoodsScreen> {
                         const SizedBox(width: 8),
                         CupertinoButton(
                           padding: EdgeInsets.zero,
-                          onPressed: () => Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (_) => const TipsScreen()),
-                          ),
+                          onPressed: () {
+                            AnalyticsService.tipsOpened();
+                            Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (_) => const TipsScreen()),
+                            );
+                          },
                           child: Container(
                             padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(

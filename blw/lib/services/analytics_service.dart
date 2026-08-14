@@ -76,4 +76,20 @@ class AnalyticsService {
 
   static Future<void> reviewPromptRequested(String trigger) =>
       _log('review_prompt_requested', {'trigger': trigger});
+
+  // MARK: - Navigation & secondary actions
+
+  /// [tab] is diary, foods or gallery.
+  static Future<void> tabViewed(String tab) => _log('tab_viewed', {'tab': tab});
+
+  static Future<void> logOpened() => _log('food_log_opened');
+
+  static Future<void> logDeleted() => _log('food_log_deleted');
+
+  static Future<void> recipeViewed(String recipeId) =>
+      _log('recipe_viewed', {'recipe_id': recipeId});
+
+  static Future<void> tipsOpened() => _log('tips_opened');
+
+  static Future<void> galleryPhotoViewed() => _log('gallery_photo_viewed');
 }

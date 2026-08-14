@@ -6,6 +6,7 @@ import '../main.dart';
 import '../models/food.dart';
 import '../data/recipes_data.dart';
 import '../providers/premium_provider.dart';
+import '../services/analytics_service.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import '../widgets/food_icon.dart';
@@ -449,6 +450,9 @@ class FoodDetailScreen extends StatelessWidget {
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           trailing: isPremium ? null : const ProBadge(),
+          onExpansionChanged: (open) {
+            if (open) AnalyticsService.recipeViewed(recipe.id);
+          },
           childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           leading: Container(
             width: 48,

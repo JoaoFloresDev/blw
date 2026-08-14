@@ -9,10 +9,12 @@ import '../models/food.dart';
 import '../models/food_log.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
+import '../providers/premium_provider.dart';
 import '../services/analytics_service.dart';
 import '../services/app_opens_service.dart';
 import '../services/photo_service.dart';
 import '../widgets/celebration_overlay.dart';
+import '../widgets/paywall_view.dart';
 import '../widgets/food_icon.dart';
 
 class AddFoodLogScreen extends StatefulWidget {
@@ -868,6 +870,15 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
   }
 
   void _addPhoto(ImageSource source, AppLocalizations l10n) async {
+    // Free users are limited to a single photo per record; extra photos
+    // are a premium feature.
+    final premium = context.read<PremiumProvider>();
+    if (!premium.canAddPhoto(_photoPaths.length)) {
+      await showPaywall(context, source: 'photo_limit');
+      if (!mounted) return;
+      if (!context.read<PremiumProvider>().isPremium) return;
+    }
+
     final path = await PhotoService.pickImage(source);
     if (path != null) {
       setState(() {

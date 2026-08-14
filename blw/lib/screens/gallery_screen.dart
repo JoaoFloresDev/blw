@@ -273,15 +273,18 @@ class GalleryScreen extends StatelessWidget {
     AppLocalizations l10n,
   ) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        CupertinoPageRoute(
-          builder: (_) => PhotoViewerScreen(
-            photos: allPhotos,
-            initialIndex: index,
+      onTap: () {
+        AnalyticsService.galleryPhotoViewed();
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+            builder: (_) => PhotoViewerScreen(
+              photos: allPhotos,
+              initialIndex: index,
+            ),
           ),
-        ),
-      ),
+        );
+      },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),

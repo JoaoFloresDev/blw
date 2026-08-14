@@ -8,6 +8,7 @@ import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
 import 'providers/food_log_provider.dart';
 import 'providers/premium_provider.dart';
+import 'services/analytics_service.dart';
 import 'services/storage_service.dart';
 import 'services/app_opens_service.dart';
 import 'screens/foods_screen.dart';
@@ -391,7 +392,12 @@ class _MainTabScreenState extends State<MainTabScreen> {
       fit: BoxFit.contain,
     );
     return GestureDetector(
-      onTap: () => setState(() => _selectedIndex = index),
+      onTap: () {
+        if (index != _selectedIndex) {
+          AnalyticsService.tabViewed(const ['diary', 'foods', 'gallery'][index]);
+        }
+        setState(() => _selectedIndex = index);
+      },
       behavior: HitTestBehavior.opaque,
       child: SizedBox(
         width: 64,

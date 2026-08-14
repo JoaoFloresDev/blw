@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' show Rect;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:path_provider/path_provider.dart';
@@ -13,6 +14,7 @@ class PdfService {
     required String title,
     required String subtitle,
     required Map<String, String> labels,
+    Rect? sharePositionOrigin,
   }) async {
     final pdf = pw.Document();
 
@@ -73,9 +75,12 @@ class PdfService {
     final file = File('${tempDir.path}/$filename');
     await file.writeAsBytes(bytes);
 
+    // sharePositionOrigin is required on iPad — without it the share popover
+    // fails silently (Apple reviews iPhone-only apps on iPad too).
     await Share.shareXFiles(
       [XFile(file.path)],
       subject: title,
+      sharePositionOrigin: sharePositionOrigin,
     );
   }
 
