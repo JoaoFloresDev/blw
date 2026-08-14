@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import '../services/analytics_service.dart';
 import '../services/purchase_service.dart';
 import '../services/storage_service.dart';
 
@@ -9,10 +10,6 @@ import '../services/storage_service.dart';
 /// flag locally so the gate resolves instantly on next launch while a
 /// silent restore re-validates the subscription in the background.
 class PremiumProvider extends ChangeNotifier {
-  // MARK: - Constants
-  /// Free users can attach this many photos per food record.
-  static const int freePhotosPerLog = 1;
-
   // MARK: - Properties
   final PurchaseService _service = PurchaseService.instance;
   StreamSubscription<List<PurchaseDetails>>? _subscription;
@@ -45,11 +42,6 @@ class PremiumProvider extends ChangeNotifier {
   }
 
   // MARK: - Public Methods
-  /// Returns true when the user is allowed to attach one more photo.
-  bool canAddPhoto(int currentPhotoCount) {
-    return _isPremium || currentPhotoCount < freePhotosPerLog;
-  }
-
   Future<void> buy(ProductDetails product) async {
     _purchasePending = true;
     notifyListeners();
@@ -103,6 +95,8 @@ class PremiumProvider extends ChangeNotifier {
           break;
         case PurchaseStatus.error:
         case PurchaseStatus.canceled:
+          AnalyticsService.purchaseAbandoned(
+              purchase.status == PurchaseStatus.canceled ? 'canceled' : 'error');
           _purchasePending = false;
           await _service.complete(purchase);
           break;

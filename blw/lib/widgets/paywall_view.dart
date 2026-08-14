@@ -14,7 +14,6 @@ import '../services/analytics_service.dart';
 /// became premium while it was open. [source] tags the funnel entry point
 /// on every analytics event this paywall emits.
 Future<bool> showPaywall(BuildContext context, {String source = 'unknown'}) async {
-  AnalyticsService.paywallShown(source);
   await Navigator.of(context, rootNavigator: true).push(
     CupertinoPageRoute(
       fullscreenDialog: true,
@@ -126,6 +125,9 @@ class _PaywallViewState extends State<PaywallView> {
   void initState() {
     super.initState();
     _wasPremium = context.read<PremiumProvider>().isPremium;
+    // Logged here (not in showPaywall) so the onboarding paywall, which embeds
+    // this view directly without the modal helper, is counted too.
+    AnalyticsService.paywallShown(widget.source);
   }
 
   // MARK: - Actions
@@ -320,9 +322,9 @@ class _PaywallViewState extends State<PaywallView> {
 
   Widget _buildFeatures(AppLocalizations l10n) {
     final features = [
-      (CupertinoIcons.square_pencil_fill, l10n.paywallFeatureDiary),
-      (CupertinoIcons.doc_text_fill, l10n.paywallFeature1),
       (CupertinoIcons.book_fill, l10n.paywallFeature2),
+      (CupertinoIcons.list_bullet, l10n.paywallFeatureRecipeCount),
+      (CupertinoIcons.heart_fill, l10n.paywallFeatureRecipeMeals),
     ];
     return Column(
       children: features.map((f) {

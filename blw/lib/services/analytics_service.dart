@@ -27,6 +27,11 @@ class AnalyticsService {
 
   // MARK: - Onboarding
 
+  /// Fired once per feature page (0-based) so drop-off inside the
+  /// onboarding is measurable; the paywall step logs paywall_shown instead.
+  static Future<void> onboardingStepViewed(int step) =>
+      _log('onboarding_step_viewed', {'step': step});
+
   static Future<void> onboardingCompleted() => _log('onboarding_completed');
 
   // MARK: - Sales funnel
@@ -47,6 +52,11 @@ class AnalyticsService {
       _log('purchase_success', {'source': source});
 
   static Future<void> purchaseRestored() => _log('purchase_restored');
+
+  /// The native payment sheet ended without a purchase.
+  /// [reason] is 'canceled' (user dismissed) or 'error' (payment failed).
+  static Future<void> purchaseAbandoned(String reason) =>
+      _log('purchase_abandoned', {'reason': reason});
 
   // MARK: - Core usage
 

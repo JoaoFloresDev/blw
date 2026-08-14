@@ -24,6 +24,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   // MARK: - Lifecycle
   @override
+  void initState() {
+    super.initState();
+    AnalyticsService.onboardingStepViewed(0);
+  }
+
+  @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
@@ -99,7 +105,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: PageView.builder(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),
-        onPageChanged: (index) => setState(() => _currentPage = index),
+        onPageChanged: (index) {
+          AnalyticsService.onboardingStepViewed(index);
+          setState(() => _currentPage = index);
+        },
         itemCount: pages.length,
         itemBuilder: (context, index) {
           return _OnboardingFeaturePage(

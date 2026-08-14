@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../models/food.dart';
 import '../data/recipes_data.dart';
+import '../providers/premium_provider.dart';
 import '../widgets/paywall_view.dart';
 import 'add_food_log_screen.dart';
 import '../widgets/food_icon.dart';
@@ -441,23 +443,12 @@ class FoodDetailScreen extends StatelessWidget {
   }
 
   Widget _buildRecipeCard(BuildContext context, Recipe recipe) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Theme(
+    final isPremium = context.watch<PremiumProvider>().isPremium;
+    final tile = Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+          trailing: isPremium ? null : const ProBadge(),
           childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           leading: Container(
             width: 48,
@@ -630,7 +621,31 @@ class FoodDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      );
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
+      child: isPremium
+          ? tile
+          : GestureDetector(
+              onTap: () => PremiumGate.guard(
+                context,
+                source: 'recipes',
+                onUnlocked: () {},
+              ),
+              child: AbsorbPointer(child: tile),
+            ),
     );
   }
 
@@ -683,14 +698,10 @@ class FoodDetailScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           color: AppColors.primary,
           borderRadius: BorderRadius.circular(14),
-          onPressed: () => PremiumGate.guard(
+          onPressed: () => Navigator.push(
             context,
-            source: 'food_detail_add',
-            onUnlocked: () => Navigator.push(
-              context,
-              CupertinoPageRoute(
-                builder: (_) => AddFoodLogScreen(preselectedFood: food),
-              ),
+            CupertinoPageRoute(
+              builder: (_) => AddFoodLogScreen(preselectedFood: food),
             ),
           ),
           child: Row(

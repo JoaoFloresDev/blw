@@ -263,6 +263,8 @@ class AppLocalizations {
   String get paywallFeature2 => get('paywallFeature2');
   String get paywallFeature3 => get('paywallFeature3');
   String get paywallFeature4 => get('paywallFeature4');
+  String get paywallFeatureRecipeCount => get('paywallFeatureRecipeCount');
+  String get paywallFeatureRecipeMeals => get('paywallFeatureRecipeMeals');
   String get planWeekly => get('planWeekly');
   String get planYearly => get('planYearly');
   String get perWeek => get('perWeek');
@@ -882,10 +884,12 @@ const Map<String, String> _ptTranslations = {
 
   // Paywall / Premium
   'paywallTitle': 'Desbloqueie o BLW Pro',
-  'paywallSubtitle': 'Tudo que você precisa para acompanhar a introdução alimentar do seu bebê',
+  'paywallSubtitle': 'Todas as receitas para cada fase da introdução alimentar',
   'paywallFeatureDiary': 'Registre todas as refeições do bebê',
   'paywallFeature1': 'Exporte o diário completo em PDF',
   'paywallFeature2': 'Receitas exclusivas para cada fase',
+  'paywallFeatureRecipeCount': 'Mais de 35 receitas por idade do bebê',
+  'paywallFeatureRecipeMeals': 'Café da manhã, almoço, jantar e lanches',
   'paywallFeature3': 'Fotos ilimitadas em cada registro',
   'paywallFeature4': 'Sem anúncios, para sempre',
   'planWeekly': 'Semanal',
@@ -1482,10 +1486,12 @@ const Map<String, String> _enTranslations = {
 
   // Paywall / Premium
   'paywallTitle': 'Unlock BLW Pro',
-  'paywallSubtitle': 'Everything you need to track your baby\'s food journey',
+  'paywallSubtitle': 'Every recipe for each stage of your baby\'s food journey',
   'paywallFeatureDiary': 'Log every one of your baby\'s meals',
   'paywallFeature1': 'Export the full diary as PDF',
   'paywallFeature2': 'Exclusive recipes for every stage',
+  'paywallFeatureRecipeCount': 'Over 35 recipes by your baby\'s age',
+  'paywallFeatureRecipeMeals': 'Breakfast, lunch, dinner and snacks',
   'paywallFeature3': 'Unlimited photos on every record',
   'paywallFeature4': 'No ads, forever',
   'planWeekly': 'Weekly',
@@ -2082,10 +2088,12 @@ const Map<String, String> _esTranslations = {
 
   // Paywall / Premium
   'paywallTitle': 'Desbloquea BLW Pro',
-  'paywallSubtitle': 'Todo lo que necesitas para seguir la alimentación de tu bebé',
+  'paywallSubtitle': 'Todas las recetas para cada etapa de la alimentación de tu bebé',
   'paywallFeatureDiary': 'Registra todas las comidas del bebé',
   'paywallFeature1': 'Exporta el diario completo en PDF',
   'paywallFeature2': 'Recetas exclusivas para cada etapa',
+  'paywallFeatureRecipeCount': 'Más de 35 recetas según la edad del bebé',
+  'paywallFeatureRecipeMeals': 'Desayuno, comida, cena y meriendas',
   'paywallFeature3': 'Fotos ilimitadas en cada registro',
   'paywallFeature4': 'Sin anuncios, para siempre',
   'planWeekly': 'Semanal',
