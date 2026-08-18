@@ -115,5 +115,5 @@
   },
   "verdict": null,
   "promoted_to_current": false,
-  "notes": "Research feito sobre 105 termos ja trackeados no Astro (refresh 18/08). Name/subtitle intocados por rank-protect. Alavanca paralela maior: Start manual do BLW Panorama PPO (pronto desde 07/08) — conversao multiplica esta iter. Aguardando aprovacao do Joao pra deploy (precedente: iter-02 rejeitada em review). Deploy autorizado pelo Joao sem review previa (2026-08-18: \"ja aplica sua conclusao\"). Perda esperada es: alérgenos #38 (pop 5) sai do campo."
+  "notes": "Research feito sobre 105 termos ja trackeados no Astro (refresh 18/08). Name/subtitle intocados por rank-protect. Alavanca paralela maior: Start manual do BLW Panorama PPO (pronto desde 07/08) — conversao multiplica esta iter. Aguardando aprovacao do Joao pra deploy (precedente: iter-02 rejeitada em review). Deploy autorizado pelo Joao sem review previa (2026-08-18: \"ja aplica sua conclusao\"). Perda esperada es: alérgenos #38 (pop 5) sai do campo. ATENCAO: deliver foi no-op (LEARNING #13); keywords aplicadas via PATCH direto pelas localizations da 1.5.2 (PREPARE_FOR_SUBMISSION) — SO ENTRAM NO AR quando a 1.5.2 for aprovada. Relogio dos checkpoints D7/D14 conta a partir do release da 1.5.2, nao de 18/08. whatsNew preenchido nos 4 locales via API."
 }
