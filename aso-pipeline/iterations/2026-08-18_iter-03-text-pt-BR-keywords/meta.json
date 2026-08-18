@@ -1,0 +1,119 @@
+{
+  "iter_id": "2026-08-18_iter-03-text-pt-BR-keywords",
+  "type": "text",
+  "locale": "pt-BR",
+  "fields_changed": [
+    "keywords"
+  ],
+  "fields_unchanged": [
+    "name",
+    "subtitle",
+    "description",
+    "promotional_text"
+  ],
+  "approach": "sequential",
+  "approach_rationale": "1 variavel (keywords field). Name/subtitle carregam rank-protect (#1-#5) e ficam estaveis; o keywords field atual e o campo mais desperdicado (compostos + dups) — maior ganho por menor risco. Estendida a en-US/es-ES/es-MX no mesmo dia a pedido do Joao (mesma mecanica: só keywords field, tokens unicos).",
+  "status": "running",
+  "started_at": "2026-08-18",
+  "planned_close_at": "2026-09-15",
+  "actual_closed_at": null,
+  "hypothesis": {
+    "if_we_change": "Keywords field pt-BR de 'papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros' (compostos, papinha 3x, receitas/baby duplicando subtitle/name) para 'bebê,weaning,starting,solids,caseira,6,meses,desengasgo,cortes,seguros,alergia,cardápio,nutrição,mãe' (14 tokens unicos, 100/100 chars, front-loaded) | en-US: 'starting,solids,introduction,100,choking,allergen,finger,recipes,puree,6,month,diary,stage,1,chart' (destrava first 100 foods diff 11, allergen/peanut introduction diff 7-13, choking prevention diff 7; remove dups weaning/toddler/infant/nutrition/meal plan todos OUT diff>47) | es-ES/es-MX: 'weaning,starting,solids,solid,starts,baby,led,destete,recetas,alergia,atragantamiento,introducción' (remove blw dup do subtitle e lactancia diff 44 intent errado; adiciona introducción diff 5, atragantamiento diff 5, alergia diff 7)",
+    "then_we_expect": "Impressions diarias +25% e downloads diarios +20% em 30 dias",
+    "because": "(a) starting solids (pop 28/diff 5) e solid starts (pop 50/diff 5) ganham tokens exatos em vez de stemming; (b) token 'bebê' inexistente nos campos destrava composicoes PT hoje OUT com diff<=17 (blw bebê, papinha bebê, alergia alimentar bebê); (c) nenhum rank atual depende de token removido (todos duplicavam name/subtitle)"
+  },
+  "success_criterion": {
+    "primary_metric": "downloads_per_day",
+    "secondary_metrics": [
+      "impressions_per_day",
+      "keywords_ranking_top_30",
+      "conversion_rate"
+    ],
+    "measurement_window": "30 days from deploy day, comparing last 14d vs baseline",
+    "baseline": {
+      "downloads_per_day": 18.7,
+      "downloads_per_day_source": "ASC Sales Reports 59d via pull_analytics.py (Day 0, 2026-08-18). Top paises: ES 218, US 205, BR 153.",
+      "impressions_per_day": "TBD — capturar via pull_analytics.py no Day 0",
+      "conversion_rate": "TBD — capturar Day 0",
+      "keywords_ranking_top_30": "17 termos top-30 no Astro (snapshot 2026-08-18)",
+      "captured_at": "2026-08-18"
+    },
+    "targets": {
+      "conservador": {
+        "downloads_per_day": 20,
+        "downloads_delta_pct": 10,
+        "impressions_delta_pct": 15,
+        "keywords_top_30": "+3 vs Day 0"
+      },
+      "bold": {
+        "downloads_per_day": 23,
+        "downloads_delta_pct": 25,
+        "impressions_delta_pct": 30,
+        "keywords_top_30": "+6 vs Day 0",
+        "is_official_target": true
+      },
+      "aspiracional_90d": {
+        "downloads_per_day": 37,
+        "downloads_multiplier": 2.0,
+        "impressions_multiplier": 2.0,
+        "note": "90 dias com PPO panorama rodando junto — aspiracional, nao target desta iter."
+      }
+    },
+    "go_no_go_threshold": "downloads_per_day media ultimos 14d >= 20. Abaixo = hipotese fraca, reformular iter-04."
+  },
+  "cadence": {
+    "checkpoints": [
+      {
+        "day": 7,
+        "date": "2026-08-25",
+        "purpose": "early signal — starting solids <=12? composicoes bebê no indice? rollback se downloads -30%",
+        "metrics_file": "metrics/2026-08-25_d07.csv"
+      },
+      {
+        "day": 14,
+        "date": "2026-09-01",
+        "purpose": "tendencia — solid starts <=50, impressoes subindo",
+        "metrics_file": "metrics/2026-09-01_d14.csv"
+      },
+      {
+        "day": 21,
+        "date": "2026-09-08",
+        "purpose": "rascunho iter-04 (es-ES ou en-US usando research da iter-02)",
+        "metrics_file": "metrics/2026-09-08_d21.csv"
+      },
+      {
+        "day": 28,
+        "date": "2026-09-15",
+        "purpose": "decision day — promote/rollback/extend",
+        "metrics_file": "metrics/2026-09-15_d28_final.csv"
+      }
+    ],
+    "rollback_triggers": [
+      "Downloads/dia -30% sustentado por 7 dias seguidos",
+      "Perda de 3+ ranks do cluster protegido (#1-#5) sem ganho nos GOLD"
+    ],
+    "escalation_triggers": [
+      "starting solids top-5 antes do D14 -> reforcar cluster EN via promotional_text",
+      "Composicao bebê top-10 antes do D14 -> iter-04 agressiva no subtitle"
+    ]
+  },
+  "research_done": true,
+  "research_files": [
+    "research/keyword_candidates.md"
+  ],
+  "deployed": true,
+  "deploy_commit": null,
+  "deploy_timestamp": "2026-08-18T19:20:02Z",
+  "results": {
+    "baseline": {
+      "date": "2026-08-18",
+      "metrics_file": "metrics/baseline.md",
+      "status": "pending — rodar ./scripts/pull_analytics.py no Day 0 (deploy)"
+    },
+    "checkpoints": [],
+    "final": null
+  },
+  "verdict": null,
+  "promoted_to_current": false,
+  "notes": "Research feito sobre 105 termos ja trackeados no Astro (refresh 18/08). Name/subtitle intocados por rank-protect. Alavanca paralela maior: Start manual do BLW Panorama PPO (pronto desde 07/08) — conversao multiplica esta iter. Aguardando aprovacao do Joao pra deploy (precedente: iter-02 rejeitada em review). Deploy autorizado pelo Joao sem review previa (2026-08-18: \"ja aplica sua conclusao\"). Perda esperada es: alérgenos #38 (pop 5) sai do campo."
+}
