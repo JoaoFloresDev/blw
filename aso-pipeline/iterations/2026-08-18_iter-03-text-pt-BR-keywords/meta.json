@@ -13,10 +13,10 @@
   ],
   "approach": "sequential",
   "approach_rationale": "1 variavel (keywords field). Name/subtitle carregam rank-protect (#1-#5) e ficam estaveis; o keywords field atual e o campo mais desperdicado (compostos + dups) — maior ganho por menor risco. Estendida a en-US/es-ES/es-MX no mesmo dia a pedido do Joao (mesma mecanica: só keywords field, tokens unicos).",
-  "status": "running",
+  "status": "superseded",
   "started_at": "2026-08-18",
   "planned_close_at": "2026-09-15",
-  "actual_closed_at": null,
+  "actual_closed_at": "2026-08-18",
   "hypothesis": {
     "if_we_change": "Keywords field pt-BR de 'papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros' (compostos, papinha 3x, receitas/baby duplicando subtitle/name) para 'bebê,weaning,starting,solids,caseira,6,meses,desengasgo,cortes,seguros,alergia,cardápio,nutrição,mãe' (14 tokens unicos, 100/100 chars, front-loaded) | en-US: 'starting,solids,introduction,100,choking,allergen,finger,recipes,puree,6,month,diary,stage,1,chart' (destrava first 100 foods diff 11, allergen/peanut introduction diff 7-13, choking prevention diff 7; remove dups weaning/toddler/infant/nutrition/meal plan todos OUT diff>47) | es-ES/es-MX: 'weaning,starting,solids,solid,starts,baby,led,destete,recetas,alergia,atragantamiento,introducción' (remove blw dup do subtitle e lactancia diff 44 intent errado; adiciona introducción diff 5, atragantamiento diff 5, alergia diff 7)",
     "then_we_expect": "Impressions diarias +25% e downloads diarios +20% em 30 dias",
@@ -113,7 +113,7 @@
     "checkpoints": [],
     "final": null
   },
-  "verdict": null,
+  "verdict": "superseded",
   "promoted_to_current": false,
-  "notes": "Research feito sobre 105 termos ja trackeados no Astro (refresh 18/08). Name/subtitle intocados por rank-protect. Alavanca paralela maior: Start manual do BLW Panorama PPO (pronto desde 07/08) — conversao multiplica esta iter. Aguardando aprovacao do Joao pra deploy (precedente: iter-02 rejeitada em review). Deploy autorizado pelo Joao sem review previa (2026-08-18: \"ja aplica sua conclusao\"). Perda esperada es: alérgenos #38 (pop 5) sai do campo. ATENCAO: deliver foi no-op (LEARNING #13); keywords aplicadas via PATCH direto pelas localizations da 1.5.2 (PREPARE_FOR_SUBMISSION) — SO ENTRAM NO AR quando a 1.5.2 for aprovada. Relogio dos checkpoints D7/D14 conta a partir do release da 1.5.2, nao de 18/08. whatsNew preenchido nos 4 locales via API."
+  "notes": "SUPERSEDED em 2026-08-18 (mesmo dia) pela iter-04: as keywords desta iter foram PATCHadas na 1.5.2 editável mas NUNCA foram ao ar (1.5.2 seguia PREPARE_FOR_SUBMISSION). A iter-04 recompôs do zero sobre a base LIVE 1.5.1 com pipeline completo e mapa de proteção — esta composição removia tokens que protegiam ranks (ex. frases papinha exatas #1-#5) e foi descartada antes de qualquer exposição real. Nenhum dado de resultado a colher. Notas originais: Research feito sobre 105 termos ja trackeados no Astro (refresh 18/08). Name/subtitle intocados por rank-protect. Alavanca paralela maior: Start manual do BLW Panorama PPO (pronto desde 07/08) — conversao multiplica esta iter. Aguardando aprovacao do Joao pra deploy (precedente: iter-02 rejeitada em review). Deploy autorizado pelo Joao sem review previa (2026-08-18: \"ja aplica sua conclusao\"). Perda esperada es: alérgenos #38 (pop 5) sai do campo. ATENCAO: deliver foi no-op (LEARNING #13); keywords aplicadas via PATCH direto pelas localizations da 1.5.2 (PREPARE_FOR_SUBMISSION) — SO ENTRAM NO AR quando a 1.5.2 for aprovada. Relogio dos checkpoints D7/D14 conta a partir do release da 1.5.2, nao de 18/08. whatsNew preenchido nos 4 locales via API."
 }

@@ -1,0 +1,155 @@
+{
+  "iter_id": "2026-08-18_iter-04-text-pt-BR-keywords",
+  "type": "text",
+  "locale": "pt-BR",
+  "locales_all": [
+    "pt-BR",
+    "en-US",
+    "es-ES",
+    "es-MX"
+  ],
+  "fields_changed": [
+    "subtitle",
+    "keywords",
+    "description (pt-BR, fix cirúrgico do mismatch 'cardápio semanal')"
+  ],
+  "fields_unchanged": [
+    "name",
+    "promotional_text",
+    "whatsNew"
+  ],
+  "approach": "parallel",
+  "approach_rationale": "4 locales de uma vez (subtitle+keywords pt-BR; só keywords en-US/es-ES/es-MX, es-MX cópia de es-ES). App em WATCH com tendência ↑ (17,8-18,7 dl/dia) — velocity > attribution. Composição disciplinada por mapa de proteção (nenhum token que sustenta rank ≤30 sai do campo) reduz o risco do parallel; per-keyword rank tracking via Astro permite attribution post-hoc. Names intocados (protegem #1-30 nas 3 stores). Nota: description e promotional_text não são variáveis desta iter, mas a description pt-BR recebe correção cirúrgica no deploy (remove promessa de 'cardápio semanal' inexistente — MISMATCH do fit-checker), ação anexa do coordenador, não parte da hipótese.",
+  "status": "running",
+  "started_at": "2026-08-18",
+  "planned_close_at": "2026-09-15",
+  "actual_closed_at": null,
+  "hypothesis": {
+    "if_we_change": "pt-BR subtitle 'Papinha, Receitas Solid Starts' → 'Papinha, Receitas e Weaning' + keywords → 'starting solids,bebe,guia,papinha caseira,papinha 6 meses,receitas papinha,desengasgo,cortes seguros' (100/100) | en-US keywords → 'starting solids,introduction,finger food,guide,100,puree,recipes,allergen,meal plan,6 month' (91/100; saem feeding/infant/toddler/nutrition mortos + dup weaning coberto pelo name) | es-ES/es-MX keywords → 'introduccion,guia,atragantamiento,starting solids,baby led weaning,recetas,destete,solidos,alergenos' (100/100; saem blw dup do subtitle, solid starts morto, lactancia off-scope)",
+    "then_we_expect": "Impressões diárias ↑ ≥15% e downloads 18,7 → ≥20/dia (conservador) rumo a 23/dia (bold) em 30 dias contados do RELEASE da 1.5.2 (agregado 4 locales)",
+    "because": "(a) promoção de peso do CLIMB #1 do br: baby weaning (pop 25, diff 5, br #24) ganha baby(name)+weaning(subtitle) em vez de kw — name/subtitle ≫ keywords; (b) nenhum token removido protegia composição rankeada ≤30 (só dups exatos e slots mortos — 45+ chars reinvestidos); (c) starting solids (pop 28-29, diff 5-19, br #18/us #22/es #15) ganha frase exata pt e front-loading nos 3 sets; (d) 10 apostas-feeder (bebe, guia | introduction, finger food, guide, 100 | introduccion, guia, atragantamiento) destravam ≥15 composições CLIMB 'top 10 se token entrar' com diff ≤15 e SERPs pulverizadas (incumbentes 0-350 ratings fora o brand Solid Starts); (e) mapa de proteção integral — única troca de protetor aceita: br #20 solid starts baby first foods migra do subtitle pt pro subtitle en-US (store br indexa ambos)"
+  },
+  "success_criterion": {
+    "primary_metric": "downloads_per_day",
+    "secondary_metrics": [
+      "impressions_per_day",
+      "keywords_ranking_top_30",
+      "search_terms_unique_30d",
+      "conversion_rate"
+    ],
+    "measurement_window": "30 days from 1.5.2 RELEASE (not from deploy/PATCH day), comparing last 14d vs baseline",
+    "baseline": {
+      "downloads_per_day": 18.7,
+      "downloads_per_day_source": "pull_analytics.py, ASC Sales Reports 60d (2026-06-19→2026-08-17, 59 dias com dados, 1101 units). Top países: ES 218 (19,8%) / US 205 (18,6%) / BR 153 (13,9%)",
+      "downloads_per_day_45d": 17.8,
+      "downloads_per_day_45d_source": "kill_or_scale.py 45d (800 units) — veredito WATCH, tendência rising. Métrica alternativa registrada pra cross-check; checkpoints comparam like-for-like com a série do pull_analytics",
+      "ratings_count": "BR 1 / US 3 / ES 1 — massa de rating é o gargalo dos heads blw (fleet BLW SOCIAL 874-1885 ratings)",
+      "impressions_per_day": "TBD — Analytics Reports request ONGOING (id ff722017, snapshot em 24-48h); capturar no Day 0 do release",
+      "conversion_rate": "TBD — idem",
+      "keywords_ranking_top_30": "BR 33 / US 8 / ES 17 composições ≤30 (protection_map.md, snapshot 2026-08-18)",
+      "search_terms_unique_30d": "TBD — mesmo request",
+      "captured_at": "2026-08-18",
+      "metrics_file": "research/baseline_2026-08-18.md"
+    },
+    "targets": {
+      "conservador": {
+        "downloads_per_day": 20,
+        "downloads_delta_pct": 7,
+        "impressions_delta_pct": 15,
+        "keywords_top_30": "+4 vs Day 0"
+      },
+      "bold": {
+        "downloads_per_day": 23,
+        "downloads_delta_pct": 23,
+        "impressions_delta_pct": 30,
+        "keywords_top_30": "+8 vs Day 0 (≥ metade das composições 'top 10 se token entrar')",
+        "is_official_target": true
+      },
+      "aspiracional_90d": {
+        "downloads_per_day": 37,
+        "downloads_multiplier": 2.0,
+        "impressions_multiplier": 2.0,
+        "note": "90 dias, com BLW Panorama PPO (Start pendente) multiplicando conversão — aspiracional, não target desta iter."
+      }
+    },
+    "go_no_go_threshold": "downloads_per_day média últimos 14d ≥ 20. Abaixo = hipótese fraca; próxima alavanca é conversão/ratings (PPO Start + rating push), não mais texto."
+  },
+  "cadence": {
+    "clock_note": "IMPORTANTE: campos aplicados via PATCH na 1.5.2 (PREPARE_FOR_SUBMISSION) — SÓ ENTRAM NO AR quando a 1.5.2 for aprovada/released. O relógio D7-D28 conta do RELEASE, não de 18/08. Datas abaixo assumem release até ~2026-08-18/20; deslocar todas pela data real do release.",
+    "checkpoints": [
+      {
+        "day": 7,
+        "date": "2026-08-25",
+        "purpose": "early signal — starting solids br ≤12? weaning us segura #3-4? ≥3 composições novas (bebe/guia/introduccion) no índice em qualquer rank? cluster papinha #1-5 intacto? rollback se downloads -30%",
+        "metrics_file": "metrics/2026-08-25_d07.csv"
+      },
+      {
+        "day": 14,
+        "date": "2026-09-01",
+        "purpose": "tendência — baby weaning br ≤15, impressões +15%, composições introducción es ≤20. Zero composição nova indexada = apostas mortas, preparar swap",
+        "metrics_file": "metrics/2026-09-01_d14.csv"
+      },
+      {
+        "day": 21,
+        "date": "2026-09-08",
+        "purpose": "média 7d ≥19? rascunhar iter-05 (rating push / promotional_text). Impressões altas + downloads flat = problema de CONVERSÃO → PPO",
+        "metrics_file": "metrics/2026-09-08_d21.csv"
+      },
+      {
+        "day": 28,
+        "date": "2026-09-15",
+        "purpose": "decision day — média 14d ≥20 promote / <20 reformular / ≥23 bold batido, dobrar aposta",
+        "metrics_file": "metrics/2026-09-15_d28_final.csv"
+      }
+    ],
+    "rollback_triggers": [
+      "Downloads/dia ↓ ≥30% sustentado por 7 dias seguidos",
+      "Perda de 3+ ranks do cluster protegido #1-5 (papinha/receitas/blw br, recetas es) sem ganho nos CLIMBs",
+      "weaning US (crown jewel #3-4) cai >5 posições sustentado",
+      "Apple rejeita a 1.5.2 por metadata (review fail)"
+    ],
+    "escalation_triggers": [
+      "baby weaning br top 10 antes do D14 → iter-05 agressiva promovendo o próximo CLIMB pro subtitle",
+      "Impressões ↑ ≥40% antes do D14 com downloads flat → prioridade absoluta no Start do BLW Panorama PPO (conversão é o gargalo)",
+      "≥8 composições novas top 20 antes do D14 → reforçar clusters via promotional_text"
+    ]
+  },
+  "research_done": true,
+  "research_files": [
+    "research/composition_rationale.md",
+    "research/keyword_candidates.md",
+    "research/protection_map.md",
+    "research/serp_winnability_br.csv",
+    "research/serp_winnability_us.csv",
+    "research/serp_winnability_es.csv",
+    "research/term_fit_pt-BR.csv",
+    "research/term_fit_en-US.csv",
+    "research/term_fit_es-ES.csv",
+    "research/app_feature_inventory.md",
+    "research/longtails_br.csv",
+    "research/longtails_us.csv",
+    "research/longtails_es.csv",
+    "research/astro_br_2026-08-18.json",
+    "research/astro_us_2026-08-18.json",
+    "research/astro_es_2026-08-18.json",
+    "research/asc_state.json",
+    "research/baseline_2026-08-18.md",
+    "research/baseline_kill_or_scale_2026-08-18.txt",
+    "research/competitors.md"
+  ],
+  "deployed": true,
+  "deploy_commit": null,
+  "deploy_timestamp": "2026-08-18T18:34:19-03:00",
+  "results": {
+    "baseline": {
+      "date": "2026-08-18",
+      "metrics_file": "research/baseline_2026-08-18.md",
+      "status": "captured (sales 60d + 45d); impressions/CVR/search terms pendentes do Analytics Reports request ff722017 — re-rodar pull no Day 0 do release"
+    },
+    "checkpoints": [],
+    "final": null
+  },
+  "verdict": null,
+  "promoted_to_current": false,
+  "notes": "SUPERSEDE a iter-03 (2026-08-18_iter-03): as keywords da iter-03 foram PATCHadas hoje cedo na 1.5.2 editável mas NUNCA foram ao ar — esta iter-04 recompõe do zero sobre a base LIVE 1.5.1 com pipeline completo (extractor→miner→fit-checker→serp-analyst→composer) e disciplina de mapa de proteção que a iter-03 não tinha (iter-03 removia tokens que protegiam ranks, ex. frases papinha exatas). meta.json da iter-03 marcado superseded. Joia do baseline: weaning US #3-4 com Solid Starts (43.368 ratings) relegado a #9 — crown jewel a defender acima de tudo. UNWINNABLEs honestos aceitos: solid starts US (brand do líder, pop 61 diff 41), heads blw teto #20-30 (fleet BLW SOCIAL 874-1885 ratings vs nosso 1 rating br) — volume vem das long-tails, rating push é alavanca separada. AÇÃO ANEXA no deploy: corrigir description pt-BR que promete 'cardápio semanal' inexistente no app (MISMATCH, risco de review negativa). es-MX = cópia byte a byte de es-ES. en-US fecha 91/100 e pt-BR subtitle 27/30 por decisão honesta (nenhum token restante sem dup/filler). Deploy: PATCH direto nas localizations da 1.5.2 (deliver é no-op silencioso — LEARNING #13), depois deploy-verifier. | DEPLOY 2026-08-18: 5 PATCHes 200 + read-back verbatim OK na 1.5.2 (PREPARE_FOR_SUBMISSION) — keywords 4 locales (appStoreVersionLocalizations), subtitle pt-BR (appInfoLocalization 773a0d32 do appInfo editável), description pt-BR corrigida: bullet 'CARDÁPIO SEMANAL...' → 'DICAS DE BLW pra cada etapa — quando começar, alimentos proibidos, hidratação e ferro na medida certa' (2935 chars). NADA entra no ar até a 1.5.2 ser submetida/aprovada — relógio D7-D28 conta do RELEASE. Baseline Day 0: research/baseline_2026-08-18.md (não recapturado no deploy). Rollback: PATCH de volta pros valores pré-iter (git tag pre-iter-04, current/metadata@pre-iter-04)."
+}

@@ -1,0 +1,54 @@
+Keyword,Store,Pop,Diff,Rank,Verdict,Reason
+alergias alimentarias bebé,es,5,5,OUT,FIT,flag alergenico + reacao por nivel no diario
+alimentacion complementaria,es,7,11,8,FIT,termo ES do nicho exato — nosso name ES
+alimentación complementaria,es,6,11,4,FIT,termo ES do nicho exato — nosso name ES
+alimentación complementaria 6 meses,es,5,5,OUT,FIT,nucleo ES + idade — catalogo comeca em 6m
+alimentación complementaria bebé,es,5,7,2,FIT,nucleo ES
+alimentación complementaria recetas,es,5,7,2,FIT,112 receitas por categoria (freemium)
+app alimentación complementaria,es,5,7,3,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+app blw,es,5,30,OUT,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+baby led weaning,es,7,9,22,FIT,expansao exata do nosso nome EN
+baby led weaning app,es,7,7,16,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+baby led weaning español,es,5,9,10,FIT,app localizado es — metodo exato
+baby weaning,es,25,7,18,FIT,weaning alimentar — SERP e nossa categoria
+blw,es,47,9,46,FIT,termo exato do metodo que o app cobre — tips_screen: guia BLW/seguranca/quando comecar
+blw 6 meses,es,5,5,OUT,FIT,catalogo 120 alimentos por idade/categoria com preparo — filtro 6 meses
+blw bebé,es,5,9,12,FIT,metodo BLW pra bebe = exatamente o app
+blw en español,es,5,5,OUT,FIT,app localizado es
+blw ideas,es,54,11,OUT,FIT,"competitor_brand (Baby Led Weaning - BLW ""BLW ideas & Recipes"") + leitura generica ""ideias BLW"" existe = receitas/catalogo"
+blw meals,es,6,7,26,FIT,refeicoes BLW = receitas + diario; mesma formula do subtitle da Solid Starts
+blw recetas,es,5,11,11,FIT,112 receitas por categoria (freemium)
+comida para bebé,es,5,40,OUT,FIT,catalogo+receitas ES
+comida sólida bebé,es,5,5,OUT,FIT,nucleo ES — solidos pro bebe
+destete dirigido por el bebé,es,5,5,OUT,FIT,traducao literal ES de baby-led weaning — metodo exato do app
+guía alimentación complementaria,es,5,5,OUT,FIT,tips_screen: guia BLW/seguranca/quando comecar
+guía blw,es,5,5,OUT,FIT,tips_screen: guia BLW/seguranca/quando comecar
+introducción alergenos,es,5,5,OUT,FIT,flag alergenico + reacao por nivel no diario
+introducción alimentos bebé,es,5,5,OUT,FIT,nucleo ES — diario de introducao alimentar (registro+reacao+meta 100)
+introducción de sólidos,es,5,5,OUT,FIT,nucleo ES
+mi alimentación complementaria,es,5,7,4,FIT,competitor_brand ES da mesma categoria + leitura generica identica ao nucleo
+método blw,es,5,5,OUT,FIT,tips_screen: guia BLW/seguranca/quando comecar (whatIsBLW)
+papilla de frutas,es,5,5,OUT,FIT,receitas + frutas por idade
+papillas 6 meses,es,5,5,OUT,FIT,receitas/alimentos por 6m
+papillas para bebés,es,5,5,OUT,FIT,112 receitas por categoria (freemium)
+papillas y purés,es,5,5,OUT,FIT,112 receitas por categoria (freemium)
+prevención atragantamiento,es,5,5,OUT,FIT,prevencao de engasgo = guia de cortes + alimentos proibidos
+primera comida bebé,es,5,17,OUT,FIT,catalogo 120 alimentos por idade/categoria com preparo
+recetas bebé 6 meses,es,5,5,OUT,FIT,112 receitas por categoria (freemium) por idade
+recetas blw bebé,es,5,9,8,FIT,112 receitas por categoria (freemium)
+recetas de papillas,es,5,7,9,FIT,112 receitas por categoria (freemium)
+recetas papillas bebé,es,5,7,8,FIT,112 receitas por categoria (freemium)
+recetas para bebé,es,5,9,OUT,FIT,112 receitas por categoria (freemium)
+registro alergias bebé,es,5,5,OUT,FIT,flag alergenico + reacao por nivel no diario
+weaning,es,16,7,14,FIT,"SERP US top10 = nossa categoria (Solid Starts, BLW apps, nos #3) — sentido App Store e alimentar, nao destete"
+alimentacion,es,12,49,72,PARTIAL,idem ES
+alimentación infantil,es,5,5,OUT,PARTIAL,idem ES
+atragantamiento bebé,es,5,5,OUT,PARTIAL,"idem engasgo — prevencao sim, socorro nao"
+bebes,es,33,53,OUT,PARTIAL,feeder
+bebé,es,18,54,OUT,PARTIAL,feeder ES/BR
+bebés,es,11,53,OUT,PARTIAL,feeder
+destete bebé,es,5,9,11,PARTIAL,polissemico ES: desmame de PEITO (nao temos) vs weaning alimentar (temos) — feeder
+menú bebé 6 meses,es,5,5,OUT,PARTIAL,menu intent; receitas por idade cobrem parcialmente
+recetas infantiles,es,5,45,OUT,PARTIAL,"""infantiles"" puxa criancas maiores; cobrimos so 6m-2a"
+menú infantil,es,5,5,OUT,MISMATCH,menu de crianca maior — fora do escopo
+menú semanal bebé,es,5,5,OUT,MISMATCH,"NOT-list: sem cardapio semanal/meal planner (description promete, source nao tem)"

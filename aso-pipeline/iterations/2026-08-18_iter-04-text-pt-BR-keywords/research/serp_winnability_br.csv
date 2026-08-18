@@ -1,0 +1,154 @@
+Keyword,Fit,Pop,Diff,RankAtual,TopIncumbents(ratings),Winnability,TargetPosD28,RationaleCurta
+blw baby,FIT,5,13,1,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),DOMINATE,#1 (defender),ja #1; blw+baby no name pt-BR
+blw tracker baby led,FIT,5,5,1,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),DOMINATE,#1 (defender),ja #1; name pt + name en-US (led/tracker)
+papinha caseira,FIT,5,5,1,Pippin 13; nos #2; resto 0-20,DOMINATE,#1 (defender),ja #1; papinha(sub)+caseira(kw)
+receitas de papinha caseira,FIT,5,5,1,Pippin 13; nos #2; resto 0-20,DOMINATE,#1 (defender),ja #1; sub+kw
+desengasgo,PARTIAL,5,5,1,SERP 6 resultados; nos #2; zero nicho,DOMINATE,#1 (defender),ja #1 zero competicao; intencao parcial (socorro)
+cortes seguros,FIT,5,8,2,SERP 6 resultados; nos #2; zero nicho,DOMINATE,#1-2,"ja #2, SERP com 6 resultados"
+papinha,FIT,5,5,2,Pippin 13; nos #2; resto 0-20,DOMINATE,#1-2,ja #2 atras de Pippin 13 ratings; subtitle sustenta
+blw 6 meses,FIT,5,5,3,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),DOMINATE,top 3 (defender),ja #3; blw(name)+6 meses(kw)
+blw baby introdução,FIT,5,9,3,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),DOMINATE,top 3 (defender),ja #3; 100% name
+blw cortes,FIT,5,31,3,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),DOMINATE,top 3 (defender),ja #3; blw(name)+cortes(kw)
+introdução alimentar 6 meses,FIT,5,5,3,BLW Brasil 1885; Pippin 13; Garfinho 350,DOMINATE,top 3 (defender),ja #3; name+kw 6 meses
+introdução alimentar 7 meses,FIT,5,5,3,BLW Brasil 1885; Pippin 13; Garfinho 350,DOMINATE,top 3 (defender),ja #3; name compoe
+papinha 6 meses,FIT,5,5,3,Pippin 13; nos #2; resto 0-20,DOMINATE,top 3 (defender),ja #3; kw exata
+receitas 6 meses,FIT,5,5,3,Pippin 13; nos #2; resto 0-20,DOMINATE,top 3 (defender),ja #3; receitas(sub)+6 meses(kw)
+introdução alimentar blw,FIT,5,11,4,BLW Brasil 1885; Pippin 13; Garfinho 350,DOMINATE,top 3 (defender),ja #4; 100% name
+blw,FIT,48,19,37,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 20-25,"pop 48; BLW ja no name e so #37 — teto e sinal, nao campo; BLW SOCIAL domina"
+introducao alimentar,FIT,40,19,34,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 20,"pop 40; variante sem acento, ja #34; mesmo SERP do head"
+starting solids,FIT,28,5,18,Solid Starts 57; resto 0-20 ratings,CLIMB,top 8-10,pop 28 diff 5; SERP fraquissima (SS 57); indexa via kw en-US
+baby weaning,FIT,25,5,24,Solid Starts 57; resto 0-20 ratings,CLIMB,top 10,pop 25 diff 5; incumbentes 0-57 ratings; frase ja no kw — promover peso
+weaning,FIT,16,5,18,Solid Starts 57; resto 0-20 ratings,CLIMB,top 10,pop 16 diff 5; mesma SERP fraca; ja #18
+solid starts baby first foods,FIT,9,17,20,Solid Starts 57; resto 0-20 ratings,CLIMB,top 12,ja #20; brand-longtail com SERP fraca
+solid start,FIT,8,15,31,Solid Starts 57; resto 0-20 ratings,CLIMB,top 20,ja #31 diff 15
+baby led weaning,FIT,7,9,17,Solid Starts 57; resto 0-20 ratings,CLIMB,top 10,ja #17; name en-US exato; incumbentes fracos no br
+blw meals,FIT,6,5,23,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 12,ja #23; meals so via 'meal plan' kw en-US
+receitas papinha,FIT,5,5,5,Pippin 13; nos #2; resto 0-20,CLIMB,top 3,ja #5; kw exata + subtitle
+introdução alimentar receitas,FIT,5,11,6,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 3,ja #6; name+subtitle
+led weaning,FIT,5,5,6,Solid Starts 57; resto 0-20 ratings,CLIMB,top 3,ja #6; fragmento do name en-US
+receitas introdução alimentar,FIT,5,11,6,Pippin 13; nos #2; resto 0-20,CLIMB,top 5,ja top 10; consolidar com peso
+baby introdução alimentar,FIT,5,9,7,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 3-5,ja #7; name
+blw tracker,FIT,5,13,7,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 3-5,ja #7; name pt + name en-US
+baby introdução,FIT,5,9,8,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 5,ja #8; name
+blw receitas,FIT,5,15,10,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 5,ja #10; name+subtitle
+weaning tracker,FIT,5,5,10,Solid Starts 57; resto 0-20 ratings,CLIMB,top 5,ja #10; name en-US
+introdução,PARTIAL,5,13,12,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 8,ja #12; feeder polissemico mas gratuito (name)
+introdução alimentar,FIT,5,21,17,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10,"head PT no name (7x); ja #17; empurrar com CR/sinais, sem mexer no name"
+weaning recipes,FIT,5,5,20,Solid Starts 57; resto 0-20 ratings,CLIMB,top 10,ja #20; kw en-US
+start solid food,FIT,5,15,28,Solid Starts 57; resto 0-20 ratings,CLIMB,top 15,ja #28; compoe do en-US
+baby solids,FIT,5,17,32,Solid Starts 57; resto 0-20 ratings,CLIMB,top 20,ja #32; compoe en-US
+baby first foods,FIT,5,24,34,Solid Starts 57; resto 0-20 ratings,CLIMB,top 20,ja #34; name+subtitle en-US
+acompanhar introdução alimentar,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+alergia alimentar bebê,FIT,5,11,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+alergênicos bebê,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+alimentação bebê 6 meses,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+alimentação blw,FIT,5,15,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+blw em português,FIT,5,5,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+blw primeiros alimentos,FIT,5,5,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+blw tradicional,FIT,5,5,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+checklist introdução alimentar,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+começar introdução alimentar,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+comida caseira bebê,FIT,5,9,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+como fazer papinha,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+cortes blw por idade,FIT,5,5,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+diário introdução alimentar,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+fruta 6 meses,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+guia baby led weaning,FIT,5,5,OUT,Solid Starts 57; resto 0-20 ratings,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+guia blw,FIT,5,9,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+guia introdução alimentar,FIT,5,12,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+intolerância alimentar bebê,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+introdução alimentar bebê,FIT,5,13,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+introdução alimentar participativa,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+introdução alimentar tradicional,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha 7 meses,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha 8 meses,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha bebê,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha caseira bebê,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha de bebê,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha de fruta,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+papinha salgada,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+primeira papinha,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+primeiro alimento,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+primeiros alimentos,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+primeiros alimentos bebê,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+rastrear alimentação bebê,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+receitas bebê 1 ano,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+receitas bebê 6 meses,FIT,5,5,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+receitas blw bebê,FIT,5,13,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+receitas saudáveis bebê,FIT,5,15,OUT,Pippin 13; nos #2; resto 0-20,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+registrar alimentos bebê,FIT,5,11,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+registro alergia bebê,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+tabela introdução alimentar,FIT,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+texturas bebê,FIT,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",CLIMB,top 10 se token entrar,OUT hoje; diff<=15 e SERP de nicho fraca — ganhavel por composicao
+solid starts,FIT,50,5,68,Solid Starts 57; resto 0-20 ratings,LOTTERY,top 40,pop 50 mas brand do lider; tokens ja no subtitle e mesmo assim #68 — manter pelas composicoes
+diário alimentar,PARTIAL,23,21,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,-,OUT + diff medio; nao prioritario
+babyplate,FIT,11,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,brand pequena; so se sobrar char
+baby food,FIT,8,7,68,Solid Starts 57; resto 0-20 ratings,LOTTERY,top 40,"pop 8; generico, ja #68"
+baby food tracker,FIT,5,42,62,Solid Starts 57; resto 0-20 ratings,LOTTERY,-,diff 42; ja #62 sem tracao
+alimentação complementar,FIT,5,18,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,OUT + diff medio; nao prioritario
+blw bebê,FIT,5,17,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),LOTTERY,-,OUT + diff medio; nao prioritario
+blw método,FIT,5,18,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),LOTTERY,-,OUT + diff medio; nao prioritario
+como cortar alimentos bebê,FIT,5,30,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,OUT + diff medio; nao prioritario
+controle alimentação bebê,FIT,5,34,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,OUT + diff medio; nao prioritario
+cortes seguros bebê,FIT,5,28,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,OUT + diff medio; nao prioritario
+diário alimentar bebê,FIT,5,34,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,-,OUT + diff medio; nao prioritario
+método blw,FIT,5,34,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),LOTTERY,-,OUT + diff medio; nao prioritario
+primeira comida do bebê,FIT,5,23,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,-,OUT + diff medio; nao prioritario
+receitas bebê,FIT,5,17,OUT,Pippin 13; nos #2; resto 0-20,LOTTERY,-,OUT + diff medio; nao prioritario
+6 meses diário,PARTIAL,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+alergia alimentar,PARTIAL,5,11,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+alimentação infantil,PARTIAL,5,11,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+cardápio bebê 6 meses,PARTIAL,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+cardápio introdução alimentar,PARTIAL,5,9,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+cardápio papinha,PARTIAL,5,5,OUT,Pippin 13; nos #2; resto 0-20,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+desengasgo bebê,PARTIAL,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+desengasgo infantil,PARTIAL,5,5,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+engasgo bebê,PARTIAL,5,12,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+lanche infantil,PARTIAL,5,13,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+maternidade alimentação,PARTIAL,5,13,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+nutrição infantil,PARTIAL,5,9,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+pediatria alimentar,PARTIAL,5,5,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+planejamento alimentar bebê,PARTIAL,5,9,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+plano alimentar bebê,PARTIAL,5,17,OUT,BLW Brasil 1885; Pippin 13; Garfinho 350,LOTTERY,-,OUT + diff medio; nao prioritario
+receitas infantis saudáveis,PARTIAL,5,5,OUT,Pippin 13; nos #2; resto 0-20,LOTTERY,top 20 se token entrar,OUT; diff baixo mas intencao parcial
+led,PARTIAL,57,23,81,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,rank fundo + diff alto
+blw brasil,FIT,56,38,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),UNWINNABLE,-,"brand do BLW SOCIAL (dono presente, 1885 ratings) + diff 38"
+baby,PARTIAL,52,57,OUT,Solid Starts 57; resto 0-20 ratings,UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+tracker,PARTIAL,43,40,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+baby app,PARTIAL,35,54,OUT,Solid Starts 57; resto 0-20 ratings,UNWINNABLE,-,token 'app' vetado (memoria do lab) — nunca compor
+alimentação,PARTIAL,27,70,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+beb,PARTIAL,25,49,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebé,PARTIAL,19,45,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebés,PARTIAL,12,38,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+baby led weaning app,FIT,7,9,17,Solid Starts 57; resto 0-20 ratings,UNWINNABLE,-,token 'app' vetado (memoria do lab) — nunca compor
+alimentos,PARTIAL,6,48,151,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,rank fundo + diff alto
+corte,PARTIAL,6,49,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+app introdução alimentar,FIT,5,11,16,BLW Brasil 1885; Pippin 13; Garfinho 350,UNWINNABLE,-,token 'app' vetado (memoria do lab) — nunca compor
+alimentar,PARTIAL,5,57,183,BLW Brasil 1885; Pippin 13; Garfinho 350,UNWINNABLE,-,rank fundo + diff alto
+6 meses,PARTIAL,5,90,188,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,rank fundo + diff alto
+alimentação bebê,FIT,5,43,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+alimentação bebês,FIT,5,42,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+alimentação do bebê,FIT,5,42,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+app blw,FIT,5,45,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),UNWINNABLE,-,token 'app' vetado (memoria do lab) — nunca compor
+comida 6 meses,FIT,5,87,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+comida bebê,FIT,5,47,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+comida bebê 6,FIT,5,79,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+comida bebê 6 meses,FIT,5,75,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+comida bebê 7 meses,FIT,5,78,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+comida de bebê,FIT,5,49,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+mundo blw,FIT,5,36,OUT,BLW Brasil 1885; Mundo BLW 228; Garfinho 350 (BLW SOCIAL 4/6 top),UNWINNABLE,-,"brand do Mundo BLW (228 ratings, #1-2 nos proprios termos)"
+receitas para bebê,FIT,5,38,OUT,Pippin 13; nos #2; resto 0-20,UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+acompanhamento bebê,PARTIAL,5,56,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê,PARTIAL,5,63,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê 1 ano,PARTIAL,5,53,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê 6,PARTIAL,5,78,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê 6 meses,PARTIAL,5,78,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê 7 meses,PARTIAL,5,81,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+bebê 8 meses,PARTIAL,5,73,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+cardápio bebê,PARTIAL,5,50,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+diário,PARTIAL,5,54,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+feeding diary baby,PARTIAL,5,40,OUT,Solid Starts 57; resto 0-20 ratings,UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+lanche bebê,PARTIAL,5,46,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+meses,PARTIAL,5,54,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+meses diário,PARTIAL,5,51,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam
+nutrição bebê,PARTIAL,5,39,OUT,"n/d (nicho pulverizado, <100 ratings tipico)",UNWINNABLE,-,OUT + diff alto; incumbentes genericos esmagam

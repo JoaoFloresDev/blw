@@ -1,0 +1,54 @@
+App Name,App Id,Platform,Keyword,Store Domain,Store,Note,Last Update,Ranking,Change,Popularity,Difficulty,Apps in Ranking,Tags
+Alimentación Complementaria,6758321287,iphone,blw,es,🇪🇸 Spain,"[blw] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,46,0,47,9,213,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,baby led weaning app,es,🇪🇸 Spain,"[weaning] get_keyword_suggestions(app, es) | needs:app",2026-08-18,16,0,7,7,107,mined;weaning;long
+Alimentación Complementaria,6758321287,iphone,baby weaning,es,🇪🇸 Spain,"[weaning] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,18,0,25,7,212,mined;weaning;short
+Alimentación Complementaria,6758321287,iphone,baby led weaning,es,🇪🇸 Spain,"[weaning] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,22,0,7,9,218,mined;weaning;long
+Alimentación Complementaria,6758321287,iphone,weaning,es,🇪🇸 Spain,"[weaning] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,14,0,16,7,219,mined;weaning;short
+Alimentación Complementaria,6758321287,iphone,alimentacion,es,🇪🇸 Spain,"[alimentación] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,72,0,12,49,215,mined;alimentación;short
+Alimentación Complementaria,6758321287,iphone,blw meals,es,🇪🇸 Spain,"[blw] get_keyword_suggestions(app, es) | needs:meals",2026-08-18,26,0,6,7,99,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,alimentacion complementaria,es,🇪🇸 Spain,"[alimentación] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,8,0,7,11,32,mined;alimentación;short
+Alimentación Complementaria,6758321287,iphone,alimentación complementaria,es,🇪🇸 Spain,"[alimentación] get_keyword_suggestions(app, es) | all-field-tokens",2026-08-18,4,0,6,11,31,mined;alimentación;short
+Alimentación Complementaria,6758321287,iphone,blw ideas,es,🇪🇸 Spain,"[blw] extract_competitors_keywords('blw', es) pop=54 | needs:ideas",2026-08-18,OUT,0,54,11,38,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,bebes,es,🇪🇸 Spain,"[bebé] extract_competitors_keywords('blw', es) pop=33 | needs:bebes",2026-08-18,OUT,0,33,53,193,mined;bebé;short
+Alimentación Complementaria,6758321287,iphone,bebé,es,🇪🇸 Spain,"[bebé] extract_competitors_keywords('blw', es) pop=18 | all-field-tokens",2026-08-18,OUT,0,18,54,227,mined;bebé;short
+Alimentación Complementaria,6758321287,iphone,bebés,es,🇪🇸 Spain,"[bebé] extract_competitors_keywords('alimentación complementaria', es) pop=11 | needs:bebes",2026-08-18,OUT,0,11,53,220,mined;bebé;short
+Alimentación Complementaria,6758321287,iphone,alimentación complementaria bebé,es,🇪🇸 Spain,[alimentación] composição natural es: head + bebé | all-field-tokens,2026-08-18,2,0,5,7,17,mined;alimentación;long
+Alimentación Complementaria,6758321287,iphone,app alimentación complementaria,es,🇪🇸 Spain,[alimentación] composição natural es: app de X | needs:app,2026-08-18,3,0,5,7,22,mined;alimentación;long
+Alimentación Complementaria,6758321287,iphone,alimentación complementaria 6 meses,es,🇪🇸 Spain,[alimentación] composição natural es: head + idade | needs:6+meses,2026-08-18,OUT,0,5,5,3,mined;alimentación;long
+Alimentación Complementaria,6758321287,iphone,guía alimentación complementaria,es,🇪🇸 Spain,[alimentación] composição natural es: guía de X | needs:guia,2026-08-18,OUT,0,5,5,4,mined;alimentación;long
+Alimentación Complementaria,6758321287,iphone,alimentación complementaria recetas,es,🇪🇸 Spain,[alimentación] composição natural es: head + recetas | all-field-tokens,2026-08-18,2,0,5,7,14,mined;alimentación;long
+Alimentación Complementaria,6758321287,iphone,alimentación infantil,es,🇪🇸 Spain,[alimentación] composição natural es: termo corrente (subtitle WISERAPPS 'BLW y Alimentación Infantil') | needs:infantil,2026-08-18,OUT,0,5,5,10,mined;alimentación;short
+Alimentación Complementaria,6758321287,iphone,blw recetas,es,🇪🇸 Spain,[blw] composição natural es: blw + recetas | all-field-tokens,2026-08-18,11,0,5,11,33,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,método blw,es,🇪🇸 Spain,[blw] composição natural es: método BLW | needs:metodo,2026-08-18,OUT,0,5,5,1,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,blw 6 meses,es,🇪🇸 Spain,[blw] composição natural es: blw + idade | needs:6+meses,2026-08-18,OUT,0,5,5,1,mined;blw;long
+Alimentación Complementaria,6758321287,iphone,app blw,es,🇪🇸 Spain,[blw] composição natural es: app de X | needs:app,2026-08-18,OUT,0,5,30,149,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,blw en español,es,🇪🇸 Spain,[blw] composição natural es: idioma qualifier (SERP es #3 'BLW App En Castellano') | needs:en+espanol,2026-08-18,OUT,0,5,5,,mined;blw;long
+Alimentación Complementaria,6758321287,iphone,recetas blw bebé,es,🇪🇸 Spain,[blw] composição natural es: recetas + blw + bebé | all-field-tokens,2026-08-18,8,0,5,9,22,mined;blw;long
+Alimentación Complementaria,6758321287,iphone,guía blw,es,🇪🇸 Spain,[blw] composição natural es: guía de X | needs:guia,2026-08-18,OUT,0,5,5,8,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,blw bebé,es,🇪🇸 Spain,[blw] composição natural es: blw + bebé | all-field-tokens,2026-08-18,12,0,5,9,55,mined;blw;short
+Alimentación Complementaria,6758321287,iphone,comida para bebé,es,🇪🇸 Spain,[comida] composição natural es: comida para X | needs:para,2026-08-18,OUT,0,5,40,152,mined;comida;long
+Alimentación Complementaria,6758321287,iphone,primera comida bebé,es,🇪🇸 Spain,[comida] composição natural es: momento de necessidade | needs:primera,2026-08-18,OUT,0,5,17,10,mined;comida;long
+Alimentación Complementaria,6758321287,iphone,comida sólida bebé,es,🇪🇸 Spain,[comida] composição natural es: comida sólida + bebé | needs:solida,2026-08-18,OUT,0,5,5,,mined;comida;long
+Alimentación Complementaria,6758321287,iphone,recetas para bebé,es,🇪🇸 Spain,[bebé] SERP es 'blw' #1: name BLW Ideas 'Recetas para bebé' | needs:para,2026-08-18,OUT,0,5,9,12,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,menú semanal bebé,es,🇪🇸 Spain,[bebé] composição natural es: menú semanal + bebé | needs:menu+semanal,2026-08-18,OUT,0,5,5,2,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,papillas para bebés,es,🇪🇸 Spain,[bebé] composição natural es: papillas para X | needs:para+bebes,2026-08-18,OUT,0,5,5,4,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,recetas de papillas,es,🇪🇸 Spain,[papilla] composição natural es: recetas de X | needs:de,2026-08-18,9,0,5,7,21,mined;papilla;long
+Alimentación Complementaria,6758321287,iphone,papillas 6 meses,es,🇪🇸 Spain,[papilla] composição natural es: papilla + idade | needs:6+meses,2026-08-18,OUT,0,5,5,1,mined;papilla;long
+Alimentación Complementaria,6758321287,iphone,papillas y purés,es,🇪🇸 Spain,[papilla] composição natural es: par corrente | needs:pures,2026-08-18,OUT,0,5,5,5,mined;papilla;long
+Alimentación Complementaria,6758321287,iphone,papilla de frutas,es,🇪🇸 Spain,[papilla] composição natural es: variante corrente | needs:papilla+de+frutas,2026-08-18,OUT,0,5,5,1,mined;papilla;long
+Alimentación Complementaria,6758321287,iphone,recetas papillas bebé,es,🇪🇸 Spain,[bebé] SERP es 'blw' #9: name WISERAPPS 'Recetas para Bebés y Papillas' | all-field-tokens,2026-08-18,8,0,5,7,17,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,destete dirigido por el bebé,es,🇪🇸 Spain,[bebé] composição natural es: expansão do termo tracked 'destete dirigido' | needs:dirigido+por+el,2026-08-18,OUT,0,5,5,,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,destete bebé,es,🇪🇸 Spain,[bebé] composição natural es: destete + bebé | all-field-tokens,2026-08-18,11,0,5,9,31,mined;bebé;short
+Alimentación Complementaria,6758321287,iphone,recetas bebé 6 meses,es,🇪🇸 Spain,[bebé] composição natural es: recetas + bebé + idade | needs:6+meses,2026-08-18,OUT,0,5,5,3,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,recetas infantiles,es,🇪🇸 Spain,[recetas] composição natural es: termo corrente | needs:infantiles,2026-08-18,OUT,0,5,45,225,mined;recetas;short
+Alimentación Complementaria,6758321287,iphone,baby led weaning español,es,🇪🇸 Spain,[weaning] composição natural es: termo EN + idioma | needs:espanol,2026-08-18,10,0,5,9,107,mined;weaning;long
+Alimentación Complementaria,6758321287,iphone,introducción alimentos bebé,es,🇪🇸 Spain,[bebé] composição natural es: introducción + alimentos + bebé | needs:alimentos,2026-08-18,OUT,0,5,5,4,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,introducción de sólidos,es,🇪🇸 Spain,[introducción] composição natural es: forma corrente | needs:de,2026-08-18,OUT,0,5,5,,mined;introducción;long
+Alimentación Complementaria,6758321287,iphone,introducción alergenos,es,🇪🇸 Spain,[introducción] composição natural es: introducción + alérgenos (core feature) | all-field-tokens,2026-08-18,OUT,0,5,5,2,mined;introducción;short
+Alimentación Complementaria,6758321287,iphone,atragantamiento bebé,es,🇪🇸 Spain,[bebé] composição natural es: atragantamiento + bebé | all-field-tokens,2026-08-18,OUT,0,5,5,3,mined;bebé;short
+Alimentación Complementaria,6758321287,iphone,prevención atragantamiento,es,🇪🇸 Spain,[atragantamiento] composição natural es: prevenção (conteúdo do app) | needs:prevencion,2026-08-18,OUT,0,5,5,,mined;atragantamiento;short
+Alimentación Complementaria,6758321287,iphone,alergias alimentarias bebé,es,🇪🇸 Spain,[bebé] composição natural es: expansão de 'alergias alimentarias' (tracked) | needs:alergias+alimentarias,2026-08-18,OUT,0,5,5,2,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,registro alergias bebé,es,🇪🇸 Spain,[bebé] composição natural es: registro (core feature) | needs:registro+alergias,2026-08-18,OUT,0,5,5,6,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,menú bebé 6 meses,es,🇪🇸 Spain,[bebé] composição natural es: menú + bebé + idade | needs:menu+6+meses,2026-08-18,OUT,0,5,5,3,mined;bebé;long
+Alimentación Complementaria,6758321287,iphone,menú infantil,es,🇪🇸 Spain,[menú] composição natural es: termo corrente | needs:menu+infantil,2026-08-18,OUT,0,5,5,8,mined;menú;short
+Alimentación Complementaria,6758321287,iphone,mi alimentación complementaria,es,🇪🇸 Spain,[alimentación] SERP es 'blw' #5: subtitle Drama Labs 'Mi alimentación complementaria' | needs:mi,2026-08-18,4,0,5,7,22,mined;alimentación;long

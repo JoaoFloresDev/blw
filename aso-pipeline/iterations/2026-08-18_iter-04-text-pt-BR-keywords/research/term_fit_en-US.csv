@@ -1,0 +1,98 @@
+Keyword,Store,Pop,Diff,Rank,Verdict,Reason
+100 foods baby,us,5,7,175,FIT,"meta ""primeiros 100 alimentos"" e literalmente a feature central do diario"
+100 foods before one,us,5,23,OUT,FIT,meta 100 alimentos — feature exata
+100 foods checklist,us,5,7,200,FIT,meta 100 alimentos com progresso = checklist
+allergen introduction tracker,us,5,15,OUT,FIT,flag alergenico + reacao por nivel no diario — introducao de alergenicos e feature
+allergen tracker baby,us,5,37,76,FIT,flag alergenico + reacao por nivel no diario
+baby eating tracker,us,5,53,OUT,FIT,eating = solidos; diario de introducao alimentar (registro+reacao+meta 100)
+baby first foods,us,8,15,141,FIT,catalogo 120 alimentos por idade/categoria com preparo + meta 100
+baby food,us,9,44,192,FIT,baby food = comida de bebe; catalogo+receitas entregam
+baby food app,us,5,23,OUT,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+baby food recipes 6 months,us,5,13,114,FIT,112 receitas por categoria (freemium) por idade
+baby led weaning,us,9,15,16,FIT,expansao exata do nosso nome EN
+baby led weaning family meals,us,5,9,23,FIT,tips_screen: guia BLW/seguranca/quando comecar (familyMeals) + receitas
+baby led weaning food list,us,5,11,19,FIT,catalogo 120 alimentos por idade/categoria com preparo
+baby meal log,us,5,17,47,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+baby puree recipes,us,5,11,99,FIT,112 receitas por categoria (freemium)
+baby solid food,us,5,40,243,FIT,catalogo 120 alimentos por idade/categoria com preparo
+baby weaning,us,26,17,22,FIT,weaning alimentar — SERP e nossa categoria
+baby weaning and recipes,us,6,19,34,FIT,competitor_brand (MadeForMums) mesma categoria + leitura generica = receitas de weaning
+baby weaning app,us,5,23,80,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+baby's first foods,us,5,9,83,FIT,catalogo 120 alimentos por idade/categoria com preparo
+babyplate starting solids,us,8,19,115,FIT,competitor_brand mesma categoria
+blw,us,19,17,30,FIT,termo exato do metodo que o app cobre — tips_screen: guia BLW/seguranca/quando comecar
+blw app,us,5,49,225,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+blw first foods,us,5,11,32,FIT,catalogo 120 alimentos por idade/categoria com preparo
+blw food list,us,5,13,35,FIT,catalogo 120 alimentos por idade/categoria com preparo = a lista que o buscador quer
+blw food tracker,us,5,5,48,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+blw for beginners,us,5,11,15,FIT,"tips_screen: guia BLW/seguranca/quando comecar (quando comecar, o que e BLW)"
+blw ideas,us,39,19,OUT,FIT,"competitor_brand (Baby Led Weaning - BLW ""BLW ideas & Recipes"") + leitura generica ""ideias BLW"" existe = receitas/catalogo"
+blw meal ideas,us,5,38,OUT,FIT,112 receitas por categoria (freemium)
+blw meals,us,8,37,167,FIT,refeicoes BLW = receitas + diario; mesma formula do subtitle da Solid Starts
+blw meals tracker,us,5,11,147,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+blw solids,us,5,11,32,FIT,BLW + solidos = nucleo do app
+choking hazards baby,us,5,23,250,FIT,lista de riscos = alimentos proibidos + cortes seguros (prevencao e exatamente o que entregamos)
+easy baby food recipes,us,5,11,190,FIT,112 receitas por categoria (freemium)
+finger food ideas baby,us,5,7,OUT,FIT,preparationTip por alimento = guia de cortes seguros (bastao/palito = finger foods) + receitas
+finger food recipes,us,5,11,OUT,FIT,112 receitas por categoria (freemium) + cortes finger-food
+first food tracker,us,5,19,OUT,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+first foods allergens,us,5,9,240,FIT,flag alergenico + reacao por nivel no diario
+first foods app,us,5,49,OUT,FIT,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token"
+first foods list,us,5,40,OUT,FIT,catalogo 120 alimentos por idade/categoria com preparo
+food allergen log,us,5,5,OUT,FIT,flag alergenico + reacao por nivel no diario
+food introduction tracker,us,5,5,OUT,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+foods for baby,us,5,17,193,FIT,catalogo 120 alimentos por idade/categoria com preparo
+introduction to solids,us,5,9,192,FIT,nicho exato EN
+new food tracker,us,5,9,OUT,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+puree tracker,us,5,5,51,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+solid food for baby,us,5,19,132,FIT,catalogo 120 alimentos por idade/categoria com preparo
+solid food introduction,us,5,9,OUT,FIT,nicho exato EN
+solid start,us,9,17,79,FIT,competitor_brand mesma categoria + leitura generica
+solid starts,us,61,41,49,FIT,"competitor_brand da MESMA categoria; leitura generica ""solid starts"" = nosso nicho (esta no nosso subtitle)"
+solid starts baby first foods,us,6,17,64,FIT,nome completo do concorrente lider — mesma categoria/intencao
+solid starts free,us,6,21,74,FIT,buscador quer alternativa gratis ao Solid Starts — nos somos freemium mais barato
+solid starts recipes,us,5,19,OUT,FIT,"brand+receitas — mesma categoria, temos receitas"
+solids log,us,5,17,53,FIT,diario de introducao alimentar (registro+reacao+meta 100)
+start solids,us,6,17,71,FIT,nicho exato EN
+starting solids,us,29,19,22,FIT,nicho exato em EN — SERP US e nossa categoria (Solid Starts et al)
+starting solids at 6 months,us,5,11,43,FIT,catalogo 120 alimentos por idade/categoria com preparo comeca em 6m
+starting solids first foods,us,5,17,75,FIT,nucleo EN
+starting solids guide,us,5,11,OUT,FIT,tips_screen: guia BLW/seguranca/quando comecar
+starting solids recipes,us,5,19,OUT,FIT,112 receitas por categoria (freemium)
+table foods for baby,us,5,7,120,FIT,catalogo 120 alimentos por idade/categoria com preparo + cortes por fase
+weaning,us,14,13,4,FIT,"SERP US top10 = nossa categoria (Solid Starts, BLW apps, nos #3) — sentido App Store e alimentar, nao destete"
+weaning guide,us,5,7,37,FIT,tips_screen: guia BLW/seguranca/quando comecar
+allergies,us,7,34,OUT,PARTIAL,"alergia generica adulta (polen, medicamento); nosso escopo e alergenico alimentar de bebe"
+allergy,us,21,54,OUT,PARTIAL,idem — polissemico adulto
+allergy app,us,12,37,OUT,PARTIAL,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token; alergia generica adulta domina"
+baby app,us,7,72,OUT,PARTIAL,"token 'app' proibido (memoria do lab) — intencao FIT, mas nunca compor o token; generico de bebe"
+baby choking,us,5,5,OUT,PARTIAL,"prevencao sim, socorro nao — NOT-list: sem primeiros socorros de engasgo, so prevencao"
+baby diary,us,19,39,OUT,PARTIAL,diario generico do bebe (marcos/momentos); so cobrimos alimentacao+fotos
+baby first,us,8,47,OUT,PARTIAL,fragmento de baby first foods — feeder; sozinho e generico
+baby food schedule,us,5,7,169,PARTIAL,"schedule intent; progressao por idade cobre parcialmente o ""quando"""
+blw schedule,us,5,11,OUT,PARTIAL,"sem scheduler; progressao por idade do catalogo cobre so parcialmente o ""quando"""
+feeding log,us,5,44,OUT,PARTIAL,feeding no SERP = mamadas/mamadeira; nosso log e de solidos — feeder fraco
+solid food schedule,us,5,52,OUT,PARTIAL,sem scheduler; idade-por-alimento cobre parcialmente
+stage 2 purees,us,5,9,134,PARTIAL,"terminologia de estagios Gerber — temos receitas por idade, nao sistema de stages"
+weaning schedule,us,5,17,62,PARTIAL,sem scheduler; progressao por idade cobre parcialmente
+app led,us,7,45,OUT,MISMATCH,"busca por LED/lanterna, nao pelo metodo — categoria errada"
+baby feeding tracker,us,6,65,72,MISMATCH,"SERP US top10 = trackers de mamada/sono/fralda (Huckleberry, Baby Tracker) — NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos"
+baby schedule,us,20,51,OUT,MISMATCH,rotina do bebe (sono/mamada) — NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos
+baby tracker,us,63,78,OUT,MISMATCH,NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos
+delivery food,us,6,93,OUT,MISMATCH,delivery — categoria errada
+food,us,67,94,OUT,MISMATCH,generico total — delivery/receitas adultas
+food delivery,us,61,94,OUT,MISMATCH,delivery — categoria errada
+food planner,us,6,59,OUT,MISMATCH,"NOT-list: sem cardapio semanal/meal planner (description promete, source nao tem)"
+food recipes,us,7,67,OUT,MISMATCH,receitas genericas de culinaria adulta — categoria errada
+food scanner,us,48,67,OUT,MISMATCH,scanner de codigo de barras/nutricao — nao temos scanner
+food tracker,us,63,80,OUT,MISMATCH,tracker de comida ADULTO (calorias/dieta) — categoria errada
+food truck,us,25,48,OUT,MISMATCH,food truck — categoria errada
+huckleberry baby,us,14,34,OUT,MISMATCH,brand de sleep tracker — NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos
+led app,us,8,56,OUT,MISMATCH,"busca por LED/lanterna, nao pelo metodo — categoria errada"
+meal tracker,us,55,81,OUT,MISMATCH,tracker de refeicao adulto (dieta) — categoria errada
+nara baby,us,50,54,OUT,MISMATCH,brand de baby tracker gravidez/recem-nascido (sono/mamada) — NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos
+newborn tracker,us,23,63,OUT,MISMATCH,recem-nascido = pre-solidos (sono/mamada) — NOT-list: sem sono/fralda/mamada — SERP = baby trackers genericos
+scan food,us,6,51,OUT,MISMATCH,idem scanner
+start,us,48,23,OUT,MISMATCH,token generico sem intencao ligada ao nicho
+tracker app,us,17,62,OUT,MISMATCH,tracker generico + token app proibido — categoria indefinida
+weaning meal plan,us,5,17,200,MISMATCH,"NOT-list: sem cardapio semanal/meal planner (description promete, source nao tem)"

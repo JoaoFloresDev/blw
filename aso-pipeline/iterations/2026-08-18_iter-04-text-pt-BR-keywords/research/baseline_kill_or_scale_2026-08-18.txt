@@ -1,0 +1,18 @@
+kill_or_scale.py --app-id 6758321287 --days 45  (run 2026-08-18)
+METHOD: ASC Sales Reports, 45-day window (differs from pull_analytics 60-day window)
+
+verdict: WATCH
+window_days: 45
+downloads_total: 800
+downloads_per_day: 17.8
+revenue_window_usd: 54.40
+run_rate_usd_month: 36
+trend: rising
+skus: com.gambit.blwbaby.2024
+
+Cross-reference (other method, pull_analytics.py, 60-day window 2026-06-19 -> 2026-08-17):
+downloads_total: 1101
+downloads_per_day_avg_59d: 18.66
+proceeds_usd: 54.4
+top_countries: ES 218 (19.8%), US 205 (18.6%), BR 153 (13.9%)
+full detail: baseline_2026-08-18.md + baseline_2026-08-18_sales.csv (same folder)

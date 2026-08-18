@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "iter": "2026-08-18_iter-04-text-pt-BR-keywords",
+    "deployed": "2026-08-18",
+    "live_when": "release da 1.5.2",
+    "changes": {
+      "pt-BR": {
+        "keywords_entered": [
+          "starting solids",
+          "bebe",
+          "guia"
+        ],
+        "keywords_left": [
+          "baby weaning",
+          "baby feeding"
+        ],
+        "subtitle_entered": [
+          "weaning"
+        ],
+        "subtitle_left": [
+          "solid starts"
+        ],
+        "note": "baby weaning agora coberto por baby(name)+weaning(subtitle); solid starts migrou do subtitle pro kw field como frase exata"
+      },
+      "en-US": {
+        "keywords_entered": [
+          "introduction",
+          "finger food",
+          "guide",
+          "100"
+        ],
+        "keywords_left": [
+          "weaning",
+          "feeding",
+          "infant",
+          "toddler",
+          "nutrition"
+        ],
+        "note": "weaning é dup do name; feeding/infant/toddler/nutrition slots mortos"
+      },
+      "es-ES": {
+        "keywords_entered": [
+          "introduccion",
+          "guia",
+          "atragantamiento"
+        ],
+        "keywords_left": [
+          "blw",
+          "solid starts",
+          "lactancia"
+        ],
+        "note": "blw dup do subtitle; solid starts morto na store es; lactancia off-scope (fit-checker). Acentos removidos (solidos/alergenos)"
+      },
+      "es-MX": {
+        "same_as": "es-ES"
+      }
+    }
+  }
+]

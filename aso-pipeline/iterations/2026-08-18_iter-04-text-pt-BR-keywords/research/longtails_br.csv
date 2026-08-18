@@ -1,0 +1,77 @@
+App Name,App Id,Platform,Keyword,Store Domain,Store,Note,Last Update,Ranking,Change,Popularity,Difficulty,Apps in Ranking,Tags
+Introdução Alimentar BLW Baby,6758321287,iphone,starting solids,br,🇧🇷 Brazil,"[solid] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,18,-2,28,5,92,mined;solid;short
+Introdução Alimentar BLW Baby,6758321287,iphone,weaning,br,🇧🇷 Brazil,"[weaning] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,18,-5,16,5,236,mined;weaning;short
+Introdução Alimentar BLW Baby,6758321287,iphone,baby led weaning,br,🇧🇷 Brazil,"[weaning] get_keyword_suggestions(app, br) | needs:led",2026-08-18,17,-5,7,9,236,mined;weaning;long
+Introdução Alimentar BLW Baby,6758321287,iphone,baby weaning,br,🇧🇷 Brazil,"[weaning] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,24,-5,25,5,240,mined;weaning;short
+Introdução Alimentar BLW Baby,6758321287,iphone,solid starts baby first foods,br,🇧🇷 Brazil,"[baby] get_keyword_suggestions(app, br) | needs:first+foods",2026-08-18,20,-2,9,17,101,mined;baby;long
+Introdução Alimentar BLW Baby,6758321287,iphone,baby food,br,🇧🇷 Brazil,"[baby] get_keyword_suggestions(app, br) | needs:food",2026-08-18,68,-8,8,7,233,mined;baby;short
+Introdução Alimentar BLW Baby,6758321287,iphone,baby led weaning app,br,🇧🇷 Brazil,"[weaning] get_keyword_suggestions(app, br) | needs:led+app",2026-08-18,17,-2,7,9,108,mined;weaning;long
+Introdução Alimentar BLW Baby,6758321287,iphone,baby tracker,br,🇧🇷 Brazil,"[baby] get_keyword_suggestions(app, br) | needs:tracker",2026-08-18,79,-4,54,46,245,mined;baby;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw,br,🇧🇷 Brazil,"[blw] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,37,-1,48,19,208,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw meals,br,🇧🇷 Brazil,"[blw] get_keyword_suggestions(app, br) | needs:meals",2026-08-18,23,0,6,5,103,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,solid starts,br,🇧🇷 Brazil,"[solid] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,68,-1,50,5,128,mined;solid;short
+Introdução Alimentar BLW Baby,6758321287,iphone,solid start,br,🇧🇷 Brazil,"[solid] get_keyword_suggestions(app, br) | needs:start",2026-08-18,31,-9,8,15,115,mined;solid;short
+Introdução Alimentar BLW Baby,6758321287,iphone,introducao alimentar,br,🇧🇷 Brazil,"[introdução] get_keyword_suggestions(app, br) | all-field-tokens",2026-08-18,34,-15,40,19,60,mined;introdução;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw brasil,br,🇧🇷 Brazil,"[blw] extract_competitors_keywords('blw', br) pop=56 | needs:brasil",2026-08-18,OUT,0,56,38,32,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,bebés,br,🇧🇷 Brazil,"[bebê] extract_competitors_keywords('blw', br) pop=12 | needs:bebes",2026-08-18,OUT,0,12,38,224,mined;bebê;short
+Introdução Alimentar BLW Baby,6758321287,iphone,cardápio semanal,br,🇧🇷 Brazil,"[cardápio] extract_competitors_keywords('introdução alimentar', br) pop=40 | needs:semanal",2026-08-18,OUT,0,40,13,250,mined;cardápio;short
+Introdução Alimentar BLW Baby,6758321287,iphone,plano alimentar,br,🇧🇷 Brazil,"[alimentar] extract_competitors_keywords('introdução alimentar', br) pop=15 | needs:plano",2026-08-18,OUT,0,15,46,247,mined;alimentar;short
+Introdução Alimentar BLW Baby,6758321287,iphone,alimentação,br,🇧🇷 Brazil,"[alimentar] extract_competitors_keywords('papinha', br) pop=27 | needs:alimentacao",2026-08-18,OUT,0,27,70,250,mined;alimentar;short
+Introdução Alimentar BLW Baby,6758321287,iphone,baby app,br,🇧🇷 Brazil,"[baby] extract_competitors_keywords('baby weaning', br) pop=35 | needs:app",2026-08-18,OUT,0,35,54,238,mined;baby;short
+Introdução Alimentar BLW Baby,6758321287,iphone,babyplate,br,🇧🇷 Brazil,"[baby] extract_competitors_keywords('weaning', br) pop=11 | needs:babyplate",2026-08-18,OUT,0,11,5,5,mined;baby;short
+Introdução Alimentar BLW Baby,6758321287,iphone,bebé,br,🇧🇷 Brazil,"[bebê] extract_competitors_keywords('solid starts', br) pop=19 | all-field-tokens",2026-08-18,OUT,0,19,45,226,mined;bebê;short
+Introdução Alimentar BLW Baby,6758321287,iphone,corte,br,🇧🇷 Brazil,"[cortes] extract_competitors_keywords('cortes seguros', br) pop=6 | needs:corte",2026-08-18,OUT,0,6,49,249,mined;cortes;short
+Introdução Alimentar BLW Baby,6758321287,iphone,app introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: 'app de X' | needs:app,2026-08-18,16,0,5,11,38,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,introdução alimentar receitas,br,🇧🇷 Brazil,[introdução] composição natural pt: X + receitas | all-field-tokens,2026-08-18,6,0,5,11,20,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,diário introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: diário de X (core feature) | needs:diario,2026-08-18,OUT,0,5,5,17,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,tabela introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: tabela de X | needs:tabela,2026-08-18,OUT,0,5,5,1,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,checklist introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: checklist de X | needs:checklist,2026-08-18,OUT,0,5,5,1,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,introdução alimentar 7 meses,br,🇧🇷 Brazil,[introdução] composição natural pt: X + idade | needs:7,2026-08-18,3,0,5,5,5,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,introdução alimentar tradicional,br,🇧🇷 Brazil,[introdução] composição natural pt: método tradicional (Pippin: BLW e tradicional) | needs:tradicional,2026-08-18,OUT,0,5,5,,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,introdução alimentar participativa,br,🇧🇷 Brazil,[introdução] composição natural pt: termo corrente BR (método participativo) | needs:participativa,2026-08-18,OUT,0,5,5,,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,seletividade alimentar,br,🇧🇷 Brazil,[alimentar] composição natural pt: usa token 'alimentar' | needs:seletividade,2026-08-18,OUT,0,5,8,7,mined;alimentar;short
+Introdução Alimentar BLW Baby,6758321287,iphone,método blw,br,🇧🇷 Brazil,[blw] composição natural pt: BLW Brasil promove 'método BLW' | needs:metodo,2026-08-18,OUT,0,5,34,24,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw 6 meses,br,🇧🇷 Brazil,[blw] composição natural pt: blw + idade | all-field-tokens,2026-08-18,3,0,5,5,3,mined;blw;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas blw bebê,br,🇧🇷 Brazil,[blw] composição natural pt: receitas + blw + bebê | all-field-tokens,2026-08-18,OUT,0,5,13,20,mined;blw;long
+Introdução Alimentar BLW Baby,6758321287,iphone,app blw,br,🇧🇷 Brazil,[blw] composição natural pt: 'app de X' | needs:app,2026-08-18,OUT,0,5,45,246,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,guia blw,br,🇧🇷 Brazil,[blw] composição natural pt: guia de X (Mundo BLW: guia) | needs:guia,2026-08-18,OUT,0,5,9,9,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw em português,br,🇧🇷 Brazil,[blw] composição natural pt: idioma qualifier | needs:em+portugues,2026-08-18,OUT,0,5,5,,mined;blw;long
+Introdução Alimentar BLW Baby,6758321287,iphone,alimentação blw,br,🇧🇷 Brazil,[blw] composição natural pt: alimentação + blw | needs:alimentacao,2026-08-18,OUT,0,5,15,17,mined;blw;short
+Introdução Alimentar BLW Baby,6758321287,iphone,blw primeiros alimentos,br,🇧🇷 Brazil,[blw] composição natural pt: blw + primeiros alimentos | needs:primeiros+alimentos,2026-08-18,OUT,0,5,5,4,mined;blw;long
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha de bebê,br,🇧🇷 Brazil,[papinha] composição natural pt: X de bebê | needs:de,2026-08-18,OUT,0,5,5,49,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha salgada,br,🇧🇷 Brazil,[papinha] composição natural pt: variante corrente BR | needs:salgada,2026-08-18,OUT,0,5,5,,mined;papinha;short
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha de fruta,br,🇧🇷 Brazil,[papinha] composição natural pt: variante corrente BR | needs:de+fruta,2026-08-18,OUT,0,5,5,2,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha 7 meses,br,🇧🇷 Brazil,[papinha] composição natural pt: papinha + idade | needs:7,2026-08-18,OUT,0,5,5,,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha 8 meses,br,🇧🇷 Brazil,[papinha] composição natural pt: papinha + idade | needs:8,2026-08-18,OUT,0,5,5,,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,cardápio papinha,br,🇧🇷 Brazil,[papinha] composição natural pt: cardápio + papinha | all-field-tokens,2026-08-18,OUT,0,5,5,7,mined;papinha;short
+Introdução Alimentar BLW Baby,6758321287,iphone,papinha caseira bebê,br,🇧🇷 Brazil,[papinha] composição natural pt: expansão de 'papinha caseira' (field token) | all-field-tokens,2026-08-18,OUT,0,5,5,,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,como fazer papinha,br,🇧🇷 Brazil,[papinha] composição natural pt: query how-to | needs:como+fazer,2026-08-18,OUT,0,5,5,,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas de papinha caseira,br,🇧🇷 Brazil,[papinha] composição natural pt: receitas + papinha caseira | needs:de,2026-08-18,1,0,5,5,1,mined;papinha;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas para bebê,br,🇧🇷 Brazil,[receitas] composição natural pt: receitas para X | needs:para,2026-08-18,OUT,0,5,38,249,mined;receitas;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas bebê 6 meses,br,🇧🇷 Brazil,[receitas] composição natural pt: receitas + bebê + idade | all-field-tokens,2026-08-18,OUT,0,5,5,11,mined;receitas;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: receitas + head | all-field-tokens,2026-08-18,6,0,5,11,20,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas bebê 1 ano,br,🇧🇷 Brazil,[receitas] composição natural pt: receitas + idade | needs:1+ano,2026-08-18,OUT,0,5,5,2,mined;receitas;long
+Introdução Alimentar BLW Baby,6758321287,iphone,receitas infantis saudáveis,br,🇧🇷 Brazil,[receitas] composição natural pt: receitas + saúde | needs:infantis+saudaveis,2026-08-18,OUT,0,5,5,,mined;receitas;long
+Introdução Alimentar BLW Baby,6758321287,iphone,alimentação do bebê,br,🇧🇷 Brazil,[bebê] composição natural pt: alimentação do X | needs:alimentacao+do,2026-08-18,OUT,0,5,42,242,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,comida de bebê,br,🇧🇷 Brazil,[bebê] SERP br 'introdução alimentar' #5: nome do app 'Comida de Bebé' | needs:comida+de,2026-08-18,OUT,0,5,49,238,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,primeira comida do bebê,br,🇧🇷 Brazil,[bebê] composição natural pt: momento de necessidade | needs:primeira+comida+do,2026-08-18,OUT,0,5,23,23,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,weaning tracker,br,🇧🇷 Brazil,[weaning] composição natural en-in-br: weaning + tracker (nosso name en) | needs:tracker,2026-08-18,10,0,5,5,237,mined;weaning;short
+Introdução Alimentar BLW Baby,6758321287,iphone,weaning recipes,br,🇧🇷 Brazil,[weaning] composição natural en-in-br: weaning + recipes | needs:recipes,2026-08-18,20,0,5,5,120,mined;weaning;short
+Introdução Alimentar BLW Baby,6758321287,iphone,led weaning,br,🇧🇷 Brazil,[weaning] composição natural en-in-br: bigram interno de baby led weaning | needs:led,2026-08-18,6,0,5,5,108,mined;weaning;short
+Introdução Alimentar BLW Baby,6758321287,iphone,baby solids,br,🇧🇷 Brazil,[baby] composição natural en-in-br: baby + solids | all-field-tokens,2026-08-18,32,0,5,17,239,mined;baby;short
+Introdução Alimentar BLW Baby,6758321287,iphone,comida caseira bebê,br,🇧🇷 Brazil,[bebê] composição natural pt: caseira + bebê | needs:comida,2026-08-18,OUT,0,5,9,56,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,desengasgo infantil,br,🇧🇷 Brazil,[desengasgo] composição natural pt: desengasgo + infantil | needs:infantil,2026-08-18,OUT,0,5,5,,mined;desengasgo;short
+Introdução Alimentar BLW Baby,6758321287,iphone,manobra desengasgo,br,🇧🇷 Brazil,[desengasgo] composição natural pt: manobra de desengasgo (query real de socorro) | needs:manobra,2026-08-18,OUT,0,5,5,,mined;desengasgo;short
+Introdução Alimentar BLW Baby,6758321287,iphone,cortes blw por idade,br,🇧🇷 Brazil,[blw] composição natural pt: Mundo BLW ensina cortes por idade | needs:por+idade,2026-08-18,OUT,0,5,5,,mined;blw;long
+Introdução Alimentar BLW Baby,6758321287,iphone,como cortar alimentos bebê,br,🇧🇷 Brazil,[bebê] composição natural pt: query how-to de cortes | needs:como+cortar+alimentos,2026-08-18,OUT,0,5,30,3,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,alergia alimentar,br,🇧🇷 Brazil,[alergia] composição natural pt: head de alergia (token field) | all-field-tokens,2026-08-18,OUT,0,5,11,241,mined;alergia;short
+Introdução Alimentar BLW Baby,6758321287,iphone,registro alergia bebê,br,🇧🇷 Brazil,[bebê] composição natural pt: registro de alergia (core feature) | needs:registro,2026-08-18,OUT,0,5,5,5,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,cardápio introdução alimentar,br,🇧🇷 Brazil,[introdução] composição natural pt: cardápio + head | all-field-tokens,2026-08-18,OUT,0,5,9,11,mined;introdução;long
+Introdução Alimentar BLW Baby,6758321287,iphone,cardápio bebê 6 meses,br,🇧🇷 Brazil,[bebê] composição natural pt: cardápio + bebê + idade | all-field-tokens,2026-08-18,OUT,0,5,5,33,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,fruta 6 meses,br,🇧🇷 Brazil,[6 meses] composição natural pt: alimento + idade | needs:fruta,2026-08-18,OUT,0,5,5,1,mined;6meses;long
+Introdução Alimentar BLW Baby,6758321287,iphone,alimentação bebê 6 meses,br,🇧🇷 Brazil,[bebê] composição natural pt: alimentação + bebê + 6 meses | needs:alimentacao,2026-08-18,OUT,0,5,5,3,mined;bebê;long
+Introdução Alimentar BLW Baby,6758321287,iphone,alimentação bebês,br,🇧🇷 Brazil,[bebê] SERP br 'blw' #1: name BLW Brasil 'Alimentação bebês' | needs:alimentacao+bebes,2026-08-18,OUT,0,5,42,221,mined;bebê;short
+Introdução Alimentar BLW Baby,6758321287,iphone,guia baby led weaning,br,🇧🇷 Brazil,[weaning] SERP br 'blw' #10: subtitle Riafy 'Guia completo baby led weaning' | needs:guia+led,2026-08-18,OUT,0,5,5,1,mined;weaning;long
+Introdução Alimentar BLW Baby,6758321287,iphone,start solid food,br,🇧🇷 Brazil,[solid] SERP br 'introdução alimentar' #6: subtitle 'Start Solid Food - Brazil' | needs:start+food,2026-08-18,28,0,5,15,101,mined;solid;long
+Introdução Alimentar BLW Baby,6758321287,iphone,cardápio para criança,br,🇧🇷 Brazil,[cardápio] SERP br 'introdução alimentar' #4: subtitle Garfinho 'cardápio para criança' | needs:para+crianca,2026-08-18,OUT,0,5,15,2,mined;cardápio;long
+Introdução Alimentar BLW Baby,6758321287,iphone,plano alimentar bebê,br,🇧🇷 Brazil,[bebê] SERP br 'introdução alimentar' #7: subtitle Cardápio Semanal 'Plano Alimentar' + bebê | needs:plano,2026-08-18,OUT,0,5,17,52,mined;bebê;long

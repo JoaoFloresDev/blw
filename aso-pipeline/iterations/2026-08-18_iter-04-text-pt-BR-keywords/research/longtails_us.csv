@@ -1,0 +1,98 @@
+App Name,App Id,Platform,Keyword,Store Domain,Store,Note,Last Update,Ranking,Change,Popularity,Difficulty,Apps in Ranking,Tags
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby weaning,us,🇺🇸 United States,"[weaning] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,22,3,26,17,249,mined;weaning;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,start solids,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | needs:start",2026-08-18,71,9,6,17,134,mined;solids;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,starting solids,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,22,-3,29,19,84,mined;solids;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid starts,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,49,-5,61,41,137,mined;solids;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby first foods,us,🇺🇸 United States,"[first] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,141,19,8,15,247,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid starts free,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | needs:free",2026-08-18,74,0,6,21,135,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby led weaning,us,🇺🇸 United States,"[weaning] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,16,2,9,15,247,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,weaning,us,🇺🇸 United States,"[weaning] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,4,0,14,13,243,mined;weaning;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby weaning and recipes,us,🇺🇸 United States,"[weaning] get_keyword_suggestions(app, us) | needs:and",2026-08-18,34,0,6,19,247,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid start,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | needs:start",2026-08-18,79,-1,9,17,136,mined;solids;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid starts baby first foods,us,🇺🇸 United States,"[first] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,64,-6,6,17,248,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,babyplate starting solids,us,🇺🇸 United States,"[solids] get_keyword_suggestions(app, us) | needs:babyplate",2026-08-18,115,0,8,19,250,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby feeding tracker,us,🇺🇸 United States,"[tracker] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,72,4,6,65,248,mined;tracker;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw,us,🇺🇸 United States,"[blw] get_keyword_suggestions(app, us) | all-field-tokens",2026-08-18,30,1,19,17,246,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food,us,🇺🇸 United States,"[foods] extract_competitors_keywords('baby led weaning', us) pop=67 | needs:food",2026-08-18,OUT,0,67,94,248,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby tracker,us,🇺🇸 United States,"[tracker] extract_competitors_keywords('baby led weaning', us) pop=63 | all-field-tokens",2026-08-18,OUT,0,63,78,247,mined;tracker;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food tracker,us,🇺🇸 United States,"[foods] extract_competitors_keywords('baby led weaning', us) pop=63 | needs:food",2026-08-18,OUT,0,63,80,248,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,start,us,🇺🇸 United States,"[starting] extract_competitors_keywords('baby led weaning', us) pop=48 | needs:start",2026-08-18,OUT,0,48,23,248,mined;starting;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw meals,us,🇺🇸 United States,"[blw] extract_competitors_keywords('baby led weaning', us) pop=9 | needs:meals",2026-08-18,167,833,8,37,249,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby first,us,🇺🇸 United States,"[first] extract_competitors_keywords('baby led weaning', us) pop=8 | all-field-tokens",2026-08-18,OUT,0,8,47,220,mined;first;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,app led,us,🇺🇸 United States,"[led] extract_competitors_keywords('baby led weaning', us) pop=7 | needs:app",2026-08-18,OUT,0,7,45,250,mined;led;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food recipes,us,🇺🇸 United States,"[foods] extract_competitors_keywords('baby led weaning', us) pop=7 | needs:food",2026-08-18,OUT,0,7,67,247,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby app,us,🇺🇸 United States,"[baby] extract_competitors_keywords('baby led weaning', us) pop=7 | needs:app",2026-08-18,OUT,0,7,72,248,mined;baby;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food delivery,us,🇺🇸 United States,"[foods] extract_competitors_keywords('first foods', us) pop=61 | needs:food+delivery",2026-08-18,OUT,0,61,94,248,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,meal tracker,us,🇺🇸 United States,"[tracker] extract_competitors_keywords('first foods', us) pop=55 | all-field-tokens",2026-08-18,OUT,0,55,81,248,mined;tracker;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food truck,us,🇺🇸 United States,"[foods] extract_competitors_keywords('first foods', us) pop=25 | needs:food+truck",2026-08-18,OUT,0,25,48,244,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,delivery food,us,🇺🇸 United States,"[foods] extract_competitors_keywords('first foods', us) pop=6 | needs:delivery+food",2026-08-18,OUT,0,6,93,247,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby schedule,us,🇺🇸 United States,"[baby] extract_competitors_keywords('solid starts', us) pop=20 | needs:schedule",2026-08-18,OUT,0,20,51,248,mined;baby;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,huckleberry baby,us,🇺🇸 United States,"[baby] extract_competitors_keywords('solid starts', us) pop=14 | needs:huckleberry",2026-08-18,OUT,0,14,34,113,mined;baby;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw ideas,us,🇺🇸 United States,"[blw] extract_competitors_keywords('puree', us) pop=39 | needs:ideas",2026-08-18,OUT,0,39,19,68,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,allergy,us,🇺🇸 United States,"[allergen] extract_competitors_keywords('puree', us) pop=21 | needs:allergy",2026-08-18,OUT,0,21,54,247,mined;allergen;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food planner,us,🇺🇸 United States,"[foods] extract_competitors_keywords('puree', us) pop=6 | needs:food+planner",2026-08-18,OUT,0,6,59,249,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food scanner,us,🇺🇸 United States,"[foods] extract_competitors_keywords('allergen', us) pop=48 | needs:food+scanner",2026-08-18,OUT,0,48,67,248,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,allergy app,us,🇺🇸 United States,"[allergen] extract_competitors_keywords('allergen', us) pop=12 | needs:allergy+app",2026-08-18,OUT,0,12,37,248,mined;allergen;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby food,us,🇺🇸 United States,"[foods] extract_competitors_keywords('allergen', us) pop=9 | needs:food",2026-08-18,192,0,9,44,249,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,allergies,us,🇺🇸 United States,"[allergen] extract_competitors_keywords('allergen', us) pop=7 | needs:allergies",2026-08-18,OUT,0,7,34,249,mined;allergen;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,scan food,us,🇺🇸 United States,"[foods] extract_competitors_keywords('allergen', us) pop=6 | needs:scan+food",2026-08-18,OUT,0,6,51,249,mined;foods;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,nara baby,us,🇺🇸 United States,"[baby] extract_competitors_keywords('baby food tracker', us) pop=50 | needs:nara",2026-08-18,OUT,0,50,54,248,mined;baby;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,newborn tracker,us,🇺🇸 United States,"[tracker] extract_competitors_keywords('baby food tracker', us) pop=23 | needs:newborn",2026-08-18,OUT,0,23,63,248,mined;tracker;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,tracker app,us,🇺🇸 United States,"[tracker] extract_competitors_keywords('baby food tracker', us) pop=17 | needs:app",2026-08-18,OUT,0,17,62,247,mined;tracker;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,led app,us,🇺🇸 United States,"[led] extract_competitors_keywords('baby food tracker', us) pop=8 | needs:app",2026-08-18,OUT,0,8,56,250,mined;led;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby diary,us,🇺🇸 United States,"[baby] extract_competitors_keywords('weaning', us) pop=19 | all-field-tokens",2026-08-18,OUT,0,19,39,246,mined;baby;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw app,us,🇺🇸 United States,[blw] composição natural en: X app | needs:app,2026-08-18,225,0,5,49,250,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw food list,us,🇺🇸 United States,[blw] composição natural en: blw + food list | needs:food+list,2026-08-18,35,0,5,13,248,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw first foods,us,🇺🇸 United States,[blw] composição natural en: blw + first foods | all-field-tokens,2026-08-18,32,0,5,11,247,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw meal ideas,us,🇺🇸 United States,[blw] composição natural en: blw + meal ideas | needs:ideas,2026-08-18,OUT,0,5,38,249,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw for beginners,us,🇺🇸 United States,[blw] composição natural en: X for beginners | needs:for+beginners,2026-08-18,15,0,5,11,249,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw schedule,us,🇺🇸 United States,[blw] composição natural en: blw + schedule (Solid Starts subtitle: Schedules) | needs:schedule,2026-08-18,OUT,0,5,11,212,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw food tracker,us,🇺🇸 United States,[blw] composição natural en: blw + tracker | needs:food,2026-08-18,48,0,5,5,250,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw solids,us,🇺🇸 United States,[blw] SERP us 'baby led weaning' #10: name Byte Flux 'BLW Solids' | all-field-tokens,2026-08-18,32,0,5,11,142,mined;blw;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,blw meals tracker,us,🇺🇸 United States,[blw] SERP us 'baby led weaning' #1: subtitle Solid Starts 'BLW Meals Tracker Schedules' | needs:meals,2026-08-18,147,0,5,11,249,mined;blw;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby food app,us,🇺🇸 United States,[foods] composição natural en: baby food + app | needs:food+app,2026-08-18,OUT,0,5,23,248,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby food schedule,us,🇺🇸 United States,[foods] composição natural en: baby food + schedule | needs:food+schedule,2026-08-18,169,0,5,7,246,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby led weaning food list,us,🇺🇸 United States,[weaning] composição natural en: blw spelled out + food list | needs:food+list,2026-08-18,19,0,5,11,244,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby led weaning family meals,us,🇺🇸 United States,[weaning] SERP us 'baby led weaning' #4: subtitle 101 before one | needs:family+meals,2026-08-18,23,0,5,9,246,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,weaning guide,us,🇺🇸 United States,[weaning] composição natural en: weaning + guide | needs:guide,2026-08-18,37,0,5,7,247,mined;weaning;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,weaning schedule,us,🇺🇸 United States,[weaning] composição natural en: weaning + schedule | needs:schedule,2026-08-18,62,0,5,17,250,mined;weaning;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,weaning meal plan,us,🇺🇸 United States,[weaning] composição natural en: weaning + meal plan (field token) | all-field-tokens,2026-08-18,200,0,5,17,248,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby weaning app,us,🇺🇸 United States,[weaning] composição natural en: baby weaning + app | needs:app,2026-08-18,80,0,5,23,246,mined;weaning;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,first foods list,us,🇺🇸 United States,[first] composição natural en: first foods + list | needs:list,2026-08-18,OUT,0,5,40,247,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby's first foods,us,🇺🇸 United States,[first] composição natural en: forma possessiva corrente | needs:baby's,2026-08-18,83,0,5,9,243,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,first food tracker,us,🇺🇸 United States,[first] composição natural en: first food + tracker (nosso produto) | needs:food,2026-08-18,OUT,0,5,19,248,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,first foods app,us,🇺🇸 United States,[first] composição natural en: first foods + app | needs:app,2026-08-18,OUT,0,5,49,247,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,100 foods before one,us,🇺🇸 United States,[foods] composição natural en: meme '100 foods before 1' do nicho | needs:before+one,2026-08-18,OUT,0,5,23,250,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,foods for baby,us,🇺🇸 United States,[foods] composição natural en: foods for X | needs:for,2026-08-18,193,0,5,17,250,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,table foods for baby,us,🇺🇸 United States,[foods] composição natural en: table foods (transição pós-puree) | needs:table+for,2026-08-18,120,0,5,7,245,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid food for baby,us,🇺🇸 United States,[foods] composição natural en: solid food for X | needs:food+for,2026-08-18,132,0,5,19,249,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby solid food,us,🇺🇸 United States,[foods] composição natural en: inversão natural | needs:food,2026-08-18,243,0,5,40,248,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid food introduction,us,🇺🇸 United States,[foods] composição natural en: solid food + introduction (field tokens) | needs:food,2026-08-18,OUT,0,5,9,250,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid food schedule,us,🇺🇸 United States,[foods] composição natural en: solid food + schedule | needs:food+schedule,2026-08-18,OUT,0,5,52,249,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,starting solids guide,us,🇺🇸 United States,[solids] composição natural en: head + guide | needs:guide,2026-08-18,OUT,0,5,11,36,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,starting solids at 6 months,us,🇺🇸 United States,[solids] composição natural en: head + idade | needs:at+months,2026-08-18,43,0,5,11,85,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,starting solids recipes,us,🇺🇸 United States,[solids] composição natural en: head + recipes | all-field-tokens,2026-08-18,OUT,0,5,19,249,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,solid starts recipes,us,🇺🇸 United States,[solids] composição natural en: brand-adjacent + recipes | all-field-tokens,2026-08-18,OUT,0,5,19,248,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,starting solids first foods,us,🇺🇸 United States,[first] SERP us 'baby led weaning' #8: subtitle Momsie 'Starting Solids & First Foods' | all-field-tokens,2026-08-18,75,0,5,17,248,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,allergen tracker baby,us,🇺🇸 United States,[allergen] composição natural en: allergen tracker + baby (core feature) | all-field-tokens,2026-08-18,76,0,5,37,247,mined;allergen;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,food allergen log,us,🇺🇸 United States,[foods] composição natural en: allergen + log (field tokens) | needs:food,2026-08-18,OUT,0,5,5,247,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,allergen introduction tracker,us,🇺🇸 United States,[allergen] composição natural en: expansão de 'allergen introduction' (tracked) | all-field-tokens,2026-08-18,OUT,0,5,15,248,mined;allergen;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,first foods allergens,us,🇺🇸 United States,"[first] SERP us 'starting solids' #9: subtitle Nibble 'BLW, First Foods & Allergens' | needs:allergens",2026-08-18,240,0,5,9,250,mined;first;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,choking hazards baby,us,🇺🇸 United States,[choking] composição natural en: choking + hazards (safety content do app) | needs:hazards,2026-08-18,250,0,5,23,250,mined;choking;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby choking,us,🇺🇸 United States,[choking] composição natural en: baby + choking | all-field-tokens,2026-08-18,OUT,0,5,5,213,mined;choking;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,food introduction tracker,us,🇺🇸 United States,[foods] composição natural en: introduction + tracker | needs:food,2026-08-18,OUT,0,5,5,249,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,introduction to solids,us,🇺🇸 United States,[solids] composição natural en: forma corrente | needs:to,2026-08-18,192,0,5,9,249,mined;solids;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,100 foods checklist,us,🇺🇸 United States,[foods] composição natural en: 100 foods + checklist (core feature) | needs:checklist,2026-08-18,200,0,5,7,249,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,100 foods baby,us,🇺🇸 United States,[foods] composição natural en: 100 + foods + baby | all-field-tokens,2026-08-18,175,0,5,7,247,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,finger food recipes,us,🇺🇸 United States,[foods] composição natural en: finger food + recipes | needs:food,2026-08-18,OUT,0,5,11,244,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,finger food ideas baby,us,🇺🇸 United States,[foods] composição natural en: finger food + ideas | needs:food+ideas,2026-08-18,OUT,0,5,7,248,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby puree recipes,us,🇺🇸 United States,[puree] composição natural en: puree + recipes | all-field-tokens,2026-08-18,99,0,5,11,247,mined;puree;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,puree tracker,us,🇺🇸 United States,[puree] composição natural en: puree + tracker | all-field-tokens,2026-08-18,51,0,5,5,249,mined;puree;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,stage 2 purees,us,🇺🇸 United States,[puree] composição natural en: stages de puree (temos 'stage 1' no field) | needs:2+purees,2026-08-18,134,0,5,9,250,mined;puree;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby food recipes 6 months,us,🇺🇸 United States,[foods] composição natural en: recipes + idade | needs:food+months,2026-08-18,114,0,5,13,247,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,easy baby food recipes,us,🇺🇸 United States,[foods] composição natural en: qualifier easy | needs:easy+food,2026-08-18,190,0,5,11,246,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,new food tracker,us,🇺🇸 United States,[foods] composição natural en: tracker de novos alimentos (core feature) | needs:new+food,2026-08-18,OUT,0,5,9,249,mined;foods;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby eating tracker,us,🇺🇸 United States,[tracker] composição natural en: eating + tracker | needs:eating,2026-08-18,OUT,0,5,53,249,mined;tracker;long
+BLW Baby Led Weaning Tracker,6758321287,iphone,feeding log,us,🇺🇸 United States,[log] composição natural en: feeding + log | all-field-tokens,2026-08-18,OUT,0,5,44,250,mined;log;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,solids log,us,🇺🇸 United States,[solids] composição natural en: solids + log (field tokens) | all-field-tokens,2026-08-18,53,0,5,17,247,mined;solids;short
+BLW Baby Led Weaning Tracker,6758321287,iphone,baby meal log,us,🇺🇸 United States,[log] composição natural en: meal + log | all-field-tokens,2026-08-18,47,0,5,17,248,mined;log;long
