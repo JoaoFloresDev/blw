@@ -1,15 +1,22 @@
 import 'dart:developer' as developer;
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/foundation.dart';
 
 /// Central analytics facade. Every user-behavior event funnels through here
 /// so event names stay consistent and call sites stay one-liners. Failures
 /// are swallowed — analytics must never break a user flow.
+/// Debug builds only print to console — QA sessions in the simulator must
+/// never pollute the production funnel.
 class AnalyticsService {
   // MARK: - Core
 
   static final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
 
   static Future<void> _log(String name, [Map<String, Object>? params]) async {
+    if (kDebugMode) {
+      developer.log('analytics (debug, not sent): $name ${params ?? ''}');
+      return;
+    }
     try {
       await _analytics.logEvent(name: name, parameters: params);
     } catch (e) {
@@ -18,6 +25,7 @@ class AnalyticsService {
   }
 
   static Future<void> screen(String name) async {
+    if (kDebugMode) return;
     try {
       await _analytics.logScreenView(screenName: name);
     } catch (e) {
@@ -30,7 +38,8 @@ class AnalyticsService {
   /// Fired once per feature page (0-based) so drop-off inside the
   /// onboarding is measurable; the paywall step logs paywall_shown instead.
   static Future<void> onboardingStepViewed(int step) =>
-      _log('onboarding_step_viewed', {'step': step});
+      // String value: GA4 custom dimensions only capture string params.
+      _log('onboarding_step_viewed', {'step': '$step'});
 
   static Future<void> onboardingCompleted() => _log('onboarding_completed');
 
@@ -57,6 +66,13 @@ class AnalyticsService {
   /// [reason] is 'canceled' (user dismissed) or 'error' (payment failed).
   static Future<void> purchaseAbandoned(String reason) =>
       _log('purchase_abandoned', {'reason': reason});
+
+  /// Where the user went right after abandoning the payment sheet:
+  /// 'retried' (tapped the CTA again), 'closed_paywall', 'left_app'
+  /// (backgrounded within the watch window) or 'stayed_on_paywall'
+  /// (still on the paywall when the window expired).
+  static Future<void> postAbandonOutcome(String outcome, String source) =>
+      _log('post_abandon_outcome', {'outcome': outcome, 'source': source});
 
   // MARK: - Core usage
 

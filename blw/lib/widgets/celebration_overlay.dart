@@ -119,79 +119,98 @@ class _CelebrationOverlayState extends State<CelebrationOverlay>
     final l10n = AppLocalizations.of(context);
 
     return Container(
-      margin: const EdgeInsets.all(32),
-      padding: const EdgeInsets.all(32),
+      margin: const EdgeInsets.symmetric(horizontal: 28),
+      padding: const EdgeInsets.fromLTRB(24, 32, 24, 24),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(28),
+        borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
-            blurRadius: 30,
-            offset: const Offset(0, 15),
+            color: Colors.black.withValues(alpha: 0.25),
+            blurRadius: 40,
+            offset: const Offset(0, 20),
           ),
         ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Celebration icon
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0xFF34C759), Color(0xFF30D158)],
-              ),
-              borderRadius: BorderRadius.circular(28),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF34C759).withValues(alpha: 0.4),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
+          // Food hero inside a soft green halo, party badge on top
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 128,
+                height: 128,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      const Color(0xFF34C759).withValues(alpha: 0.18),
+                      const Color(0xFF30D158).withValues(alpha: 0.08),
+                    ],
+                  ),
                 ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                widget.foodIcon,
-                style: const TextStyle(fontSize: 50),
               ),
-            ),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF2FBF4),
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: const Color(0xFF34C759).withValues(alpha: 0.25),
+                    width: 1.5,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    widget.foodIcon,
+                    style: const TextStyle(fontSize: 52),
+                  ),
+                ),
+              ),
+              const Positioned(
+                top: -8,
+                right: -4,
+                child: Text('🎉', style: TextStyle(fontSize: 34)),
+              ),
+            ],
           ),
-          const SizedBox(height: 24),
-
-          // Star animation
-          const Text(
-            '🎉',
-            style: TextStyle(fontSize: 40),
-          ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 22),
 
           // Title
           Text(
             l10n.firstTime,
             style: const TextStyle(
-              fontSize: 28,
+              fontSize: 26,
               fontWeight: FontWeight.w800,
               color: Color(0xFF1C1C1E),
               letterSpacing: -0.5,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
 
-          // Food name
-          Text(
-            widget.foodName,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF34C759),
-              letterSpacing: -0.3,
+          // Food name pill
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
+            decoration: BoxDecoration(
+              color: const Color(0xFF34C759).withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(20),
             ),
-            textAlign: TextAlign.center,
+            child: Text(
+              widget.foodName,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF1B9A43),
+                letterSpacing: -0.3,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
           const SizedBox(height: 12),
 
@@ -199,21 +218,45 @@ class _CelebrationOverlayState extends State<CelebrationOverlay>
           Text(
             l10n.addedToDiary,
             style: const TextStyle(
-              fontSize: 16,
-              color: Color(0xFF8E8E93),
+              fontSize: 15,
+              color: Color(0xFF6E6E73),
               letterSpacing: -0.2,
+              height: 1.35,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 24),
 
-          // Tap to dismiss hint
-          Text(
-            l10n.tapToContinue,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[400],
-              fontWeight: FontWeight.w500,
+          // Dismiss button
+          GestureDetector(
+            onTap: widget.onDismiss,
+            child: Container(
+              width: double.infinity,
+              height: 52,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF34C759), Color(0xFF2BB554)],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.10),
+                    blurRadius: 12,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  l10n.tapToContinue,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                    letterSpacing: -0.3,
+                  ),
+                ),
+              ),
             ),
           ),
         ],

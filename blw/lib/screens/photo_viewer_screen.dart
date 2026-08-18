@@ -354,7 +354,7 @@ class _PhotoViewerScreenState extends State<PhotoViewerScreen> {
       case Acceptance.liked:
         return AppColors.primary;
       case Acceptance.neutral:
-        return const Color(0xFFFFCC00);
+        return const Color(0xFFC79100);
       case Acceptance.disliked:
         return const Color(0xFFFF9500);
       case Acceptance.refused:
@@ -382,7 +382,7 @@ class _PhotoViewerScreenState extends State<PhotoViewerScreen> {
       case Reaction.none:
         return Colors.grey;
       case Reaction.mild:
-        return const Color(0xFFFFCC00);
+        return const Color(0xFFC79100);
       case Reaction.moderate:
         return const Color(0xFFFF9500);
       case Reaction.severe:

@@ -166,16 +166,27 @@ class FoodLogScreen extends StatelessWidget {
                                 child: Stack(
                                   clipBehavior: Clip.none,
                                   children: [
+                                    // Same white-card look as the header
+                                    // buttons on the Foods tab (btn_*.png).
                                     Container(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: const EdgeInsets.all(7),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFF007AFF),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      child: const Icon(
-                                        CupertinoIcons.doc_text_fill,
                                         color: Colors.white,
-                                        size: 22,
+                                        borderRadius: BorderRadius.circular(14),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black
+                                                .withValues(alpha: 0.06),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 3),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Image.asset(
+                                        'assets/images/btn_pdf.png',
+                                        width: 30,
+                                        height: 30,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                     if (!context
@@ -239,6 +250,7 @@ class FoodLogScreen extends StatelessWidget {
         final untried = allFoods
             .where((food) =>
                 !tried.contains(food.id) &&
+                !food.isAllergen &&
                 food.minimumAge.index <= ageIndex)
             .toList();
         if (untried.isEmpty) return const SizedBox.shrink();
@@ -294,7 +306,7 @@ class FoodLogScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           SizedBox(
-            height: 96,
+            height: 112,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               clipBehavior: Clip.none,
@@ -324,6 +336,7 @@ class FoodLogScreen extends StatelessWidget {
       ),
       child: Container(
         width: double.infinity,
+        height: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -337,19 +350,21 @@ class FoodLogScreen extends StatelessWidget {
           ],
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FoodIcon(food, size: 26),
             const SizedBox(height: 6),
             Text(
               displayName,
-              maxLines: 1,
+              maxLines: 2,
+              textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textPrimary,
                 letterSpacing: -0.2,
+                height: 1.15,
               ),
             ),
           ],
@@ -542,6 +557,13 @@ class FoodLogScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.cardBackground,
                   borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.08),
+                      blurRadius: 16,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
                 ),
                 child: Column(
                   children: dateLogs.asMap().entries.map((logEntry) {

@@ -22,12 +22,17 @@ class PremiumProvider extends ChangeNotifier {
   bool _isPremium = false;
   bool _isLoading = true;
   bool _purchasePending = false;
+  int _abandonCount = 0;
   List<ProductDetails> _products = [];
 
   // MARK: - Computed Properties
   bool get isPremium => _isPremium;
   bool get isLoading => _isLoading;
   bool get purchasePending => _purchasePending;
+
+  /// Bumped every time the native payment sheet ends without a purchase,
+  /// so the paywall UI can watch where the user goes next.
+  int get abandonCount => _abandonCount;
   List<ProductDetails> get products => _products;
   bool get hasProducts => _products.isNotEmpty;
 
@@ -65,6 +70,7 @@ class PremiumProvider extends ChangeNotifier {
   Future<void> restore() async {
     await _service.restore();
   }
+
 
   // MARK: - Private Methods
   Future<void> _init() async {
@@ -106,6 +112,7 @@ class PremiumProvider extends ChangeNotifier {
         case PurchaseStatus.canceled:
           AnalyticsService.purchaseAbandoned(
               purchase.status == PurchaseStatus.canceled ? 'canceled' : 'error');
+          _abandonCount++;
           _purchasePending = false;
           await _service.complete(purchase);
           break;

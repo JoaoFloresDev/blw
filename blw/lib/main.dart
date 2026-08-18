@@ -291,9 +291,6 @@ class _AppWrapperState extends State<AppWrapper> {
     // Increment app opens counter
     await AppOpensService.incrementAndGetOpens();
 
-    // Check if should request review (5th to 10th open)
-    final shouldReview = await AppOpensService.shouldRequestReview();
-
     if (!mounted) return;
 
     setState(() {
@@ -301,10 +298,8 @@ class _AppWrapperState extends State<AppWrapper> {
       _isLoading = false;
     });
 
-    // Request review if eligible
-    if (isOnboardingComplete && shouldReview) {
-      await AppOpensService.requestReview();
-    }
+    // Review is only requested at the aha moment (first food logged) —
+    // never on launch, which interrupted users over an empty diary.
   }
 
   void _onOnboardingComplete() {
@@ -372,7 +367,7 @@ class _MainTabScreenState extends State<MainTabScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, 'assets/images/tab_diary.png', l10n.foodDiary),
+                _buildNavItem(0, 'assets/images/tab_diary.png', l10n.diaryTab),
                 _buildNavItem(1, 'assets/images/tab_foods.png', l10n.foods),
                 _buildNavItem(2, 'assets/images/tab_gallery.png', l10n.gallery),
               ],

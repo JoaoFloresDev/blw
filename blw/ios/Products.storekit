@@ -1,0 +1,90 @@
+{
+  "identifier" : "B1000000-0000-0000-0000-000000000001",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "B2000000-0000-0000-0000-000000000001",
+      "localizations" : [
+
+      ],
+      "name" : "BLW Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "B3000000-0000-0000-0000-000000000001",
+          "introductoryOffer" : {
+            "internalID" : "B4000000-0000-0000-0000-000000000001",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "BLW Pro weekly",
+              "displayName" : "BLW Pro Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.bemestar.poc.pro.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Pro Weekly",
+          "subscriptionGroupID" : "B2000000-0000-0000-0000-000000000001",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "B3000000-0000-0000-0000-000000000002",
+          "introductoryOffer" : {
+            "internalID" : "B4000000-0000-0000-0000-000000000002",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "BLW Pro yearly",
+              "displayName" : "BLW Pro Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.bemestar.poc.pro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Yearly",
+          "subscriptionGroupID" : "B2000000-0000-0000-0000-000000000001",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

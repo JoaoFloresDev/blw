@@ -70,9 +70,10 @@ extension AcceptanceExtension on Acceptance {
       case Acceptance.disliked:
         return '😕';
       case Acceptance.refused:
-        return '🙅';
+        return '😤';
     }
   }
+
 }
 
 class FoodLog {

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../main.dart';
 import '../data/recipes_data.dart';
+import '../providers/premium_provider.dart';
 import '../services/analytics_service.dart';
+import '../widgets/paywall_view.dart';
 
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
@@ -19,6 +22,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final recipes = recipesFor(Localizations.localeOf(context).languageCode);
+    final isPremium = context.watch<PremiumProvider>().isPremium;
+    final freeIds = freeRecipeIds(recipes);
 
     final filteredRecipes = _selectedCategory == null
         ? recipes
@@ -114,9 +119,10 @@ class _RecipesScreenState extends State<RecipesScreen> {
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   final recipe = filteredRecipes[index];
+                  final locked = !isPremium && !freeIds.contains(recipe.id);
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 12),
-                    child: _buildRecipeCard(context, recipe, l10n),
+                    child: _buildRecipeCard(context, recipe, l10n, locked),
                   );
                 },
                 childCount: filteredRecipes.length,
@@ -163,9 +169,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
     );
   }
 
-  Widget _buildRecipeCard(BuildContext context, Recipe recipe, AppLocalizations l10n) {
+  Widget _buildRecipeCard(
+      BuildContext context, Recipe recipe, AppLocalizations l10n, bool locked) {
     return GestureDetector(
-      onTap: () {
+      onTap: () async {
+        if (locked) {
+          final unlocked = await showPaywall(context, source: 'recipes');
+          if (!unlocked || !context.mounted) return;
+        }
         AnalyticsService.recipeViewed(recipe.id);
         Navigator.push(
           context,
@@ -202,31 +213,13 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            recipe.name,
-                            style: const TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: -0.4,
-                            ),
-                          ),
-                        ),
-                        if (recipe.isAllergen)
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: AppColors.secondary.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: const Text(
-                              '⚠️',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-                      ],
+                    Text(
+                      recipe.name,
+                      style: const TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: -0.4,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Row(
@@ -263,11 +256,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   ],
                 ),
               ),
-              const Icon(
-                CupertinoIcons.chevron_right,
-                color: AppColors.textSecondary,
-                size: 18,
-              ),
+              if (locked)
+                const ProBadge()
+              else
+                const Icon(
+                  CupertinoIcons.chevron_right,
+                  color: AppColors.textSecondary,
+                  size: 18,
+                ),
             ],
           ),
         ),

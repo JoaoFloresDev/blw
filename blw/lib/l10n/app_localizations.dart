@@ -37,6 +37,7 @@ class AppLocalizations {
   // Navigation
   String get foods => get('foods');
   String get foodDiary => get('foodDiary');
+  String get diaryTab => get('diaryTab');
   String get allergens => get('allergens');
   String get blwTips => get('blwTips');
 
@@ -511,6 +512,7 @@ const Map<String, String> _ptTranslations = {
   'home': 'Início',
   'foods': 'Alimentos',
   'foodDiary': 'Diario Alimentar',
+  'diaryTab': 'Diario',
   'allergens': 'Alergenicos',
   'blwTips': 'Dicas de BLW',
 
@@ -849,7 +851,7 @@ const Map<String, String> _ptTranslations = {
   // Celebration
   'firstTime': 'Primeira vez!',
   'addedToDiary': 'foi adicionado ao diário do bebê!',
-  'tapToContinue': 'Toque para continuar',
+  'tapToContinue': 'Continuar',
 
   // Home screen
   'quickActions': 'Ações Rápidas',
@@ -1110,6 +1112,7 @@ const Map<String, String> _enTranslations = {
   'home': 'Home',
   'foods': 'Foods',
   'foodDiary': 'Food Diary',
+  'diaryTab': 'Diary',
   'allergens': 'Allergens',
   'blwTips': 'BLW Tips',
 
@@ -1449,7 +1452,7 @@ const Map<String, String> _enTranslations = {
   // Celebration
   'firstTime': 'First time!',
   'addedToDiary': 'was added to baby\'s diary!',
-  'tapToContinue': 'Tap to continue',
+  'tapToContinue': 'Continue',
 
   // Home screen
   'quickActions': 'Quick Actions',
@@ -1710,6 +1713,7 @@ const Map<String, String> _esTranslations = {
   'home': 'Inicio',
   'foods': 'Alimentos',
   'foodDiary': 'Diario Alimentario',
+  'diaryTab': 'Diario',
   'allergens': 'Alergenicos',
   'blwTips': 'Consejos BLW',
 
@@ -2049,7 +2053,7 @@ const Map<String, String> _esTranslations = {
   // Celebration
   'firstTime': '¡Primera vez!',
   'addedToDiary': '¡fue agregado al diario del bebé!',
-  'tapToContinue': 'Toca para continuar',
+  'tapToContinue': 'Continuar',
 
   // Home screen
   'quickActions': 'Acciones Rápidas',

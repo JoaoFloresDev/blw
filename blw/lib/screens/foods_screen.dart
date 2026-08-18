@@ -9,8 +9,6 @@ import '../models/food.dart';
 import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import 'food_detail_screen.dart';
-import '../providers/premium_provider.dart';
-import '../widgets/paywall_view.dart';
 import 'recipes_screen.dart';
 import 'allergens_screen.dart';
 import 'tips_screen.dart';
@@ -114,18 +112,16 @@ class _FoodsScreenState extends State<FoodsScreen> {
                       children: [
                         CupertinoButton(
                           padding: EdgeInsets.zero,
-                          onPressed: () => PremiumGate.guard(
-                            context,
-                            source: 'recipes',
-                            onUnlocked: () {
-                              AnalyticsService.recipesOpened();
-                              Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (_) => const RecipesScreen()),
-                              );
-                            },
-                          ),
+                          // The list itself is free to browse; individual
+                          // recipes beyond the free set gate inside.
+                          onPressed: () {
+                            AnalyticsService.recipesOpened();
+                            Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (_) => const RecipesScreen()),
+                            );
+                          },
                           child: Stack(
                             clipBehavior: Clip.none,
                             children: [
@@ -150,23 +146,6 @@ class _FoodsScreenState extends State<FoodsScreen> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              if (!context.watch<PremiumProvider>().isPremium)
-                                Positioned(
-                                  top: -4,
-                                  right: -4,
-                                  child: Container(
-                                    padding: const EdgeInsets.all(3),
-                                    decoration: const BoxDecoration(
-                                      color: Color(0xFFFF9500),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: const Icon(
-                                      CupertinoIcons.lock_fill,
-                                      size: 9,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
                             ],
                           ),
                         ),

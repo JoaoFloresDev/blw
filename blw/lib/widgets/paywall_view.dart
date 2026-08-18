@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -117,17 +119,57 @@ class PaywallView extends StatefulWidget {
   State<PaywallView> createState() => _PaywallViewState();
 }
 
-class _PaywallViewState extends State<PaywallView> {
+class _PaywallViewState extends State<PaywallView>
+    with WidgetsBindingObserver {
+  /// How long after an abandon we keep watching where the user goes.
+  static const Duration _abandonWatchWindow = Duration(seconds: 20);
+
   bool _yearlySelected = true;
   bool _wasPremium = false;
+  int _seenAbandonCount = 0;
+  bool _awaitingAbandonOutcome = false;
+  Timer? _abandonTimer;
 
   @override
   void initState() {
     super.initState();
-    _wasPremium = context.read<PremiumProvider>().isPremium;
+    WidgetsBinding.instance.addObserver(this);
+    final premium = context.read<PremiumProvider>();
+    _wasPremium = premium.isPremium;
+    _seenAbandonCount = premium.abandonCount;
     // Logged here (not in showPaywall) so the onboarding paywall, which embeds
     // this view directly without the modal helper, is counted too.
     AnalyticsService.paywallShown(widget.source);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _abandonTimer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      _resolveAbandonOutcome('left_app');
+    }
+  }
+
+  // MARK: - Post-abandon tracking
+  void _watchAbandonOutcome() {
+    _awaitingAbandonOutcome = true;
+    _abandonTimer?.cancel();
+    _abandonTimer = Timer(_abandonWatchWindow, () {
+      _resolveAbandonOutcome('stayed_on_paywall');
+    });
+  }
+
+  void _resolveAbandonOutcome(String outcome) {
+    if (!_awaitingAbandonOutcome) return;
+    _awaitingAbandonOutcome = false;
+    _abandonTimer?.cancel();
+    AnalyticsService.postAbandonOutcome(outcome, widget.source);
   }
 
   // MARK: - Actions
@@ -139,6 +181,7 @@ class _PaywallViewState extends State<PaywallView> {
       _showUnavailable();
       return;
     }
+    _resolveAbandonOutcome('retried');
     AnalyticsService.purchaseStarted(
         _yearlySelected ? 'yearly' : 'weekly', widget.source);
     HapticFeedback.mediumImpact();
@@ -176,6 +219,13 @@ class _PaywallViewState extends State<PaywallView> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final premium = context.watch<PremiumProvider>();
+
+    // A new abandon landed while this paywall is visible — start watching
+    // where the user goes next (retry, close, background, or stay).
+    if (premium.abandonCount > _seenAbandonCount) {
+      _seenAbandonCount = premium.abandonCount;
+      _watchAbandonOutcome();
+    }
 
     // Auto-dismiss once the purchase lands.
     if (premium.isPremium && !_wasPremium) {
@@ -249,6 +299,7 @@ class _PaywallViewState extends State<PaywallView> {
         padding: const EdgeInsets.all(16),
         onPressed: () {
           HapticFeedback.selectionClick();
+          _resolveAbandonOutcome('closed_paywall');
           if (!context.read<PremiumProvider>().isPremium) {
             AnalyticsService.paywallDismissed(widget.source);
           }

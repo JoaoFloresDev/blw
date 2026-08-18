@@ -59,7 +59,7 @@ class FoodDetailScreen extends StatelessWidget {
       case FoodCategory.proteins:
         return const Color(0xFFFF3B30);
       case FoodCategory.grains:
-        return const Color(0xFFFFCC00);
+        return const Color(0xFFC79100);
       case FoodCategory.dairy:
         return const Color(0xFF007AFF);
     }
@@ -445,11 +445,16 @@ class FoodDetailScreen extends StatelessWidget {
 
   Widget _buildRecipeCard(BuildContext context, Recipe recipe) {
     final isPremium = context.watch<PremiumProvider>().isPremium;
+    // Same freemium rule as the recipes list: the free set opens directly,
+    // everything else gates on tap.
+    final locked = !isPremium &&
+        !freeRecipeIds(recipesFor(Localizations.localeOf(context).languageCode))
+            .contains(recipe.id);
     final tile = Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-          trailing: isPremium ? null : const ProBadge(),
+          trailing: locked ? const ProBadge() : null,
           onExpansionChanged: (open) {
             if (open) AnalyticsService.recipeViewed(recipe.id);
           },
@@ -640,16 +645,16 @@ class FoodDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      child: isPremium
-          ? tile
-          : GestureDetector(
+      child: locked
+          ? GestureDetector(
               onTap: () => PremiumGate.guard(
                 context,
                 source: 'recipes',
                 onUnlocked: () {},
               ),
               child: AbsorbPointer(child: tile),
-            ),
+            )
+          : tile,
     );
   }
 

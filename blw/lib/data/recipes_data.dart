@@ -2501,3 +2501,22 @@ List<Recipe> getRecipesByCategory(RecipeCategory category) {
 List<Recipe> getRecipesForAge(int ageMonths) {
   return allRecipes.where((r) => r.ageMonths <= ageMonths).toList();
 }
+
+/// How many recipes of each category a free user can open.
+const int freeRecipesPerCategory = 2;
+
+/// Ids a free user can open: the first [freeRecipesPerCategory] recipes of
+/// each category, in data order. Every screen gating recipes uses this same
+/// set so a recipe that is free in the list is also free everywhere else.
+Set<String> freeRecipeIds(List<Recipe> recipes) {
+  final perCategory = <RecipeCategory, int>{};
+  final free = <String>{};
+  for (final recipe in recipes) {
+    final used = perCategory[recipe.category] ?? 0;
+    if (used < freeRecipesPerCategory) {
+      perCategory[recipe.category] = used + 1;
+      free.add(recipe.id);
+    }
+  }
+  return free;
+}

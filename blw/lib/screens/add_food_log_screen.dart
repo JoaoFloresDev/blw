@@ -153,7 +153,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
       case FoodCategory.proteins:
         return const Color(0xFFFF3B30);
       case FoodCategory.grains:
-        return const Color(0xFFFFCC00);
+        return const Color(0xFFC79100);
       case FoodCategory.dairy:
         return const Color(0xFF007AFF);
     }
