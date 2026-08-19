@@ -34,6 +34,16 @@ class AppLocalizations {
   String get appTitle => get('appTitle');
   String get appSubtitle => get('appSubtitle');
 
+  // Rating gate
+  String get ratingGateTitle => get('ratingGateTitle');
+  String get ratingGateSubtitle => get('ratingGateSubtitle');
+  String get ratingGateYes => get('ratingGateYes');
+  String get ratingGateNo => get('ratingGateNo');
+  String get ratingGateFeedbackTitle => get('ratingGateFeedbackTitle');
+  String get ratingGateFeedbackHint => get('ratingGateFeedbackHint');
+  String get ratingGateSend => get('ratingGateSend');
+  String get ratingGateThanks => get('ratingGateThanks');
+
   // Navigation
   String get foods => get('foods');
   String get foodDiary => get('foodDiary');
@@ -314,6 +324,15 @@ class _AppLocalizationsDelegate
 
 // Portuguese translations
 const Map<String, String> _ptTranslations = {
+  // ===== Rating gate (2026-08) =====
+  'ratingGateTitle': 'Curtindo o app?',
+  'ratingGateSubtitle': 'Sua opinião ajuda outras famílias a encontrar o app.',
+  'ratingGateYes': 'Sim, tô gostando',
+  'ratingGateNo': 'Nem tanto',
+  'ratingGateFeedbackTitle': 'O que podemos melhorar?',
+  'ratingGateFeedbackHint': 'Conta pra gente o que faltou...',
+  'ratingGateSend': 'Enviar',
+  'ratingGateThanks': 'Obrigado! Lemos todas as mensagens.',
   // ===== Foods expansion to 120 (2026-08) =====
   'food_nectarina': 'Nectarina',
   'prep_nectarina': 'Bem madura, em fatias grandes sem caroço. Se firme, cozinhe levemente até amaciar.',
@@ -914,6 +933,15 @@ const Map<String, String> _ptTranslations = {
 
 // English translations
 const Map<String, String> _enTranslations = {
+  // ===== Rating gate (2026-08) =====
+  'ratingGateTitle': 'Enjoying the app?',
+  'ratingGateSubtitle': 'Your feedback helps other families find the app.',
+  'ratingGateYes': 'Yes, loving it',
+  'ratingGateNo': 'Not really',
+  'ratingGateFeedbackTitle': 'What can we do better?',
+  'ratingGateFeedbackHint': 'Tell us what went wrong...',
+  'ratingGateSend': 'Send',
+  'ratingGateThanks': 'Thank you! We read every message.',
   // ===== Foods expansion to 120 (2026-08) =====
   'food_nectarina': 'Nectarine',
   'prep_nectarina': 'Very ripe, in large pitted slices. If firm, steam briefly until soft.',
@@ -1515,6 +1543,15 @@ const Map<String, String> _enTranslations = {
 
 // Spanish translations
 const Map<String, String> _esTranslations = {
+  // ===== Rating gate (2026-08) =====
+  'ratingGateTitle': '¿Te está gustando la app?',
+  'ratingGateSubtitle': 'Tu opinión ayuda a otras familias a encontrar la app.',
+  'ratingGateYes': 'Sí, me encanta',
+  'ratingGateNo': 'No mucho',
+  'ratingGateFeedbackTitle': '¿Qué podemos mejorar?',
+  'ratingGateFeedbackHint': 'Cuéntanos qué faltó...',
+  'ratingGateSend': 'Enviar',
+  'ratingGateThanks': '¡Gracias! Leemos todos los mensajes.',
   // ===== Foods expansion to 120 (2026-08) =====
   'food_nectarina': 'Nectarina',
   'prep_nectarina': 'Bien madura, en rodajas grandes sin hueso. Si está firme, cocínala al vapor hasta ablandar.',

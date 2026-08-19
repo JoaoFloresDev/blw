@@ -93,6 +93,15 @@ class AnalyticsService {
   static Future<void> reviewPromptRequested(String trigger) =>
       _log('review_prompt_requested', {'trigger': trigger});
 
+  /// Rating gate funnel: rating_gate_shown / rating_gate_yes /
+  /// rating_gate_no / rating_gate_dismissed.
+  static Future<void> ratingGate(String event, String trigger) =>
+      _log(event, {'trigger': trigger});
+
+  static Future<void> ratingGateFeedback(String trigger, String text) =>
+      _log('rating_gate_feedback',
+          {'trigger': trigger, 'text': text.length > 90 ? text.substring(0, 90) : text});
+
   // MARK: - Navigation & secondary actions
 
   /// [tab] is diary, foods or gallery.

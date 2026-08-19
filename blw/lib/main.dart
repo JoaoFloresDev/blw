@@ -11,6 +11,7 @@ import 'providers/premium_provider.dart';
 import 'services/analytics_service.dart';
 import 'services/storage_service.dart';
 import 'services/app_opens_service.dart';
+import 'services/rating_gate.dart';
 import 'screens/foods_screen.dart';
 import 'screens/food_log_screen.dart';
 import 'screens/gallery_screen.dart';
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'BLW App',
+        navigatorKey: RatingGate.navigatorKey,
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light, // Force light mode only
         builder: (context, child) {

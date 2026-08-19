@@ -11,8 +11,8 @@ import '../data/foods_data.dart';
 import '../providers/food_log_provider.dart';
 import '../providers/premium_provider.dart';
 import '../services/analytics_service.dart';
-import '../services/app_opens_service.dart';
 import '../services/photo_service.dart';
+import '../services/rating_gate.dart';
 import '../widgets/celebration_overlay.dart';
 import '../widgets/paywall_view.dart';
 import '../widgets/food_icon.dart';
@@ -1022,7 +1022,7 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
             Navigator.of(context).pop();
             Navigator.of(this.context).pop();
             // Aha moment: baby just tried a brand-new food.
-            AppOpensService.maybeRequestReviewAtAhaMoment();
+            RatingGate.instance.maybePresent(trigger: 'first_food_celebration');
           },
         );
       },
