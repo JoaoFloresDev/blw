@@ -1021,8 +1021,9 @@ class _AddFoodLogScreenState extends State<AddFoodLogScreen> {
           onDismiss: () {
             Navigator.of(context).pop();
             Navigator.of(this.context).pop();
-            // Aha moment: baby just tried a brand-new food.
-            RatingGate.instance.maybePresent(trigger: 'first_food_celebration');
+            // Aha moment: baby tried a brand-new food. The gate itself only
+            // shows from the 2nd new food on (minPositiveEvents).
+            RatingGate.instance.recordPositiveEvent(trigger: 'food_celebration');
           },
         );
       },

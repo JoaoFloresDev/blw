@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../l10n/app_localizations.dart';
+import '../main.dart';
 import '../services/analytics_service.dart';
 import '../services/storage_service.dart';
 import '../widgets/paywall_view.dart';
@@ -47,31 +48,88 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
-  /// Pushes the paywall as a native horizontal route (iOS push with parallax
-  /// + edge shadow) — a clean transition since both screens share the green
-  /// background and a plain page slide would look static.
+  /// Horizontal slide with the native iOS feel — fast start, long gentle
+  /// deceleration (Cupertino's linearToEaseOut) and a soft parallax on the
+  /// screen underneath — but without the Cupertino edge shadow, which reads
+  /// as a dark band between two identical green screens.
+  static Route<T> _slideRoute<T>(WidgetBuilder builder) {
+    return PageRouteBuilder<T>(
+      // Non-opaque so the widgets BENEATH stay mounted while this route is on
+      // top — the pre-warmed home under the paywall depends on it (an opaque
+      // route lets the framework unmount everything underneath).
+      opaque: false,
+      transitionDuration: const Duration(milliseconds: 700),
+      reverseTransitionDuration: const Duration(milliseconds: 650),
+      pageBuilder: (context, animation, secondaryAnimation) => builder(context),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final slideIn = Tween<Offset>(
+          begin: const Offset(1, 0),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(
+          parent: animation,
+          curve: Curves.linearToEaseOut,
+          reverseCurve: Curves.easeInToLinear,
+        ));
+        // When another _slideRoute is pushed on top, drift left underneath.
+        final slideUnder = Tween<Offset>(
+          begin: Offset.zero,
+          end: const Offset(-0.3, 0),
+        ).animate(CurvedAnimation(
+          parent: secondaryAnimation,
+          curve: Curves.linearToEaseOut,
+          reverseCurve: Curves.easeInToLinear,
+        ));
+        return SlideTransition(
+          position: slideUnder,
+          child: SlideTransition(position: slideIn, child: child),
+        );
+      },
+    );
+  }
+
   void _openPaywall() {
     Navigator.of(context).push(
-      CupertinoPageRoute(
-        builder: (routeContext) => Scaffold(
+      _slideRoute(
+        (routeContext) => Scaffold(
           backgroundColor: const Color(0xFF1B9A43),
           body: PaywallView(
             isOnboarding: true,
             source: 'onboarding',
-            onClose: () {
-              Navigator.of(routeContext).pop();
-              _completeOnboarding();
-            },
+            onClose: () => _closePaywall(routeContext),
           ),
         ),
       ),
     );
+    // Pre-warm the home: once the entry transition settles, swap the wrapper
+    // BENEATH the paywall to MainTabScreen (invisible, fully built). Closing
+    // then just pops — the paywall slides away revealing a warm home, with
+    // none of the first-build jank that made the exit stutter.
+    Future.delayed(const Duration(milliseconds: 900), () {
+      if (mounted) widget.onComplete();
+    });
   }
 
-  void _completeOnboarding() async {
+  /// Paywall close = reverse horizontal slide revealing the pre-built home.
+  void _closePaywall(BuildContext routeContext) {
+    Navigator.of(routeContext).pop();
     AnalyticsService.onboardingCompleted();
-    await StorageService.setOnboardingComplete();
-    widget.onComplete();
+    StorageService.setOnboardingComplete();
+  }
+
+  /// Closing the onboarding paywall moves FORWARD: home slides in with the
+  /// native horizontal push (not a pop back to the last onboarding page),
+  /// and the whole onboarding/paywall stack is cleared. AppWrapper's
+  /// onComplete callback is intentionally not used here — the wrapper route
+  /// is removed from the stack; next launch reads the persisted flag.
+  void _completeOnboarding(BuildContext routeContext) {
+    // Push FIRST so the transition starts on the tap frame; bookkeeping
+    // (analytics + prefs write) runs right after, off the critical path.
+    Navigator.of(routeContext).pushAndRemoveUntil(
+      _slideRoute((_) => const MainTabScreen()),
+      (route) => false,
+    );
+    AnalyticsService.onboardingCompleted();
+    StorageService.setOnboardingComplete();
   }
 
   // MARK: - View
@@ -117,7 +175,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             pageIndex: index,
             pageCount: _featurePageCount,
             onNext: _nextPage,
-            onSkip: _completeOnboarding,
+            onSkip: () => _completeOnboarding(context),
             l10n: l10n,
           );
         },

@@ -20,10 +20,13 @@ class RatingGate {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   // -- Config ---------------------------------------------------------------
+  /// Celebrations (new foods tried) before the gate may show.
+  static const int _minPositiveEvents = 1;
   static const int _cooldownDays = 60;
   static const int _negativeCooldownDays = 120;
   static const int _maxNativePromptsPerYear = 3;
 
+  static const _kPositiveCount = 'gate.positiveCount';
   static const _kLastShown = 'gate.lastShownMs';
   static const _kLastNegative = 'gate.lastNegativeMs';
   static const _kAnsweredYes = 'gate.answeredYes';
@@ -34,6 +37,16 @@ class RatingGate {
 
   // -- Public API -----------------------------------------------------------
 
+  /// Call on every positive moment (each new-food celebration). Presents the
+  /// gate only from the [_minPositiveEvents]-th event on, when eligible.
+  Future<void> recordPositiveEvent({required String trigger}) async {
+    final prefs = await SharedPreferences.getInstance();
+    final count = (prefs.getInt(_kPositiveCount) ?? 0) + 1;
+    await prefs.setInt(_kPositiveCount, count);
+    if (count < _minPositiveEvents) return;
+    await maybePresent(trigger: trigger);
+  }
+
   /// Presents the gate at an aha-moment if eligible. Safe to call while the
   /// caller is popping routes: presentation happens on the root navigator
   /// after the current frame.
@@ -42,21 +55,22 @@ class RatingGate {
     if (!_isEligible(prefs)) return;
     await prefs.setInt(_kLastShown, DateTime.now().millisecondsSinceEpoch);
     AnalyticsService.ratingGate('rating_gate_shown', trigger);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final context = navigatorKey.currentContext;
-      if (context == null) return;
-      showModalBottomSheet<bool>(
-        context: context,
-        isScrollControlled: true,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
-        builder: (_) => _GateSheet(trigger: trigger),
-      ).then((answered) {
-        if (answered == null) {
-          AnalyticsService.ratingGate('rating_gate_dismissed', trigger);
-        }
-      });
-    });
+    // Callers trigger this while popping their own routes — wait for the pop
+    // animations to settle on the home screen before sliding the sheet up,
+    // otherwise the sheet races the navigation transition.
+    await Future.delayed(const Duration(milliseconds: 600));
+    final context = navigatorKey.currentContext;
+    if (context == null || !context.mounted) return;
+    final answered = await showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+      builder: (_) => _GateSheet(trigger: trigger),
+    );
+    if (answered == null) {
+      AnalyticsService.ratingGate('rating_gate_dismissed', trigger);
+    }
   }
 
   // -- Eligibility ----------------------------------------------------------
@@ -166,8 +180,11 @@ class _GateSheetState extends State<_GateSheet> {
           child: Text(l10n.ratingGateYes),
         ),
         const SizedBox(height: 10),
-        OutlinedButton(
-          style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(50)),
+        TextButton(
+          style: TextButton.styleFrom(
+            minimumSize: const Size.fromHeight(50),
+            foregroundColor: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
           onPressed: () {
             RatingGate.instance._answeredNo(widget.trigger);
             setState(() => _showFeedback = true);
