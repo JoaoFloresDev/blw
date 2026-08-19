@@ -141,7 +141,7 @@
     "research/keyword_candidates.md"
   ],
   "deployed": true,
-  "deploy_commit": "6b1f314",
+  "deploy_commit": "94dccba",
   "deploy_timestamp": "2026-08-19T18:45:00-03:00",
   "deploy_plan": {
     "targets": [
