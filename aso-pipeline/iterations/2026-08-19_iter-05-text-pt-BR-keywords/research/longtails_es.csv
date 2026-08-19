@@ -1,0 +1,47 @@
+Core Word,Long Tail,Source,Popularity,Difficulty,Our Ranking,Apps in Ranking,Note
+alimentación,plan alimenticio,Astro get_keyword_suggestions app 6758321287 es,6,43,98,205,precisa entrar em campo: alimenticio+plan
+alimentación,alimentación complementaria ia,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Dalo Solids subtitle,5,5,1000,2,precisa entrar em campo: ia
+alimentación,alimentación del bebé,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Sólidos Bebé subtitle,5,5,1000,33,precisa entrar em campo: del
+alimentación,alimentación bebé,natural-query pattern es composição direta,5,13,25,133,composição livre (todos os tokens já em campo)
+alimentación,alimentación infantil,natural-query pattern es cabeça de nicho,5,5,1000,10,precisa entrar em campo: infantil
+alérgenos,alérgenos bebé,natural-query pattern es 'X + bebé',5,5,5,20,composição livre (todos os tokens já em campo)
+alérgenos,alérgenos alimentarios,natural-query pattern es query real de alergia,5,5,1000,20,precisa entrar em campo: alimentarios
+baby,baby food tracker,Astro get_keyword_suggestions app 6758321287 es,6,13,66,208,precisa entrar em campo: food+tracker
+bebé,baby first,extract_competitors_keywords 'alimentación complementaria' es,9,19,1000,175,precisa entrar em campo: first
+bebé,baby tracker,extract_competitors_keywords 'recetas bebé' es,47,46,1000,224,precisa entrar em campo: tracker
+bebé,baby first foods,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Solid Starts name,5,7,41,157,precisa entrar em campo: first+foods
+bebé,primeros alimentos y recetas,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Pippin subtitle,5,5,1000,7,precisa entrar em campo: alimentos+primeros
+bebé,primeros alimentos bebé,natural-query pattern es 'primeros alimentos + bebé',5,9,1000,12,precisa entrar em campo: alimentos+primeros
+bebé,alimentos para bebé,natural-query pattern es 'X para bebé',5,13,1000,15,precisa entrar em campo: alimentos
+bebé,menú bebé 6 meses,natural-query pattern es 'menú + idade',5,5,1000,3,precisa entrar em campo: 6+menú+meses
+bebé,recetas bebé 6 meses,natural-query pattern es 'recetas + idade',5,5,1000,3,precisa entrar em campo: 6+meses
+blw,blw meals,Astro get_keyword_suggestions app 6758321287 es,6,7,22,98,precisa entrar em campo: meals
+blw,blw ideas,extract_competitors_keywords 'recetas bebé' es,54,11,1000,38,precisa entrar em campo: ideas
+blw,blw app en castellano,stage-1 competitor SERP n-gram (candidate_terms tsv) es — BLW App En Castellano name,5,11,1000,25,precisa entrar em campo: app+castellano
+blw,blw y alimentación infantil,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Recetas p/ Bebés y Papillas subtitle,5,5,1000,9,precisa entrar em campo: infantil
+comida,comida bebés,extract_competitors_keywords 'alimentación complementaria' es (combo bebes pop33),5,38,189,203,precisa entrar em campo: bebés
+comida,comida de bebé,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Comida de Bebé name,5,42,1000,224,composição livre (todos os tokens já em campo)
+comida,comida para bebé,natural-query pattern es 'comida para X',5,40,1000,149,composição livre (todos os tokens já em campo)
+destete,destete bebé,natural-query pattern es 'X + bebé',5,9,11,31,composição livre (todos os tokens já em campo)
+destete,destete respetuoso,natural-query pattern es variação real de destete,5,5,1000,,precisa entrar em campo: respetuoso
+feeding,feeding tracker,Astro get_keyword_suggestions app 6758321287 es,8,19,99,229,precisa entrar em campo: feeding+tracker
+lactancia,lactancia materna,Astro get_keyword_suggestions app 6758321287 es,9,38,96,196,precisa entrar em campo: materna
+lactancia,lactancia bebé,extract_competitors_keywords 'recetas bebé' es (combo lactancia pop8),5,38,92,206,composição livre (todos os tokens já em campo)
+papillas,recetas de papillas,natural-query pattern es 'recetas de X',5,7,8,21,composição livre (todos os tokens já em campo)
+papillas,papillas para bebé,natural-query pattern es 'X para bebé',5,5,1000,4,composição livre (todos os tokens já em campo)
+papillas,papillas bebé,natural-query pattern es composição direta,5,5,14,40,composição livre (todos os tokens já em campo)
+papillas,papillas 6 meses,natural-query pattern es 'X + idade',5,5,1000,1,precisa entrar em campo: 6+meses
+recetas,recetas blw,extract_competitors_keywords 'papillas' es (combo blw pop47),5,11,10,34,composição livre (todos os tokens já em campo)
+recetas,baby food recipes,stage-1 competitor SERP n-gram (candidate_terms tsv) es — BLW Meals subtitle,5,7,45,164,precisa entrar em campo: food+recipes
+recetas,recetas bebé blw,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Dalo Solids name,5,9,8,22,composição livre (todos os tokens já em campo)
+recetas,recetas para bebe,stage-1 competitor SERP n-gram (candidate_terms tsv) es — BLW Ideas name,5,17,1000,15,precisa entrar em campo: bebe
+recetas,recetas para bebés,stage-1 competitor SERP n-gram (candidate_terms tsv) es — variante natural,5,8,1000,7,precisa entrar em campo: bebés
+recetas,blw recetas,natural-query pattern es ordem alternativa,5,11,10,33,composição livre (todos os tokens já em campo)
+solids,solid starts baby first foods,Astro get_keyword_suggestions app 6758321287 es,9,9,29,95,precisa entrar em campo: first+foods
+solids,solid starts,Astro get_keyword_suggestions app 6758321287 es,33,13,40,120,composição livre (todos os tokens já em campo)
+solids,solid start,Astro get_keyword_suggestions app 6758321287 es,8,7,27,110,precisa entrar em campo: start
+sólidos,sólidos bebé,stage-1 competitor SERP n-gram (candidate_terms tsv) es — Sólidos Bebé name,5,23,14,48,composição livre (todos os tokens já em campo)
+sólidos,primeros sólidos,natural-query pattern es 'primeros X',5,8,1000,7,precisa entrar em campo: primeros
+sólidos,introducción de sólidos,natural-query pattern es 'introducción de X',5,5,1000,,precisa entrar em campo: introducción
+weaning,baby led weaning app,Astro get_keyword_suggestions app 6758321287 es,7,7,15,107,precisa entrar em campo: app
+weaning,baby weaning,Astro get_keyword_suggestions app 6758321287 es,25,7,18,212,composição livre (todos os tokens já em campo)

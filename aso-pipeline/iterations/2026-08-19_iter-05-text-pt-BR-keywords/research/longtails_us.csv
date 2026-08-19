@@ -1,0 +1,64 @@
+Core Word,Long Tail,Source,Popularity,Difficulty,Our Ranking,Apps in Ranking,Note
+allergen,allergen tracker,natural-query pattern en 'X tracker',5,42,1000,250,composição livre (todos os tokens já em campo)
+allergen,baby allergen tracker,natural-query pattern en 'baby X tracker',5,23,82,247,composição livre (todos os tokens já em campo)
+allergen,food allergy tracker,natural-query pattern en query real de alergia,5,21,1000,248,precisa entrar em campo: allergy+food
+baby,baby first,extract_competitors_keywords 'baby led weaning' us,8,47,1000,220,composição livre (todos os tokens já em campo)
+baby,baby app,extract_competitors_keywords 'baby led weaning' us,7,72,1000,248,precisa entrar em campo: app
+blw,blw ideas,extract_competitors_keywords 'starting solids' us,39,19,1000,69,precisa entrar em campo: ideas
+blw,blw diary,stage-1 competitor SERP n-gram (candidate_terms tsv) us — BLW Diary name,5,38,1000,248,precisa entrar em campo: diary
+blw,blw feeding,stage-1 competitor SERP n-gram (candidate_terms tsv) us — HeySolids subtitle,5,9,15,248,composição livre (todos os tokens já em campo)
+blw,blw recipes and more,stage-1 competitor SERP n-gram (candidate_terms tsv) us — BLW Recipes App subtitle,5,17,1000,249,precisa entrar em campo: more
+blw,blw recipes,natural-query pattern en 'X recipes',5,9,26,242,composição livre (todos os tokens já em campo)
+blw,blw app,natural-query pattern en 'X app',5,49,80,250,precisa entrar em campo: app
+blw,blw food ideas,natural-query pattern en 'X ideas',5,11,1000,248,precisa entrar em campo: food+ideas
+feeding,baby feeding tracker,Astro get_keyword_suggestions app 6758321287 us,6,65,65,248,composição livre (todos os tokens já em campo)
+feeding,infant feeding,natural-query pattern en 'infant X',5,44,1000,250,composição livre (todos os tokens já em campo)
+feeding,baby feeding schedule,natural-query pattern en 'X schedule',5,53,1000,249,precisa entrar em campo: schedule
+first,baby first foods,Astro get_keyword_suggestions app 6758321287 us,8,15,132,249,composição livre (todos os tokens já em campo)
+food,baby food planner,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Tocomo name,5,17,228,249,precisa entrar em campo: food+planner
+food,baby foods and recipes,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Foods and Recipes name,5,11,127,241,composição livre (todos os tokens já em campo)
+food,baby foods tracker,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Foods Tracker name,5,54,193,249,composição livre (todos os tokens já em campo)
+food,baby meals recipes,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Food subtitle,5,21,1000,245,precisa entrar em campo: meals
+food,baby food tracker,natural-query pattern en 'X tracker',7,50,1000,248,precisa entrar em campo: food
+food,baby food app,natural-query pattern en 'X app',5,23,1000,248,precisa entrar em campo: app+food
+food,baby food chart,natural-query pattern en 'X chart',5,23,187,248,precisa entrar em campo: chart+food
+food,solid food tracker,natural-query pattern en 'X tracker',5,15,1000,250,precisa entrar em campo: food
+food,baby solid food,natural-query pattern en composição solid+food,5,41,183,248,precisa entrar em campo: food
+food,first foods for baby,natural-query pattern en 'X for baby',5,9,99,242,composição livre (todos os tokens já em campo)
+food,baby food recipes homemade,stage-1 competitor SERP n-gram normalizado — 'Baby Food Recipes (Home-made)' name (Astro rejeita parênteses),5,19,1000,244,precisa entrar em campo: food+homemade
+food,homemade baby food,natural-query pattern en 'homemade X' (equiv. do candidato com parênteses),5,9,220,239,precisa entrar em campo: food+homemade
+log,baby food log,natural-query pattern en 'X log',5,47,83,248,precisa entrar em campo: food
+meal,blw meals,extract_competitors_keywords 'baby led weaning' us,8,37,169,250,precisa entrar em campo: meals
+meal,meal ideas,extract_competitors_keywords 'starting solids' us,6,54,1000,249,precisa entrar em campo: ideas
+meal,baby meal planner,natural-query pattern en 'X planner',5,19,1000,249,precisa entrar em campo: planner
+meal,baby meal ideas,natural-query pattern en 'X ideas',5,23,234,249,precisa entrar em campo: ideas
+month,6 month baby food,stage-1 competitor SERP n-gram (candidate_terms tsv) us — composição '6 month'+'baby food',5,9,107,245,precisa entrar em campo: food
+month,6 month old baby food,natural-query pattern en 'idade + baby food',5,9,190,247,precisa entrar em campo: food
+nutrition,baby nutrition,natural-query pattern en 'baby X',5,17,87,249,composição livre (todos os tokens já em campo)
+puree,baby puree,natural-query pattern en 'baby X',5,15,46,249,composição livre (todos os tokens já em campo)
+puree,puree recipes,natural-query pattern en 'X recipes',5,19,1000,245,composição livre (todos os tokens já em campo)
+puree,baby puree recipes,natural-query pattern en 'baby X recipes',5,11,107,243,composição livre (todos os tokens já em campo)
+recipes,baby food recipes,extract_competitors_keywords 'baby food' us (combo recipes pop53),6,17,214,248,precisa entrar em campo: food
+recipes,healthy recipes,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Foods and Recipes subtitle,21,70,1000,249,precisa entrar em campo: healthy
+solid,solid starts,Astro get_keyword_suggestions app 6758321287 us,61,40,46,136,composição livre (todos os tokens já em campo)
+solid,solid starts free,Astro get_keyword_suggestions app 6758321287 us,6,17,59,134,precisa entrar em campo: free
+solid,solid start,Astro get_keyword_suggestions app 6758321287 us,9,17,72,135,precisa entrar em campo: start
+solid,solid starts baby first foods,Astro get_keyword_suggestions app 6758321287 us,6,17,61,247,composição livre (todos os tokens já em campo)
+solids,babyplate starting solids,Astro get_keyword_suggestions app 6758321287 us,8,19,93,250,precisa entrar em campo: babyplate
+solids,baby solids food tracker,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Solids Food Tracker name,5,39,68,248,precisa entrar em campo: food
+solids,track solids,stage-1 competitor SERP n-gram (candidate_terms tsv) us — DearBaby subtitle,5,15,1000,244,precisa entrar em campo: track
+solids,solids for baby,natural-query pattern en 'X for baby',5,13,102,248,composição livre (todos os tokens já em campo)
+starting,starting food,stage-1 competitor SERP n-gram (candidate_terms tsv) us — Baby Led Weaning: BLW Solids subtitle,5,13,1000,249,precisa entrar em campo: food
+starts,start solids,Astro get_keyword_suggestions app 6758321287 us,6,17,65,132,precisa entrar em campo: start
+starts,start solid food,stage-1 competitor SERP n-gram (candidate_terms tsv) us — BLW Meals name,5,17,119,249,precisa entrar em campo: food+start
+toddler,toddler meal ideas,natural-query pattern en 'toddler X',5,19,1000,250,precisa entrar em campo: ideas
+toddler,toddler food tracker,natural-query pattern en 'toddler X tracker',5,44,1000,250,precisa entrar em campo: food
+toddler,toddler recipes,natural-query pattern en 'toddler X',5,39,1000,248,composição livre (todos os tokens já em campo)
+tracker,food tracker,extract_competitors_keywords 'baby led weaning' us,63,80,1000,248,precisa entrar em campo: food
+tracker,baby tracker,extract_competitors_keywords 'baby led weaning' us,63,78,1000,248,composição livre (todos os tokens já em campo)
+weaning,baby weaning,Astro get_keyword_suggestions app 6758321287 us,26,17,24,249,composição livre (todos os tokens já em campo)
+weaning,baby led weaning,Astro get_keyword_suggestions app 6758321287 us,9,15,17,247,composição livre (todos os tokens já em campo)
+weaning,baby weaning and recipes,Astro get_keyword_suggestions app 6758321287 us,6,19,32,247,composição livre (todos os tokens já em campo)
+weaning,weaning guide,extract_competitors_keywords 'baby led weaning' us (combo guide pop9),5,7,35,247,precisa entrar em campo: guide
+weaning,baby led weaning recipes,natural-query pattern en 'X recipes',5,15,17,246,composição livre (todos os tokens já em campo)
+weaning,when to start solids,natural-query pattern en pergunta real de weaning,5,9,241,249,precisa entrar em campo: start

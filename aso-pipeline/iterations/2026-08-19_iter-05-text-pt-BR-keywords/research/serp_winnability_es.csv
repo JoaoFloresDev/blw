@@ -1,0 +1,57 @@
+Term,Fit,Pop,Diff,Our Rank,Top3 Owner (ratings),Score,Target Position D28,Protecting/Needed Tokens
+alimentación complementaria,FIT,6,11,4,BLW Ideas 875r / SolidStarts 317r / Sólidos Bebé 0r,DOMINATE,#3,name exato (passar o app 0r no #3)
+recetas de papillas,PARTIAL,5,7,8,fracos,DOMINATE,top 5,kw: recetas + sub: Papillas
+papillas bebé,PARTIAL,5,5,14,fracos,DOMINATE,top 8,sub: Papillas+Bebé
+recetas bebé blw,PARTIAL,5,9,8,fracos,DOMINATE,top 5,kw: recetas + sub: Bebé+BLW
+blw recetas,PARTIAL,5,11,10,fracos,DOMINATE,top 5,sub: BLW + kw: recetas
+sólidos bebé,FIT,5,23,14,Sólidos Bebé 0r (nome exato),DOMINATE,top 8,kw: sólidos + sub: Bebé
+papillas,PARTIAL,5,7,11,RecetasBebésPapillas 26r / YummyBites 6r / LittleLunches 7r,DOMINATE,top 5,sub: Papillas (campo fraquíssimo)
+alérgenos bebé,FIT,,,n/med,fracos,DOMINATE,top 3,kw: alérgenos + sub: Bebé
+blw ideas,FIT,54,11,unranked,BLW Ideas 875r (MARCA) / Peque Ideas 51r / SolidStarts 317r,CLIMB,top 10-15 (precisa token),"FALTA kw: ideas — pop 54, aposta mais valiosa ES (meio de SERP fraco)"
+blw,FIT,47,9,36,BLW Ideas 875r / SolidStarts 317r / BLW Castellano 0r,CLIMB,#18-28,sub: BLW (pop 47; império BLW Social)
+solid starts,PARTIAL,33,13,40,"SolidStarts 317r (marca, fraca localmente)",CLIMB,#20-30,kw: solid starts
+starting solids,FIT,28,7,16,SolidStarts 317r / BLW Ideas&Meals 6r / BLW Meals 2r,CLIMB,#8-12,"kw: starting solids (pop 28, diff 7)"
+baby weaning,FIT,25,7,18,SolidStarts 317r ES / fracos,CLIMB,#8-12,"kw: baby led weaning (pop 25, diff 7 — 2ª melhor aposta ES)"
+baby led weaning app,FIT,7,7,15,fracos,CLIMB,top 10,kw
+baby led weaning,FIT,7,9,20,idem,CLIMB,#10-15,kw: baby led weaning
+blw meals,FIT,6,7,22,fracos localmente,CLIMB,top 10,sub: BLW (falta meals; só se sobrar)
+alimentación del bebé,FIT,5,5,unranked,~33 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+alimentación bebé,FIT,5,13,25,fracos,CLIMB,#10-15,name: Alimentación + sub: Bebé
+alimentación infantil,PARTIAL,5,5,unranked,~10 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+baby first foods,FIT,5,7,41,SolidStarts marca,CLIMB,#20-30,en tokens
+primeros alimentos y recetas,FIT,5,5,unranked,~7 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+recetas bebé 6 meses,PARTIAL,5,5,unranked,3 apps,CLIMB,top 3,kw: recetas + FALTA: 6/meses
+blw app en castellano,FIT,5,11,unranked,~25 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw y alimentación infantil,FIT,5,5,unranked,~9 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+comida de bebé,FIT,5,42,unranked,idem,CLIMB,top 15,sub
+destete bebé,PARTIAL,5,9,11,idem,CLIMB,top 5-8,kw: destete + sub: Bebé
+papillas 6 meses,PARTIAL,5,5,unranked,vazio,CLIMB,top 3 (1 app no SERP),sub: Papillas + FALTA: 6/meses
+baby food recipes,PARTIAL,5,7,45,~164 apps no SERP,CLIMB,top 30,-
+recetas para bebés,PARTIAL,5,8,unranked,~7 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+introducción de sólidos,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+baby foods tracker,FIT,5,19,32,fracos,CLIMB,#20-30,en tokens
+introducao alimentar,FIT,5,5,unranked,5 apps,CLIMB,top 5,cross-locale; barato
+comida bebé,FIT,5,21,unranked,BLW Ideas 875r / Comida de Bebé 2r / Avo 1r,CLIMB,top 10,sub: Comida+Bebé (SERP fraco; indexação recente)
+destete,PARTIAL,5,9,10,Selfeat 0r / SolidStarts 317r / Dormus(sono) 112r — SERP misto/ambíguo,CLIMB,top 5-8,kw: destete (manter em kw; NÃO promover — ambiguidade desmame do peito)
+alérgenos,PARTIAL,5,9,29,mid (apps de alergia adulto),CLIMB,#15-25,kw: alérgenos
+comida para bebé,FIT,5,40,unranked,diff 40,LOTTERY,—,—
+recetas para bebe,PARTIAL,5,17,unranked,~15 apps no SERP,LOTTERY,—,-
+alimentação bebês,FIT,5,5,unranked,termo PT na loja ES,LOTTERY,—,—
+blw brasil,PARTIAL,5,14,unranked,marca BR,LOTTERY,—,não gastar
+blw meals tracker schedules,PARTIAL,5,7,unranked,subtitle SolidStarts,LOTTERY,—,—
+meals,PARTIAL,5,19,unranked,genérico,LOTTERY,—,—
+sólidos,PARTIAL,5,40,unranked,diff 40 genérico,LOTTERY,—,kw sólidos = feeder
+alérgenos alimentarios,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+baby food tracker,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+baby first,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+primeros alimentos bebé,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+alimentos para bebé,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+comida bebés,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+destete respetuoso,PARTIAL,,,n/med,intent = desmame do peito,LOTTERY,—,não gastar
+feeding tracker,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+papillas para bebé,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+recetas blw,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+solid starts baby first foods,PARTIAL,,,n/med,marca completa,LOTTERY,—,—
+solid start,PARTIAL,,,n/med,marca,LOTTERY,—,—
+primeros sólidos,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+recetas,PARTIAL,,,n/med,heads de receitas gerais,UNWINNABLE,—,kw recetas fica só como feeder de comps

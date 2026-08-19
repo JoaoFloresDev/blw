@@ -1,0 +1,50 @@
+Core Word,Long Tail,Source,Popularity,Difficulty,Our Ranking,Apps in Ranking,Note
+alimentar,plano alimentar,extract_competitors_keywords 'introdução alimentar' br,15,50,1000,246,precisa entrar em campo: plano
+alimentar,alimentação complementar,natural-query pattern pt termo técnico (equiv. es 'alimentación complementaria'),5,18,1000,3,precisa entrar em campo: alimentação+complementar
+baby,baby food,Astro get_keyword_suggestions app 6758321287 br,8,7,56,231,precisa entrar em campo: food
+baby,baby tracker,Astro get_keyword_suggestions app 6758321287 br,54,46,74,247,precisa entrar em campo: tracker
+baby,baby foods tracker,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Baby Foods Tracker name,5,46,28,235,precisa entrar em campo: foods+tracker
+baby,baby food recipes,stage-1 competitor SERP n-gram (candidate_terms tsv) br — BLW Meals subtitle,5,5,40,169,precisa entrar em campo: food+recipes
+bebê,comida para bebê,natural-query pattern pt 'comida para X',5,72,1000,237,precisa entrar em campo: bebê+comida
+bebê,alimentação do bebê,natural-query pattern pt 'alimentação do X',5,42,1000,242,precisa entrar em campo: alimentação+bebê
+bebê,alimentação infantil,natural-query pattern pt cabeça de nicho (Garfinho subtitle),5,15,1000,17,precisa entrar em campo: alimentação+infantil
+bebê,primeiros alimentos,natural-query pattern pt equivalente 'first foods',5,5,1000,8,precisa entrar em campo: alimentos+primeiros
+blw,blw meals,Astro get_keyword_suggestions app 6758321287 br,6,5,24,102,precisa entrar em campo: meals
+blw,blw brasil,extract_competitors_keywords 'papinha' br,56,38,1000,32,precisa entrar em campo: brasil
+blw,blw ideas,extract_competitors_keywords 'blw' br,5,13,1000,28,precisa entrar em campo: ideas
+blw,blw recipes,extract_competitors_keywords 'blw' br (combo recipes pop9),5,5,22,94,precisa entrar em campo: recipes
+blw,blw alimentação bebê,stage-1 competitor SERP n-gram (candidate_terms tsv) br — YumYum name,5,15,1000,17,precisa entrar em campo: alimentação+bebê
+blw,blw e alimentação infantil,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Pippin subtitle,5,13,1000,16,precisa entrar em campo: alimentação+infantil
+blw,receitas blw,natural-query pattern pt 'receitas de X',5,15,8,23,composição livre (todos os tokens já em campo)
+blw,método blw,natural-query pattern pt 'método X',5,34,1000,24,precisa entrar em campo: método
+cortes,cortes blw,natural-query pattern pt 'cortes + blw',5,31,3,3,composição livre (todos os tokens já em campo)
+cortes,cortes de alimentos,natural-query pattern pt 'cortes de X',5,17,8,14,precisa entrar em campo: alimentos
+desengasgo,desengasgo bebê,natural-query pattern pt 'X + bebê',5,5,1000,,precisa entrar em campo: bebê
+desengasgo,manobra de desengasgo,natural-query pattern pt query real de socorro,5,5,1000,,precisa entrar em campo: manobra
+introdução,introducao alimentar,Astro get_keyword_suggestions app 6758321287 br,40,19,36,60,precisa entrar em campo: introducao
+introdução,intro alimentar,stage-1 competitor SERP n-gram (candidate_terms tsv) br — BLW Receitas name,5,5,1000,1,precisa entrar em campo: intro
+introdução,introdução alimentar do bebê,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Mundo BLW subtitle,5,13,1000,35,precisa entrar em campo: bebê
+introdução,introdução alimentar e blw,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Introdução Alimentar e BLW name,5,11,8,28,composição livre (todos os tokens já em campo)
+introdução,cardápio introdução alimentar,natural-query pattern pt 'cardápio de X',5,9,1000,11,precisa entrar em campo: cardápio
+introdução,receitas introdução alimentar,natural-query pattern pt 'receitas de X',5,11,5,20,composição livre (todos os tokens já em campo)
+introdução,introdução alimentar 6 meses,natural-query pattern pt 'X + idade',5,5,3,5,composição livre (todos os tokens já em campo)
+introdução,introdução alimentar participativa,natural-query pattern pt termo técnico BLW em português,5,5,1000,,precisa entrar em campo: participativa
+meses,cardápio bebê 6 meses,natural-query pattern pt 'cardápio + idade',5,5,1000,35,precisa entrar em campo: bebê+cardápio
+meses,receitas para bebê de 6 meses,natural-query pattern pt 'receitas + idade',5,5,1000,11,precisa entrar em campo: bebê
+papinha,papinha alergia,extract_competitors_keywords 'papinha' br (combo alergia pop12),5,5,1000,11,precisa entrar em campo: alergia
+papinha,papinhas,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Introdução Alimentar e BLW subtitle,5,5,11,57,precisa entrar em campo: papinhas
+papinha,papinhas para bebês,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Mother Box subtitle,5,5,1000,4,precisa entrar em campo: bebês+papinhas
+papinha,receitas de papinha,natural-query pattern pt 'receitas de X',5,43,199,243,composição livre (todos os tokens já em campo)
+papinha,papinha de bebê,natural-query pattern pt 'X de bebê',5,5,1000,49,precisa entrar em campo: bebê
+papinha,papinha para bebê,natural-query pattern pt 'X para bebê',5,5,1000,4,precisa entrar em campo: bebê
+papinha,papinha salgada,natural-query pattern pt variação real de papinha,5,5,1000,,precisa entrar em campo: salgada
+receitas,cardápio semanal,extract_competitors_keywords 'introdução alimentar' br,40,13,1000,250,precisa entrar em campo: cardápio+semanal
+receitas,receitas saudáveis,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Alimentos e Receitas p/ Bebê subtitle,5,38,1000,249,precisa entrar em campo: saudáveis
+solid,solid starts baby first foods,Astro get_keyword_suggestions app 6758321287 br,9,17,15,101,precisa entrar em campo: first+foods
+solid,solid starts,Astro get_keyword_suggestions app 6758321287 br,50,9,59,128,composição livre (todos os tokens já em campo)
+solid,solid start,Astro get_keyword_suggestions app 6758321287 br,8,15,31,115,precisa entrar em campo: start
+starts,starting solids,Astro get_keyword_suggestions app 6758321287 br,28,5,13,90,precisa entrar em campo: solids+starting
+starts,start solids,stage-1 competitor SERP n-gram (candidate_terms tsv) br — Little Foodie name,5,15,21,114,precisa entrar em campo: solids+start
+weaning,baby led weaning,Astro get_keyword_suggestions app 6758321287 br,7,9,13,237,precisa entrar em campo: led
+weaning,baby weaning,Astro get_keyword_suggestions app 6758321287 br,25,5,15,241,composição livre (todos os tokens já em campo)
+weaning,baby led weaning app,Astro get_keyword_suggestions app 6758321287 br,7,9,16,108,precisa entrar em campo: app+led

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Image: 01-diary-art.png</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 1200px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      opacity: 0.9;
+      font-size: 14px;
+    }
+    .content {
+      padding: 40px;
+    }
+    .image-container {
+      text-align: center;
+      margin-bottom: 30px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .metadata {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .metadata h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .metadata-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .metadata-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .metadata-label {
+      font-weight: 600;
+      color: #667eea;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .metadata-value {
+      color: #555;
+      line-height: 1.6;
+    }
+    .prompt-box {
+      background: #fff;
+      border: 2px solid #667eea;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 10px;
+      position: relative;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .copy-btn:hover {
+      background: #5568d3;
+    }
+    .copy-btn:active {
+      background: #4a5bc4;
+    }
+    .copy-btn.copied {
+      background: #10b981;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 12px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #5568d3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Gemini Generated Image</h1>
+      <p>Created with Google Gemini AI (Nano Banana Pro)</p>
+    </div>
+
+    <div class="content">
+      <div class="image-container">
+        <img src="/Users/joaoflores/Documents/GambitStudio/Apps/recovery/flutter/blw/nano/v2/01-diary-art.png" alt="Generated image">
+      </div>
+
+      <div class="metadata">
+        <h2>Generation Details</h2>
+
+        <div class="metadata-item">
+          <span class="metadata-label">Prompt</span>
+          <div class="prompt-box" id="promptBox">
+            <button class="copy-btn" onclick="copyPrompt()">Copy</button>
+            You are the marketing designer for a top-grossing baby app. Create an App Store screenshot ARTWORK (no headline text — it will be added later).
+
+LAYOUT REFERENCE (first image): copy this composition style — soft light gradient background, a dark-framed iPhone in the center starting around 21% from the top, and ONE app card enlarged, popping out over the phone edge with a soft shadow.
+
+UI REFERENCE (second image): this is the REAL app screen ("Food Diary"). Reproduce this exact UI inside the phone faithfully — green gradient "Foods Tried" progress card with a cute illustrated baby in a high chair, "Try next" horizontal row of small white food suggestion cards with emoji, list area, green "Add Record" button docked at the bottom, and the bottom tab bar with 3 cute 3D icons (Food Diary, Foods, Gallery). IDEALIZE the content to look its best: progress shows "37 / 100" with the progress bar about one third full, and below "Try next" show a filled diary list with entries like "Avocado — Today 😋" and "Banana — Yesterday 🙂".
+
+BREAKOUT ELEMENT: the green "Foods Tried 37/100" progress card (with the baby illustration and chunky progress bar) enlarged, floating over the phone, slightly overlapping the phone's left edge, with soft drop shadow and rounded corners.
+
+STYLE: background is a soft mint-green vertical gradient (#F4FBF6 at top to #DFF3E6), clean and airy like a premium parenting app. Phone has a thin dark charcoal frame. Palette accents: green #34C759, orange #FF9500.
+
+RULES: NO text outside the phone and the breakout card. Leave the TOP 30% of the image as completely plain background (gradient only) — the headline will be added later. All content within the central 72% of the width; edges show only background. No watermark. Portrait 9:16.
+          </div>
+        </div>
+
+        
+
+        <div class="metadata-item">
+          <span class="metadata-label">Generated</span>
+          <div class="metadata-value">8/7/2026, 12:10:59 AM</div>
+        </div>
+
+        <div class="metadata-item">
+          <span class="metadata-label">File</span>
+          <div class="metadata-value">01-diary-art.png</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="/Users/joaoflores/Documents/GambitStudio/Apps/recovery/flutter/blw/nano/v2/01-diary-art.png" download class="btn">Download Image</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated by Gemini MCP Server &middot; @houtini/gemini-mcp
+    </div>
+  </div>
+
+  <script>
+    function copyPrompt() {
+      const promptText = document.getElementById('promptBox').innerText.replace('Copy', '').trim();
+      navigator.clipboard.writeText(promptText).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -11,7 +11,7 @@ Base: LIVE 1.5.1. Supersede a iter-03 (composta hoje cedo na 1.5.2 editável, nu
 | subtitle | Papinha, Receitas <span style="color:#d64541">Solid Starts</span> | Papinha, Receitas e <span style="color:#2d6cdf">Weaning</span> |
 | keywords | papinha caseira, papinha 6 meses, receitas papinha, <span style="color:#2d6cdf">baby weaning</span>, <span style="color:#d64541">baby feeding</span>, desengasgo, cortes seguros | <span style="color:#1e9e5a">starting solids</span>, <span style="color:#1e9e5a">bebe</span>, <span style="color:#1e9e5a">guia</span>, papinha caseira, papinha 6 meses, receitas papinha, desengasgo, cortes seguros |
 
-<span style="color:#2d6cdf">baby weaning</span> não foi cortado — foi **promovido de peso**: `baby` já está no name pt, `weaning` sobe pro subtitle (name/subtitle ≫ kw). <span style="color:#d64541">solid starts</span> sai do subtitle pt mas `solid`+`starts` seguem indexados pelo subtitle en-US (a store br indexa os dois locales).
+**Posição em jogo:** `baby weaning` (pop 25) está **#24** na loja BR com incumbentes de 0-57 ratings acima — com peso de name+subtitle a projeção é **top 10 até D28** (é o maior salto de tráfego da iteração no BR). `weaning` solo (pop 16, hoje #18) deve acompanhar pra **top 10**. Risco assumido: `solid starts` br fica em **#20/#28** e tende a segurar ±5 posições (a indexação passa a vir do subtitle en-US); se cair além disso no D7, o rollback está mapeado. `starting solids` (pop 28, #18) mira **top 8-10** com o token exato.
 
 **en-US**
 
@@ -19,7 +19,7 @@ Base: LIVE 1.5.1. Supersede a iter-03 (composta hoje cedo na 1.5.2 editável, nu
 |---|---|---|
 | keywords | starting solids, <span style="color:#2d6cdf">weaning</span>, puree, <span style="color:#d64541">feeding</span>, recipes, allergen, <span style="color:#d64541">infant</span>, <span style="color:#d64541">toddler</span>, <span style="color:#d64541">nutrition</span>, meal plan, 6 month | starting solids, <span style="color:#1e9e5a">introduction</span>, <span style="color:#1e9e5a">finger food</span>, <span style="color:#1e9e5a">guide</span>, <span style="color:#1e9e5a">100</span>, puree, recipes, allergen, meal plan, 6 month |
 
-<span style="color:#2d6cdf">weaning</span> era dup exato do name en-US ("…Led Weaning Tracker") — cobertura 100% pelo name (7×), 8 chars reinvestidos.
+**Posição em jogo:** nada rankeado se move — `weaning` **#4** (pop 14, nossa melhor posição em termo com volume nos 3 stores), `baby led weaning app` **#15** (pop 27), `starting solids` **#22** (pop 29) e `baby weaning` **#22** (pop 26) continuam sustentados pelo name/subtitle; os alvos são **top 3 / top 12 / top 12-15**. Os 4 tokens que saíram estavam todos **OUT** (rank >1000) sem caminho de volta (diff 47-78). As entradas miram posições novas: `100 foods baby` e `allergen introduction` hoje **OUT → top 20-30** (diff 7-11, SERPs de <100 ratings), `weaning guide` **#37 → top 18**.
 
 **es-ES / es-MX (cópia)**
 
@@ -27,7 +27,7 @@ Base: LIVE 1.5.1. Supersede a iter-03 (composta hoje cedo na 1.5.2 editável, nu
 |---|---|---|
 | keywords | <span style="color:#2d6cdf">blw</span>, starting solids, <span style="color:#d64541">solid starts</span>, baby led weaning, destete, recetas, <span style="color:#2d6cdf">sólidos</span>, <span style="color:#2d6cdf">alérgenos</span>, <span style="color:#d64541">lactancia</span> | <span style="color:#1e9e5a">introduccion</span>, <span style="color:#1e9e5a">guia</span>, <span style="color:#1e9e5a">atragantamiento</span>, starting solids, baby led weaning, recetas, destete, <span style="color:#2d6cdf">solidos</span>, <span style="color:#2d6cdf">alergenos</span> |
 
-<span style="color:#2d6cdf">blw</span> era dup exato do subtitle es — as composições "blw *" seguem pelo subtitle. <span style="color:#2d6cdf">sólidos/alérgenos</span> renormalizados sem acento.
+**Posição em jogo:** o bloco rankeado segue intacto — `alimentación complementaria` **#4** e as composições `+bebé`/`+recetas` **#2/#2** (defendidas pelo name), `starting solids` **#16 → top 10** (pop 28, SERP rasa: líder 317 ratings), `weaning` **#14 → top 8**, `recetas papillas bebé` **#8**. `blw` (pop 47) está **#46** e o teto honesto é ~25-30 (fleet do líder BLW SOCIAL) — o subtitle continua sustentando, sem char extra apostado nele. As entradas miram posição nova em SERPs vazias: `introducción alimentaria`, `atragantamiento bebé` e `guía blw`, todas diff 5, hoje **OUT → top 10-20**.
 
 ## pt-BR — decisões
 

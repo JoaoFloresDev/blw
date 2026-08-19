@@ -54,6 +54,75 @@
       "es-MX": {
         "same_as": "es-ES"
       }
+    },
+    "superseded": true,
+    "superseded_note": "Nunca foi ao ar — sobrescrito pela iter-05 em 2026-08-19 (subtitle pt-BR revertido pro live)"
+  },
+  {
+    "iter": "2026-08-19_iter-05-text-pt-BR-keywords",
+    "deployed": "2026-08-19",
+    "live_when": "release da 1.5.2 (AFTER_APPROVAL) — Day 0 conta do release, nao do PATCH",
+    "base": "LIVE 1.5.1 (staged iter-04 sobrescrito)",
+    "changes": {
+      "pt-BR": {
+        "keywords_entered": [
+          "bebe",
+          "guia",
+          "primeiros",
+          "alimentos",
+          "alergia",
+          "diario",
+          "7"
+        ],
+        "keywords_left": [
+          "papinha",
+          "receitas",
+          "baby",
+          "feeding"
+        ],
+        "note": "Frases decompostas em tokens (papinha caseira/papinha 6 meses/receitas papinha -> caseira,6,meses); papinha/receitas dup do subtitle, baby dup do name; weaning mantido no kw (subtitle revertido pro live perde o token). description: linha CARDAPIO SEMANAL (MISMATCH) -> DICAS DE ESPECIALISTA"
+      },
+      "en-US": {
+        "keywords_entered": [
+          "ideas",
+          "guide",
+          "meals",
+          "alergenicos",
+          "intro",
+          "texturas",
+          "fruta",
+          "registro"
+        ],
+        "keywords_left": [
+          "weaning",
+          "puree",
+          "allergen",
+          "infant",
+          "toddler",
+          "nutrition",
+          "meal plan"
+        ],
+        "note": "weaning dup do name; puree #60 sem retorno; infant/toddler/nutrition/allergen LOTTERY; meal plan MISMATCH. alergenicos/intro/texturas/fruta/registro = tokens hospedados pro BR (loja BR indexa en-US)"
+      },
+      "es-ES": {
+        "keywords_entered": [
+          "ideas",
+          "meals",
+          "6",
+          "meses"
+        ],
+        "keywords_left": [
+          "blw",
+          "lactancia"
+        ],
+        "note": "blw dup do subtitle; lactancia MISMATCH. Acentos normalizados (solidos/alergenos). solid starts recuperado vs staged iter-04 (#40 + stem)"
+      },
+      "es-MX": {
+        "same_as": "es-ES"
+      }
+    },
+    "subtitle_revert": {
+      "pt-BR": "iter-04 staged 'Papinha, Receitas e Weaning' -> live 'Papinha, Receitas Solid Starts' (protege solid starts #13 BR)"
     }
   }
 ]

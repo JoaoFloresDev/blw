@@ -1,0 +1,179 @@
+Term,Fit,Pop,Diff,Our Rank,Top3 Owner (ratings),Score,Target Position D28,Protecting/Needed Tokens
+starting solids,FIT,28,5,13,Solid Starts 57r (BR) / BLW:IntroAlim 18r / IntroAlim:Comidas 9r,DOMINATE,top 5,sub: Solid Starts (stem) + en-US kw: starting solids
+weaning,FIT,16,5,13,fracos no BR,DOMINATE,top 8,kw: weaning
+desengasgo bebê,PARTIAL,5,5,unranked,sem apps relevantes,DOMINATE,#1 (precisa token),kw: desengasgo + FALTA: bebe
+introdução alimentar e blw,FIT,5,11,8,IntroAlim e BLW 19r (nome exato),DOMINATE,top 5,name
+receitas introdução alimentar,PARTIAL,5,11,5,fracos,DOMINATE,top 3,name + sub: Receitas
+introdução alimentar 6 meses,FIT,5,5,3,5 apps,DOMINATE,#1,name + kw: 6+meses
+papinhas,FIT,5,5,11,Pippin 13r + fracos,DOMINATE,top 5,sub: Papinha (stem)
+papinha de bebê,FIT,5,5,unranked,fracos,DOMINATE,top 3 (precisa token),sub: Papinha + FALTA kw: bebe
+blw baby,FIT,5,13,1,nós #1; campo fraco,DOMINATE,#1 (hold),name: BLW+Baby
+papinha caseira,FIT,5,5,1,nós #1; 1 app no SERP,DOMINATE,#1 (hold),sub: Papinha + kw: caseira
+desengasgo,PARTIAL,5,5,1,nós #1; totalResults=1,DOMINATE,#1 (hold — ÚNICO resultado),kw: desengasgo
+cortes seguros,FIT,5,8,2,campo fraquíssimo (6 apps),DOMINATE,#1,kw: cortes+seguros
+papinha,FIT,5,5,2,Pippin 13r / nós #2 / Papinhas 0r,DOMINATE,#1,sub: Papinha
+blw 6 meses,FIT,5,5,2,3 apps no SERP,DOMINATE,#1,name: blw + kw: 6+meses
+blw baby introdução,FIT,5,9,3,fraco,DOMINATE,top 2,name completo
+papinha 6 meses,FIT,5,5,3,3 apps,DOMINATE,#1,kw: papinha 6 meses
+blw cortes,FIT,5,31,3,3 apps,DOMINATE,#1,name: blw + kw: cortes
+receitas 6 meses,PARTIAL,5,5,3,8 apps,DOMINATE,top 2,sub: Receitas + kw: 6+meses
+introdução alimentar blw,FIT,5,11,4,IntroAlim e BLW 19r / fracos,DOMINATE,top 3,name completo
+receitas papinha,PARTIAL,5,5,5,fracos <20r,DOMINATE,top 3,sub: Receitas+Papinha
+introdução alimentar receitas,PARTIAL,5,11,5,fracos,DOMINATE,top 3,name + sub: Receitas
+baby introdução alimentar,FIT,5,9,6,fracos,DOMINATE,top 3,name: Baby+Introdução+Alimentar
+baby introdução,FIT,5,9,7,fracos,DOMINATE,top 3,name
+blw receitas,PARTIAL,5,15,10,fracos,DOMINATE,top 5,name: blw + sub: Receitas
+introdução,PARTIAL,5,13,13,fracos no termo solto,DOMINATE,top 8,name: Introdução
+receitas de papinha caseira,PARTIAL,5,5,1,nós #1,DOMINATE,#1 (hold),sub: Receitas+Papinha + kw: caseira
+blw tracker baby led,FIT,5,5,2,fracos,DOMINATE,top 2,en-US name completo (cross-locale)
+led weaning,PARTIAL,5,5,2,fracos,DOMINATE,top 2,en-US name: Led+Weaning
+introdução alimentar 7 meses,FIT,5,5,3,5 apps,DOMINATE,#1,name + kw: 7? (via meses)
+blw tracker,FIT,5,13,5,fracos,DOMINATE,top 3,name: blw + en-US name: Tracker (cross-locale)
+weaning tracker,FIT,5,5,8,fracos,DOMINATE,top 5,kw: weaning + en-US name: Tracker
+app introdução alimentar,FIT,5,11,12,fracos,DOMINATE,top 8,name
+introdução alimentar bebê,FIT,5,13,unranked,IntroAlim e BLW 19r / Spoonli 0r / BLW Brasil 1887r,DOMINATE,top 3 (precisa token),FALTA kw: bebe — família '* bebê' inteira órfã
+papinha bebê,FIT,5,5,unranked,fracos,DOMINATE,top 3 (precisa token),idem
+blw bebê,FIT,5,17,unranked,fracos,DOMINATE,top 5 (precisa token),name: blw + FALTA kw: bebe
+solid starts,PARTIAL,50,9,59,Solid Starts LLC 57r BR / BLW Meals 4r / Drama Labs 0r,CLIMB,#20-30,"sub: Solid Starts (pop 50 local, incumbente fraco na loja BR)"
+blw,FIT,48,19,49,BLW Brasil 1887r / Mundo BLW 228r / Garfinho 350r (império BLW Social),CLIMB,#25-35,name: BLW
+tracker,PARTIAL,43,39,unranked,~231 apps no SERP,CLIMB,top 30,-
+introducao alimentar,FIT,40,19,36,BLW Brasil 1887r / IntroAlim:Comidas 9r / Pippin 13r,CLIMB,#18-25,name (match sem acento)
+baby feeding tracker,FIT,36,21,122,trackers US mid,CLIMB,#60-90,kw: baby+feeding + en-US Tracker; subir mais = sinais
+baby weaning,FIT,25,5,15,fracos no BR,CLIMB,top 8,kw: baby+weaning
+solid starts baby first foods,PARTIAL,9,17,15,Solid Starts 57r (BR),CLIMB,top 8,sub: Solid Starts + en-US sub: First Foods
+baby food,FIT,8,7,56,incumbentes US mid na loja BR,CLIMB,#25-40,en-US tokens
+solid start,PARTIAL,8,15,31,idem solid starts,CLIMB,#15-25,sub: Solid Starts
+baby led weaning,FIT,7,9,13,Solid Starts 57r (BR) / fracos,CLIMB,top 8,en-US name (cross-locale); kw pt: baby+weaning
+baby led weaning app,FIT,7,9,16,fracos,CLIMB,top 10,en-US name
+blw meals,FIT,6,5,24,"BLW Meals 4r (BR, marca fraca local)",CLIMB,top 10,name: blw (falta meals — só se sobrar char)
+alimentos,PARTIAL,6,48,138,~247 apps no SERP,CLIMB,top 30,-
+baby foods tracker,FIT,5,46,28,Baby Foods Tracker 1r (BR),CLIMB,top 15,en-US tokens
+baby food recipes,PARTIAL,5,5,40,fracos,CLIMB,#20-30,en-US kw: recipes
+alimentação infantil,PARTIAL,5,15,unranked,~17 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+primeiros alimentos,FIT,5,5,unranked,~8 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw ideas,FIT,5,13,unranked,~28 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw alimentação bebê,FIT,5,15,unranked,~17 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw e alimentação infantil,FIT,5,13,unranked,~16 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+intro alimentar,FIT,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+introdução alimentar do bebê,FIT,5,13,unranked,~35 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+introdução alimentar participativa,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+papinhas para bebês,FIT,5,5,unranked,~4 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+papinha salgada,PARTIAL,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+start solids,FIT,5,15,21,fracos,CLIMB,top 10,sub stem + en-US kw
+baby meals recipes,PARTIAL,5,7,25,fracos,CLIMB,top 15,en-US tokens
+controle da introdução,FIT,5,5,unranked,~2 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+recetas para bebé,PARTIAL,5,7,unranked,~10 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+seu registro do bebê,PARTIAL,5,11,unranked,~13 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+introdução alimentar,FIT,5,21,30,BLW Brasil 1887r 4.7 / IntroAlim:Comidas 9r / Pippin 13r,CLIMB,#12-18,name (7× já aplicado; subir = sinais/ratings)
+weaning recipes,PARTIAL,5,5,16,fracos,CLIMB,top 8,kw: weaning + sub: Receitas? (en-US kw: recipes)
+baby first foods,FIT,5,24,23,fracos,CLIMB,top 10,en-US sub: First Foods
+baby solids,FIT,5,17,27,fracos,CLIMB,top 15,en-US tokens
+start solid food,FIT,5,15,27,fracos,CLIMB,top 15,en-US tokens
+baby food tracker,FIT,5,42,48,~241 apps no SERP,CLIMB,top 30,-
+primeiro alimento,FIT,5,5,unranked,~8 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+6 meses diário,PARTIAL,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw tradicional,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+primeira papinha,FIT,5,5,unranked,~2 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+engasgo bebê,PARTIAL,5,12,unranked,~3 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+registrar alimentos bebê,FIT,5,11,unranked,~31 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+alergia alimentar bebê,FIT,5,11,unranked,fracos,CLIMB,top 10 (precisa tokens),FALTA: alergia + bebe
+intolerância alimentar bebê,FIT,5,5,unranked,~11 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+acompanhar introdução alimentar,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+nutrição infantil,PARTIAL,5,9,unranked,~13 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+rastrear alimentação bebê,FIT,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+guia introdução alimentar,FIT,5,12,unranked,~5 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+mãe primeira viagem,PARTIAL,5,5,unranked,~3 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+começar introdução alimentar,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+texturas bebê,FIT,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+pais primeira vez,PARTIAL,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+maternidade alimentação,PARTIAL,5,13,unranked,~19 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+pediatria alimentar,PARTIAL,5,5,unranked,~7 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+alergênicos bebê,FIT,5,5,unranked,3 apps,CLIMB,top 5 (precisa tokens),FALTA: alergenicos + bebe
+receitas saudáveis bebê,PARTIAL,5,15,unranked,~43 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+lanche infantil,PARTIAL,5,13,unranked,~5 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+primeiros alimentos bebê,FIT,5,5,unranked,~6 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+diário introdução alimentar,FIT,5,5,unranked,~16 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+tabela introdução alimentar,PARTIAL,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+checklist introdução alimentar,PARTIAL,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+introdução alimentar tradicional,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+seletividade alimentar,PARTIAL,5,8,unranked,~7 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+receitas blw bebê,PARTIAL,5,13,unranked,~20 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+guia blw,FIT,5,9,unranked,~9 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw em português,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+alimentação blw,FIT,5,15,unranked,~17 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+blw primeiros alimentos,FIT,5,5,unranked,~4 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+papinha de fruta,PARTIAL,5,5,unranked,~2 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+papinha 7 meses,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+papinha 8 meses,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+papinha caseira bebê,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+como fazer papinha,PARTIAL,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+receitas bebê 6 meses,PARTIAL,5,5,unranked,~11 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+receitas bebê 1 ano,PARTIAL,5,5,unranked,~2 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+receitas infantis saudáveis,PARTIAL,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+comida caseira bebê,FIT,5,9,unranked,~56 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+desengasgo infantil,PARTIAL,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+cortes blw por idade,FIT,5,5,unranked,não medido,CLIMB,"top 10 (barato, campo raso)",-
+alergia alimentar,PARTIAL,5,11,unranked,~240 apps no SERP,CLIMB,top 30,-
+registro alergia bebê,FIT,5,5,unranked,~5 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+fruta 6 meses,FIT,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+alimentação bebê 6 meses,FIT,5,5,unranked,~3 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+guia baby led weaning,FIT,5,5,unranked,~1 apps no SERP,CLIMB,"top 10 (barato, campo raso)",-
+led,PARTIAL,57,23,72,apps de luz LED (intent errada),LOTTERY,—,feeder de 'baby led weaning' via en-US; não usar solo
+blw brasil,PARTIAL,56,38,unranked,BLW Brasil 1887r 4.7 (MARCA exata) / Garfinho 350r / Mundo BLW 228r,LOTTERY,#10-20 na melhor hipótese,"exigiria kw: brasil (6 chars, não alimenta mais nada; busca navegacional → CR ruim). NÃO gastar"
+beb,PARTIAL,25,49,unranked,~228 apps no SERP,LOTTERY,—,-
+diário alimentar,FIT,23,21,unranked,apps de dieta adulto,LOTTERY,—,intent adjacente; só como feeder (diario) se sobrar char
+bebé,PARTIAL,19,45,unranked,genérico pesado,LOTTERY,—,—
+alergia,PARTIAL,12,17,unranked,~250 apps no SERP,LOTTERY,—,-
+bebés,PARTIAL,12,38,unranked,genérico pesado,LOTTERY,—,—
+corte,PARTIAL,6,49,unranked,~250 apps no SERP,LOTTERY,—,-
+alimentação complementar,FIT,5,18,unranked,~3 apps no SERP,LOTTERY,—,-
+alimentação do bebê,FIT,5,42,unranked,~242 apps no SERP,LOTTERY,—,-
+método blw,FIT,5,34,unranked,~24 apps no SERP,LOTTERY,—,-
+comida de bebé,FIT,5,52,unranked,~247 apps no SERP,LOTTERY,—,-
+receita,PARTIAL,5,44,unranked,~245 apps no SERP,LOTTERY,—,-
+alimentar,PARTIAL,5,55,162,~249 apps no SERP,LOTTERY,—,-
+6 meses,PARTIAL,5,90,183,~213 apps no SERP,LOTTERY,—,-
+meses,PARTIAL,5,54,unranked,~247 apps no SERP,LOTTERY,—,-
+meses diário,PARTIAL,5,51,unranked,~76 apps no SERP,LOTTERY,—,-
+comida bebê,FIT,5,47,unranked,~240 apps no SERP,LOTTERY,—,-
+comida bebê 6 meses,FIT,5,75,unranked,~116 apps no SERP,LOTTERY,—,-
+bebê 6,PARTIAL,5,78,unranked,~228 apps no SERP,LOTTERY,—,-
+bebê 6 meses,PARTIAL,5,78,unranked,~33 apps no SERP,LOTTERY,—,-
+comida bebê 6,PARTIAL,5,79,unranked,~66 apps no SERP,LOTTERY,—,-
+diário,PARTIAL,5,54,unranked,~247 apps no SERP,LOTTERY,—,-
+bebê,PARTIAL,5,63,unranked,~242 apps no SERP,LOTTERY,—,-
+receitas bebê,PARTIAL,5,17,unranked,~242 apps no SERP,LOTTERY,—,-
+bebê 1 ano,PARTIAL,5,53,unranked,~83 apps no SERP,LOTTERY,—,-
+comida 6 meses,FIT,5,87,unranked,~84 apps no SERP,LOTTERY,—,-
+bebê 7 meses,PARTIAL,5,81,unranked,~20 apps no SERP,LOTTERY,—,-
+alimentação bebê,FIT,5,43,unranked,~241 apps no SERP,LOTTERY,—,-
+nutrição bebê,PARTIAL,5,39,unranked,~244 apps no SERP,LOTTERY,—,-
+bebê 8 meses,PARTIAL,5,73,unranked,~14 apps no SERP,LOTTERY,—,-
+comida bebê 7 meses,FIT,5,78,unranked,~116 apps no SERP,LOTTERY,—,-
+controle alimentação bebê,FIT,5,34,unranked,~21 apps no SERP,LOTTERY,—,-
+blw método,FIT,5,18,unranked,~3 apps no SERP,LOTTERY,—,-
+cortes seguros bebê,FIT,5,28,unranked,~1 apps no SERP,LOTTERY,—,-
+diário alimentar bebê,FIT,5,34,unranked,~137 apps no SERP,LOTTERY,—,-
+feeding diary baby,FIT,5,40,unranked,~213 apps no SERP,LOTTERY,—,-
+lanche bebê,PARTIAL,5,46,unranked,~246 apps no SERP,LOTTERY,—,-
+app blw,FIT,5,45,unranked,~244 apps no SERP,LOTTERY,—,-
+receitas para bebê,PARTIAL,5,38,unranked,BLW Brasil 1887r / Garfinho 350r / TudoGostoso 129560r,LOTTERY,—,tokens existem; SERP pesado + intent recipe ampla
+comida de bebê,FIT,5,49,unranked,~237 apps no SERP,LOTTERY,—,-
+primeira comida do bebê,FIT,5,23,unranked,~22 apps no SERP,LOTTERY,—,-
+como cortar alimentos bebê,FIT,5,30,unranked,~3 apps no SERP,LOTTERY,—,-
+alimentação bebês,FIT,5,42,unranked,~221 apps no SERP,LOTTERY,—,-
+comida para bebê,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+blw recipes,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+receitas blw,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+cortes blw,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+cortes de alimentos,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+receitas para bebê de 6 meses,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+papinha alergia,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+receitas de papinha,PARTIAL,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+papinha para bebê,FIT,,,n/med,não medido,LOTTERY,— (não medido no Astro),-
+comida,PARTIAL,59,83,unranked,heads gigantes,UNWINNABLE,—,não gastar
+baby,PARTIAL,52,57,unranked,Huckleberry 71k+ / trackers gigantes,UNWINNABLE,—,não gastar
+receitas,PARTIAL,50,42,unranked,TudoGostoso 129560r + apps de receita gerais,UNWINNABLE,—,não gastar
+comidas,PARTIAL,41,75,unranked,heads de comida/delivery,UNWINNABLE,—,não gastar
+baby app,PARTIAL,35,54,unranked,heads baby 10k+,UNWINNABLE,—,não gastar
+alimentação,PARTIAL,27,70,unranked,apps de dieta gigantes,UNWINNABLE,—,não gastar

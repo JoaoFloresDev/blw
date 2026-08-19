@@ -1,0 +1,93 @@
+Term,Verdict,Reason,Inventory Feature (or NOT-list item)
+allergen tracker,PARTIAL,"sem ""baby"" pode ser tracker de alergia adulto",Alergênicos: tela dedicada + reação no diário
+baby allergen tracker,FIT,alergênicos do bebê + reações no diário,Alergênicos: tela dedicada + reação no diário
+food allergy tracker,PARTIAL,tracker de alergia geral/adulto; nosso é só bebê,Alergênicos: tela dedicada + reação no diário
+baby first,PARTIAL,ambíguo (marca BabyFirst TV / fragmento),composition-feeder
+baby app,PARTIAL,genérico demais,composition-feeder
+blw ideas,FIT,ideias BLW = guia de alimentos grátis,Guia 120 alimentos por idade + preparo
+blw diary,FIT,diário BLW grátis,Diário alimentar grátis (reação/aceitação/foto)
+blw feeding,FIT,alimentação BLW = o app,App inteiro = guia+diário de introdução alimentar
+blw recipes and more,PARTIAL,receitas premium (frase de subtitle concorrente),"Receitas: 112, mas só 2 grátis/categoria (premium)"
+blw recipes,PARTIAL,receitas BLW existem mas maioria premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+blw app,FIT,app de BLW literalmente,App inteiro = guia+diário de introdução alimentar
+blw food ideas,FIT,guia de alimentos com preparo,Guia 120 alimentos por idade + preparo
+baby feeding tracker,FIT,diário de alimentação do bebê,Diário alimentar grátis (reação/aceitação/foto)
+infant feeding,FIT,alimentação do bebê = escopo,App inteiro = guia+diário de introdução alimentar
+baby feeding schedule,MISMATCH,quer agenda/horários de refeição; sem scheduler,NOT-list: sem cardápio/meal planner
+baby first foods,FIT,primeiros alimentos = guia,Guia 120 alimentos por idade + preparo
+baby food planner,MISMATCH,quer planner de refeições; não existe,NOT-list: sem cardápio/meal planner
+baby foods and recipes,FIT,guia de alimentos (grátis) + receitas — lado foods entrega,Guia 120 alimentos por idade + preparo
+baby foods tracker,FIT,diário de alimentos,Diário alimentar grátis (reação/aceitação/foto)
+baby meals recipes,PARTIAL,receitas premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+baby food tracker,FIT,diário de comida do bebê,Diário alimentar grátis (reação/aceitação/foto)
+baby food app,FIT,"SERP ""baby food"" = nossa categoria",App inteiro = guia+diário de introdução alimentar
+baby food chart,PARTIAL,"quer chart por idade; guia por idade cobre, mas sem tabela/print",Guia 120 alimentos por idade + preparo
+solid food tracker,FIT,tracker de sólidos = diário,Diário alimentar grátis (reação/aceitação/foto)
+baby solid food,FIT,sólidos do bebê = guia+diário,App inteiro = guia+diário de introdução alimentar
+first foods for baby,FIT,primeiros alimentos,Guia 120 alimentos por idade + preparo
+baby food recipes homemade,PARTIAL,receitas caseiras premium + viés purê,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+homemade baby food,PARTIAL,comida caseira: guia de preparo ajuda; receituário caseiro premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+baby food log,FIT,log de comida do bebê = diário grátis,Diário alimentar grátis (reação/aceitação/foto)
+blw meals,FIT,refeições BLW,App inteiro = guia+diário de introdução alimentar
+meal ideas,MISMATCH,ideias de refeição adulta/jantar; sem contexto bebê,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+baby meal planner,MISMATCH,quer meal planner; não existe,NOT-list: sem cardápio/meal planner
+baby meal ideas,FIT,ideias de refeição do bebê = guia 120 alimentos grátis,Guia 120 alimentos por idade + preparo
+6 month baby food,FIT,alimentos aos 6m no guia,Guia 120 alimentos por idade + preparo
+6 month old baby food,FIT,idem,Guia 120 alimentos por idade + preparo
+baby nutrition,PARTIAL,"nutrição: dicas sim (ferro, dieta balanceada), tracking nutricional não","Tips: quando começar, segurança, engasgo vs gag"
+baby puree,PARTIAL,"purê: app é BLW-first; guia (idades/alérgenos) serve, receitas de purê quase não","NOT-list: receitas BLW-first, ~2 purês em 112"
+puree recipes,MISMATCH,quer receituário de purê; ~2 purês em 112 receitas,"NOT-list: receitas BLW-first, ~2 purês em 112"
+baby puree recipes,MISMATCH,idem — receitas de purê praticamente inexistentes,"NOT-list: receitas BLW-first, ~2 purês em 112"
+baby food recipes,PARTIAL,receitas premium; SERP = categoria bebê,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+healthy recipes,MISMATCH,receitas saudáveis adultas/fitness,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+solid starts,PARTIAL,marca do incumbente Solid Starts; leitura genérica existe — só composição,NOT-list: marca de terceiro
+solid starts free,PARTIAL,"quer Solid Starts grátis; nosso diário grátis serve o intent, mas é busca de marca",NOT-list: marca de terceiro
+solid start,PARTIAL,singular da marca / leitura genérica ambígua,NOT-list: marca de terceiro
+solid starts baby first foods,PARTIAL,nome completo da marca,NOT-list: marca de terceiro
+babyplate starting solids,MISMATCH,marca Babyplate,NOT-list: marca de terceiro
+baby solids food tracker,FIT,tracker de sólidos do bebê = diário,Diário alimentar grátis (reação/aceitação/foto)
+track solids,FIT,registrar sólidos = diário,Diário alimentar grátis (reação/aceitação/foto)
+solids for baby,FIT,sólidos pro bebê = guia,Guia 120 alimentos por idade + preparo
+starting food,FIT,começar comida = guia quando começar,"Tips: quando começar, segurança, engasgo vs gag"
+start solids,FIT,começar sólidos,App inteiro = guia+diário de introdução alimentar
+start solid food,FIT,idem,App inteiro = guia+diário de introdução alimentar
+toddler meal ideas,PARTIAL,toddler vai além de 2 anos; cobertura parcial,Guia 120 alimentos por idade + preparo
+toddler food tracker,PARTIAL,"diário serve, mas app é focado 6m-2a",Diário alimentar grátis (reação/aceitação/foto)
+toddler recipes,PARTIAL,"receitas toddler: fase ""1 ano+"" existe, premium","Receitas: 112, mas só 2 grátis/categoria (premium)"
+food tracker,PARTIAL,"sem ""baby"" = contador de calorias adulto",composition-feeder
+baby tracker,MISMATCH,categoria recém-nascido (sono/fralda/mamada); não fazemos,NOT-list: sem sono/fralda/mamada/crescimento
+baby weaning,FIT,weaning = introdução de sólidos,App inteiro = guia+diário de introdução alimentar
+baby led weaning,FIT,É o app,App inteiro = guia+diário de introdução alimentar
+baby weaning and recipes,PARTIAL,metade receitas (premium),"Receitas: 112, mas só 2 grátis/categoria (premium)"
+weaning guide,FIT,guia de weaning: tips + alimentos,"Tips: quando começar, segurança, engasgo vs gag"
+baby led weaning recipes,PARTIAL,receitas BLW premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+when to start solids,FIT,"tip ""quando começar"" responde literalmente","Tips: quando começar, segurança, engasgo vs gag"
+alimentación complementaria,FIT,buscador hispânico na loja US; é o app,App inteiro = guia+diário de introdução alimentar
+baby,PARTIAL,palavra solta genérica,composition-feeder
+baby food recipes (home-made),PARTIAL,nome de app concorrente mas leitura genérica; receitas premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+baby sleep,MISMATCH,sono do bebê; app não trata sono,NOT-list: sem sono/fralda/mamada/crescimento
+baby-led weaning katie ferraro,MISMATCH,marca pessoal (Katie Ferraro),NOT-list: marca de terceiro
+blw brasil alimentação bebês,PARTIAL,marca BLW Brasil + descritivo genérico,NOT-list: marca de terceiro
+blw meals tracker schedules,PARTIAL,"subtitle da Solid Starts; ""schedules"" não temos",NOT-list: sem cardápio/meal planner
+dearbaby,MISMATCH,marca de app concorrente,NOT-list: marca de terceiro
+heysolids,MISMATCH,marca de app concorrente,NOT-list: marca de terceiro
+introdução alimentar,FIT,buscador brasileiro na loja US; é o app,App inteiro = guia+diário de introdução alimentar
+meal,PARTIAL,palavra solta genérica,composition-feeder
+receitas,PARTIAL,palavra solta; receitas premium,composition-feeder
+recetas para bebé,PARTIAL,receitas bebê ES; premium,"Receitas: 112, mas só 2 grátis/categoria (premium)"
+toddler app,MISMATCH,"apps pra toddler = jogos/educativo, outra categoria",composition-feeder
+blw,FIT,É o app,App inteiro = guia+diário de introdução alimentar
+tracker,PARTIAL,palavra solta polissêmica,composition-feeder
+first foods,FIT,primeiros alimentos = guia,Guia 120 alimentos por idade + preparo
+log,PARTIAL,palavra solta polissêmica,composition-feeder
+starting solids,FIT,começar sólidos,App inteiro = guia+diário de introdução alimentar
+weaning,FIT,weaning = introdução de sólidos,App inteiro = guia+diário de introdução alimentar
+puree,PARTIAL,"purê: BLW-first, cobertura mínima de purê","NOT-list: receitas BLW-first, ~2 purês em 112"
+feeding,PARTIAL,palavra solta (feeding de recém-nascido = mamadeira/peito),composition-feeder
+recipes,PARTIAL,palavra solta; receitas premium,composition-feeder
+allergen,PARTIAL,palavra solta; feature existe mas termo sozinho é composição,Alergênicos: tela dedicada + reação no diário
+infant,PARTIAL,palavra solta,composition-feeder
+toddler,PARTIAL,palavra solta; cobertura parcial pós-2 anos,composition-feeder
+nutrition,PARTIAL,palavra solta (nutrição adulta),composition-feeder
+meal plan,MISMATCH,quer meal planner; não existe (keyword live a remover),NOT-list: sem cardápio/meal planner
+6 month,PARTIAL,fragmento de idade,composition-feeder

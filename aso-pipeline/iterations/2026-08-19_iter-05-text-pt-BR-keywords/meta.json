@@ -1,0 +1,171 @@
+{
+  "iter_id": "2026-08-19_iter-05-text-pt-BR-keywords",
+  "type": "text",
+  "locale": "pt-BR",
+  "locales_all": [
+    "pt-BR",
+    "en-US",
+    "es-ES",
+    "es-MX"
+  ],
+  "fields_changed": [
+    "keywords",
+    "description"
+  ],
+  "fields_unchanged": [
+    "name",
+    "subtitle",
+    "promotional_text"
+  ],
+  "supersedes": "2026-08-18_iter-04 (staged na 1.5.2, nunca foi ao ar) — redo pedido pelo João 19/08. Os campos da iter-05 SOBRESCREVEM o staged via PATCH; o subtitle pt-BR staged da iter-04 ('Papinha, Receitas e Weaning', appInfo 051bb999/localization 773a0d32) DEVE ser revertido pro LIVE 'Papinha, Receitas Solid Starts' — sem esse PATCH o sub perde 'Solid Starts' (protege solid starts baby first foods #15 / start solids #21 / stem #13).",
+  "approach": "parallel",
+  "approach_rationale": "4 lojas de uma vez (pt-BR primário + en-US + es-ES/es-MX cópia) — velocity > attribution num app de 14-18 dl/dia; atribuição post-hoc por termo via Astro. description pt-BR muda junto (fix cirúrgico MISMATCH cardápio semanal, fora da hipótese de ranking). subtitle/name intocados em todos os locales (regra 7 não disparou); nota: description muda SÓ no pt-BR.",
+  "status": "live",
+  "started_at": "2026-08-19",
+  "planned_close_at": "2026-09-19",
+  "actual_closed_at": null,
+  "hypothesis": {
+    "if_we_change": "Sobre o LIVE 1.5.1, sobrescrevendo o staged da iter-04 na 1.5.2: pt-BR keywords decompostos em tokens (frases 'papinha caseira'/'papinha 6 meses'/'receitas papinha' → caseira,6,meses; dups papinha/receitas/baby saem) + apostas bebe,guia,primeiros,alimentos,alergia,diario,7 → 'bebe,guia,primeiros,alimentos,alergia,diario,desengasgo,cortes,seguros,caseira,6,7,meses,weaning' (96); en-US corta weaning-dup/puree/meal plan/infant/toddler/nutrition/allergen e entra ideas,guide,meals + 5 tokens hospedados pro BR → 'starting solids,ideas,guide,meals,recipes,feeding,6 month,alergenicos,intro,texturas,fruta,registro' (99); es-ES/es-MX corta lactancia/blw-dup, normaliza acentos e entra ideas,meals,6,meses → 'recetas,ideas,meals,6,meses,starting solids,baby led weaning,solid starts,destete,solidos,alergenos' (99); description pt-BR troca a linha CARDÁPIO SEMANAL (MISMATCH) por DICAS DE ESPECIALISTA; name/subtitle intocados nos 4 locales (subtitle pt-BR staged da iter-04 revertido pro live).",
+    "then_we_expect": "Downloads 18,1 → ≥22,5/dia (agregado 4 lojas) e impressões de busca ↑ ≥25% em 30 dias contados do RELEASE da 1.5.2 (bold: 27/dia)",
+    "because": "(a) prêmio US é posição já paga: weaning #4 com top 3 fraco (MadeForMums 9r / Drama Labs 689r; Solid Starts só #5) → #1-2 com campo limpo + sinal; (b) 'bebe' destrava ~6 comps DOMINATE órfãs no BR com 1 token (introdução alimentar bebê → top 3, desengasgo bebê → #1, papinha bebê → top 3, blw bebê → top 5); (c) 'ideas' compra o maior pop disponível (39 US / 54 ES) em SERPs de meio fraco → top 10-15; (d) família '6 meses' ES entra em SERPs de 1-3 apps (recetas bebé 6 meses / papillas 6 meses → top 3); (e) mecânica cross-locale comprovada (loja BR indexa en-US): alergenicos,intro,texturas,fruta,registro hospedados no campo US alimentam ~5 comps BR de SERP quase vazio; (f) todos os cortes eram dup (weaning/blw/papinha/receitas/baby), MISMATCH (meal plan/lactancia) ou token sem comp rankeada (puree #60, infant/toddler/nutrition/allergen LOTTERY diff 42-78) — custo zero de posição; (g) mapa de proteção 100% coberto (nenhuma comp ≤#30 perde protetor)."
+  },
+  "success_criterion": {
+    "primary_metric": "downloads_per_day",
+    "secondary_metrics": [
+      "impressions_per_day",
+      "keywords_ranking_top_30",
+      "search_terms_unique_30d",
+      "conversion_rate"
+    ],
+    "measurement_window": "30 dias contados do RELEASE da 1.5.2 (metadata só indexa com a aprovação — NÃO contar do PATCH), comparando últimos 14d vs baseline",
+    "baseline": {
+      "downloads_per_day": 18.1,
+      "downloads_per_day_source": "kill_or_scale.py 45d CORRIDOS (816 dl, US$55,13, WATCH, tendência ↑) — SÉRIE DOS TARGETS. ATENÇÃO: contaminada por picos (22-23/06 ≈198 dl, 04-07/08 ≈258 dl); organic típico ~4-6 dl/dia — checkpoints olham também mediana sem pico + rankings",
+      "downloads_per_day_pull_analytics": 14.08,
+      "downloads_per_day_pull_analytics_source": "pull_analytics.py 60d sobre DIAS-COM-DADOS (676 dl / 48 dias) — usar essa série nos checkpoints pra comparação like-for-like; targets 22,5/27/45 são sobre a série kill_or_scale 18,1",
+      "impressions_per_day": "Busca (CSV Discovery até 17/08): BR 1.502 · ES 657 · US 642 · MX 387 (janela do CSV)",
+      "iap_units_60d": 16,
+      "proceeds_usd_60d": 35.96,
+      "downloads_by_country_60d": "ES 126 > US 121 > BR 92 > MX 84",
+      "ratings": "BR 1×5,0 · US 3×5,0 · ES 1×2,0 · MX 1×5,0 (incumbente BR: BLW Brasil 1.887×4,7)",
+      "conversion_rate": null,
+      "keywords_ranking_top_30": "Snapshot Day -1 em research/protection_map.md (BR ~35 comps ≤#30 incl. 4×#1; US 8; ES 15)",
+      "search_terms_unique_30d": "TBD — report App Store Search Terms request ff722017 ainda não materializou; D7 cruza",
+      "captured_at": "2026-08-19"
+    },
+    "targets": {
+      "conservador": {
+        "downloads_per_day": 22.5,
+        "downloads_delta_pct": 25,
+        "impressions_delta_pct": 25,
+        "keywords_top_30": "+5 comps novas vs Day -1 (bebe-família BR e/ou 6-meses ES indexadas)"
+      },
+      "bold": {
+        "downloads_per_day": 27.0,
+        "downloads_delta_pct": 50,
+        "impressions_delta_pct": 40,
+        "keywords_top_30": "+10 comps novas vs Day -1; weaning US #1-2",
+        "is_official_target": true
+      },
+      "aspiracional_90d": {
+        "downloads_per_day": 45.0,
+        "downloads_multiplier": 2.5,
+        "impressions_multiplier": 2.5,
+        "note": "90 dias — aspiracional, não target dessa iter."
+      }
+    },
+    "go_no_go_threshold": "downloads_per_day média últimos 14d ≥ 22,5 (e mediana sem pico ≥ 6). Abaixo com rankings melhores = problema é CONVERSÃO (prints/PPO/ratings — ES 1×2,0 é dreno), não mais texto."
+  },
+  "cadence": {
+    "note": "Datas ESTIMADAS assumindo release da 1.5.2 ~22/08 — recontar D7/14/21/28 do release real (AFTER_APPROVAL). Se a 1.5.2 atrasar, deslizar tudo.",
+    "checkpoints": [
+      {
+        "day": 7,
+        "date": "2026-08-29",
+        "purpose": "early signal — comps 'bebê' indexadas (qualquer rank); weaning US ≤ #3; ideas indexou; cruzar com App Store Search Terms report (volume REAL da cauda pop-5); rollback se papinha caseira/desengasgo saírem do #1 ou downloads ↓ ≥30%",
+        "metrics_file": "metrics/2026-08-29_d07.csv"
+      },
+      {
+        "day": 14,
+        "date": "2026-09-05",
+        "purpose": "tendência — desengasgo bebê #1, introdução alimentar bebê top 5, recetas bebé 6 meses top 5, impressões +15%; falha se bebe/ideas não indexaram em comp alguma",
+        "metrics_file": "metrics/2026-09-05_d14.csv"
+      },
+      {
+        "day": 21,
+        "date": "2026-09-12",
+        "purpose": "dl ≥ 20/dia (mediana sem pico ≥ 6); rascunho iter-06 com dados do Search Terms",
+        "metrics_file": "metrics/2026-09-12_d21.csv"
+      },
+      {
+        "day": 28,
+        "date": "2026-09-19",
+        "purpose": "decision day — média 14d ≥ 22,5 → promote; ≥ 27 → bold; abaixo → alavanca vira conversão",
+        "metrics_file": "metrics/2026-09-19_d28_final.csv"
+      }
+    ],
+    "rollback_triggers": [
+      "papinha caseira / receitas de papinha caseira / desengasgo (BR) saem do #1 sustentado por 7 dias (risco da decomposição de frases)",
+      "weaning (US) ou alimentación complementaria (ES/US) caem >5 posições sustentado",
+      "Downloads/dia ↓ ≥30% (mediana sem pico) sustentado por 7 dias",
+      "Apple rejeita a 1.5.2 por metadata (review fail)"
+    ],
+    "escalation_triggers": [
+      "Impressões ↑ ≥50% antes do D14 → apostas mais ousadas na iter-06 (ex.: promover weaning/ideas a campo de peso maior)",
+      "blw ideas top 10 antes do D14 → reforçar cluster ideas via promotional_text",
+      "Search Terms report confirma volume na cauda bebê/6 meses → dobrar a família na iter-06"
+    ]
+  },
+  "research_done": true,
+  "research_files": [
+    "research/asc_state.json",
+    "research/baseline_2026-08-19.md",
+    "research/baseline_2026-08-19_sales.csv",
+    "research/discovery_engagement_daily_2026-08-19.csv",
+    "research/competitors.md",
+    "research/astro_br_2026-08-19.json",
+    "research/astro_us_2026-08-19.json",
+    "research/astro_es_2026-08-19.json",
+    "research/longtails_br.csv",
+    "research/longtails_us.csv",
+    "research/longtails_es.csv",
+    "research/term_fit_pt-BR.csv",
+    "research/term_fit_en-US.csv",
+    "research/term_fit_es-ES.csv",
+    "research/app_feature_inventory.md",
+    "research/serp_winnability_br.csv",
+    "research/serp_winnability_us.csv",
+    "research/serp_winnability_es.csv",
+    "research/protection_map.md",
+    "research/composition_rationale.md",
+    "research/keyword_candidates.md"
+  ],
+  "deployed": true,
+  "deploy_commit": "6b1f314",
+  "deploy_timestamp": "2026-08-19T18:45:00-03:00",
+  "deploy_plan": {
+    "targets": [
+      "PATCH keywords: appStoreVersionLocalizations da 1.5.2 (ccba393d) — pt-BR 23b2ddc1-38aa-410b-952e-145f20432456 · en-US f6907b99-8908-4b15-8aa9-8bcf3b13adbf · es-ES 1f71bc55-074b-4b2f-89ae-a4f8bdbdba7c · es-MX e63deedb-2205-48c9-ae16-77a350e345be",
+      "PATCH description pt-BR (mesma localization) — linha CARDÁPIO SEMANAL → DICAS DE ESPECIALISTA",
+      "PATCH REVERT subtitle pt-BR no appInfo PREPARE_FOR_SUBMISSION 051bb999-a04d-4711-9494-761067e9c1e5, localization 773a0d32-6ea1-4f64-ada9-d04a9d72a776: 'Papinha, Receitas e Weaning' (iter-04 staged) → 'Papinha, Receitas Solid Starts' (live)"
+    ],
+    "authorization": "SÓ com autorização do João; read-back byte a byte + deploy-verifier depois; janela de medição conta do RELEASE da 1.5.2, não do PATCH"
+  },
+  "results": {
+    "baseline": {
+      "date": "2026-08-19",
+      "metrics_file": "research/baseline_2026-08-19.md",
+      "status": "captured Day -1 (pull_analytics 14,08 dl/dia 60d · kill_or_scale 18,1 dl/dia 45d)"
+    },
+    "checkpoints": [],
+    "final": null
+  },
+  "verdict": null,
+  "promoted_to_current": false,
+  "notes": "iter-05 = REDO da iter-04 (pedido do João 19/08); a iter-04 ficou staged na 1.5.2 e nunca foi ao ar — supersedida integralmente. Base de comparação do relatório = LIVE 1.5.1; base do PATCH = staged 1.5.2. Pipeline com agentes (extractor → longtail-miner → fit-checker → serp-analyst → field-composer → reporter). Cortes com razão: en-US meal plan MISMATCH (sem planner), puree #60 sem retorno, weaning dup do name; es lactancia MISMATCH (sem amamentação), blw dup do subtitle; pt-BR dups papinha×3/receitas/baby + feeding sem retorno (#122). Mecânica cross-locale: loja BR indexa campos en-US — alergenicos,intro,texturas,fruta,registro hospedados no kw US pro BR. Trade-off declarado do composer: budget 95-100 chars priorizado sobre a regra ~3 apostas/locale (apostas extras todas FIT com SERP raso, atribuição via Astro). Diffs vs staged que merecem atenção no deploy: pt-BR perde 'starting solids' do kw (BR já indexa via kw en-US, #13 comprovado) e recupera 'weaning' no kw (porque o subtitle reverte); en-US recupera 'feeding' (protege blw feeding #15); es recupera 'solid starts' (#40 + stem). Baseline com picos (22-23/06 e 04-07/08, prováveis features/campanha) — targets na série kill_or_scale 18,1, checkpoints validam também mediana sem pico e rankings por termo. Report App Store Search Terms (request ff722017) ainda não materializou — D7 cruza. es-MX permanece CÓPIA do es-ES (name 'Alimentación Complementaria' protege o #3 cross-locale nos EUA — nunca divergir).",
+  "deploy_note": "Deploy 2026-08-19: 6 PATCHes (keywords x4 + description pt-BR na 1.5.2 ccba393d; subtitle pt-BR REVERT no appInfo 051bb999/loc 773a0d32 -> 'Papinha, Receitas Solid Starts'), todos 200 + read-back byte a byte OK. Campos nao tocados conferidos intactos (names, subtitles en/es, whatsNew, promotionalText=null). Day 0 da metrica = RELEASE da 1.5.2 (AFTER_APPROVAL), NAO a data do PATCH — recontar checkpoints do release real.",
+  "rollback": {
+    "refs": "Valores LIVE 1.5.1 no worktree de aso-pipeline/current/metadata/ (sync do extractor 19/08); staged pre-iter-05 (iter-04) preservado em research/asc_state.json (versao 1.5.2 + appInfo 051bb999)",
+    "command": "PATCH /v1/appStoreVersionLocalizations/{id} keywords/description com os valores de current/metadata/<locale>/ (ids no deploy_plan.targets) + PATCH /v1/appInfoLocalizations/773a0d32 subtitle (ja esta no valor live)"
+  }
+}

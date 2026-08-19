@@ -1,0 +1,436 @@
+{
+  "captured_at": "2026-08-19T12:13:34-0300",
+  "app_id": "6758321287",
+  "appStoreVersions": [
+    {
+      "id": "ccba393d-b35e-42fd-b195-424f250f5ef4",
+      "versionString": "1.5.2",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "createdDate": "2026-08-18T11:19:57-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "1f71bc55-074b-4b2f-89ae-a4f8bdbdba7c",
+          "locale": "es-ES",
+          "keywords": "introduccion,guia,atragantamiento,starting solids,baby led weaning,recetas,destete,solidos,alergenos",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Explora las recetas — las primeras de cada categoría ahora son gratis\nSugerencias más seguras — los alérgenos ya no aparecen en la lista\nDiario pulido y nueva celebración de primera vez",
+          "promotionalText": null
+        },
+        {
+          "id": "f6907b99-8908-4b15-8aa9-8bcf3b13adbf",
+          "locale": "en-US",
+          "keywords": "starting solids,introduction,finger food,guide,100,puree,recipes,allergen,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "Browse recipes freely — the first ones in each category are now free\nSafer suggestions — allergens no longer appear in the try-next list\nPolished diary visuals and a new first-time celebration",
+          "promotionalText": null
+        },
+        {
+          "id": "23b2ddc1-38aa-410b-952e-145f20432456",
+          "locale": "pt-BR",
+          "keywords": "starting solids,bebe,guia,papinha caseira,papinha 6 meses,receitas papinha,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2935,
+          "whatsNew": "Receitas liberadas pra explorar — as primeiras de cada categoria agora são grátis\nSugestões do diário mais seguras — alergênicos ficam fora da lista\nVisual refinado no diário e na celebração de primeira vez",
+          "promotionalText": null
+        },
+        {
+          "id": "e63deedb-2205-48c9-ae16-77a350e345be",
+          "locale": "es-MX",
+          "keywords": "introduccion,guia,atragantamiento,starting solids,baby led weaning,recetas,destete,solidos,alergenos",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Explora las recetas — las primeras de cada categoría ahora son gratis\nSugerencias más seguras — los alérgenos ya no aparecen en la lista\nDiario pulido y nueva celebración de primera vez",
+          "promotionalText": null
+        }
+      ],
+      "build": "26"
+    },
+    {
+      "id": "57bae8d0-71bb-4a7f-b3f0-beac43458d5e",
+      "versionString": "1.5.1",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-08-13T19:57:07-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "39ea7c97-a5c4-47a7-9afd-df751bbef1d5",
+          "locale": "pt-BR",
+          "keywords": "papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Registro de refeições agora é totalmente gratuito\nPro renovado — receitas, PDF e fotos ilimitadas\nExportação em PDF melhorada no iPad",
+          "promotionalText": null
+        },
+        {
+          "id": "87af913b-b598-4a44-95bc-ae8de453c930",
+          "locale": "en-US",
+          "keywords": "starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "Meal logging is now completely free\nRefreshed Pro — recipes, PDF export and unlimited photos\nImproved PDF export on iPad",
+          "promotionalText": null
+        },
+        {
+          "id": "bf583458-199f-4ef1-bae5-5da7816f964f",
+          "locale": "es-ES",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Registrar comidas ahora es totalmente gratis\nPro renovado — recetas, PDF y fotos ilimitadas\nExportación en PDF mejorada en iPad",
+          "promotionalText": null
+        },
+        {
+          "id": "4816a46e-a96c-43e1-92c1-ad054bbdc6a4",
+          "locale": "es-MX",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Registrar comidas ahora es totalmente gratis\nPro renovado — recetas, PDF y fotos ilimitadas\nExportación en PDF mejorada en iPad",
+          "promotionalText": null
+        }
+      ],
+      "build": "25"
+    },
+    {
+      "id": "15acdeb2-5158-4093-8ee3-41ed322452ef",
+      "versionString": "1.5.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-08-06T20:01:49-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "4ca7ba10-73a3-4677-945f-b5f28667b49b",
+          "locale": "en-US",
+          "keywords": "starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "Track your baby's first 100 foods — new diary with progress and smart suggestions\n120 foods with safe-prep guides, search and custom icons\nAllergen tracking now shows every exposure and reaction",
+          "promotionalText": null
+        },
+        {
+          "id": "d632e3f0-e2a6-47ba-86f6-154ad08d67a3",
+          "locale": "pt-BR",
+          "keywords": "papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Acompanhe os 100 primeiros alimentos — diário novo com progresso e sugestões\n120 alimentos com preparo seguro, busca e ícones novos\nAlérgenos agora mostram cada exposição e reação do bebê",
+          "promotionalText": null
+        },
+        {
+          "id": "014e9eef-6517-4ffb-8782-3c3ba542d73f",
+          "locale": "es-ES",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Sigue los primeros 100 alimentos — nuevo diario con progreso y sugerencias\n120 alimentos con preparación segura, búsqueda e iconos nuevos\nLos alérgenos ahora muestran cada exposición y reacción del bebé",
+          "promotionalText": null
+        },
+        {
+          "id": "f9ccae89-5d9f-4592-b545-b644393a9023",
+          "locale": "es-MX",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Sigue los primeros 100 alimentos — nuevo diario con progreso y sugerencias\n120 alimentos con preparación segura, búsqueda e iconos nuevos\nLos alérgenos ahora muestran cada exposición y reacción del bebé",
+          "promotionalText": null
+        }
+      ],
+      "build": "24"
+    },
+    {
+      "id": "febb0f88-be20-4a36-bc77-4f417c47194a",
+      "versionString": "1.4.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-08-03T17:09:44-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "f7cc356d-8d00-477a-838f-81ef94ef3383",
+          "locale": "en-US",
+          "keywords": "starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "Smoother, more reliable meal logging\nPremium got better — 3-day free trial on both plans\nPerformance fixes and polish throughout",
+          "promotionalText": null
+        },
+        {
+          "id": "c4ba1206-a377-496b-a24d-da58fe103064",
+          "locale": "es-MX",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Registro de comidas más fluido y estable\nPremium mejoró — prueba gratis de 3 días en ambos planes\nCorrecciones y mejor rendimiento",
+          "promotionalText": null
+        },
+        {
+          "id": "b7a4a013-e9b9-4fd8-b5ab-463d51f1941d",
+          "locale": "pt-BR",
+          "keywords": "papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Registro de refeições mais fluido e estável\nPremium melhorou — teste grátis de 3 dias nos dois planos\nCorreções e desempenho aprimorado",
+          "promotionalText": null
+        },
+        {
+          "id": "f4f48231-4a52-4b69-8b34-61e3922ecb9c",
+          "locale": "es-ES",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Registro de comidas más fluido y estable\nPremium mejoró — prueba gratis de 3 días en ambos planes\nCorrecciones y mejor rendimiento",
+          "promotionalText": null
+        }
+      ],
+      "build": "23"
+    },
+    {
+      "id": "c84d9c6f-3770-4723-ba10-957c655dd255",
+      "versionString": "1.3.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-06-17T14:54:50-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "efe451ab-280a-4917-b2d4-5771362c727d",
+          "locale": "es-ES",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Nuevas recetas añadidas con diferentes frutas y verduras",
+          "promotionalText": null
+        },
+        {
+          "id": "678d7181-4b9f-48b9-8cf3-60d851ab03cb",
+          "locale": "es-MX",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Nuevas recetas añadidas con diferentes frutas y verduras",
+          "promotionalText": null
+        },
+        {
+          "id": "d60cc9aa-2a22-4396-90cf-20de22407d20",
+          "locale": "en-US",
+          "keywords": "starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "New recipes added with different fruits and vegetables",
+          "promotionalText": null
+        },
+        {
+          "id": "acb1a525-6874-45a1-9f64-30e0c2641339",
+          "locale": "pt-BR",
+          "keywords": "papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Novas receitas cadastradas com diferentes frutas e verduras",
+          "promotionalText": null
+        }
+      ],
+      "build": "21"
+    },
+    {
+      "id": "8f446f0e-8803-4b54-8199-850ba67e75f2",
+      "versionString": "1.2.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-06-12T16:46:58-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "e025fcf1-1a13-4948-9c97-53ee47241c2c",
+          "locale": "pt-BR",
+          "keywords": "papinha caseira,papinha 6 meses,receitas papinha,baby weaning,baby feeding,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Agora dá pra adicionar foto direto da galeria — registra a refeição ou só guarda a lembrança\nPremium libera fotos ilimitadas, receitas exclusivas e exportação em PDF\nNovo tour de boas-vindas pra começar em segundos",
+          "promotionalText": null
+        },
+        {
+          "id": "c14b74dc-1d8f-4ae9-9bf9-5ea644586e44",
+          "locale": "es-ES",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Ahora puedes añadir fotos directo desde la galería — registra la comida o solo guarda el recuerdo\nPremium desbloquea fotos ilimitadas, recetas exclusivas y exportación a PDF\nUn nuevo tour de bienvenida para empezar en segundos",
+          "promotionalText": null
+        },
+        {
+          "id": "93b19ef0-6781-4476-bfcc-df3f528a9a49",
+          "locale": "en-US",
+          "keywords": "starting solids,weaning,puree,feeding,recipes,allergen,infant,toddler,nutrition,meal plan,6 month",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "Add photos straight from the gallery — log the meal or just keep the memory\nPremium unlocks unlimited photos, exclusive recipes and PDF export\nA new welcome tour gets you started in seconds",
+          "promotionalText": null
+        },
+        {
+          "id": "0863c696-5e68-4c4c-9e04-488f82f7ef7b",
+          "locale": "es-MX",
+          "keywords": "blw,starting solids,solid starts,baby led weaning,destete,recetas,sólidos,alérgenos,lactancia",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Ahora puedes añadir fotos directo desde la galería — registra la comida o solo guarda el recuerdo\nPremium desbloquea fotos ilimitadas, recetas exclusivas y exportación a PDF\nUn nuevo tour de bienvenida para empezar en segundos",
+          "promotionalText": null
+        }
+      ],
+      "build": "20"
+    },
+    {
+      "id": "fa792847-c680-46e9-ba23-db1f37b33ac9",
+      "versionString": "1.1.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-05-22T20:16:57-07:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "fa2ed521-b961-4cba-8d0b-eb3f6195d391",
+          "locale": "es-MX",
+          "keywords": "papillas,recetas,primeros alimentos,nutrición,alérgenos,tracker,sólidos,lactancia,maternidad,infant",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Nuevo look con colores más suaves — ahora combina con tu rutina\nPequeños ajustes en la interfaz hacen todo más fácil de encontrar\nMás rápido para registrar la comida sin perder el ritmo",
+          "promotionalText": "Alimentación complementaria sin improvisar. Diario, papilla, BLW, cortes seguros y 100+ alimentos con consejos. Gratis, sin anuncios, sin registro."
+        },
+        {
+          "id": "edf9e726-6eba-40e8-94c5-fab2201bddb2",
+          "locale": "pt-BR",
+          "keywords": "starting solids,baby weaning,diário alimentar,primeiro alimento,blw meals,desengasgo,cortes seguros",
+          "description_first200": "A introdução alimentar do bebê fica simples — e segura — com o BLW Baby.\n\nMais que um diário alimentar, é o acompanhamento completo dos primeiros alimentos do seu bebê. Texturas, cortes seguros, alerg",
+          "description_len": 2914,
+          "whatsNew": "Novo visual com cores mais leves — agora o app combina com a rotina\nPequenos ajustes na interface deixaram tudo mais fácil de achar\nMais rápido pra registrar a refeição sem perder o ritmo",
+          "promotionalText": "Introdução alimentar do bebê sem improviso. Diário, papinha, BLW, cortes seguros e 100+ alimentos com dicas de preparo. Grátis, sem anúncios, sem cadastro."
+        },
+        {
+          "id": "cb2e4ab2-ae4b-4b95-8672-091a29248adb",
+          "locale": "en-US",
+          "keywords": "puree,feeding,starting solids,infant,toddler,meals,recipes,nutrition,food log,allergen,6 month old",
+          "description_first200": "Starting solids is simple — and safe — with BLW Baby.\n\nMore than a feeding diary, it's the complete companion for your baby's first foods. Textures, safe cutting shapes, allergens and every new reacti",
+          "description_len": 2707,
+          "whatsNew": "A refreshed look with softer colors — finally matches your daily flow\nSmall interface tweaks make everything easier to find\nFaster meal logging so you don't lose the rhythm",
+          "promotionalText": "Starting solids without guessing. Feeding diary, BLW recipes, safe cutting shapes and 100+ first foods with prep tips. Free, no ads, no sign-up."
+        },
+        {
+          "id": "6edca62b-fdec-4c56-9073-e92047543a56",
+          "locale": "es-ES",
+          "keywords": "papillas,recetas,primeros alimentos,nutrición,alérgenos,tracker,sólidos,lactancia,maternidad,infant",
+          "description_first200": "La alimentación complementaria del bebé fácil — y segura — con BLW Baby.\n\nMás que un diario alimentario, es el acompañamiento completo de los primeros alimentos de tu bebé. Texturas, cortes seguros, a",
+          "description_len": 2939,
+          "whatsNew": "Nuevo look con colores más suaves — ahora combina con tu rutina\nPequeños ajustes en la interfaz hacen todo más fácil de encontrar\nMás rápido para registrar la comida sin perder el ritmo",
+          "promotionalText": "Alimentación complementaria sin improvisar. Diario, papilla, BLW, cortes seguros y 100+ alimentos con consejos. Gratis, sin anuncios, sin registro."
+        }
+      ],
+      "build": "15"
+    },
+    {
+      "id": "eb0fb7e0-5782-4e58-8588-4ec531a67532",
+      "versionString": "1.0",
+      "state": "READY_FOR_SALE",
+      "createdDate": "2026-01-26T18:59:13-08:00",
+      "releaseType": "AFTER_APPROVAL",
+      "localizations": [
+        {
+          "id": "733a48ea-58d5-42b4-9adf-cbf83b3fbdaf",
+          "locale": "es-ES",
+          "keywords": "papillas,recetas,primeros alimentos,nutrición,alérgenos,tracker,sólidos,lactancia,maternidad,infant",
+          "description_first200": "¡Acompaña la alimentación complementaria de tu bebé de forma simple, organizada y segura con BLW Baby!\n\nBLW Baby es la app completa para padres que desean registrar y acompañar todo el viaje alimentar",
+          "description_len": 2130,
+          "whatsNew": null,
+          "promotionalText": "¡Registra la alimentación de tu bebé! Diario completo, +100 alimentos, recetas y consejos BLW. Todo en una app, gratis y sin anuncios."
+        },
+        {
+          "id": "b33cc94e-7ce9-4f8f-af8a-f814f8583400",
+          "locale": "es-MX",
+          "keywords": "papillas,recetas,primeros alimentos,nutrición,alérgenos,tracker,sólidos,lactancia,maternidad,infant",
+          "description_first200": "¡Acompaña la alimentación complementaria de tu bebé de forma simple, organizada y segura con BLW Baby!\n\nBLW Baby es la app completa para padres que desean registrar y acompañar todo el viaje alimentar",
+          "description_len": 2130,
+          "whatsNew": null,
+          "promotionalText": "¡Registra la alimentación de tu bebé! Diario completo, +100 alimentos, recetas y consejos BLW. Todo en una app, gratis y sin anuncios."
+        },
+        {
+          "id": "93f56c20-5da1-4a7c-bf1b-27f8e0c47126",
+          "locale": "en-US",
+          "keywords": "puree,feeding,starting solids,infant,toddler,meals,recipes,nutrition,food log,allergen,6 month old",
+          "description_first200": "Track your baby's food introduction journey simply, organized, and safely with BLW Baby!\n\nBLW Baby is the complete app for parents who want to record and track their baby's entire food journey, from f",
+          "description_len": 1799,
+          "whatsNew": null,
+          "promotionalText": "Track your baby's food introduction! Complete diary, 100+ foods, recipes & BLW tips. All in one app, free with no ads."
+        },
+        {
+          "id": "b7193ce6-a18f-4e29-902e-eddc853649f7",
+          "locale": "pt-BR",
+          "keywords": "beb,alimentação,receitas bebê,primeiro alimento,diário alimentar,tracker,comida saudável,maternidade",
+          "description_first200": "Acompanhe a introdução alimentar do seu bebê de forma simples, organizada e segura com o BLW Baby!\n\nO BLW Baby é o app completo para pais que desejam registrar e acompanhar toda a jornada alimentar do",
+          "description_len": 2057,
+          "whatsNew": null,
+          "promotionalText": "Registre a introdução alimentar do seu bebê! Diário completo, +100 alimentos, receitas e dicas de BLW. Tudo em um só app, grátis e sem anúncios."
+        }
+      ],
+      "build": "14"
+    }
+  ],
+  "appInfos": [
+    {
+      "id": "ab8aad0e-da19-4913-b57c-660bbaf1d163",
+      "state": "READY_FOR_SALE",
+      "localizations": [
+        {
+          "id": "d44b6f60-f422-4d66-bb70-d57587e60347",
+          "locale": "pt-BR",
+          "name": "Introdução Alimentar BLW Baby",
+          "subtitle": "Papinha, Receitas Solid Starts"
+        },
+        {
+          "id": "88d0cd72-c2ff-4852-9a0c-94c18d59c5d4",
+          "locale": "es-MX",
+          "name": "Alimentación Complementaria",
+          "subtitle": "BLW, Comida Bebé y Papillas"
+        },
+        {
+          "id": "de124590-0f00-4ee4-8c10-57349c94c9f6",
+          "locale": "es-ES",
+          "name": "Alimentación Complementaria",
+          "subtitle": "BLW, Comida Bebé y Papillas"
+        },
+        {
+          "id": "8f80fcfa-1e08-4ff5-a62f-d69cf976b1b2",
+          "locale": "en-US",
+          "name": "BLW Baby Led Weaning Tracker",
+          "subtitle": "First Foods & Solid Starts Log"
+        }
+      ]
+    },
+    {
+      "id": "051bb999-a04d-4711-9494-761067e9c1e5",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "localizations": [
+        {
+          "id": "02c05a75-5364-4858-98d4-e99c1843d5e2",
+          "locale": "es-MX",
+          "name": "Alimentación Complementaria",
+          "subtitle": "BLW, Comida Bebé y Papillas"
+        },
+        {
+          "id": "773a0d32-6ea1-4f64-ada9-d04a9d72a776",
+          "locale": "pt-BR",
+          "name": "Introdução Alimentar BLW Baby",
+          "subtitle": "Papinha, Receitas e Weaning"
+        },
+        {
+          "id": "0b6f10bc-6c08-4bca-9eda-ad5e0d02c35b",
+          "locale": "en-US",
+          "name": "BLW Baby Led Weaning Tracker",
+          "subtitle": "First Foods & Solid Starts Log"
+        },
+        {
+          "id": "dcd43f25-5cfd-4462-b36b-46e5e983eb07",
+          "locale": "es-ES",
+          "name": "Alimentación Complementaria",
+          "subtitle": "BLW, Comida Bebé y Papillas"
+        }
+      ]
+    }
+  ]
+}
