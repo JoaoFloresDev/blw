@@ -54,7 +54,7 @@ class RatingGate {
     final prefs = await SharedPreferences.getInstance();
     if (!_isEligible(prefs)) return;
     await prefs.setInt(_kLastShown, DateTime.now().millisecondsSinceEpoch);
-    AnalyticsService.ratingGate('rating_gate_shown', trigger);
+    AnalyticsService.ratingGateShown(trigger);
     // Callers trigger this while popping their own routes — wait for the pop
     // animations to settle on the home screen before sliding the sheet up,
     // otherwise the sheet races the navigation transition.
@@ -69,7 +69,7 @@ class RatingGate {
       builder: (_) => _GateSheet(trigger: trigger),
     );
     if (answered == null) {
-      AnalyticsService.ratingGate('rating_gate_dismissed', trigger);
+      AnalyticsService.ratingGateDismissed(trigger);
     }
   }
 
@@ -99,7 +99,7 @@ class RatingGate {
   // -- Outcomes -------------------------------------------------------------
 
   Future<void> _answeredYes(String trigger) async {
-    AnalyticsService.ratingGate('rating_gate_yes', trigger);
+    AnalyticsService.ratingGateYes(trigger);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_kAnsweredYes, true);
     final prompts = prefs.getStringList(_kNativePrompts) ?? [];
@@ -111,7 +111,7 @@ class RatingGate {
   }
 
   Future<void> _answeredNo(String trigger) async {
-    AnalyticsService.ratingGate('rating_gate_no', trigger);
+    AnalyticsService.ratingGateNo(trigger);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_kLastNegative, DateTime.now().millisecondsSinceEpoch);
   }

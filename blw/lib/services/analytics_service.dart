@@ -1,6 +1,7 @@
 import 'dart:developer' as developer;
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Central analytics facade. Every user-behavior event funnels through here
 /// so event names stay consistent and call sites stay one-liners. Failures
@@ -79,8 +80,30 @@ class AnalyticsService {
   static Future<void> foodViewed(String foodId) =>
       _log('food_viewed', {'food_id': foodId});
 
-  static Future<void> foodLogSaved({required bool firstTime, required int photoCount}) =>
-      _log('food_log_saved', {'first_time': '$firstTime', 'photo_count': photoCount});
+  static Future<void> foodLogSaved({required bool firstTime, required int photoCount}) async {
+    await _log('food_log_saved', {'first_time': '$firstTime', 'photo_count': photoCount});
+    await coreAction('food_logged', {'photo_count': photoCount});
+  }
+
+  // MARK: - Activation
+
+  static const _coreActionKey = 'analytics.didCoreAction';
+
+  /// The moment the app delivered its value. `first` marks the very first time on
+  /// this install, which is what predicts retention.
+  static Future<void> coreAction(String kind, [Map<String, Object>? extra]) async {
+    var first = false;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      first = !(prefs.getBool(_coreActionKey) ?? false);
+      if (first) await prefs.setBool(_coreActionKey, true);
+    } catch (_) {}
+    await _log('core_action', {'kind': kind, 'first': '$first', ...?extra});
+  }
+
+  /// Feature adoption, comparable across every app in the lab.
+  static Future<void> featureUsed(String name, {required String source}) =>
+      _log('feature_used', {'name': name, 'source': source});
 
   static Future<void> recipesOpened() => _log('recipes_opened');
 
@@ -93,10 +116,19 @@ class AnalyticsService {
   static Future<void> reviewPromptRequested(String trigger) =>
       _log('review_prompt_requested', {'trigger': trigger});
 
-  /// Rating gate funnel: rating_gate_shown / rating_gate_yes /
-  /// rating_gate_no / rating_gate_dismissed.
-  static Future<void> ratingGate(String event, String trigger) =>
-      _log(event, {'trigger': trigger});
+  /// Rating gate funnel. Cada evento tem método próprio: nome passado como variável
+  /// some da análise estática e some do verificador de instrumentação do lab.
+  static Future<void> ratingGateShown(String trigger) =>
+      _log('rating_gate_shown', {'trigger': trigger});
+
+  static Future<void> ratingGateDismissed(String trigger) =>
+      _log('rating_gate_dismissed', {'trigger': trigger});
+
+  static Future<void> ratingGateYes(String trigger) =>
+      _log('rating_gate_yes', {'trigger': trigger});
+
+  static Future<void> ratingGateNo(String trigger) =>
+      _log('rating_gate_no', {'trigger': trigger});
 
   static Future<void> ratingGateFeedback(String trigger, String text) =>
       _log('rating_gate_feedback',
