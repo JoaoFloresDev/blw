@@ -60,3 +60,11 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# PPO pipeline: rendered prints and raw base are regenerable (tools/ + base/); keep them on disk only
+ppo-pipeline/**/out/
+ppo-pipeline/**/base_raw/
+ppo-pipeline/**/source/live/
+ppo-pipeline/**/tools/render_headlines
+ppo-pipeline/**/tools/jobs.json
+ppo-pipeline/**/qa_sheet_39.jpg

@@ -1,0 +1,41 @@
+{
+  "_note": "Panorama C journey headlines (line1 = age, line2 = milestone). Locales absent here reuse another lang via aliases.",
+  "aliases": {
+    "en-GB": "live:en-US", "en-AU": "live:en-US", "en-CA": "live:en-US", "en-US": "live:en-US",
+    "pt-BR": "live:pt-BR", "es-ES": "live:es-ES", "es-MX": "live:es-ES",
+    "fr-CA": "fr-FR"
+  },
+  "langs": {
+    "de-DE": {"prints": [["6 Monate", "Der erste Bissen"], ["7-8 Monate", "Texturen lernen"], ["9 Monate", "Aromen entdecken"], ["11 Monate", "Allergene im Griff"], ["12+ Monate", "Isst wie die Großen"]]},
+    "fr-FR": {"prints": [["6 mois", "La première bouchée"], ["7-8 mois", "Découvrir les textures"], ["9 mois", "Explorer les saveurs"], ["11 mois", "Allergènes maîtrisés"], ["12+ mois", "Mange comme un grand"]]},
+    "it": {"prints": [["6 mesi", "Il primo morso"], ["7-8 mesi", "Imparare le consistenze"], ["9 mesi", "Esplorare i sapori"], ["11 mesi", "Allergeni sotto controllo"], ["12+ mesi", "Mangia come i grandi"]]},
+    "nl-NL": {"prints": [["6 maanden", "De eerste hap"], ["7-8 maanden", "Texturen leren"], ["9 maanden", "Smaken ontdekken"], ["11 maanden", "Allergenen onder controle"], ["12+ maanden", "Eet als een grote"]]},
+    "pt-PT": {"prints": [["6 meses", "A primeira dentada"], ["7-8 meses", "A aprender texturas"], ["9 meses", "A explorar sabores"], ["11 meses", "Alergénios em dia"], ["12+ meses", "A comer sozinho"]]},
+    "ca": {"prints": [["6 mesos", "La primera mossegada"], ["7-8 mesos", "Aprenent textures"], ["9 mesos", "Explorant sabors"], ["11 mesos", "Al·lèrgens al dia"], ["12+ mesos", "Menja com els grans"]]},
+    "da": {"prints": [["6 måneder", "Den første bid"], ["7-8 måneder", "Lærer teksturer"], ["9 måneder", "Udforsker smage"], ["11 måneder", "Styr på allergener"], ["12+ måneder", "Spiser som de store"]]},
+    "sv": {"prints": [["6 månader", "Första tuggan"], ["7-8 månader", "Lär sig texturer"], ["9 månader", "Utforskar smaker"], ["11 månader", "Koll på allergener"], ["12+ månader", "Äter som de stora"]]},
+    "no": {"prints": [["6 måneder", "Den første biten"], ["7-8 måneder", "Lærer teksturer"], ["9 måneder", "Utforsker smaker"], ["11 måneder", "Kontroll på allergener"], ["12+ måneder", "Spiser som de store"]]},
+    "fi": {"prints": [["6 kuukautta", "Ensimmäinen suupala"], ["7-8 kuukautta", "Uusia koostumuksia"], ["9 kuukautta", "Makuja tutkimassa"], ["11 kuukautta", "Allergeenit hallinnassa"], ["12+ kuukautta", "Syö kuin isot"]]},
+    "pl": {"prints": [["6 miesięcy", "Pierwszy kęs"], ["7-8 miesięcy", "Poznaje tekstury"], ["9 miesięcy", "Odkrywa smaki"], ["11 miesięcy", "Alergeny pod kontrolą"], ["12+ miesięcy", "Je jak duże dziecko"]]},
+    "cs": {"prints": [["6 měsíců", "První sousto"], ["7-8 měsíců", "Poznává textury"], ["9 měsíců", "Objevuje chutě"], ["11 měsíců", "Alergeny pod kontrolou"], ["12+ měsíců", "Jí jako velké dítě"]]},
+    "sk": {"prints": [["6 mesiacov", "Prvé sústo"], ["7-8 mesiacov", "Spoznáva textúry"], ["9 mesiacov", "Objavuje chute"], ["11 mesiacov", "Alergény pod kontrolou"], ["12+ mesiacov", "Je ako veľké dieťa"]]},
+    "hu": {"prints": [["6 hónap", "Az első falat"], ["7-8 hónap", "Állagok felfedezése"], ["9 hónap", "Ízek felfedezése"], ["11 hónap", "Allergének kézben"], ["12+ hónap", "Úgy eszik, mint a nagyok"]]},
+    "ro": {"prints": [["6 luni", "Prima îmbucătură"], ["7-8 luni", "Învață texturile"], ["9 luni", "Explorează gusturile"], ["11 luni", "Alergenii sub control"], ["12+ luni", "Mănâncă precum cei mari"]]},
+    "hr": {"prints": [["6 mjeseci", "Prvi zalogaj"], ["7-8 mjeseci", "Uči teksture"], ["9 mjeseci", "Otkriva okuse"], ["11 mjeseci", "Alergeni pod kontrolom"], ["12+ mjeseci", "Jede kao veliki"]]},
+    "ru": {"prints": [["6 месяцев", "Первый кусочек"], ["7-8 месяцев", "Изучаем текстуры"], ["9 месяцев", "Открываем вкусы"], ["11 месяцев", "Аллергены под контролем"], ["12+ месяцев", "Ест как большой"]]},
+    "uk": {"prints": [["6 місяців", "Перший шматочок"], ["7-8 місяців", "Вивчаємо текстури"], ["9 місяців", "Відкриваємо смаки"], ["11 місяців", "Алергени під контролем"], ["12+ місяців", "Їсть як дорослий"]]},
+    "el": {"prints": [["6 μηνών", "Η πρώτη μπουκιά"], ["7-8 μηνών", "Μαθαίνει υφές"], ["9 μηνών", "Ανακαλύπτει γεύσεις"], ["11 μηνών", "Αλλεργιογόνα υπό έλεγχο"], ["12+ μηνών", "Τρώει σαν μεγάλο παιδί"]]},
+    "tr": {"prints": [["6 ay", "İlk lokma"], ["7-8 ay", "Dokuları öğreniyor"], ["9 ay", "Tatları keşfediyor"], ["11 ay", "Alerjenler kontrol altında"], ["12+ ay", "Büyükler gibi yiyor"]]},
+    "he": {"uppercase": false, "prints": [["6 חודשים", "הביס הראשון"], ["7-8 חודשים", "לומדים מרקמים"], ["9 חודשים", "מגלים טעמים"], ["11 חודשים", "אלרגנים בשליטה"], ["12+ חודשים", "אוכל כמו גדול"]]},
+    "ar-SA": {"uppercase": false, "scale2": 0.95, "prints": [["6 أشهر", "أول قضمة"], ["7-8 أشهر", "تعلّم القوام"], ["9 أشهر", "اكتشاف النكهات"], ["11 شهرًا", "الحساسية تحت السيطرة"], ["12+ شهرًا", "يأكل مثل الكبار"]]},
+    "hi": {"uppercase": false, "scale1": 0.85, "scale2": 0.85, "prints": [["6 महीने", "पहला निवाला"], ["7-8 महीने", "बनावट सीखना"], ["9 महीने", "स्वाद की खोज"], ["11 महीने", "एलर्जी पर नज़र"], ["12+ महीने", "बड़ों की तरह खाना"]]},
+    "th": {"uppercase": false, "scale1": 0.85, "scale2": 0.85, "prints": [["6 เดือน", "คำแรกของลูก"], ["7-8 เดือน", "เรียนรู้เนื้อสัมผัส"], ["9 เดือน", "สำรวจรสชาติ"], ["11 เดือน", "คุมสารก่อภูมิแพ้"], ["12+ เดือน", "กินเก่งเหมือนพี่โต"]]},
+    "vi": {"prints": [["6 tháng", "Miếng cắn đầu tiên"], ["7-8 tháng", "Làm quen kết cấu"], ["9 tháng", "Khám phá hương vị"], ["11 tháng", "Kiểm soát dị ứng"], ["12+ tháng", "Ăn như anh chị lớn"]]},
+    "id": {"prints": [["6 bulan", "Gigitan pertama"], ["7-8 bulan", "Mengenal tekstur"], ["9 bulan", "Menjelajahi rasa"], ["11 bulan", "Alergen terpantau"], ["12+ bulan", "Makan seperti anak besar"]]},
+    "ms": {"prints": [["6 bulan", "Suapan pertama"], ["7-8 bulan", "Mengenal tekstur"], ["9 bulan", "Meneroka rasa"], ["11 bulan", "Alergen terkawal"], ["12+ bulan", "Makan seperti anak besar"]]},
+    "ja": {"uppercase": false, "scale1": 0.78, "scale2": 0.85, "prints": [["生後6か月", "はじめてのひとくち"], ["7〜8か月", "食感を覚える"], ["9か月", "味を楽しむ"], ["11か月", "アレルゲンも安心"], ["1歳以上", "大人と同じ食事へ"]]},
+    "ko": {"uppercase": false, "scale1": 0.78, "scale2": 0.85, "prints": [["6개월", "첫 한입"], ["7-8개월", "식감 배우기"], ["9개월", "맛 탐험"], ["11개월", "알레르겐 체크 완료"], ["12개월+", "혼자서 잘 먹어요"]]},
+    "zh-Hans": {"uppercase": false, "scale1": 0.78, "scale2": 0.85, "prints": [["6个月", "第一口辅食"], ["7-8个月", "认识食物质地"], ["9个月", "探索各种味道"], ["11个月", "过敏原全掌握"], ["12个月+", "像大孩子一样吃饭"]]},
+    "zh-Hant": {"uppercase": false, "scale1": 0.78, "scale2": 0.85, "prints": [["6個月", "第一口副食品"], ["7-8個月", "認識食物質地"], ["9個月", "探索各種味道"], ["11個月", "過敏原全掌握"], ["12個月+", "像大孩子一樣吃飯"]]}
+  }
+}
